@@ -1,0 +1,140 @@
+#dashboard {
+    padding: 30px 0;
+	font-family: Arial, sans-serif; 
+}
+
+#dashboard a {
+	text-decoration:none;
+}
+#dashboard .cpi {
+    width: 286px;
+    float: left;
+    position: relative;
+    text-align: center;
+    padding: 30px 40px;
+}
+
+#dashboard h2 {
+    font-size: 1.5em;
+    color: #ff672b;
+}
+
+#dashboard .cpi h3 {
+    padding-bottom: 30px;
+	font-weight: bold;
+    font-size: 1.16667em;
+}
+
+#dashboard .cpi .b2g, #dashboard .cpi .g2b {
+    width: 286px;
+    height: 163px;
+    background: transparent left top no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+#dashboard .cpi .g2b {
+    background-image: url(../images/cpi-g2b-bg.png);
+}
+
+#dashboard .cpi .b2g {
+    background-image: url(../images/cpi-b2g-bg.png);
+}
+
+#dashboard .cpi .pointer {
+    width: 5px;
+    height: 271px;
+    background: transparent url(../images/pointer.png) left top no-repeat;
+    position: absolute;
+    bottom: -118px;
+    left: 141px;
+}
+
+#dashboard h2 {
+    float: left; 
+    position: relative;
+}
+
+#dashboard .top {
+    padding-bottom: 20px;
+}
+
+#dashboard .options {
+    float: right;
+    position: relative;
+}
+
+#dashboard .options .btn {
+    float: left;
+    position: relative;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #cacaca;
+    padding: 0 11px;
+    background: transparent url(../images/btn-bg.gif) left top repeat-x;
+    color: #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 0 0 15px;
+    text-shadow: 0 1px rgba(255,255,255,.5);
+}
+
+#dashboard .options .btn-left {
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    -moz-border-radius-bottomright: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}  
+
+#dashboard .options .btn-right {
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+}  
+
+#dashboard .options .btn.inactive {
+    color: #777;
+    background: #ddd;
+}
+
+#dashboard .options .btn:hover {
+    background-position: left bottom;
+    color: #222;
+    text-decoration: none;
+}
+
+#dashboard .options .btn-settings {
+    padding: 0;
+}
+
+#dashboard .options .btn-settings .icon {
+    display: block;
+    height: 34px;
+    width: 34px;
+    background: transparent url(../images/icon-settings.png) center no-repeat;
+}
+
+/* Container */
+
+.container {
+    width: 732px;
+    margin: 50px auto;
+}
+
+/* Clearfix */
+
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}
+/* IE sucks \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End IE sucks */

@@ -1,0 +1,168 @@
+.div_cust_hidden
+{
+	margin-left: 20px;
+	margin-top: 20px;
+	display: none;
+}
+
+.div_cust_display
+{
+	margin-left: 20px;
+	margin-top: 20px;
+	display: 'block';
+}
+
+.divHidden
+{
+	display: none;
+}
+
+.divDisplayed
+{
+	display: 'block';
+	margin-left: 30px;
+}
+
+.pos_col_product
+{
+	align: left;
+	text-align: left;
+	font-size: 18px;
+}
+
+.pos_col_qty
+{
+	align: center;
+	text-align: center;
+	font-size: 18px;
+}
+
+.img_qty
+{
+    padding-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.input_qty
+{
+        width: 30px;
+}
+
+.pos_col_price
+{
+	align: center;
+	text-align: center;
+	font-size: 18px;	
+}
+
+.pos_col_total
+{
+	align: right;
+	text-align: right;
+	font-size: 18px;	
+}
+
+.pos_col_delete
+{
+	align: center;
+	text-align: center;
+}
+
+.scanner-value
+{
+	font-size: 18px;
+}
+
+.scanner-status-ready
+{
+	font-size: 24px;	
+	color: green;
+}
+
+.scanner-status-holdon
+{
+	font-size: 24px;	
+	color: red;
+}
+
+.hidden-menu
+{
+    display: none;
+}
+
+.visible-menu
+{
+    display: '';
+}
+
+
+.payment_method_selected
+{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff0033;
+
+    cursor: hand;
+    cursor: pointer;
+}
+
+.payment_method
+{
+    border-style: solid;
+    border-width: 0px;
+    border-color: #ff0033;
+
+    cursor: hand;
+    cursor: pointer;
+}
+
+#div_shipping_methods p
+{
+    padding: 4px;
+}
+
+.span_shipping_method_label
+{
+    text-align: left;
+    font-size: 14px;
+    color: #aaaaaa;
+    padding: 3px;
+
+    border-style: solid;
+    border-width: 0px;
+    border-color: #aaaaaa;
+
+    margin-bottom: 5px;
+    
+    font-weight: bold;
+    
+    cursor: hand;
+    cursor: pointer;
+}
+
+.span_shipping_method_label_selected
+{
+    text-align: left;
+    font-size: 14px;
+    padding: 3px;
+    color: #000000;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ff0000;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+
+    cursor: hand;
+    cursor: pointer;
+}
+
+#productInfosDialog .dialogButton{
+
+    /*color:red;*/
+    padding: 5px;
+
+}

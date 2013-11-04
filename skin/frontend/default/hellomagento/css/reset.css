@@ -1,0 +1,128 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* { margin:0; padding:0; }
+
+body        { background : #B9B9B9 url(../images/bg.gif) fixed repeat-x;font:12px/1.5 Arial, Helvetica, sans-serif; color:#000; text-align:center; }
+
+
+img         { border:0; vertical-align:top; }
+
+a           {color: #404040;}
+a:hover     {color: #000;}
+:focus      { outline: 0; }
+
+/* Headings */
+h1          { font-size:20px; font-weight:normal; line-height:1.3; margin: .5em 0; }
+h2          { font-size:18px; font-weight:normal; line-height:1.34;margin: 0; }
+h3          { font-size:16px; font-weight:bold; line-height:1.375; margin: .5em 0;}
+h4          { font-size:14px; font-weight:bold; }
+h5          { font-size:12px; font-weight:bold; }
+h6          { font-size:11px; font-weight:bold; }
+
+/* Forms */
+form        { display:inline; }
+fieldset    { border:0; }
+legend      { display:none; }
+
+/* Table */
+table       { border:0; border-collapse:collapse; border-spacing:0; empty-cells:show; font-size:100%; }
+th          { vertical-align:top; text-align:left; font-weight:normal; }
+td          { vertical-align:top; }
+
+/* Content */
+address     { font-style:normal; }
+cite        { font-style:normal; }
+q,
+blockquote  { quotes:none; }
+q:before, 
+q:after     { content:''; }
+small,big   { font-size:1em; }
+sup         { font-size:1em; vertical-align:top; }
+p			{line-height: 23px;}
+
+/* Lists */
+ul,ol       { list-style:none; }
+
+/* Tools */
+.nobr       { white-space:nowrap !important; }
+.wrap       { white-space:normal !important; }
+.a-left     { text-align:left !important; }
+.a-center   { text-align:center !important; }
+.a-right    { text-align:right !important; }
+.v-middle   { vertical-align:middle; }
+.f-left,
+.left       { float:left !important; }
+.f-right,
+.right      { float:right !important; }
+.f-none     { float:none !important; }
+.f-fix      { float:left; width:100%; }
+.no-display { display:none; }
+.no-margin  { margin:0 !important; }
+.no-padding { padding:0 !important; }
+.no-bg      { background:none !important; }/* MiniLogin */#mini-login {text-align:center; }#mini-login label{float:left;line-height:28px; }#mini-login input{float:right;height:15px;margin-bottom:5px;width:125px; }#mini-login .bt-minilog{clear:both;float:right;white-space:nowrap;font:bold 12px/16px Arial,Helvetica,sans-serif;font-weight:bold;margin-top:5px;height:24px;background:url(../images/headers.gif) repeat-x  #E4E4E4;border:1px solid #717171;cursor:pointer;overflow:visible;width:auto;padding:0px 5px; }
