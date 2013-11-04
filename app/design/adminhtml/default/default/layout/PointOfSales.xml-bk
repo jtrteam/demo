@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+    <pointofsales_pointofsales_stepone>
+    	
+        <reference name="head">
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>PointOfSales.css</name>
+            </action>
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+        </reference>
+ 		
+        <reference name="content">
+            <block type="PointOfSales/OrderCreation_StepOne" name="stepone" template="PointOfSales/OrderCreation/StepOne.phtml">
+                <block type="PointOfSales/OrderCreation_ProductsGrid" as="productsgrid" name="productsgrid">
+                </block>
+                <block type="PointOfSales/OrderCreation_CustomerGrid" as="customergrid" name="customergrid">
+                </block>
+            </block>
+        </reference>
+    </pointofsales_pointofsales_stepone>
+
+    <pointofsales_pointofsales_confirm>
+        <reference name="head">
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>PointOfSales.css</name>
+            </action>
+			<action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="PointOfSales/OrderCreation_Confirm" name="createorder" template="PointOfSales/OrderCreation/Confirm.phtml">
+                <block type="adminhtml/sales_order_view_info" name="order_info" template="sales/order/view/info.phtml"></block>
+                <block type="adminhtml/sales_order_view_items" name="order_items" template="sales/order/view/items.phtml">
+                    <action method="addItemRender">
+                        <type>default</type>
+                        <block>adminhtml/sales_order_view_items_renderer_default</block>
+                        <template>sales/order/view/items/renderer/default.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>qty</column>
+                        <block>adminhtml/sales_items_column_qty</block>
+                        <template>sales/items/column/qty.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>name</column>
+                        <block>adminhtml/sales_items_column_name</block>
+                        <template>sales/items/column/name.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>name</column>
+                        <block>adminhtml/sales_items_column_name_grouped</block>
+                        <template>sales/items/column/name.phtml</template>
+                        <type>grouped</type>
+                    </action>
+                </block>
+                <block type="adminhtml/sales_order_payment" name="order_payment"></block>
+                <block type="adminhtml/sales_order_totals" name="order_totals" template="sales/order/totals.phtml">
+                    <block type="adminhtml/sales_order_totals_item" name="footer" template="sales/order/totals/footer.phtml">
+                        <block type="adminhtml/sales_order_totals_item" name="grand" template="sales/order/totals/grand.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="paid" template="sales/order/totals/paid.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="refunded" template="sales/order/totals/refunded.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="due" template="sales/order/totals/due.phtml" />
+                    </block>
+                    <block type="adminhtml/sales_order_totals_item" name="sales.order.view.totals.main" as="main" template="sales/order/totals/main.phtml">
+                        <block type="adminhtml/sales_order_totals_item" name="subtotal" template="sales/order/totals/item.phtml">
+                            <action method="setSourceField">
+                                <value>subtotal</value>
+                            </action>
+                            <action method="setLabel">
+                                <value>Subtotal</value>
+                            </action>
+                        </block>
+                        <block type="adminhtml/sales_order_totals_tax" name="tax" template="sales/order/totals/tax.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="shipping" template="sales/order/totals/shipping.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="discount" template="sales/order/totals/discount.phtml" />
+                        <block type="adminhtml/sales_order_totals_item" name="giftcert" template="sales/order/totals/item.phtml">
+                            <action method="setSourceField">
+                                <value>giftcert_amount</value>
+                            </action>
+                            <action method="setLabel">
+                                <value>Gift Certificate</value>
+                            </action>
+                        </block>
+                        <block type="adminhtml/sales_order_totals_item" name="adjustment_positive" template="sales/order/totals/item.phtml">
+                            <action method="setSourceField">
+                                <value>adjustment_positive</value>
+                            </action>
+                            <action method="setLabel">
+                                <value>Adjustment Refund</value>
+                            </action>
+                        </block>
+                        <block type="adminhtml/sales_order_totals_item" name="adjustment_negative" template="sales/order/totals/item.phtml">
+                            <action method="setSourceField">
+                                <value>adjustment_negative</value>
+                            </action>
+                            <action method="setLabel">
+                                <value>Adjustment Fee</value>
+                            </action>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </reference>
+    </pointofsales_pointofsales_confirm>
+    
+    <pointofsales_salesreport_grid>
+        <reference name="head">
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="PointOfSales/SalesReport_Grid" as="salesreportgrid" name="salesreportgrid" template="PointOfSales/SalesReport/Grid.phtml" />
+        </reference>
+    </pointofsales_salesreport_grid>
+    
+    <pointofsales_othersales_grid>
+        <reference name="head">
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="PointOfSales/OtherSales_Grid" as="othersalesgrid" name="othersalesgrid" template="PointOfSales/OtherSales/Grid.phtml" />
+        </reference>
+    </pointofsales_othersales_grid>
+    
+    <pointofsales_customer_grid>
+        <reference name="head">
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="PointOfSales/Customer_Grid" as="customergrid" name="customergrid" template="PointOfSales/Customer/Grid.phtml" />
+        </reference>
+    </pointofsales_customer_grid>
+    
+    <pointofsales_customer_info>
+        <reference name="content">
+            <block type="PointOfSales/Customer_Info" as="customer_info" name="customer_info" template="PointOfSales/Customer/Info.phtml" />
+        </reference>
+    </pointofsales_customer_info>
+    
+    <pointofsales_product_grid>
+        <reference name="head">
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/alphacube.css</name>
+            </action>
+            <action method="addJs">
+                <script>mdn/PointOfSales.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="PointOfSales/Product_Grid" as="productgrid" name="productgrid" template="PointOfSales/Product/Grid.phtml" />
+        </reference>
+    </pointofsales_product_grid>
+    
+</layout>

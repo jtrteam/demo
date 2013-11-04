@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * config.xml
+ *	- rewrite blocks,
+ *	- set-up helper,
+ *	- set-up url rewrite,
+ *	- define router,
+ *	- set-up layout.xml,
+ *	- set-up translation file,
+ *	- define default values
+ *
+ * @category    Sitewards
+ * @package     Sitewards_B2BProfessional
+ * @copyright   Copyright (c) 2013 Sitewards GmbH (http://www.sitewards.com/)
+ */
+-->
+<config>
+	<modules>
+		<Sitewards_B2BProfessional>
+			<version>2.2.3</version>
+		</Sitewards_B2BProfessional>
+	</modules>
+	<global>
+		<blocks>
+			<b2bprofessional>
+				<class>Sitewards_B2BProfessional_Block</class>
+			</b2bprofessional>
+			<catalog>
+				<rewrite>
+					<product_list>Sitewards_B2BProfessional_Block_Catalog_Product_List</product_list>
+					<product_new>Sitewards_B2BProfessional_Block_Catalog_Product_New</product_new>
+					<product_widget_new>Sitewards_B2BProfessional_Block_Catalog_Product_Widget_New</product_widget_new>
+				</rewrite>
+			</catalog>
+			<checkout>
+				<rewrite>
+					<links>Sitewards_B2BProfessional_Block_Checkout_Links</links>
+				</rewrite>
+			</checkout>
+			<reports>
+				<rewrite>
+					<product_compared>Sitewards_B2BProfessional_Block_Reports_Product_Compared</product_compared>
+					<product_viewed>Sitewards_B2BProfessional_Block_Reports_Product_Viewed</product_viewed>
+					<product_widget_compared>Sitewards_B2BProfessional_Block_Reports_Product_Widget_Compared</product_widget_compared>
+					<product_widget_viewed>Sitewards_B2BProfessional_Block_Reports_Product_Widget_Viewed</product_widget_viewed>
+				</rewrite>
+			</reports>
+		</blocks>
+		<events>
+			<controller_action_predispatch>
+				<observers>
+					<b2bprofessional>
+						<class>b2bprofessional/observer</class>
+						<method>onControllerActionPreDispatch</method>
+					</b2bprofessional>
+				</observers>
+			</controller_action_predispatch>
+			<core_block_abstract_to_html_before>
+				<observers>
+					<b2bprofessional>
+						<class>b2bprofessional/observer</class>
+						<method>onCoreBlockAbstractToHtmlBefore</method>
+					</b2bprofessional>
+				</observers>
+			</core_block_abstract_to_html_before>
+			<core_block_abstract_to_html_after>
+				<observers>
+					<b2bprofessional>
+						<class>b2bprofessional/observer</class>
+						<method>onCoreBlockAbstractToHtmlAfter</method>
+					</b2bprofessional>
+				</observers>
+			</core_block_abstract_to_html_after>
+			<catalog_product_type_configurable_price>
+				<observers>
+					<b2bprofessional>
+						<class>b2bprofessional/observer</class>
+						<method>onCatalogProductTypeConfigurablePrice</method>
+					</b2bprofessional>
+				</observers>
+			</catalog_product_type_configurable_price>
+			<core_layout_block_create_after>
+				<observers>
+					<b2bprofessional>
+						<class>b2bprofessional/observer</class>
+						<method>onCoreLayoutBlockCreateAfter</method>
+					</b2bprofessional>
+				</observers>
+			</core_layout_block_create_after>
+		</events>
+		<helpers>
+			<b2bprofessional>
+				<class>Sitewards_B2BProfessional_Helper</class>
+			</b2bprofessional>
+			<catalog>
+				<rewrite>
+					<product_compare>Sitewards_B2BProfessional_Helper_Catalog_Product_Compare</product_compare>
+				</rewrite>
+			</catalog>
+		</helpers>
+		<models>
+			<b2bprofessional>
+				<class>Sitewards_B2BProfessional_Model</class>
+			</b2bprofessional>
+		</models>
+		<rewrite>
+			<sitewards_B2BProfessional_cart>
+				<from><![CDATA[#^/checkout/cart/#]]></from>
+				<to>B2BProfessional/cart/</to>
+			</sitewards_B2BProfessional_cart>
+		</rewrite>
+	</global>
+	<frontend>
+		<routers>
+			<Sitewards_B2BProfessional>
+				<use>standard</use>
+				<args>
+					<module>Sitewards_B2BProfessional</module>
+					<frontName>B2BProfessional</frontName>
+				</args>
+			</Sitewards_B2BProfessional>
+		</routers>
+		<translate>
+			<modules>
+				<Sitewards_B2BProfessional>
+					<files>
+						<default>Sitewards_B2BProfessional.csv</default>
+					</files>
+				</Sitewards_B2BProfessional>
+			</modules>
+		</translate>
+	</frontend>
+	<adminhtml>
+		<translate>
+			<modules>
+				<Sitewards_B2BProfessional>
+					<files>
+						<default>Sitewards_B2BProfessional.csv</default>
+					</files>
+				</Sitewards_B2BProfessional>
+			</modules>
+		</translate>
+	</adminhtml>
+	<default>
+		<b2bprofessional>
+			<generalsettings>
+				<addtocartredirect>customer/account/login</addtocartredirect>
+			</generalsettings>
+			<languagesettings>
+				<logintext>Please login</logintext>
+				<errortext>Your account is not allowed to access this store.</errortext>
+				<requireloginmessage>You do not have access to view this store.</requireloginmessage>
+			</languagesettings>
+			<requirelogin>
+				<requirelogin>0</requirelogin>
+				<requireloginredirect>customer/account/login</requireloginredirect>
+			</requirelogin>
+			<!--
+				Each of the following sections is to do with replacing html when customer has limited access,
+				They should contain:
+					replace: flag for if the section will be replaced
+					tag: which html tag to look for <p> == p
+					id: the type of identifier for this tag (id, class, href)
+					value: what to look for in the identifier
+					remove: if the section is removed or replaced by text
+					check_cart: flag to check for invalid cart
+			-->
+			<cart_sidebar_totals>
+				<replace>1</replace>
+				<tag>p</tag>
+				<id>class</id>
+				<value>subtotal</value>
+				<remove />
+				<check_cart>1</check_cart>
+			</cart_sidebar_totals>
+			<cart_sidebar_actions>
+				<replace>1</replace>
+				<tag>div</tag>
+				<id>class</id>
+				<value>actions</value>
+				<remove>1</remove>
+				<check_cart>1</check_cart>
+			</cart_sidebar_actions>
+			<cart_item_price>
+				<replace>1</replace>
+				<tag>span</tag>
+				<id>class</id>
+				<value>price</value>
+				<remove />
+				<check_cart>1</check_cart>
+			</cart_item_price>
+			<add_to_cart>
+				<replace>1</replace>
+				<tag>button</tag>
+				<id>onclick</id>
+				<value>remove-add-to-cart</value>
+				<remove>1</remove>
+				<check_cart />
+			</add_to_cart>
+		</b2bprofessional>
+	</default>
+</config>

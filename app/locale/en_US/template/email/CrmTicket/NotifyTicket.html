@@ -1,0 +1,32 @@
+<!--@subject {{var ct_subject}} {{var hashtag}} @-->
+<p><FONT COLOR="#FFFFFF">{{var responsetag}}</FONT></p>
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+    <table cellspacing="0" cellpadding="0" border="0" width="95%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+        <tr>
+            <td align="center" valign="top">
+                <!-- [ header starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var store.getFrontendName()}}"  style="margin-bottom:10px;" border="0"/></a></td>
+                    </tr>
+                </table>
+                <!-- [ middle starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top">
+                            <p>Hello,</p>
+
+                            <p>A new message has been posted for ticket "{{var ct_subject}}" :</p>
+                                                      
+                            <p><b>Messages history : </b></p>
+                            <p>{{var messages}}</p>
+                            
+                            <p>You can also manage your responses and check messages history directly from your <a href="{{var url}}">customer account</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<p><FONT COLOR="#FFFFFF">{{var hashtag}}</FONT></p>

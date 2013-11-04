@@ -1,0 +1,53 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2013 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    2.0.0.0
+*/
+?>
+
+<div class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<h1>Frequently Asked Questions</h1>
+	
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+	<dl class="faq">
+		<dt>What browsers are supported?</dt>
+		<dd>Modern browsers like IE9, Firefox, Safari, Chrome, and Opera with excellent web standards support
+		will deliver the best user experience.
+		Older browsers like IE8 have usable, baseline functionality, but cannot take full advantage of progressively
+		enhanced features that newer browsers can. IE7 and below are no longer supported as of Acumen 1.3.3.</dd>
+		
+		<dt>Will Acumen work on Magento 1.x.x?</dt>
+		<dd>Each Acumen release is developed for a specific stable release of Magento.
+		Magento's core development dictates the backward-compatibility of themes.
+		To keep forward momentum in Acumen's development, future updates are tested with the latest stable release of Magento only.</dd>
+		
+		<dt>Is Acumen available outside ThemeForest?</dt>
+		<dd>No. Acumen is sold exclusively through partnership with ThemeForest.
+		Any other site selling Acumen is doing so illegally without compensating the original developer.
+		Do not buy Acumen from any other source than ThemeForest.
+		Your support ensures ongoing compatibility, maintenance, and improvements.</dd>
+		
+		<dt>Can I resell or use Acumen for several projects?</dt>
+		<dd>Acumen is licensed for a single application and may not be relicensed, sold, or packaged under any circumstances.
+		You must buy an additional license for each project that you want to use Acumen for.
+		Please see the <a href="http://themeforest.net/wiki/support/legal-terms/licensing-terms/">ThemeForest Licensing Terms</a> for more details.</dd>
+		
+		<dt>Who made Acumen?</dt>
+		<dd><a href="http://gravitydept.com">Gravity Department</a> did, specifically <a href="http://brendanfalkowski.com">Brendan Falkowski</a> (the boss).</dd>
+		
+		<dt>Can you help me configure/launch Magento?</dt>
+		<dd>Yes. Project consulting is available depending on Gravity Department's workload and schedule. Get in touch.</dd>
+		
+		<dt>Do you make custom themes?</dt>
+		<dd>Of course we do. Contact us for more information.</dd>
+	</dl>
+</div>

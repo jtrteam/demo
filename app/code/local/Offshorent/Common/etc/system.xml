@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <offshorent_extensions translate="label">
+            <label>Offshorent Extensions</label>
+            <sort_order>180</sort_order>      
+        </offshorent_extensions>
+    </tabs>
+</config>

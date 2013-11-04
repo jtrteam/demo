@@ -1,0 +1,24 @@
+<?php $_maincategorylisting=$this->getCurrentCategory()?>
+<?php $_categories=$this->getCurrentChildCategories()?>
+<div class="subcat-listing">
+	<ul class="subcat-products">
+		<? foreach ($_categories as $_category):?>
+		<? if($_category->getIsActive()): ?>
+		<?php $cur_category=Mage::getModel('catalog/category')->load($_category->getId()); ?>
+		<?php $layer = Mage::getSingleton('catalog/layer'); ?>
+		<?php $layer->setCurrentCategory($cur_category); ?>
+		<? if($_imageUrl=$this->getCurrentCategory()->getImageUrl()):?>
+		<li>
+			<a class="img-display" href="<?php echo $this->getCategoryUrl($_category) ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>">
+				<img src="<?php echo $_imageUrl ?>" width="auto" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"/>
+				<? if($_description=$this->getCurrentCategory()->getDescription()):?>
+				<span class="category-description-home"><?php echo $_description ?></span>
+				<? endif; ?>
+			</a>
+			<h3><?php echo $this->htmlEscape($_category->getName()) ?><a class="link-category" href="<?php echo $this->getCategoryUrl($_category) ?>">&nbsp;</a></h3>
+		</li>
+		<?php endif; ?>
+		<? endif; ?>
+		<?php endforeach; ?>
+	</ul>
+</div>

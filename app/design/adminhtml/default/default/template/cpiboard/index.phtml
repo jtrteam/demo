@@ -1,0 +1,149 @@
+<script type="text/javascript">
+
+function changeCpiPeriod(prd) {
+
+	jQuery('#period').val(prd);
+
+	jQuery('#periodFrm').submit();
+
+}
+
+jQuery(function() {
+
+		var percentage = 0;
+
+		<?php if(Mage::getStoreConfig('cpiboard/cpiboard/orderintake')){ ?>
+
+			percentage = <?php echo $this->getOrderIntake() ?>;
+
+			jQuery('#dashboard .pointer.orderintake').rotate({angle: -90, animateTo: Math.min(90, percentage*1.8-90), easing: jQuery.easing.easeInOutExpo});
+
+		<?php } ?>
+
+		<?php if(Mage::getStoreConfig('cpiboard/cpiboard/quotes')){ ?>
+
+			percentage = <?php echo $this->getQuote()?>;
+
+			jQuery('#dashboard .pointer.quotes').rotate({angle: -90, animateTo: Math.min(90, percentage*1.8-90), easing: jQuery.easing.easeInOutExpo});
+
+		<?php } ?>
+
+		<?php if(Mage::getStoreConfig('cpiboard/cpiboard/complaints')){ ?>
+
+			percentage = <?php echo $this->getComplaints() ?>;
+
+			jQuery('#dashboard .pointer.complaints').rotate({angle: -90, animateTo: Math.min(90, percentage*1.8-90), easing: jQuery.easing.easeInOutExpo});
+
+		<?php } ?>
+
+		<?php if(Mage::getStoreConfig('cpiboard/cpiboard/visitors')){ ?>
+
+			percentage = <?php echo $this->getVisitors() ?>;
+
+			jQuery('#dashboard .pointer.visitors').rotate({angle: -90, animateTo: Math.min(90, percentage*1.8-90), easing: jQuery.easing.easeInOutExpo});
+
+		<?php } ?>
+
+	});
+
+</script>
+
+<div id="dashboard">
+
+        <?php echo $this->getChildHtml('store_switcher') ?>
+
+            <div class="top clearfix">
+
+                <h2><?php echo $this->__('My Dashboard') ?></h2>
+
+                <form action=""  id="periodFrm" >
+
+                <?php $period = $this->getRequest()->getParam('period', '1m') ?>
+
+                <div class="options">
+
+                    <a href="javascript:void(0)" onClick="changeCpiPeriod('1y');" class="btn btn-left <?php if($period == '1y') echo 'inactive'; ?>"><?php echo $this->__('Yearly') ?></a>
+
+                    <a href="javascript:void(0)" onClick="changeCpiPeriod('1m');"  class="btn btn-right <?php if($period == '1m') echo 'inactive'; ?>"><?php echo $this->__('Monthly') ?></a>
+
+                    <a href="<?php echo $this->getSettingUrl() ?>" class="btn btn-settings"><span class="icon"></span></a>
+
+                </div>
+
+                <input type="hidden" id="period" value="<?php echo $period ?>" name="period" />
+
+                </form>
+
+            </div>
+
+            
+
+            <div class="clearfix">
+
+            	<?php if(Mage::getStoreConfig('cpiboard/cpiboard/orderintake')){ ?>
+
+                    <div class="cpi">
+
+                        <h3><?php echo $this->__('Order intake') ?></h3>
+
+                        <div class="b2g">
+
+                            <div class="pointer orderintake"></div>
+
+                        </div>
+
+                    </div>
+
+                <?php } ?>
+
+				<?php if(Mage::getStoreConfig('cpiboard/cpiboard/quotes')){ ?>
+
+                    <div class="cpi">
+
+                        <h3><?php echo $this->__('Quotes') ?></h3>
+
+                        <div class="b2g">
+
+                            <div class="pointer quotes"></div>
+
+                        </div>
+
+                    </div>
+
+                <?php } ?>
+
+				<?php if(Mage::getStoreConfig('cpiboard/cpiboard/complaints')){ ?>
+
+                <div class="cpi">
+
+                    <h3><?php echo $this->__('Complaints') ?></h3>
+
+                    <div class="g2b">
+
+                        <div class="pointer complaints"></div>
+
+                    </div>
+
+                </div>
+
+                <?php } ?>
+
+				<?php if(Mage::getStoreConfig('cpiboard/cpiboard/visitors')){ ?>
+
+                    <div class="cpi">
+
+                        <h3><?php echo $this->__('Visitors') ?></h3>
+
+                        <div class="b2g">
+
+                            <div class="pointer visitors"></div>
+
+                        </div>
+
+                    </div>
+
+                <?php } ?>
+
+            </div>
+
+  </div>

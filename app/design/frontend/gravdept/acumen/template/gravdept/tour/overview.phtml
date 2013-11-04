@@ -1,0 +1,80 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2011 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    1.3.1
+*/
+?>
+
+<div class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	<h1><a href="<?php echo $this->getUrl('tour/features') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/overview.jpg') ?>" alt="Acumen: Sharp design with disciplined character." /></a></h1>
+
+	<div class="grid tour-snacks">
+		<div class="grid_4">
+			<h2>Features</h2>
+			<p>Every template in Acumen is customized &ndash; jQuery sliders are just the beginning.</p>
+			<p><a href="<?php echo $this->getUrl('tour/features') ?>">More info</a></p>
+		</div>
+		
+		<div class="grid_4">
+			<h2>Design</h2>
+			<p>Preview full-page layouts for a sense of Acumen's organized &amp; consistent character.</p>
+			<p><a href="<?php echo $this->getUrl('tour/design') ?>">More info</a></p>
+		</div>
+		
+		<div class="grid_4">
+			<h2>UI Widgets</h2>
+			<p>Customizable widgets for showing interactive content anywhere in Magento.</p>
+			<p><a href="<?php echo $this->getUrl('tour/ui-widgets') ?>">More info</a></p>
+		</div>
+	</div>
+	
+	<div class="grid tour-snacks">
+		<div class="grid_4">
+			<h2>Snippets</h2>
+			<p>Content areas you can update from the Magento Admin. Turn them on/off as needed with no coding!</p>
+			<p><a href="<?php echo $this->getUrl('tour/snippets') ?>">More info</a></p>
+		</div>
+		
+		<div class="grid_4">
+			<h2>Grid</h2>
+			<p>Every scrap of Magento's layout was removed and replaced with an extensible grid system.</p>
+			<p><a href="<?php echo $this->getUrl('tour/grid') ?>">More info</a></p>
+		</div>
+		
+		<div class="grid_4">
+			<h2>Code</h2>
+			<p>Nearly everything changed and 100% documented using Zend best practices.</p>
+			<p><a href="<?php echo $this->getUrl('tour/code') ?>">More info</a></p>
+		</div>
+	</div>
+	
+	<div class="grid tour-snacks">
+    	<div class="grid_4">
+    		<h2>Performance</h2>
+    		<p>Magento isn't like Wordpress &ndash; theme architecture heavily impacts performance.</p>
+    		<p><a href="<?php echo $this->getUrl('tour/performance') ?>">More info</a></p>
+    	</div>
+	    
+		<div class="grid_4">
+			<h2>FAQ</h2>
+			<p>Answers to common questions about Acumen, licensing, and browser support.</p>
+			<p><a href="<?php echo $this->getUrl('tour/faq') ?>">More info</a></p>
+		</div>
+		
+		<div class="grid_4">
+			<h2>Changelog</h2>
+			<p>History of updates and release notes.</p>
+			<p><a href="<?php echo $this->getUrl('tour/changelog') ?>">More info</a></p>
+		</div>
+	</div>
+
+</div>

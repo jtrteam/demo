@@ -1,0 +1,170 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2011 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    1.3.1
+*/
+?>
+
+<div class="tour">
+
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml(); ?>
+	
+	<h1>Code</h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+	<div class="tour-section">
+		<h2>Best Practices</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/docblock.png') ?>" alt="DocBlock syntax"></div>
+				<h3>Custom DocBlocks</h3>
+				<p>Every file in Acumen has a custom DocBlock with package information to easily distinguish file versions.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/local-override.png') ?>" alt="Magento code/local files"></div>
+				<h3>Local Overrides</h3>
+				<p>Magento core updates are properly written in the <code>/app/code/local</code> directory to prevent code overwriting.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/xml-updates.png') ?>" alt="XML update code"></div>
+				<h3>Thoroughly Documented</h3>
+				<p>Customized Magento code is always commented for easy reference and fast comparison to original code. </p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Language / Translation</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/flags.png') ?>" alt="Flags"></div>
+				<h3>Multi-Language Ready</h3>
+				<p>Acumen has been used in dozens of languages like German, Spanish, French, Dutch, Italian, Greek, and more.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/translation-method.png') ?>" alt="Translation method"></div>
+				<h3>Fully Translatable</h3>
+				<p>Acumen implements Magento's translation method on every text snippet and in every frontend template.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/clearer-language.png') ?>" alt="Clearer language"></div>
+				<h3>Straightforward, Friendly Tone</h3>
+				<p>The store's tone was rewritten for clarity and brevity to improve the customer's experience.</p>
+			</div>
+		</div>
+	</div>
+		
+	<div class="tour-section">
+		<h2>HTML5 / CSS3</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/html5.png') ?>" alt="W3 HTML5 logo"></div>
+				<h3>HTML5</h3>
+				<p>The doctype of the modern web powers Acumen. It's simpler, future-proof, and validates.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/css3.png') ?>" alt="W3 CSS3 logo"></div>
+				<h3>CSS3</h3>
+				<p>Gradients, animations, and rounded corners that previously required complex workarounds are supported by modern browsers.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/semantics.png') ?>" alt="W3 Semantics logo"></div>
+				<h3>Semantics</h3>
+				<p>Terse, semantic markup improves maintainability, but also boosts SEO rank by helping search engines understand your content.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Beautiful Markup</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<h3>Scrubbed Clean</h3>
+				<p>Magento could use a diet. Acumen slims everything to the semantic essentials:</p>
+				
+				<ul class="std">
+					<li>Simplified redundant attributes</li>
+					<li>Cured <code>div</code>-itis</li>
+					<li>Removed non-critical inline JS</li>
+				</ul>
+				
+				<p>Compare Magento to Acumen and see for yourself, this is the tip of the iceberg:</p>
+			</div>
+		
+			<div class="grid_8">
+				<h4 class="p5">Magento</h4>
+				
+				<pre><code>&lt;button type=&quot;button&quot; title=&quot;&lt;?php echo $this-&gt;__('Add to Cart') ?&gt;&quot; class=&quot;button btn-cart&quot; onclick=&quot;setLocation('&lt;?php echo $this-&gt;getAddToCartUrl($_product) ?&gt;')&quot;&gt;
+  &lt;span&gt;
+    &lt;span&gt;
+      &lt;?php echo $this-&gt;__('Add to Cart') ?&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+				
+				<h4 class="p5">Acumen</h4>
+				
+				<pre><code>&lt;a class=&quot;faux-button&quot; href=&quot;&lt;?php echo $this-&gt;getAddToCartUrl($_product) ?&gt;&quot;&gt;
+  &lt;?php echo $this-&gt;__('Add To Cart') ?&gt;
+&lt;/a&gt;</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="tour-section">
+		<h2>JavaScript</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/jquery.png') ?>" alt="jQuery library"></div>
+				<h3>jQuery Added</h3>
+				<p><a href="http://jquery.com">jQuery</a> is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.</p>
+			</div>
+		
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/jquery-prototype.png') ?>" alt="jQuery + Prototype compatibility"></div>
+				<h3>Prototype + jQuery Compatibility</h3>
+				<p>jQuery runs in compatibility mode within a special wrapper to maintain normal syntax for plugin initialization. Prototype operates within Magento as usual.</p>
+			</div>
+			
+			<div class="grid_4">
+			    <div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/code/jquery-plugins.png') ?>" alt="SlidesJS + ColorBox"></div>
+				<h3>jQuery + SlidesJS + ColorBox</h3>
+				<p>Configurable plugins like <a href="http://slidesjs.com">Slides</a> and <a href="#">ColorBox</a> power Acumen's UI Widgets.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Custom Functions</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<h3>Semantic Menus</h3>
+				<p>Rewritten navigation menus use standards-driven lists and pure CSS styling to unfold without JavaScript.</p>
+			</div>
+		
+			<div class="grid_4">
+				<h3>Smarter Page Titles</h3>
+				<p>A three-layered override for page titles gives control even in modules without <code>setTitle()</code> methods.</p>
+			</div>
+		</div>
+	</div>
+	
+</div>

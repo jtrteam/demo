@@ -1,0 +1,52 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2013 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    2.0.0.0
+*/
+?>
+
+<div class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<h1>Snippets</h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+	<div class="grid std">
+	    <div class="grid_8">
+	        <p class="keynote">Snippets are content areas you can update from the Magento Admin. Turn them on/off as needed with no coding!</p>
+	        
+	        <div class="tour-callout">
+	            <p>Browse around the Acumen demo. Anywhere you see a thick dashed box (like this), you're looking at a <strong>Snippet</strong>.</p>
+    	        
+    	        <p>Oh look, there's one at the bottom of this page.</p>
+    	    </div>
+	        
+	        <p class="keynote">There are 15 snippets covering the most frequently edited content areas:</p>
+	        
+	        <ol>
+    	        <li>Cart Bottom</a></li>
+    	        <li>Cart Coupon Below</a></li>
+    	        <li>Cart Empty Bottom</a></li>
+    	        <li>Cart List Below</a></li>
+    	        <li>Catalog List Below</a></li>
+    	        <li>Catalog Sidebar Below</a></li>
+    	        <li>Checkout OnePage Progress Below</a></li>
+    	        <li>Checkout OnePage Steps Below</a></li>
+    	        <li>Checkout OnePage Top</a></li>
+    	        <li>CMS Page Bottom</a></li>
+    	        <li>Nav After</a></li>
+    	        <li>Nav Before</a></li>
+    	        <li>Product View Bottom</a></li>
+    	        <li>Product View Tab 1</a></li>
+    	        <li>Product View Tab 2</a></li>
+	        </ol>
+	    </div>
+	</div>
+
+</div>

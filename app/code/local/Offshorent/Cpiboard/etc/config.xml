@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+<config>
+
+    <modules>
+
+        <Offshorent_Cpiboard>
+
+            <version>1.0.1</version>
+
+        </Offshorent_Cpiboard>
+
+    </modules>
+
+    <admin>
+
+        <routers>
+
+			<cpiboard>
+
+				<use>admin</use>
+
+				<args>
+
+					<module>Offshorent_Cpiboard</module>
+
+					<frontName>cpiboard</frontName>
+
+				</args>
+
+			</cpiboard>
+
+        </routers>
+
+    </admin>
+
+    <adminhtml>	
+
+		<menu>
+
+			<cpiboard module="cpiboard">
+
+				<title>CPI Definition</title>
+
+				<sort_order>150</sort_order> 
+
+				<action>cpiboard/adminhtml_cpiboard</action> 
+
+			</cpiboard>
+
+		</menu>
+
+		<layout>
+
+			<updates>
+
+				<cpiboard>
+
+					<file>cpiboard.xml</file>
+
+				</cpiboard>
+
+			</updates>
+
+		</layout>
+
+    </adminhtml>   
+
+    <global>
+
+		<resources>
+
+			<cpiboard_setup>
+
+				<setup>
+
+					<module>Offshorent_Cpiboard</module>
+
+				</setup>
+
+				<connection>
+
+					<use>core_setup</use>
+
+				</connection>
+
+			</cpiboard_setup>			
+
+			<cpiboard_write>
+
+				<connection>
+
+					<use>core_write</use>
+
+				</connection>
+
+			</cpiboard_write>			
+
+			<cpiboard_read>
+
+				<connection>
+
+					<use>core_read</use>
+
+				</connection>
+
+			</cpiboard_read>
+
+		</resources>
+		
+        <blocks>
+
+		    <adminhtml>
+
+        		<rewrite>
+
+        			<dashboard>Offshorent_Cpiboard_Block_Adminhtml_Dashboard</dashboard>
+
+        		</rewrite>
+
+			</adminhtml>
+
+		    <cpiboard>
+
+                <class>Offshorent_Cpiboard_Block</class>
+
+            </cpiboard>
+
+        </blocks>
+
+		<models>
+
+		  <cpiboard>
+
+				<class>Offshorent_Cpiboard_Model</class>
+
+				<resourceModel>cpiboard_mysql4</resourceModel>
+
+		  </cpiboard>
+
+		  <cpiboard_mysql4>
+
+				<class>Offshorent_Cpiboard_Model_Mysql4</class>
+
+				<entities>	  
+
+					<cpi>
+
+						<table>offshorent_cpi</table>
+
+					</cpi>
+
+					<cpidefinition>
+
+						<table>offshorent_cpi_definition</table>
+
+					</cpidefinition>
+					
+				</entities>
+
+			</cpiboard_mysql4>
+
+    	</models>
+
+		<helpers>
+
+		  <cpiboard>
+
+				<class>Offshorent_Cpiboard_Helper</class>
+
+		  </cpiboard>
+
+       </helpers>
+
+    </global>
+
+</config>

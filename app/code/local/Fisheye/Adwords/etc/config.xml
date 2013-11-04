@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+ *
+ * @category   Fisheye
+ * @package    Fisheye Google Adwords
+ * @author     Domagoj Potkoc, Fisheye Team <domagoj.potkoc@surgeworks.com>
+-->
+<config>
+    <modules>
+        <Fisheye_Adwords>
+             <version>1.0.0</version>
+        </Fisheye_Adwords>
+    </modules>
+    <global>
+        <blocks>
+            <fisheye_adwords>
+                <class>Fisheye_Adwords_Block</class>
+            </fisheye_adwords>
+        </blocks>
+        <helpers>
+            <fisheye_adwords>
+                <class>Fisheye_Adwords_Helper</class>
+            </fisheye_adwords>
+        </helpers>
+    </global>
+    
+    <frontend>
+      <layout>
+          <updates>
+              <fisheye_adwords>
+                  <file>fisheye_adwords.xml</file>
+              </fisheye_adwords>
+          </updates>
+      </layout>
+    </frontend>
+    
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<adwordsmodule>
+											<title>Fisheye Extension</title>
+										</adwordsmodule>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+        <adwordsmodule>
+            <inchoad>
+                <enabled>0</enabled>
+                <google_conversion_id>0</google_conversion_id>
+                <google_conversion_language>hr</google_conversion_language>
+                <google_conversion_format>1</google_conversion_format>
+                <google_conversion_color>ffffff</google_conversion_color>
+                <google_conversion_label>0</google_conversion_label>	
+            </inchoad>
+        </adwordsmodule>
+    </default>
+	
+</config>

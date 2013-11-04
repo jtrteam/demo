@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <MDN_PointOfSales>
+            <version>1.7.9</version>
+        </MDN_PointOfSales>
+    </modules>
+    
+    <global>
+        <helpers>
+            <PointOfSales>
+                <class>MDN_PointOfSales_Helper</class>
+            </PointOfSales>
+        </helpers>
+        
+        <blocks>
+            <PointOfSales>
+                <class>MDN_PointOfSales_Block</class>
+            </PointOfSales>
+           	
+            <adminhtml>
+                <rewrite>
+                    <permissions_user_edit_tab_main>MDN_PointOfSales_Block_Adminhtml_Permissions_User_Edit_Tab_Main</permissions_user_edit_tab_main>
+                </rewrite>
+            </adminhtml>
+                       
+        </blocks>
+         
+        <models>
+            <PointOfSales>
+                <class>MDN_PointOfSales_Model</class>
+            </PointOfSales>
+        </models>
+        
+        <resources>
+            <PointOfSales_setup>
+                <setup>
+                    <module>MDN_PointOfSales</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </PointOfSales_setup>
+            <PointOfSales_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </PointOfSales_write>
+            <PointOfSales_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </PointOfSales_read>
+        </resources>
+        
+    </global>
+    
+    <adminhtml>
+    
+        <menu>
+            <sales>
+                <children>
+                    <pointofsales translate="title" module="PointOfSales">
+                        <title>Point Of Sales</title>
+                        <children>
+                            <order_form translate="title" module="PointOfSales">
+                                <title>Order form</title>
+                                <action>PointOfSales/PointOfSales/StepOne</action>
+                            </order_form>
+                            <sales_report translate="title" module="PointOfSales">
+                                <title>Sales report</title>
+                                <action>PointOfSales/SalesReport/Grid</action>
+                            </sales_report>
+                            <!--
+                            <other_sales translate="title" module="PointOfSales">
+                                <title>Other sales</title>
+                                <action>PointOfSales/OtherSales/Grid</action>
+                            </other_sales>
+                            -->
+                            <customers translate="title" module="PointOfSales">
+                                <title>Customers</title>
+                                <action>PointOfSales/Customer/Grid</action>
+                            </customers>
+                            <products translate="title" module="PointOfSales">
+                                <title>Products</title>
+                                <action>PointOfSales/Product/Grid</action>
+                            </products>
+                        </children>
+                    </pointofsales>
+                </children>
+            </sales>
+        </menu>
+        
+        <layout>
+            <updates>
+                <PointOfSales>
+                    <file>PointOfSales.xml</file>
+                </PointOfSales>
+            </updates>
+        </layout>
+        
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <sales>
+                            <children>
+                                <pointofsales translate="title" module="PointOfSales">
+                                    <title>Point Of Sales</title>
+                                    <children>
+                                        <order_form translate="title" module="PointOfSales">
+                                            <title>Order form</title>
+                                        </order_form>
+                                        <sales_report translate="title" module="PointOfSales">
+                                            <title>Sales report</title>
+                                        </sales_report>
+                                        <!--
+                                        <other_sales translate="title" module="PointOfSales">
+                                            <title>Other sales</title>
+                                        </other_sales>
+                                        -->
+                                        <customers translate="title" module="PointOfSales">
+                                            <title>Customers</title>
+                                        </customers>
+                                        <products translate="title" module="PointOfSales">
+                                            <title>Products</title>
+                                        </products>
+                                    </children>
+                                </pointofsales>
+                            </children>
+                        </sales>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <pointofsales translate="title" module="PointOfSales">
+                                            <title>Point Of Sales</title>
+                                        </pointofsales>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+	    
+        <translate>
+            <modules>
+                <MDN_PointOfSales>
+                    <files>
+                        <default>MDN_PointOfSales.csv</default>
+                    </files>
+                </MDN_PointOfSales>
+            </modules>
+        </translate>
+        
+    </adminhtml>
+	
+	
+    <frontend>
+        <secure_url>
+            <PointOfSales>/PointOfSales/</PointOfSales>
+        </secure_url>
+        <routers>
+            <PointOfSales>
+                <use>standard</use>
+                <args>
+                    <module>MDN_PointOfSales</module>
+                    <frontName>PointOfSales</frontName>
+                </args>
+            </PointOfSales>
+        </routers>
+        <!-- on inscrit notre fichier layout pour qu'il soit parse par magento (sinon il n'est pas considere) -->
+        <layout>
+            <updates>
+                <PointOfSales>
+                    <file>PointOfSales.xml</file>
+                </PointOfSales>
+            </updates>
+        </layout>
+        
+        <translate>
+            <modules>
+                <MDN_PointOfSales>
+                    <files>
+                        <default>MDN_PointOfSales.csv</default>
+                    </files>
+                </MDN_PointOfSales>
+            </modules>
+        </translate>
+    </frontend>
+    
+    <default>
+        <PointOfSales>
+            <configuration>
+                <website_id>1</website_id>
+                <store_id>1</store_id>
+                <customer_group_id>1</customer_group_id>
+            </configuration>
+        </PointOfSales>
+        <pointofsales>
+            <configuration>
+                <empty_string>n/r</empty_string>
+                <default_shipment_tick>1</default_shipment_tick>
+                <default_invoice_tick>1</default_invoice_tick>
+            </configuration>
+            <barcode_scanner>
+                <enable>0</enable>
+            </barcode_scanner>
+            <receipt>
+                <width>7</width>
+                <unit>cm</unit>
+            </receipt>
+            <notification>
+                <guest_account_email>anonymous@website.com</guest_account_email>
+                <enable_new_order_email>0</enable_new_order_email>
+            </notification>
+        </pointofsales>
+        
+        <carriers>
+            <storepickup>
+                <active>1</active>
+                <title>Store pickup</title>
+                <showmethod>1</showmethod>
+                <model>PointOfSales/Carrier_StorePickup</model>
+            </storepickup>
+        </carriers>
+
+        <payment>
+            <Check>
+                <active>1</active>
+                <model>PointOfSales/Payment_Check</model>
+                <allowspecific>0</allowspecific>
+                <title>Check</title>
+            </Check>
+            <Money>
+                <active>1</active>
+                <model>PointOfSales/Payment_Money</model>
+                <allowspecific>0</allowspecific>
+                <title>Money</title>
+            </Money>
+            <BankTerminal>
+                <active>1</active>
+                <model>PointOfSales/Payment_BankTerminal</model>
+                <allowspecific>0</allowspecific>
+                <title>Bank terminal</title>
+            </BankTerminal>
+         </payment>
+    </default>
+        
+    <admin>
+        <routers>
+            <PointOfSales>
+                <use>admin</use>
+                <args>
+                    <module>MDN_PointOfSales</module>
+                    <frontName>PointOfSales</frontName>
+                </args>
+            </PointOfSales>
+        </routers>
+    </admin>
+    
+
+	 
+</config> 

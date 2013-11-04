@@ -1,0 +1,26 @@
+<div class="clear20"></div>
+<div id="brands" class="es-carousel-wrapper">
+    <div class="es-carousel">
+        <ul>
+		<?php  foreach ($this->getStoreCategories() as $_category): ?>
+			<?php if ($_category->getIsActive()): ?>
+				<?php
+				// Imágen de categoria
+				$cur_category	= Mage::getModel("catalog/category")->load($_category->getId());
+
+				$_imageUrl		= $cur_category->getThumbnailImageUrl();
+				?>
+				<?php $isactive		= $this->isCategoryActive($_category); ?>
+				<?php $hasChildren	= $_category->hasChildren(); 
+				$i;
+				?>
+				<li>	
+					<a href="<?php echo !$hasChildren ? $this->getCategoryUrl($_category) : $this->getCategoryUrl($_category); ?>">
+						<img src="<?php echo $_imageUrl ?>" alt="<?php echo $_category->getName(); ?>" height="78"/>						
+					</a>
+				</li>
+				<?php endif ?>
+		<?php endforeach ?>
+		</ul>
+	</div> 
+</div> 

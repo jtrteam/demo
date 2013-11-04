@@ -1,0 +1,136 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2013 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    2.0.0.0
+*/
+?>
+	
+<div id="tour-content" class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<h1>Grid System</h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+	<div class="grid">
+		<div class="grid_6">
+			<p class="keynote">Every template in Acumen was stripped of Magento's structure and replaced with a flexible grid.
+			The popular <a href="http://960.gs/">960 Grid System</a> was simplified and customized with added whitespace between columns.</p>
+		</div>
+		
+		<div class="grid_6">
+			<p class="keynote">Featuring twelve 50px columns with 30px gaps, plus built-in CSS hooks for advanced layout using nested grids, prefix, suffix, push, and pull.</p>
+		</div>
+	</div>
+	
+	<div class="grid-units-demo">
+		<div class="grid grid-demo"><div class="grid_12">Grid 12</div></div>
+		<div class="grid grid-demo"><div class="grid_11">Grid 11</div></div>
+		<div class="grid grid-demo"><div class="grid_10">Grid 10</div></div>
+		<div class="grid grid-demo"><div class="grid_9">Grid 9</div></div>
+		<div class="grid grid-demo"><div class="grid_8">Grid 8</div></div>
+		<div class="grid grid-demo"><div class="grid_7">Grid 7</div></div>
+		<div class="grid grid-demo"><div class="grid_6">Grid 6</div></div>
+		<div class="grid grid-demo"><div class="grid_5">Grid 5</div></div>
+		<div class="grid grid-demo"><div class="grid_4">Grid 4</div></div>
+		<div class="grid grid-demo"><div class="grid_3">Grid 3</div></div>
+		<div class="grid grid-demo"><div class="grid_2">Grid 2</div></div>
+		<div class="grid grid-demo"><div class="grid_1">Grid 1</div></div>
+	</div>
+	
+	
+	<!-- Nested Grids -->
+	
+	<h2>Nested Grids</h2>
+	
+	<p>You can place grids inside grids to create nested layouts.</p>
+	
+	<div class="grid grid-demo">
+		<div class="grid_3">Grid 3. Vestibulum erat wisi, condimentum sed, commodo vitae.</div>
+	
+		<div class="grid_7">
+			<p>Grid 7. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, 
+			eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.</p>
+			
+			<div class="grid grid-demo">
+				<div class="grid_8">Nested Grid 8. Nested Grid 8. Nested Grid 8. Nested Grid 8. Nested Grid 8. Nested Grid 8. Nested Grid 8.</div>
+				<div class="grid_4">Nested Grid 4. Nested Grid 4. Nested Grid 4.</div>
+			</div>
+			
+			Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. 
+			Aenean fermentum, elit eget tincidunt condimentum.
+		</div>
+	
+		<div class="grid_2">Grid 2. Vestibulum erat wisi, condimentum sed, commodo vitae.</div>
+	</div>
+	
+	
+	<!-- Prefix Padding -->
+	
+	<h2>Prefix Padding</h2>
+	
+	<p>Grid elements can be padded with extra spacing before a column using the <code>.prefix_#</code> class.</p>
+	
+	<div class="grid-units-demo">
+		<div class="grid grid-demo"><div class="grid_12">Grid 12</div></div>
+		<div class="grid grid-demo"><div class="grid_11 prefix_1">Grid 11 Prefix 1</div></div>
+		<div class="grid grid-demo"><div class="grid_10 prefix_2">Grid 10 Prefix 2</div></div>
+		<div class="grid grid-demo"><div class="grid_9 prefix_3">Grid 9 Prefix 3</div></div>
+		<div class="grid grid-demo"><div class="grid_8 prefix_4">Grid 8 Prefix 4</div></div>
+		<div class="grid grid-demo"><div class="grid_7 prefix_5">Grid 7 Prefix 5</div></div>
+		<div class="grid grid-demo"><div class="grid_6 prefix_6">Grid 6 Prefix 6</div></div>
+		<div class="grid grid-demo"><div class="grid_5 prefix_7">Grid 5 Prefix 7</div></div>
+		<div class="grid grid-demo"><div class="grid_4 prefix_8">Grid 4 Prefix 8</div></div>
+		<div class="grid grid-demo"><div class="grid_3 prefix_9">Grid 3  Prefix 9</div></div>
+		<div class="grid grid-demo"><div class="grid_2 prefix_10">Grid 2 Prefix 10</div></div>
+		<div class="grid grid-demo"><div class="grid_1 prefix_11">Grid 1 Prefix 11</div></div>
+	</div>
+	
+	
+	<!-- Suffix Padding -->
+	
+	<h2>Suffix Padding</h2>
+	
+	<p>Grid elements can be padded with extra spacing after a column using the <code>.suffix_#</code> class.</p>
+	
+	<div class="grid-units-demo">
+		<div class="grid grid-demo"><div class="grid_12">Grid 12</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_1">Grid 1 Suffix 1</div><div class="grid_10">Grid 10</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_2">Grid 1 Suffix 2</div><div class="grid_9">Grid 9</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_3">Grid 1 Suffix 3</div><div class="grid_8">Grid 8</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_4">Grid 1 Suffix 4</div><div class="grid_7">Grid 7</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_5">Grid 1 Suffix 5</div><div class="grid_6">Grid 6</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_6">Grid 1 Suffix 6</div><div class="grid_5">Grid 5</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_7">Grid 1 Suffix 7</div><div class="grid_4">Grid 4</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_8">Grid 1 Suffix 8</div><div class="grid_3">Grid 3</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_9">Grid 1 Suffix 9</div><div class="grid_2">Grid 2</div></div>
+		<div class="grid grid-demo"><div class="grid_1 suffix_10">Grid 1 Suffix 10</div><div class="grid_1">Grid 1</div></div>
+	</div>
+	
+	
+	<!-- Push + Pull -->
+	
+	<h2>Push + Pull Positioning</h2>
+	
+	<p>Grid elements can be positioned separately from their source order using the <code>.push_#</code> and <code>.pull_#</code> classes.</p>
+	
+	<div class="grid-units-demo">
+	    <div class="grid grid-demo">
+	        <div class="grid_6 push_6">This block appears first in the HTML source.</div>
+	        <div class="grid_6 pull_6">This block appears second in the HTML source.</div>
+	    </div>
+	    
+	    <div class="grid grid-demo">
+	        <div class="grid_3 push_9">This block appears first in the HTML source.</div>
+	        <div class="grid_9 pull_3">This block appears second in the HTML source.</div>
+	    </div>
+	</div>
+	
+</div>
+
+

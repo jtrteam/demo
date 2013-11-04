@@ -1,0 +1,296 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2011 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    1.3.1
+*/
+?>
+
+<?php
+/**
+ * See CMS Page: "tour/ui-widgets"
+ * The content below is copy/pasted into the CMS Page so {{widget}} syntax works.
+ * Saved here for reference.
+ */
+?>
+
+<div class="tour">
+    {{block type="cms/block" block_id="gravdept_tour_header" }}
+
+    <h1>UI Widgets</h1>
+
+    <p class="keynote">UI Widgets are flexible, reusable user interface components that you can use to build interactive content.
+    They work virtually anywhere in Magento like CMS Pages and Static Blocks.</p>
+    
+    <div class="grid">
+        <div class="grid_3">
+            <p>
+                <a href="#category-products-slider">Category Products Slider</a><br>
+                <a href="#new-products-slider">New Products Slider</a><br>
+                <a href="#fluid-slider">Fluid Slider</a><br>
+                <a href="#promo-slider-right">Promo Slider Right</a><br>
+                <!--<a href="#promo-slider-left">Promo Slider Left</a><br>-->
+                <a href="#thumb-slider-right">Thumb Slider Right</a><br>
+                <!--<a href="#thumb-slider-left">Thumb Slider Left</a>-->
+            </p>
+        </div>
+        
+        <div class="grid_3">
+            <p>
+                <a href="#modal-overlay">Modal Overlay</a><br>
+                <a href="#tabs">Tabs</a>
+            </p>
+        </div>
+        
+        <div class="grid_3">
+            <p>
+                <a href="#static-promo-1-2">Static Promo 1/2</a><br>
+                <a href="#static-promo-1-3">Static Promo 1/3</a><br>
+                <a href="#static-promo-1-4">Static Promo 1/4</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Category Products Slider -->
+
+<div class="ui-widget-section" id="category-products-slider">
+    <div class="tour">
+        <h2>Category Products Slider</h2>
+
+        <p>A 1&ndash;4 column slider that shows products from a specific category.
+        Uses <a href="http://www.woothemes.com/flexslider/">FlexSlider</a>.</p>
+    </div>
+    
+    {{block type="catalog/product_list" category_id="9" column_count="3" label="Featured Products" template="gravdept/catalog/category-products-slider.phtml" }}
+</div>
+
+
+<!-- New Products Slider -->
+
+<div class="ui-widget-section" id="new-products-slider">
+    <div class="tour">
+        <h2>New Products Slider</h2>
+
+        <p>A 1&ndash;4 column slider that shows products within the defined date range.
+        Uses <a href="http://www.woothemes.com/flexslider/">FlexSlider</a>.</p>
+    </div>
+    
+    {{block type="catalog/product_new" column_count="2" label="New Products" template="gravdept/catalog/new-products-slider.phtml" }}
+</div>
+
+
+<!-- Fluid Slider -->
+
+<div class="ui-widget-section" id="fluid-slider">
+    <div class="tour">
+        <h2>Fluid Slider</h2>
+
+        <p>A variable width slider for images that scales to fit its container. 
+        Each slide can link elsewhere. 
+        Slider pagination is generated automatically.
+        Uses <a href="https://github.com/woothemes/FlexSlider">Flexslider</a>.</p>
+    </div>
+    
+    <div class="flexslider fluid-slider">
+        <ul class="slides">
+            <li><a href="{{store direct_url="link-1" }}"><img src="{{skin url="media/fluid-slider/tour/1.png" }}" alt="Slide 1" /></a></li>
+            <li><a href="{{store direct_url="link-2" }}"><img src="{{skin url="media/fluid-slider/tour/2.png" }}" alt="Slide 2" /></a></li>
+            <li><a href="{{store direct_url="link-3" }}"><img src="{{skin url="media/fluid-slider/tour/3.png" }}" alt="Slide 3" /></a></li>
+        </ul>
+    </div>
+    
+    <div class="grid">
+        <div class="grid_9">
+            <div class="flexslider fluid-slider">
+                <ul class="slides">
+                    <li><a href="{{store direct_url="link-1" }}"><img src="{{skin url="media/fluid-slider/tour/1.png" }}" alt="Slide 1" /></a></li>
+                    <li><a href="{{store direct_url="link-2" }}"><img src="{{skin url="media/fluid-slider/tour/2.png" }}" alt="Slide 2" /></a></li>
+                    <li><a href="{{store direct_url="link-3" }}"><img src="{{skin url="media/fluid-slider/tour/3.png" }}" alt="Slide 3" /></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="grid_3">
+            <p>This is the same slider within a 75/25 grid.</p>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <div class="grid_6">
+            <div class="flexslider fluid-slider">
+                <ul class="slides">
+                    <li><a href="{{store direct_url="link-1" }}"><img src="{{skin url="media/fluid-slider/tour/1.png" }}" alt="Slide 1" /></a></li>
+                    <li><a href="{{store direct_url="link-2" }}"><img src="{{skin url="media/fluid-slider/tour/2.png" }}" alt="Slide 2" /></a></li>
+                    <li><a href="{{store direct_url="link-3" }}"><img src="{{skin url="media/fluid-slider/tour/3.png" }}" alt="Slide 3" /></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="grid_6">
+            <p>The same slider in a 50/50 grid.
+            The Fluid Slider always compresses to fit its container, which makes it very versatile.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Promo Slider Right -->
+
+<div class="ui-widget-section" id="promo-slider-right">
+    <div class="tour">
+        <h2>Promo Slider Right</h2>
+
+        <p>A 3/4 width slider with detached promo images. Each main slide can link elsewhere. 
+        Slider pagination is generated automatically. Each promo image can link elsewhere.
+        Uses <a href="http://www.woothemes.com/flexslider/">FlexSlider</a>.</p>
+    </div>
+    
+    <div class="flexslider promo-slider promo-slider-right">
+        <ul class="slides">
+            <li><a href="{{store direct_url="link-1" }}"><img src="{{skin url="media/promo-slider-right/tour/1.png" }}" alt="Slide 1" /></a></li>
+            <li><a href="{{store direct_url="link-2" }}"><img src="{{skin url="media/promo-slider-right/tour/2.png" }}" alt="Slide 2" /></a></li>
+            <li><a href="{{store direct_url="link-3" }}"><img src="{{skin url="media/promo-slider-right/tour/3.png" }}" alt="Slide 3" /></a></li>
+            <li><a href="{{store direct_url="link-4" }}"><img src="{{skin url="media/promo-slider-right/tour/4.png" }}" alt="Slide 4" /></a></li>
+        </ul>
+    
+        <ul class="promos">
+            <li><a href="{{store direct_url="link-5" }}"><img src="{{skin url="media/promo-slider-right/tour/promo/1.png" }}" alt="Promo 1" /></a></li>
+            <li><a href="{{store direct_url="link-6" }}"><img src="{{skin url="media/promo-slider-right/tour/promo/2.png" }}" alt="Promo 2" /></a></li>
+            <li><a href="{{store direct_url="link-7" }}"><img src="{{skin url="media/promo-slider-right/tour/promo/3.png" }}" alt="Promo 3" /></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Thumb Slider Right -->
+
+<div class="ui-widget-section" id="thumb-slider-right">
+    <div class="tour">
+        <h2>Thumb Slider Right</h2>
+
+        <p>A 3/4 width slider with thumbnails that are linked as pagination. Each main slide can link elsewhere.
+        Uses <a href="http://www.woothemes.com/flexslider/">FlexSlider</a>.</p>
+    </div>
+    
+    <div class="flexslider thumb-slider thumb-slider-right">
+        <ul class="slides">
+            <li><a href="{{store direct_url="link-1" }}"><img src="{{skin url="media/thumb-slider-right/tour/1.png" }}" alt="Slide 1" /></a></li>
+            <li><a href="{{store direct_url="link-2" }}"><img src="{{skin url="media/thumb-slider-right/tour/2.png" }}" alt="Slide 2" /></a></li>
+            <li><a href="{{store direct_url="link-3" }}"><img src="{{skin url="media/thumb-slider-right/tour/3.png" }}" alt="Slide 3" /></a></li>
+        </ul>
+    
+        <ul class="manual-pagination">
+            <li><a href="#"><img src="{{skin url="media/thumb-slider-right/tour/thumb/1.png" }}" alt="Thumb 1" /></a></li>
+            <li><a href="#"><img src="{{skin url="media/thumb-slider-right/tour/thumb/2.png" }}" alt="Thumb 2" /></a></li>
+            <li><a href="#"><img src="{{skin url="media/thumb-slider-right/tour/thumb/3.png" }}" alt="Thumb 3" /></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Modal Overlay -->
+
+<div class="ui-widget-section" id="modal-overlay">
+    <div class="tour">
+        <h2>Modal Overlay</h2>
+
+        <p>A modal overlay for showing additional content.
+        Commonly used for showing enlarged product photos.
+        Uses <a href="http://jacklmoore.com/colorbox/">ColorBox</a>.</p>
+    </div>
+    
+    <ul class="modal-overlay-tour">
+        <li><a class="zoom" rel="zoom-group" href="{{skin url='media/modal-overlay/tour/1-z.jpg' }}"><img src="{{skin url='media/modal-overlay/tour/1.jpg' }}" alt="Image 1" /></a></li>
+        <li><a class="zoom" rel="zoom-group" href="{{skin url='media/modal-overlay/tour/2-z.jpg' }}"><img src="{{skin url='media/modal-overlay/tour/2.jpg' }}" alt="Image 2" /></a></li>
+        <li><a class="zoom" rel="zoom-group" href="{{skin url='media/modal-overlay/tour/3-z.jpg' }}"><img src="{{skin url='media/modal-overlay/tour/3.jpg' }}" alt="Image 3" /></a></li>
+    </ul>
+</div>
+
+
+<!-- Tabs -->
+
+<div class="ui-widget-section" id="tabs">
+    <div class="tour">
+        <h2>Tabs</h2>
+
+        <p>A tabbed content area for showing additional content.
+        Commonly used for showing supplemental info in a small space.</p>
+    </div>
+    
+    <div class="tabs">
+        <ul class="tabs-nav">
+            <li><a href="#tab-1">Tab 1</a></li>
+            <li><a href="#tab-2">Tab 2</a></li>
+            <li><a href="#tab-3">Tab 3</a></li>
+        </ul>
+
+        <div class="tabs-content">
+            <div id="tab-1">Content for Tab 1.</div>
+            <div id="tab-2">Content for Tab 2.</div>
+            <div id="tab-3">Content for Tab 3.</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Static Promo 1/2 -->
+
+<div class="ui-widget-section" id="static-promo-1-2">
+    <div class="tour">
+        <h2>Static Promo 1/2</h2>
+
+        <p>A two-unit grid of promo images.
+        Each image can link elsewhere.</p>
+    </div>
+    
+    <div class="grid static-promo static-promo-1-2">
+        <div class="grid_6"><a href="{{store url="link-1" }}"><img src="{{skin url="media/static-promo-1-2/tour/1.png" }}" alt="Promo 1" /></a></div>
+        <div class="grid_6"><a href="{{store url="link-2" }}"><img src="{{skin url="media/static-promo-1-2/tour/2.png" }}" alt="Promo 2" /></a></div>
+    </div>
+</div>
+
+
+<!-- Static Promo 1/3 -->
+
+<div class="ui-widget-section" id="static-promo-1-3">
+    <div class="tour">
+        <h2>Static Promo 1/3</h2>
+
+        <p>A three-unit grid of promo images.
+        Each image can link elsewhere.</p>
+    </div>
+    
+    <div class="grid static-promo static-promo-1-3">
+        <div class="grid_4"><a href="{{store url="link-1" }}"><img src="{{skin url="media/static-promo-1-3/tour/1.png" }}" alt="Promo 1" /></a></div>
+        <div class="grid_4"><a href="{{store url="link-2" }}"><img src="{{skin url="media/static-promo-1-3/tour/2.png" }}" alt="Promo 2" /></a></div>
+        <div class="grid_4"><a href="{{store url="link-3" }}"><img src="{{skin url="media/static-promo-1-3/tour/3.png" }}" alt="Promo 3" /></a></div>
+    </div>
+</div>
+
+
+<!-- Static Promo 1/4 -->
+
+<div class="ui-widget-section" id="static-promo-1-4">
+    <div class="tour">
+        <h2>Static Promo 1/4</h2>
+
+        <p>A four-unit grid of promo images.
+        Each image can link elsewhere.</p>
+    </div>
+    
+    <div class="grid static-promo static-promo-1-4">
+        <div class="grid_3"><a href="{{store url="link-1" }}"><img src="{{skin url="media/static-promo-1-4/tour/1.png" }}" alt="Promo 1" /></a></div>
+        <div class="grid_3"><a href="{{store url="link-2" }}"><img src="{{skin url="media/static-promo-1-4/tour/2.png" }}" alt="Promo 2" /></a></div>
+        <div class="grid_3"><a href="{{store url="link-3" }}"><img src="{{skin url="media/static-promo-1-4/tour/3.png" }}" alt="Promo 3" /></a></div>
+        <div class="grid_3"><a href="{{store url="link-4" }}"><img src="{{skin url="media/static-promo-1-4/tour/4.png" }}" alt="Promo 4" /></a></div>
+    </div>
+</div>

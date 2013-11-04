@@ -1,0 +1,160 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2012 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    1.3.4
+*/
+?>
+
+<div class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<h1>Features</h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+	<div class="tour-section">
+		<h2>Home Page</h2>
+	
+		<div class="grid">
+			<div class="grid_4">
+				<a class="figure" href="<?php echo $this->getUrl('tour/ui-widgets') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/home-ui-widgets.jpg') ?>" alt="UI Widgets" /></a>
+				
+				<h3>UI Widgets</h3>
+				<p>UI Widgets are flexible, reusable user interface components that let you place interactive content anywhere in Magento. <a href="<?php echo $this->getUrl('tour/ui-widgets') ?>">See them in action.</a></p>
+			</div>
+			
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/home-main-sliders-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/home-main-sliders.jpg') ?>" alt="Main Sliders" /></a>
+				
+				<h3>Grid, Promo, &amp; Thumb Sliders</h3>
+				<p>Promote anything in grand scale with built-in animated sliders. Deep-link directly to where you want customers shopping.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/home-product-sliders-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/home-product-sliders.jpg') ?>" alt="Product Sliders" /></a>
+				
+				<h3>Adjustible Product Sliders</h3>
+				<p>Create variable-width product sliders from a <dfn>Category</dfn> or <dfn>New Products</dfn> list with no programming.</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="tour-section">
+		<h2>Navigation</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/nav-menu-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/nav-menu.png') ?>" alt="Catalog Menus" /></a>
+				
+				<h3>Catalog Menus</h3>
+				<p>Main nav is pure CSS using semantic lists and CSS3 <code>rgba</code> enhancement. Fully removed Magento's JavaScript dependency.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/nav-minicart-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/nav-minicart.png') ?>" alt="Mini Cart" /></a>
+				
+				<h3>Mini Cart</h3>
+				<p>Custom interaction displays vital cart information and checkout without cluttering every page.</p>
+			</div>
+		    
+		    <!--
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/nav-breadcrumbs-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/nav-breadcrumbs.png') ?>" alt="Extended Breadcrumbs" /></a>
+				
+				<h3>Breadcrumbs</h3>
+				<p>Breadcrumbs beneath the navigation help users find their way.</p>
+			</div>
+			-->
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Catalog</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/catalog-banner-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/catalog-banner.png') ?>" alt="Contextual Banners" /></a>
+				
+				<h3>Contextual Banners</h3>
+				<p>Category images supercede text while maintaining semantic structure and aesthetic. Reverts to standard H1 headline.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/catalog-view-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/catalog-view.jpg') ?>" alt="Grid / List View" /></a>
+				
+				<h3>Grid / List View</h3>
+				<p>Extra large previews and layout tailored to viewing style. Non-essential product info is removed for clarity.</p>
+			</div>
+		    
+		    <!--
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/catalog-options-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/catalog-options.png') ?>" alt="Sorting Interaction" /></a>
+				
+				<h3>Sorting Interaction</h3>
+				<p>Display options are neatly tucked away until needed by users. Fully usable with JavaScript off.</p>
+			</div>
+			-->
+		</div>
+	</div>
+	
+	<div class="tour-section">	
+		<h2>Products</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/product-media-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/product-media.jpg') ?>" alt="FancyBox Gallery" /></a>
+				
+				<h3>Colorbox Gallery</h3>
+				<p>A better way zoom product images using jQuery. Say goodbye to Magento's confusing image drag control and Scriptaculous JS.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/product-layout-z.jpg') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/product-layout.jpg') ?>" alt="Intelligent Layout" /></a>
+				
+				<h3>Intelligent Layout</h3>
+				<p>Supports simple, configurable, grouped, and virtual products. Adds relevant modules per product: gallery, related products, up-sell, details, tags, and reviews.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/product-reviews-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/product-reviews.png') ?>" alt="Reviews" /></a>
+				
+				<h3>Reviews</h3>
+				<p>Reading / writing reviews is available on the product page. Includes a simplified star-rating system.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">	
+		<h2>Account / Checkout</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/account-dashboard-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/account-dashboard.png') ?>" alt="Dashboard" /></a>
+				
+				<h3>Dashboard</h3>
+				<p>Clear hierarchy supports easier scanning and the grid system lends weight to important account information.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/account-cart-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/account-cart.png') ?>" alt="Cart" /></a>
+				
+				<h3>Cart</h3>
+				<p>Reogranized cart list &amp; summary highlight the prominent call to action. Distinct separation identifies related actions and cross-sells.</p>
+			</div>
+		
+			<div class="grid_4">
+				<a class="figure zoom" href="<?php echo $this->getSkinUrl('media/tour/features/account-checkout-z.png') ?>"><img src="<?php echo $this->getSkinUrl('media/tour/features/account-checkout.png') ?>" alt="Checkout" /></a>
+				
+				<h3>Checkout</h3>
+				<p>Both one-page and multi-shipping checkout were completely revamped and slimmed to narrow the customer's focus on each step.</p>
+			</div>
+		</div>
+	</div>
+	
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+    
+        <Fisheye_Adwords>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Fisheye_Adwords>
+  
+  
+    </modules>
+</config>

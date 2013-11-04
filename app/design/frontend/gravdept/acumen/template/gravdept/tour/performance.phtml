@@ -1,0 +1,101 @@
+<?php
+/**
+* Acumen for Magento
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2011 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    1.3.1
+*/
+?>
+
+<div class="tour">
+
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+
+	<h1>Performance</h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+	<div class="tour-section">
+		<h2>Caching</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/tiny-pages.jpg') ?>" alt="Cache bandwidth"></div>
+				<h3>Tiny Pages</h3>
+				<p>Cached assets reload instantly and lightweight markup delivers ultra-fast page rendering.</p>
+			</div>
+		
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/google-libraries-api.png') ?>" alt="Google Libraries API"></div>
+				<h3>Google Libraries API</h3>
+				<p>Widespread adoption enables jQuery to load from the user's cache reducing bandwidth and HTTP requests. Serverside fallback ensures delivery.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/no-combining.jpg') ?>" alt="Asset loads from cache"></div>
+				<h3>No Combining</h3>
+				<p>Magento's behavior for combining JS/CSS files can actually hurt performance. Acumen saves bandwidth by not reloading cacheable libraries and files.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Smart CSS</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/modular-css-loading.jpg') ?>" alt="Web inspector timeline"></div>
+				<h3>Modular CSS Loading</h3>
+				<p>CSS for jQuery functions is loaded modularly alongside the plugin code and then cached for reuse.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/sprite-images.png') ?>" alt="Icons in sprite image"></div>
+				<h3>Sprite Images</h3>
+				<p>Rigorous sprite and CSS3 usage reduces 100+ HTTP requests to just 1. Rendering from cache is near instantaneous for subsequent pages.</p>
+			</div>
+			
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/css3-enhancement.png') ?>" alt="CSS3 rounded corners and shadows"></div>
+				<h3>CSS3 Enhancement</h3>
+				<p>Modern browsers natively implement CSS3 effects like <code>border-radius</code>, <code>box-shadow</code>, and <code>rgba</code> that previously required images. Older browsers degrade gracefully.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tour-section">
+		<h2>Smarter JavaScript</h2>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/jquery-google-api.png') ?>" alt="jQuery + Google API"></div>
+				<h3>jQuery + Google API</h3>
+				<p>jQuery is loaded via the <a href="http://code.google.com/apis/libraries/">Google Libraries API</a> for: maximum caching, more parallel downloads, and fast delivery.</p>
+			</div>
+		
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/staggered-js-loading.jpg') ?>" alt=""></div>
+				<h3>Staggered JS Loading</h3>
+				<p>Magento normally loads all JS in <code>&lt;head&gt;</code> but Acumen uses custom processes to offset downloading for snappier page loads.</p>
+			</div>
+		
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/contextual-js-loading.png') ?>" alt="Contextual JS code"></div>
+				<h3>Contextual JS Loading</h3>
+				<p>JS files are included only if the page requires them to save bandwidth and speed up the first page load.</p>
+			</div>
+		</div>
+		
+		<div class="grid">
+			<div class="grid_4">
+				<div class="figure"><img src="<?php echo $this->getSkinUrl('media/tour/performance/scriptaculous.png') ?>" alt="Scriptaculous removed"></div>
+				<h3>Scriptaculous Removed</h3>
+				<p>Removed non-essential Scriptaculous components reducing HTTP requests and saving bandwidth without sacrificing functionality.</p>
+			</div>
+		</div>
+	</div>
+	
+</div>

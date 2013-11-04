@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Offshorent_Theme>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Offshorent_Theme>
+    </modules>
+</config> 

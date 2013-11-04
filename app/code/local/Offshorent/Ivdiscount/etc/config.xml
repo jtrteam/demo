@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Offshorent_Ivdiscount>
+            <version>1.0.0</version>
+        </Offshorent_Ivdiscount>
+    </modules>
+    <adminhtml>
+		<layout>
+			<updates>
+				<ivdiscount>
+					<file>ivdiscount.xml</file>
+				</ivdiscount>
+			</updates>
+		</layout>
+    </adminhtml>
+	<admin>
+        <routers>
+			<ivdiscount>
+				<use>admin</use>
+				<args>
+					<module>Offshorent_Ivdiscount</module>
+					<frontName>ivdiscount</frontName>
+				</args>
+			</ivdiscount>
+        </routers>
+    </admin>    
+    <global> 
+		<rewrite>
+			<offshorent_ivdiscount_adminhtml_invoice>
+				<from><![CDATA[#^/admin/sales_order_invoice/#]]></from>
+                <to>/ivdiscount/adminhtml_invoice/</to>
+			</offshorent_ivdiscount_adminhtml_invoice>
+	   </rewrite>
+    </global>
+</config>

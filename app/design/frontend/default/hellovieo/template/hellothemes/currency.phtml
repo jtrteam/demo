@@ -1,0 +1,21 @@
+
+<?php if($this->getCurrencyCount() > 1): ?>
+
+<ul class="switcher currency-selector">
+<li>
+<a class="switch" href="#">€ <span class="arrow"></span></a>
+
+<ul class="options">
+<?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+    <li><a href="<?php echo $this->getSwitchCurrencyUrl($_code)?>"
+        <?php if($_code == $this->getCurrentCurrencyCode()): ?>
+            class="selected"
+        <?php endif; ?>> <?php echo $_code ?></a></li>
+      
+<?php endforeach; ?>
+ </ul>
+ </li>
+ 
+ </ul>
+<?php endif; ?>
+

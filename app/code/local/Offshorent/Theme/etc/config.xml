@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Offshorent_Theme>
+            <version>0.1.0</version>
+        </Offshorent_Theme>
+    </modules>
+    <admin>
+        <routers>
+			<theme>
+				<use>admin</use>
+				<args>
+					<module>Offshorent_Theme</module>
+					<frontName>theme</frontName>
+				</args>
+			</theme>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<theme module="theme">
+				<title>Design</title>
+				<sort_order>120</sort_order> 
+				<action>theme/adminhtml_theme</action> 
+			</theme>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<offshorent_theme>
+							<title>Theme Module</title>
+							<sort_order>50</sort_order>
+						</offshorent_theme>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<theme>
+					<file>theme.xml</file>
+				</theme>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <blocks>
+            <theme>
+                <class>Offshorent_Theme_Block</class>
+            </theme>
+        </blocks>
+        <helpers>
+            <theme>
+                <class>Offshorent_Theme_Helper</class>
+            </theme>
+        </helpers>
+    </global>
+</config>

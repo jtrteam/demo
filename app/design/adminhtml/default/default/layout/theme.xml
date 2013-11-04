@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <theme_adminhtml_theme_index>
+        <reference name="content">
+            <block type="theme/adminhtml_theme_edit" name="theme" />
+        </reference>
+    </theme_adminhtml_theme_index>
+</layout>

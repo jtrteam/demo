@@ -1,0 +1,337 @@
+<script type="text/javascript">
+    Translator.add('Product already added !','<?php echo $this->__('Product already added !')?>');
+    
+    var pos_submit_url = '<?php echo Mage::helper('adminhtml')->getUrl('PointOfSales/PointOfSales/CreateOrder'); ?>';
+    var paymentFormAjaxUrl = '<?php echo Mage::helper('adminhtml')->getUrl('PointOfSales/PointOfSales/PaymentForm'); ?>';
+    var shippingMethodAjaxUrl = '<?php echo Mage::helper('adminhtml')->getUrl('PointOfSales/PointOfSales/ShippingMethod'); ?>';
+    var defaultShippingMethod = '<?php echo mage::helper('PointOfSales/User')->getDefaultShippingMethod(); ?>';
+    
+    var addProductFromBarcodeUrl = '<?php echo Mage::helper('adminhtml')->getUrl('PointOfSales/PointOfSales/AddProductFromBarcode'); ?>';
+    
+    var labelScannerReady = '<?php echo $this->__('Ready'); ?>';
+    var labelScannerHolded = '<?php echo $this->__('On hold'); ?>';
+
+	var changeCalculatorUrl = '<?php echo Mage::helper('adminhtml')->getUrl('PointOfSales/PointOfSales/ChangeCalculator'); ?>';
+
+	var currency = '<?php echo $this->getCurrency()->getCode(); ?>';
+
+    var checked = '<?php echo (Mage::getStoreConfig('pointofsales/configuration/set_shipped') == 1) ? "checked" : '' ?>';
+    var closeModaleWindow = '<?php echo $this->__('Close') ?>';
+</script>
+
+<form name="form_one" id="form_one" method="POST" action="<?php echo $this->getUrl('PointOfSales/PointOfSales/CreateOrder'); ?>">
+<?php echo $this->getBlockHtml('formkey')?>
+<input type="hidden" name="rawdata" id="rawdata" value="<?php echo $this->getRaw(); ?>">
+<input type="hidden" name="immediate_mode" id="immediate_mode" value="0">
+<input type="hidden" name="product_ids" id="product_ids" value="">
+<input type="hidden" name="customer_id" id="customer_id" value="">
+
+
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php echo $this->__('Point of Sales'); ?></h3></td>
+        </tr>
+    </table>
+</div>
+
+<table border="0" cellspacing="4" width="100%">
+    <tr>
+        <td>
+
+            <!-- selected products -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Products'); ?></h4>
+                </div>
+                    <fieldset>
+                    <div class="grid">
+                        <table cellspacing="0" class="data" width="100%" id="tbl_products" name="tbl_products">
+                            <thead>
+                                    <tr class="headings">
+                                        <th class="a-center"><?php echo $this->__('Product')?></th>
+                                        <th class="a-center"><?php echo $this->__('Qty')?></th>
+                                        <th class="a-center"><?php echo $this->__('Price excl tax')?></th>
+                                        <th class="a-center"><?php echo $this->__('Tax Rate')?></th>
+                                        <th class="a-center"><?php echo $this->__('Price incl tax')?></th>
+                                        <th class="a-center"><?php echo $this->__('Total incl tax')?></th>
+                                        <th class="a-center"><?php echo $this->__('Shipped'); ?></th>
+                                        <th class="a-center">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                                    </table>
+                            </div>
+
+                            <div id="div_selected_products">
+
+                            </div>
+
+                    </fieldset>
+
+
+            </div>
+
+            <!-- additional actions tab -->
+            <ul id="action_tabs" class="tabs-horiz">
+                <li><a href="#" onclick="javascript:showTab('add_products_tab');" id="add_products_tab" title="Add products" class="tab-item-link "><?php echo $this->__('Add products'); ?></a></li>
+                <li><a href="#" onclick="javascript:showTab('customer_information_tab');" id="customer_information_tab" title="Customer information" class="tab-item-link "><?php echo $this->__('Customer information'); ?></a></li>
+                <li><a href="#" onclick="javascript:showTab('customer_address_tab');" id="customer_address_tab" title="Customer address" class="tab-item-link "><?php echo $this->__('Customer address'); ?></a></li>
+                <li><a href="#" onclick="javascript:showTab('comments_tab');" id="comments_tab" title="Comments" class="tab-item-link "><?php echo $this->__('Comments'); ?></a></li>
+            </ul>
+            
+            <!-- add products grid -->
+            <div class="entry-edit hidden-menu" id="tab_add_products_tab">
+                     <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Add product'); ?></h4>
+                </div>
+                    <fieldset>
+                            <div id="div_products_grid">
+                                    <?php echo $this->getChildHtml('productsgrid'); ?>
+                            </div>
+                    </fieldset>
+            </div>
+
+            <!-- customer information -->
+            <div class="entry-edit hidden-menu" id="tab_customer_information_tab">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Customer'); ?></h4>
+                </div>
+                    <fieldset>
+                            <input type="radio" onclick="setCustomerMode('guest');" value="guest" id="customer_mode_guest" name="customer_mode" checked> <label for="customer_mode_guest"><?php echo $this->__('Guest'); ?> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" onclick="setCustomerMode('new');" value="new" id="customer_mode_new" name="customer_mode"> <label for="customer_mode_new"><?php echo $this->__('New customer'); ?> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" onclick="setCustomerMode('existing');" value="existing" id="customer_mode_existing" name="customer_mode"> <label for="customer_mode_existing"><?php echo $this->__('Existing customer'); ?> </label> 
+
+                            <div class="div_cust_hidden" id="div_cust_new">
+                                    <table>
+                                            <tr>
+                                                    <td width="130"><b><?php echo $this->__('Email'); ?></b></td>
+                                                    <td><input type="text" name="customer_email" id="customer_email" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b><?php echo $this->__('Firstname'); ?></b></td>
+                                                    <td> <input type="text" name="customer_firstname" id="customer_firstname" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b><?php echo $this->__('Lastname'); ?></b></td>
+                                                    <td><input type="text" name="customer_lastname" id="customer_lastname" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b><?php echo $this->__('Company'); ?></b></td>
+                                                    <td><input type="text" name="customer_company" id="customer_company" value=""></td>
+                                            </tr>
+                                    </table>
+                            </div>
+
+                            <div class="div_cust_hidden" id="div_cust_existing">
+                                    <?php echo $this->getChildHtml('customergrid'); ?>
+                            </div>
+                            <div class="div_cust_hidden" id="div_selected_customer">
+
+                            </div>
+                    </fieldset>
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Newsletter subscription'); ?></h4>
+                </div>
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="newsletter"><?php echo $this->__('Subscribe to newsletter') ?></label>
+                            </td>
+                            <td>
+                                <input disabled type="checkbox" name="newsletter" id="newsletter" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+
+            <!-- customer address -->
+            <div class="entry-edit hidden-menu" id="tab_customer_address_tab">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Address'); ?></h4>
+                </div>
+                    <fieldset>
+                        <div class="div_cust_display" id="cust_display">
+                                <table>
+                                        <tr>
+                                                <td width="130"><b><?php echo $this->__('Address'); ?></b></td>
+                                                <td><input size="50" type="text" name="address" id="address" value=""></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('City'); ?></b></td>
+                                                <td><input size="50" type="text" name="city" id="city" value=""></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Zip'); ?></b></td>
+                                                <td><input size="50" type="text" name="zip" id="zip" value=""></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Region'); ?></b></td>
+                                                <td><?php echo $this->getRegionCombo('region'); ?></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Country'); ?></b></td>
+                                                <td><?php echo $this->getCountryCombo('country', 'FR'); ?></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Mobile'); ?></b></td>
+                                                <td><input size="50" type="text" name="mobile" id="mobile" value=""></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Phone'); ?></b></td>
+                                                <td><input size="50" type="text" name="phone" id="phone" value=""></td>
+                                        </tr>
+                                        <tr>
+                                                <td><b><?php echo $this->__('Fax'); ?></b></td>
+                                                <td><input size="50" type="text" name="fax" id="fax" value=""></td>
+                                        </tr>
+                                </table>
+                        </div>
+                    </fieldset>
+            </div>
+
+            <!-- comments -->
+            <div class="entry-edit hidden-menu" id="tab_comments_tab">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Comments'); ?></h4>
+                </div>
+                <fieldset>
+                    <table border="0">
+                        <tr>
+                            <td class="label"><?php echo $this->__('Order comments'); ?></td>
+                            <td class="value"><textarea name="comments" id="comments" cols="80" rows="5"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><?php echo $this->__('Invoice comments'); ?></td>
+                            <td class="value"><textarea name="invoice_comments" id="invoice_comments" cols="80" rows="5"></textarea></td>
+                        </tr>
+                    </table>                    
+                </fieldset>
+            </div>
+
+            
+
+        </td>
+
+        
+        <td width="300">
+
+            <!-- Order total -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Total'); ?></h4>
+                </div>
+                    <fieldset>
+                        <center>
+                            <h1><?php echo $this->__('Total '); ?><span id="div_total">0,00 </span> <?php echo $this->getCurrency()->getCode(); ?></h1>
+                        </center>
+                    </fieldset>
+            </div>
+
+            <!-- Barcode scanner -->
+            <?php if (mage::getStoreConfig('pointofsales/barcode_scanner/enable')): ?>
+
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Barcode Scanner'); ?></h4>
+                </div>
+                <fieldset>
+                    <table border="0" width="100%">
+                            <tr>
+                                    <td width="100%" align="center"><span class="scanner-value" id="scanner_value" name="scanner_value"></span></td>
+                            </tr>
+                    </table>
+                </fieldset>
+            </div>
+
+            <?php endif; ?>
+
+            <!-- Payment method -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Payment Method'); ?></h4>
+                </div>
+                <fieldset>
+                    <center>
+                        <?php $defaultPaymentMethod = mage::helper('PointOfSales/User')->getDefaultPaymentMethod(); ?>
+                        <?php foreach($this->getPaymentMethods() as $method): ?>
+                                <img src="<?php echo $this->getSkinUrl('images/payment/'.$method->getCode().'.png'); ?>" class="payment_method" onclick="selectPaymentMethod('<?php echo $method->getCode(); ?>')" name="img_payment_<?php echo $method->getCode(); ?>" id="img_payment_<?php echo $method->getCode(); ?>"  />
+                        <?php endforeach; ?>
+                        <input type="hidden" name="paymentmethod" id="paymentmethod" value="<?php echo $defaultPaymentMethod; ?>">
+                        <p><input type="checkbox" name="is_paid" id="is_paid" value="1" <?php echo $this->getCreateInvoiceCheckedValue(); ?>> <?php echo $this->__('Create invoice'); ?></p>
+                    </center>
+                </fieldset>
+            </div>
+
+            <!-- Shipping method -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Shipping Method'); ?></h4>
+                </div>
+                    <fieldset>
+                        <center>
+                            <div id="div_shipping_methods">
+
+                            </div>
+                            <!--
+                            <select name="shippingmethod" id="shippingmethod" onchange="updateTotalPrice();">
+
+                            </select>
+                            -->
+                        </center>
+                    </fieldset>
+            </div>
+
+            <!-- Change calculator -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Change calculator'); ?></h4>
+                </div>
+                    <fieldset>
+                        <center>
+                           <button onclick="ShowChangeCalculator(document.getElementById('div_total').innerHTML);" class="scalable" type="button"><span><?php echo $this->__('Calculate change')?></span></button>
+                        </center>
+                    </fieldset>
+            </div>
+
+			
+            <!-- Place order -->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Place order'); ?></h4>
+                </div>
+                    <fieldset>
+                        <center>
+                           <button onclick="CompleteOrder('<?php echo $this->getUrl('PointOfSales/PointOfSales/CreateOrder'); ?>');" class="scalable save" type="button"><span><?php echo $this->__('Create Order')?></span></button>
+                        </center>
+                    </fieldset>
+            </div>
+            
+        </td>
+    </tr>
+
+</table>
+
+
+</form>
+
+<?php if (mage::getStoreConfig('pointofsales/barcode_scanner/enable')): ?>
+
+<script type="text/javascript"> 
+
+//Init scanner
+document.onkeypress = handleKey; 
+enableCatchKeys(null, 'addProductFromBarcode();');
+
+</script>
+
+<?php endif; ?>
+
+<script>
+    showTab('add_products_tab');
+    selectPaymentMethod('<?php echo $defaultPaymentMethod; ?>');
+</script>

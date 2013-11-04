@@ -1,0 +1,53 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-account"><?php echo $this->__('Change calculator'); ?></h4>
+    </div>
+    <div class="fieldset">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+            <tr>
+                <td class="label"><h2><?php echo $this->__('Order total'); ?></h2></td>
+                <td><div id="cc_order_total" name="cc_order_total" style="font-size: 24px; text-align: right; width: 320px; margin-top: 10px; font-weight: bold;"></div></td>
+            </tr>
+            <tr>
+                <td class="label"><h2><?php echo $this->__('Given amount'); ?></h2></td>
+                <td align="right"><div id="cc_given_amount" name="cc_given_amount" style="font-size: 24px; text-align: right; width: 320px; margin-top: 10px; font-weight: bold;">0.00</div></td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <h2><?php echo $this->__('Change '); ?></h2>
+                </td>
+                <td><div id="cc_change" name="cc_change" style="font-size: 24px; text-align: right; width: 320px; margin-top: 10px; font-weight: bold; color:red;"></div></td>
+            </tr>
+            </table>
+			<p>&nbsp;</p>
+			<table cellspacing="0" width="100%">
+				<tr>
+					<td width="20%" align="center"><input type="button" value=" + 500 " onclick="addAmount(500)" style="font-size: 20px;"><br>&nbsp;</td>
+					<td width="20%" align="center"><input type="button" value=" + 200 " onclick="addAmount(200)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 100 " onclick="addAmount(100)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 50 " onclick="addAmount(50)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 20 " onclick="addAmount(20)" style="font-size: 20px;"></td>
+				</tr>
+				<tr>
+					<td width="20%" align="center"><input type="button" value=" + 10 " onclick="addAmount(10)" style="font-size: 20px;"><br>&nbsp;</td>
+					<td width="20%" align="center"><input type="button" value=" + 5 " onclick="addAmount(5)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 2 " onclick="addAmount(2)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 1 " onclick="addAmount(1)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 0.5 " onclick="addAmount(0.5)" style="font-size: 20px;"></td>
+				</tr>
+				<tr>
+					<td width="20%" align="center"><input type="button" value=" + 0.2 " onclick="addAmount(0.2)" style="font-size: 20px;"><br>&nbsp;</td>
+					<td width="20%" align="center"><input type="button" value=" + 0.1 " onclick="addAmount(0.1)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 0.05 " onclick="addAmount(0.05)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 0.02 " onclick="addAmount(0.02)" style="font-size: 20px;"></td>
+					<td width="20%" align="center"><input type="button" value=" + 0.01 " onclick="addAmount(0.01)" style="font-size: 20px;"></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="5">
+						<input type="button" value=" <?php echo $this->__('Reset'); ?> " onclick="resetAmount()" style="font-size: 20px;">
+					</td>
+			</table>
+        </div>
+    </div>
+</div>

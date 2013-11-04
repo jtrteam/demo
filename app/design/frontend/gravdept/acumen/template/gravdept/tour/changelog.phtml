@@ -1,0 +1,1678 @@
+<?php
+/**
+* Acumen For Magento Community
+* http://gravitydept.com/to/acumen-magento
+*
+* @author     Brendan Falkowski
+* @package    gravdept_acumen
+* @copyright  Copyright 2013 Gravity Department http://gravitydept.com
+* @license    All rights reserved.
+* @version    2.0.0.0
+*/
+?>
+
+<div class="tour">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('gravdept_tour_header')->toHtml() ?>
+	
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+	<h1>Changelog</h1>
+	
+	<p class="keynote">Acumen has 3.5+ years of steady development behind it.
+	No frontend package for Magento is updated more rigorously than Acumen &mdash; including Magento's own code.
+	That says a lot.</p>
+    
+	<div class="grid">
+		<div class="grid_3">
+			<div class="release-history">
+				<h2>All Releases</h2>
+				
+				<h3 class="p4">Magento 1.8.0.0</h3>
+				<p>
+				<a href="#v2.0.0">Acumen 2.0.0</a> <span class="release-date">2013-xx-xx</span><br>
+				<a href="#v1.3.5">Acumen 1.3.5</a> <span class="release-date">2013-09-28</span>
+				</p>
+				
+				<h3 class="p4">
+				    Magento 1.7.0.2<br>
+				    Magento 1.7.0.1<br>
+				    Magento 1.7.0.0
+				</h3>
+				<p>
+				<a href="#v1.3.4">Acumen 1.3.4</a> <span class="release-date">2012-05-31</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.6.2.0</h3>
+				<p>
+				<a href="#v1.3.3">Acumen 1.3.3</a> <span class="release-date">2012-03-19</span><br>
+				<a href="#v1.3.2">Acumen 1.3.2</a> <span class="release-date">2012-01-12</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.6.1.0</h3>
+				<p>
+				<a href="#v1.3.1">Acumen 1.3.1</a> <span class="release-date">2011-12-26</span><br>
+				<a href="#v1.3.0">Acumen 1.3.0</a> <span class="release-date">2011-11-04</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.6.0.0</h3>
+				<p>
+				<a href="#v1.2.9">Acumen 1.2.9</a> <span class="release-date">2011-09-09</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.5.1.0</h3>
+				<p>
+				<a href="#v1.2.8">Acumen 1.2.8</a> <span class="release-date">2011-04-02</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.5.0.1</h3>
+				<p>
+				<a href="#v1.2.7">Acumen 1.2.7</a> <span class="release-date">2011-03-29</span><br>
+				<a href="#v1.2.6">Acumen 1.2.6</a> <span class="release-date">2011-03-17</span><br>
+				<a href="#v1.2.5">Acumen 1.2.5</a> <span class="release-date">2011-03-11</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.4.2.0</h3>
+				<p>
+				<a href="#v1.2.4">Acumen 1.2.4</a> <span class="release-date">2010-12-17</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.4.1.1</h3>
+				<p>
+				<a href="#v1.2.3">Acumen 1.2.3</a> <span class="release-date">2010-08-15</span><br>
+				<a href="#v1.2.2">Acumen 1.2.2</a> <span class="release-date">2010-08-13</span>
+				</p>
+				
+				<h3 class="p4">Magento 1.4.1.0</h3>
+				<p>
+				<a href="#v1.2.1">Acumen 1.2.1</a> <span class="release-date">2010-07-17</span><br>
+				<a href="#v1.2.0">Acumen 1.2.0</a> <span class="release-date">2010-06-22</span>
+				</p>
+				
+				<h3 class="p4">
+				    Magento 1.4.0.1<br>
+				    Magento 1.4.0.0
+				</h3>
+				<p>
+				<a href="#v1.1.0">Acumen 1.1.0</a> <span class="release-date">2010-06-05</span><br>
+				<a href="#v1.0.0">Acumen 1.0.0</a> <span class="release-date">2010-04-21</span>
+				</p>
+			</div>
+		</div>
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+		<div class="grid_9">
+			<ol class="changelog">
+			    <?php /*
+			    <li id="v2.0.0">
+			    	<h2>Acumen 2.0.0 <span class="release-date">UNDER DEV</span></h2>
+			    	
+			    	<ul class="release-notes">
+			    		<li class="core">For Magento Community 1.8.0.0.</li>
+			    		
+			    		<li class="new">Rewrote all <code>CSS</code> as <a href="http://sass-lang.com/">SCSS</a> + <a href="http://compass-style.org/">Compass</a> for maintainability and easier customization.</li>
+			    		<li class="new">Added <dfn>Microdata</dfn> markup for rich snippets in Google / Yahoo / Bing.</li>
+			    		<li class="new">All slider <dfn>UI Widgets</dfn> are touch-enabled.</li>
+			    		<li class="new">Grid system is fluid and percentage-based.</li>
+			    		
+			    		<li class="update">Refined sprite icons for crisper edges and improved symmetry.</li>
+			    		<li class="update">Replaced <a href="http://slidesjs.com">SlidesJS</a> with <a href="http://www.woothemes.com/flexslider/">FlexSlider</a>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider Full</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider 3/4</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider 2/3</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider 1/2</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider 1/3</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <dfn>Grid Slider 1/4</dfn> into <dfn>Fluid Slider</dfn>.</li>
+			    		<li class="update">Consolidated <code>wrapper</code> / <code>container</code> / <code>grid-block</code> usage site-wide for improved extensibility.</li>
+			    		<li class="update">Renamed all layered PNG source files using <code>*.fw.png</code> syntax.</li>
+			    		
+			    		<li class="fix">Review helper links would break if URL suffix was configured.</li>
+			    	</ul>
+			    	
+			    	<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+			    	
+			    	<dl class="release-commits">
+			    	    <dt>/app/design/frontend/gravdept/acumen/layout</dt>
+			    	    <dd>
+			    	        /catalog.xml<br>
+			    	        /catalogsearch.xml<br>
+			    	        /checkout.xml<br>
+			    	        /cms.xml<br>
+			    	        /contacts.xml<br>
+			    	        /customer.xml<br>
+			    	        /directory.xml<br>
+			    	        /local.xml<br>
+			    	        /newsletter.xml<br>
+			    	        /page.xml<br>
+			    	        /paypal.xml<br>
+			    	        /reports.xml<br>
+			    	        /review.xml<br>
+			    	        /sales.xml<br>
+			    	        /sales/billing_agreement.xml<br>
+			    	        /sales/recurring_profile.xml<br>
+			    	        /sendfriend.xml<br>
+			    	        /tag.xml<br>
+			    	        /wishlist.xml
+			    	    </dd>
+			    	    
+			    	    <dt>/app/design/frontend/gravdept/acumen/locale</dt>
+			    	    <dd>
+			    	        /en_US/translate.csv
+			    	    </dd>
+			    	    
+			    		<dt>/app/design/frontend/gravdept/acumen/template</dt>
+			    		<dd>
+			    		    /captcha/zend.phtml<br>
+			    		    /catalog/layer/filter.phtml<br>
+			    		    /catalog/layer/state.phtml<br>
+			    		    /catalog/product/list/related.phtml<br>
+			    		    /catalog/product/list/upsell.phtml<br>
+			    		    /catalog/product/list.phtml<br>
+			    		    /catalog/product/price.phtml<br>
+			    		    <del>/catalog/product/view/additional.phtml</del><br>
+			    		    /catalog/product/view/media.phtml<br>
+			    		    /catalog/product/view/options.phtml<br>
+			    		    /catalog/product/view.phtml<br>
+			    		    /checkout/cart/item/default.phtml<br>
+			    		    /checkout/cart/crosssell.phtml<br>
+			    		    /checkout/cart/shipping.phtml<br>
+			    		    /checkout/cart/totals.phtml<br>
+			    		    /checkout/cart.phtml<br>
+			    		    /checkout/multishipping/address/select.phtml<br>
+			    		    /checkout/multishipping/billing.phtml<br>
+			    		    /checkout/multishipping/overview.phtml<br>
+			    		    /checkout/multishipping/shipping.phtml<br>
+			    		    /checkout/onepage/link.phtml<br>
+			    		    /checkout/onepage/progress.phtml<br>
+			    		    /checkout/onepage/shipping.phtml<br>
+			    		    /checkout/onepage/shipping_method.phtml<br>
+			    		    /checkout/success.phtml<br>
+			    		    /contacts/form.phtml<br>
+			    		    /customer/address/book.phtml<br>
+			    		    /customer/account/dashboard/address.phtml<br>
+			    		    /customer/account/dashboard/info.phtml<br>
+			    		    /customer/account/dashboard/newsletter.phtml<br>
+			    		    /customer/form/edit.phtml<br>
+			    		    /customer/form/forgotpassword.phtml<br>
+			    		    /customer/form/resetforgottenpassword.phtml<br>
+			    		    /customer/logout.phtml<br>
+			    		    <del>/cms/*</del><br>
+			    		    /directory/currency.phtml<br>
+			    		    /gravdept/catalog/header.phtml<br>
+			    		    <del>/gravdept/catalog/category/title-banner.phtml</del><br>
+			    		    /gravdept/catalog/category-products-slider.phtml<br>
+			    		    <del>/gravdept/catalog/category-slider.phtml</del><br>
+			    		    /gravdept/catalog/new-products-slider.phtml<br>
+			    		    /gravdept/catalogsearch/header.phtml<br>
+			    		    <del>/gravdept/catalogsearch/title-banner.phtml</del><br>
+			    		    /gravdept/jquery/fn_flexslider.phtml<br>
+			    		    <del>/gravdept/jquery/fn_loopedslider.phtml</del><br>
+			    		    <del>/gravdept/jquery/fn_slides.phtml</del><br>
+			    		    /gravdept/page/account-dashboard.phtml<br>
+			    		    /gravdept/page/catalog-list.phtml<br>
+			    		    /gravdept/page/containerless.phtml<br>
+			    		    /gravdept/page/catalog-product.phtml<br>
+			    		    /gravdept/page/checkout-multiship.phtml<br>
+			    		    /gravdept/page/checkout-onepage.phtml<br>
+			    		    /newsletter/subscribe.phtml<br>
+			    		    /page/1column.phtml<br>
+			    		    /page/2columns-left.phtml<br>
+			    		    /page/2columns-right.phtml<br>
+			    		    /page/3columns.phtml<br>
+			    		    /page/html/footer.phtml<br>
+			    		    /page/html/head.phtml<br>
+			    		    /page/html/header.phtml<br>
+			    		    /page/redirect.phtml<br>
+			    		    /page/switch/languages.phtml<br>
+			    		    /page/switch/stores.phtml<br>
+			    		    /page/template/container.phtml<br>
+			    		    /paypal/express/review.phtml<br>
+			    		    /paypal/payment/mark.phtml<br>
+			    		    /persistent/checkout/onepage/login.phtml<br>
+			    		    /persistent/customer/form/login.phtml<br>
+			    		    /persistent/customer/form/register.phtml<br>
+			    		    /review/customer/recent.phtml<br>
+			    		    /review/customer/view.phtml<br>
+			    		    /review/helper/summary.phtml<br>
+			    		    /review/product/view/list.phtml<br>
+			    		    /review/view.phtml<br>
+			    		    /sales/order/info.phtml<br>
+			    		    /sales/order/recent.phtml<br>
+			    		    /sendfriend/send.phtml<br>
+			    		    /tag/cloud.phtml<br>
+			    		    /tag/customer/recent.phtml<br>
+			    		    /tag/list.phtml<br>
+			    		    /wishlist/item/column/info.phtml<br>
+			    		    /wishlist/item/column/remove.phtml
+			    		</dd>
+			    		
+			    		<dt>/skin/frontend/gravdept/acumen</dt>
+			    		<dd>
+			    			/css/app.css<br>
+			    			<del>/css/base.css</del><br>
+			    			<del>/css/base.min.css</del><br>
+			    			/js/jquery.flexslider.min.js<br>
+			    			/js/jquery.run.js<br>
+			    			<del>/js/jquery.slides.min.js</del><br>
+			    			/img/icon/sprite.png<br>
+			    			/img/jquery-colorbox/*<br>
+			    			<del>/img/jquery.colorbox/*</del><br>
+			    			/media/fluid-slider/*<br>
+			    			<del>/media/grid-slider-1-2/*</del><br>
+			    			<del>/media/grid-slider-1-3/*</del><br>
+			    			<del>/media/grid-slider-1-4/*</del><br>
+			    			<del>/media/grid-slider-2-3/*</del><br>
+			    			<del>/media/grid-slider-3-4/*</del><br>
+			    			<del>/media/grid-slider-full/*</del><br>
+			    			/scss/*
+			    		</dd>
+			    		
+			    		<dt>{item-download-zip}</dt>
+			    		<dd>
+			    		    /documentation/*
+			    		</dd>
+			    		
+			    		<dt>{cms-page-example-markup}</dt>
+			    		<dd>
+			    		    /about<br>
+			    		    /enable-cookies<br>
+			    		    /home<br>
+			    		    /page-not-found
+			    		</dd>
+			    	</dl>
+			    </li>
+			    */ ?>
+			    
+			    <li id="v1.3.5">
+			    	<h2>Acumen 1.3.5 <span class="release-date">2013-09-28</span></h2>
+			    	
+			    	<ul class="release-notes">
+			    		<li class="core">For Magento Community 1.8.0.0.</li>
+			    		
+			    		<li class="new">w</li>
+			    		
+			    		<li class="update">Latest version: jQuery 1.10.2 JavaScript library.</li>
+			    		
+			    		<li class="fix">Firefox bug with layout of footer payment icons.</li>
+			    	</ul>
+			    	
+			    	<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+			    	
+			    	<dl class="release-commits">
+			    	    <dt>/app/code/local/Mage</dt>
+			    	    <dd>
+			    	        /Page/Block/Html/Topmenu.php<br>
+							/Wishlist/Block/Links.php
+			    	    </dd>
+			    	    
+			    	    <dt>/app/design/frontend/gravdept/acumen/layout</dt>
+			    	    <dd>
+			    	        /checkout.xml<br>
+			    	        /page.xml<br>
+			    	        /tag.xml
+			    	    </dd>
+			    	    
+			    		<dt>/app/design/frontend/gravdept/acumen/template</dt>
+			    		<dd>
+			    		    /bundle/catalog/product/view/type/bundle.phtml<br>
+			    		    /catalog/category/view.phtml<br>
+			    		    /catalog/navigation/left.phtml<br>
+			    		    /catalog/product/list/related.phtml<br>
+			    		    /catalog/product/list/upsell.phtml<br>
+			    		    /catalog/product/new.phtml<br>
+			    		    /catalog/product/view.phtml<br>
+			    		    /catalog/product/view/attributes.phtml<br>
+			    		    /catalog/product/view/media.phtml<br>
+			    		    /catalog/product/view/type/default.phtml<br>
+			    		    /catalog/product/view/type/grouped.phtml<br>
+			    		    /catalogsearch/term.phtml<br>
+			    		    /checkout/cart/coupon.phtml<br>
+			    		    /checkout/cart/crosssell.phtml<br>
+			    		    /checkout/cart/item/default.phtml<br>
+			    		    /checkout/cart/sidebar/default.phtml<br>
+			    		    /checkout/multishipping/addresses.phtml<br>
+			    		    /checkout/multishipping/agreements.phtml<br>
+			    		    /checkout/multishipping/billing.phtml<br>
+			    		    /checkout/multishipping/item/default.phtml<br>
+			    		    /checkout/multishipping/shipping.phtml<br>
+			    		    /checkout/onepage/agreements.phtml<br>
+			    		    /checkout/onepage/payment/info.phtml<br>
+			    		    /checkout/onepage/payment/methods.phtml<br>
+			    		    /checkout/onepage/progress.phtml<br>
+			    		    /checkout/onepage/progress/billing.phtml<br>
+			    		    /checkout/onepage/progress/payment.phtml<br>
+			    		    /checkout/onepage/progress/shipping.phtml<br>
+			    		    /checkout/onepage/progress/shipping_method.phtml<br>
+			    		    /checkout/onepage/review/info.phtml<br>
+			    		    /checkout/onepage/review/item.phtml<br>
+                            /checkout/onepage/shipping_method.phtml<br>
+                            /checkout/total/default.phtml<br>
+                            /contacts/form.phtml<br>
+			    		    /customer/account/dashboard/hello.phtml<br>
+                            /customer/account/dashboard/info.phtml<br>
+                            /customer/form/edit.phtml<br>
+                            /customer/form/forgotpassword.phtml<br>
+			    		    /gravdept/catalog/category/title-banner.phtml<br>
+			    		    /gravdept/jquery/load.phtml<br>
+                            /giftmessage/inline.phtml<br>
+                            /page/html/breadcrumbs.phtml<br>
+                            /page/html/header.phtml<br>
+                            /page/html/switch/flags.phtml<br>
+                            /page/html/switch/languages.phtml<br>
+                            /payment/form/cc.phtml<br>
+                            /payment/info/default.phtml<br>
+                            /persistent/checkout/onepage/login.phtml<br>
+                            /persistent/customer/form/login.phtml<br>
+                            /review/customer/list.phtml<br>
+                            /review/customer/recent.phtml<br>
+                            /review/customer/view.phtml<br>
+                            /review/form.phtml<br>
+                            /review/product/view/list.phtml<br>
+                            /review/view.phtml<br>
+                            /sales/order/history.phtml<br>
+                            /sales/order/items.phtml<br>
+                            /sales/order/items/renderer/default.phtml<br>
+                            /sales/order/recent.phtml<br>
+                            /sales/order/view.phtml<br>
+                            /sendfriend/send.phtml<br>
+                            /tag/cloud.phtml<br>
+                            /tag/customer/recent.phtml<br>
+                            /tag/customer/tags.phtml<br>
+                            /tag/customer/view.phtml<br>
+                            /tag/popular.phtml<br>
+                            /wishlist/item/column/cart.phtml<br>
+                            /wishlist/item/column/info.phtml
+			    		</dd>
+			    		
+			    		<dt>/skin/frontend/gravdept/acumen</dt>
+			    		<dd>
+			    			/css/base.css<br>
+			    			/css/base.min.css<br>
+			    			<del>/js/jquery-1.7.2.min.js</del><br>
+			    			/js/jquery-1.10.2.min.js<br>
+			    		</dd>
+			    	</dl>
+			    </li>
+			    
+				<li id="v1.3.4">
+					<h2>Acumen 1.3.4 <span class="release-date">2012-05-31</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.7.0.2.</li>
+						<li class="core">For Magento Community 1.7.0.1.</li>
+						<li class="core">For Magento Community 1.7.0.0.</li>
+						
+						<li class="new">Magento feature: form captcha for security.</li>
+						<li class="new">Significantly reduced template overrides for better maintainability.</li>
+						<li class="new">Reduced core overrides to avoid conflicts.</li>
+						<li class="new">Added <dfn>Snippet: Nav Before</dfn> with optional home icon.</li>
+						<li class="new">Added <dfn>Snippet: Nav After</dfn> for inserting custom content in the primary nav.</li>
+						<li class="new">Added <dfn>Custom Options</dfn> for all product types.</li>
+						<li class="new">Added quick edit buttons for <dfn>One Page Checkout</dfn> sections.</li>
+						<li class="new">Added modular button style: <code>button-micro</code>.</li>
+						<li class="new">Added saving/editing configurable options on <dfn>Wishlist</dfn>.</li>
+						<li class="new">Added <dfn>Gift Messages</dfn> support for individual items.</li>
+						<li class="new">Added translation <code>CSV</code> file for core changes and custom phrases.</li>
+						<li class="new">Added payment icons to footer.</li>
+						
+						<li class="update">Latest version: jQuery 1.7.2 JavaScript Library.</li>
+						<li class="update">Redesigned <dfn>Product View</dfn> to highlight bundle/custom options.</li>
+						<li class="update">Redesigned callout and table styles for more modern appearance.</li>
+						<li class="update">Redesigned <dfn>Wishlist</dfn> page with larger product images.</li>
+						<li class="update">Redesigned <dfn>Gift Messages</dfn> in checkout.</li>
+						<li class="update">Redesigned footer layout and added payment icons.</li>
+						<li class="update">Redesigned payment icons for sharper appearance.</li>
+						<li class="update">Started transitioning base typeface from Adobe Caslon to Helvetica Neue.</li>
+						<li class="update">Moved payment icons to reusable block for simpler customization.</li>
+						<li class="update">Configured product options are saved and visible in the <dfn>Wishlist</dfn>.</li>
+						<li class="update">Widened <dfn>Mini-Cart</dfn> slightly to fit long product names better.</li>
+						<li class="update">Optimized CSS selectors for improved performance and reduced specificity.</li>
+						<li class="update">Rewrote primary navigation using <code>Mage 1.7.0.0</code> methods.</li>
+						<li class="update">Reverted to Magento's form markup pattern for better maintainability.</li>
+						<li class="update">Improved language translation and extension compatibility.</li>
+						
+						<li class="fix">Text input line-height was too high in IE8.</li>
+						<li class="fix"><dfn>Catalog Bar</dfn> controls wrapping improperly in IE8.</li>
+						<li class="fix">Restored <dfn>Inline Translation</dfn> and <dfn>Calendar</dfn> JS files to avoid potential exceptions.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+						    <del>/Catalog/Block/Navigation.php</del><br>
+							<del>/Catalog/Model/Config.php</del><br>
+							<del>/CatalogSearch/Block/Result.php</del><br>
+							/Checkout/Block/Links.php<br>
+							/Page/Block/Html/Topmenu.php<br>
+							<del>/Tag/Block/Product/Result.php</del><br>
+							/Wishlist/Block/Links.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+						    /catalog.xml<br>
+						    /customer.xml<br>
+						    /downloadable.xml<br>
+						    /googleanalytics.xml<br>
+						    /local.xml<br>
+							/page.xml<br>
+							/paypal.xml<br>
+							/wishlist.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/locale</dt>
+						<dd>
+						    /en_US/translate.csv
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+						    <del>/bundle/catalog/product/view/type/bundle/option/checkbox.phtml</del><br>
+						    <del>/bundle/catalog/product/view/type/bundle/option/multi.phtml</del><br>
+						    <del>/bundle/catalog/product/view/type/bundle/option/radio.phtml</del><br>
+						    <del>/bundle/catalog/product/view/type/bundle/option/select.phtml</del><br>
+						    /captcha/zend.phtml<br>
+							/catalog/layer/filter.phtml<br>
+							/catalog/layer/state.phtml<br>
+							/catalog/layer/view.phtml<br>
+							/catalog/navigation/left.phtml<br>
+							<del>/catalog/navigation/top.phtml</del><br>
+							/catalog/product/list/related.phtml<br>
+							/catalog/product/list/upsell.phtml<br>
+							/catalog/product/list.phtml<br>
+							/catalog/product/view/addquantity.phtml<br>
+							/catalog/product/view/addtowishlist.phtml<br>
+							/catalog/product/view/media.phtml<br>
+							<del>/catalog/product/view/options/wrapper.phtml</del><br>
+							/catalog/product/view/options.phtml<br>
+							/catalog/product/view/type/grouped.phtml<br>
+							/catalog/product/view/type/options/configurable.phtml<br>
+							/catalog/product/view.phtml<br>
+							/catalogsearch/form.mini.phtml<br>
+							/catalogsearch/term.phtml<br>
+							/checkout/cart/item/default.phtml<br>
+							/checkout/cart/coupon.phtml<br>
+							/checkout/cart/crosssell.phtml<br>
+							/checkout/cart/noItems.phtml<br>
+							/checkout/cart/shipping.phtml<br>
+							/checkout/cart/sidebar/default.phtml<br>
+							/checkout/cart/totals.phtml<br>
+							/checkout/cart.phtml<br>
+							/checkout/onepage/agreements.phtml<br>
+							<del>/checkout/onepage/billing.phtml</del><br>
+							<del>/checkout/onepage/login.phtml</del><br>
+							/checkout/onepage/payment/methods.phtml<br>
+							/checkout/onepage/payment.phtml<br>
+							/checkout/onepage/progress.phtml<br>
+							/checkout/onepage/review/info.phtml<br>
+							/checkout/onepage/review/item.phtml<br>
+							/checkout/onepage/shipping_method.phtml<br>
+							/checkout/onepage/shipping.phtml<br>
+							/checkout/multishipping/address/select.phtml<br>
+							/checkout/multishipping/addresses.phtml<br>
+							/checkout/multishipping/agreements.phtml<br>
+							/checkout/multishipping/billing.phtml<br>
+							/checkout/multishipping/item/default.phtml<br>
+							/checkout/multishipping/link.phtml<br>
+							<del>/checkout/multishipping/overview/item.phtml</del><br>
+							/checkout/multishipping/overview.phtml<br>
+							/checkout/multishipping/shipping.phtml<br>
+							<del>/checkout/multishipping/state.phtml</del><br>
+							/checkout/onepage.phtml<br>
+							/checkout/total/default.phtml<br>
+							/checkout/total/tax.phtml<br>
+							/contacts/form.phtml<br>
+							/customer/account/dashboard/address.phtml<br>
+							/customer/account/dashboard/hello.phtml<br>
+							/customer/account/dashboard/info.phtml<br>
+							/customer/account/dashboard.phtml<br>
+							/customer/address/book.phtml<br>
+							/customer/address/edit.phtml<br>
+							/customer/form/edit.phtml<br>
+							/customer/form/forgotpassword.phtml<br>
+							/customer/form/resetforgottenpassword.phtml<br>
+							<del>/customer/form/login.phtml</del><br>
+							/customer/form/newsletter.phtml<br>
+							<del>/customer/form/register.phtml</del><br>
+							/customer/logout.phtml<br>
+							<del>/customer/widget/gender.phtml</del><br>
+							<del>/customer/widget/name.phtml</del><br>
+							<del>/customer/widget/taxvat.phtml</del><br>
+							/downloadable/catalog/product/links.phtml<br>
+							/downloadable/catalog/product/samples.phtml<br>
+							/downloadable/catalog/product/type.phtml<br>
+							/giftmessage/inline.phtml<br>
+							/gravdept/jquery/load.phtml<br>
+							/gravdept/page/html/payment-icons.phtml<br>
+							/page/html/footer.phtml<br>
+							/page/html/head.phtml<br>
+							<del>/page/html/notices.phtml</del><br>
+							/page/html/topmenu.phtml<br>
+							/page/print.phtml<br>
+							/page/switch/flags.phtml<br>
+							/payment/form/cc.phtml<br>
+							/paypal/express/review.phtml<br>
+							/persistent/checkout/onepage/billing.phtml<br>
+							/persistent/checkout/onepage/login.phtml<br>
+							/persistent/customer/form/login.phtml<br>
+							/persistent/customer/form/register.phtml<br>
+							/persistent/remember_me_tooltip.phtml<br>
+							/persistent/remember_me.phtml<br>
+							/review/form.phtml<br>
+							/review/product/view/list.phtml<br>
+							/sales/order/history.phtml<br>
+							/sales/order/info.phtml<br>
+							/sales/order/items.phtml<br>
+							<del>/sales/order/print.phtml</del><br>
+							/sales/order/recent.phtml<br>
+							<del>/sales/order/trackinginfo.phtml</del><br>
+							/sendfriend/send.phtml<br>
+							<del>/shipping/tracking/popup.phtml</del><br>
+							/tag/list.phtml<br>
+							/tag/popular.phtml<br>
+							/wishlist/item/column/cart.phtml<br>
+							/wishlist/item/column/image.phtml<br>
+							/wishlist/item/column/info.phtml<br>
+							/wishlist/item/column/remove.phtml<br>
+							/wishlist/item/configure/addto.phtml<br>
+							/wishlist/item/list.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/js</dt>
+						<dd>
+							/varien/js.js (Undo customizations only. See comments inside. Do not delete.)
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							/img/flag/*<br>
+							/img/icon/sprite.png<br>
+							<del>/js/jquery-1.7.1.min.js</del><br>
+							/js/jquery-1.7.2.min.js<br>
+							/js/jquery.run.js<br>
+							<del>/js/opcheckout.js</del>
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+						    /documentation/readme.html
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.3.3">
+					<h2>Acumen 1.3.3 <span class="release-date">2012-03-19</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.6.2.0.</li>
+						
+						<li class="new"><dfn>Snippets</dfn> added everywhere. Add content to frontend with no coding necessary.</li>
+						<li class="new">UI Widget: <dfn>Tabs</dfn></li>
+						<li class="new">Redesigned <dfn>Product View</dfn> to improve information hierarchy.</li>
+						<li class="new">Redesigned <code>button</code> style to stand out more.</li>
+						<li class="new">Added <code>tabs</code> to <dfn>Product View</dfn>.</li>
+						<li class="new">Added modular button styles: <code>button-small</code>, <code>button-large</code>, <code>button-subtle</code>.</li>
+						<li class="new">Added <dfn>New Product</dfn> indicator in <dfn>Catalog Grid/List</dfn>.</li>
+						<li class="new">Added <code>CSS3</code> transitions for anchors and buttons.</li>
+						<li class="new">Added <code>HTML5</code> input types for improved usability on mobile devices.</li>
+						<li class="new">Added Pinterest widget to <dfn>Product View</dfn>.</li>
+						<li class="new">Added Pinterest link to <dfn>Footer</dfn>.</li>
+						<li class="new">Added <dfn>Checkout</dfn> button in <dfn>Mini Cart</dfn> overlay.</li>
+						
+						<li class="update">Latest version: jQuery 1.7.1 JavaScript Library.</li>
+						<li class="update">Latest version: jQuery Colorbox 1.3.19 plugin.</li>
+						<li class="update">Latest version: Facebook widget code.</li>
+						<li class="update">Latest version: Twitter widget code.</li>
+						<li class="update">Redesigned <dfn>Modal Overlay</dfn> UI Widget.</li>
+						<li class="update">Redesigned <dfn>Catalog Grid</dfn> to de-clutter naming, price, and rating.</li>
+						<li class="update">Redesigned <dfn>Breadcrumbs</dfn> and relocated to beneath navigation.</li>
+						<li class="update">Redesigned <dfn>Grouped Product</dfn> options to show tier prices for individual items.</li>
+						<li class="update">Redesigned <dfn>Bundle Product</dfn> options to improve information hierarchy.</li>
+						<li class="update">Made <dfn>Breadcrumbs</dfn> visible on <dfn>Product View</dfn> by default.</li>
+						<li class="update">Simplified <dfn>Catalog Bar</dfn> and removed <dfn>Options Button</dfn>.</li>
+						<li class="update">Relocated some <dfn>Layout XML</dfn> to <code>local.xml</code> to improve maintainability.</li>
+						<li class="update">Renamed CSS class <code>block</code> to <code>grid-block</code> to improve core compatibility.</li>
+						<li class="update">Rewrote all <code>table</code> code for extensibility.</li>
+						<li class="update">Rewrote all <code>form</code> code for better extension compatibility.</li>
+						<li class="update">Consolidated <code>clearfix</code> methods to use simpler <a href="http://nicolasgallagher.com/micro-clearfix-hack/">Micro Clearfix</a>.</li>
+						<li class="update">Standardized product thumbnail sizes.</li>
+						<li class="update">Dropping IE7 support. Testing will continue with IE8 and up.</li>
+						
+						<li class="fix">Third-level categories were hidden if >= 8 per second-level category.</li>
+						<li class="fix">Improved custom date formats when localizations are active.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+							/Catalog/Block/Navigation.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/local.xml<br>
+							/page.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/bundle/catalog/product/view/type/bundle/option/checkbox.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/multi.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/radio.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/select.phtml<br>
+							/bundle/catalog/product/view/type/bundle.phtml<br>
+							/catalog/product/list/related.phtml<br>
+							/catalog/product/list/upsell.phtml<br>
+							/catalog/product/list.phtml<br>
+							/catalog/product/new.phtml<br>
+							/catalog/product/view/addquantity.phtml<br>
+							/catalog/product/view/addtocart.phtml<br>
+							/catalog/product/view/addtocompare.phtml<br>
+							/catalog/product/view/addtowishlist.phtml<br>
+							/catalog/product/view/availability.phtml<br>
+							/catalog/product-view/description.phtml<br>
+							<del>/catalog/product/view/tierprices.phtml</del><br>
+							/catalog/product/view/type/default.phtml<br>
+							/catalog/product/view/type/grouped.phtml<br>
+							/catalog/product/view.phtml<br>
+							/catalogsearch/result.phtml<br>
+							/checkout/cart/coupon.phtml<br>
+							/checkout/cart/crosssell.phtml<br>
+							/checkout/cart/item/default.phtml<br>
+							/checkout/cart/noItems.phtml<br>
+							/checkout/cart/shipping.phtml<br>
+							/checkout/cart/sidebar/default.phtml<br>
+							/checkout/cart/sidebar.phtml<br>
+							/checkout/cart/totals.phtml<br>
+							/checkout/cart.phtml<br>
+							/checkout/multishipping/address/select.phtml<br>
+							/checkout/multishipping/addresses.phtml<br>
+							/checkout/multishipping/billing/items.phtml<br>
+							/checkout/multishipping/billing.phtml<br>
+							/checkout/multishipping/link.phtml<br>
+							/checkout/multishipping/overview.phtml<br>
+							/checkout/multishipping/shipping.phtml<br>
+							/checkout/multishipping/success.phtml<br>
+							/checkout/onepage/billing.phtml<br>
+							/checkout/onepage/link.phtml<br>
+							/checkout/onepage/login.phtml<br>
+							/checkout/onepage/payment.phtml<br>
+							/checkout/onepage/progress.phtml<br>
+							/checkout/onepage/review/button.phtml<br>
+							/checkout/onepage/review/info.phtml<br>
+							/checkout/onepage/shipping_method.phtml<br>
+							/checkout/onepage/shipping.phtml<br>
+							/checkout/success.phtml<br>
+							/customer/account/dashboard/info.phtml<br>
+							/customer/account/dashboard/address.phtml<br>
+							/customer/account/dashboard/newsletter.phtml<br>
+							/customer/widget/name.phtml<br>
+							/customer/widget/taxvat.phtml<br>
+							/cms/content_heading.phtml<br>
+							/contacts/form.phtml<br>
+							/customer/address/book.phtml<br>
+							/customer/address/edit.phtml<br>
+							/customer/form/edit.phtml<br>
+							/customer/form/forgotpassword.phtml<br>
+							/customer/form/login.phtml<br>
+							/customer/form/newsletter.phtml<br>
+							/customer/form/register.phtml<br>
+							/customer/form/resetforgottenpassword.phtml<br>
+							/customer/logout.phtml<br>
+							/giftmessage/inline.phtml<br>
+							/gravdept/catalog/category/title-banner.phtml<br>
+							/gravdept/catalog/category-slider.phtml<br>
+							/gravdept/catalog/new-products-slider.phtml<br>
+							/gravdept/catalogsearch/title-banner.phtml<br>
+							/gravdept/jquery/load.phtml<br>
+							/gravdept/page/account-dashboard.phtml<br>
+							/gravdept/page/catalog-list.phtml<br>
+							/gravdept/page/catalog-product.phtml<br>
+							/gravdept/page/checkout-multiship.phtml<br>
+							/gravdept/page/checkout-onepage.phtml<br>
+							/page/1column.phtml<br>
+							/page/2columns-left.phtml<br>
+							/page/2columns-right.phtml<br>
+							/page/3columns.phtml<br>
+							/page/html/breadcrumbs.phtml<br>
+							/page/html/footer.phtml<br>
+							/page/redirect.phtml<br>
+							/page/template/container.phtml<br>
+							/payment/form/cc.phtml<br>
+							/payment/form/checkmo.phtml<br>
+							/paypal/express/review/details.phtml<br>
+							/paypal/express/review.phtml<br>
+							/persistent/checkout/onepage/billing.phtml<br>
+							/persistent/checkout/onepage/login.phtml<br>
+							/persistent/customer/form/login.phtml<br>
+							/persistent/customer/form/register.phtml<br>
+							/persistent/customer/remember_me_tooltip.phtml<br>
+							/persistent/remember_me.phtml<br>
+							/review/customer/list.phtml<br>
+							/review/customer/recent.phtml<br>
+							/review/customer/view.phtml<br>
+							/review/form.phtml<br>
+							/review/helper/summary.phtml<br>
+							/review/product/view/list.phtml<br>
+							/review/product/view/other.phtml<br>
+							/review/view.phtml<br>
+							/sales/order/history.phtml<br>
+							/sales/order/info/buttons.phtml<br>
+							/sales/order/items.phtml<br>
+							/sales/order/print.phtml<br>
+							/sales/order/recent.phtml<br>
+							/sendfriend/send.phtml<br>
+							/tag/cloud.phtml<br>
+							/tag/customer/recent.phtml<br>
+							/tag/customer/view.phtml<br>
+							/tag/list.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							/img/icon/sprite.png<br>
+							/img/jquery.colorbox/controls.png<br>
+							<del>/js/jquery-1.6.3.min.js</del><br>
+							/js/jquery-1.7.1.min.js<br>
+							/js/jquery.colorbox.min.js<br>
+							/js/jquery.run.js
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+						    /readme.html
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.3.2">
+					<h2>Acumen 1.3.2 <span class="release-date">2012-01-12</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.6.2.0.</li>
+						<li class="new">UI Widget: <dfn>Grid Slider 3/4</dfn></li>
+						<li class="new">UI Widget: <dfn>Grid Slider 2/3</dfn></li>
+						<li class="new">UI Widget: <dfn>Grid Slider 1/2</dfn></li>
+						<li class="new">UI Widget: <dfn>Grid Slider 1/3</dfn></li>
+						<li class="new">UI Widget: <dfn>Grid Slider 1/4</dfn></li>
+						<li class="new">UI Widget: <dfn>Static Promo 1/2</dfn></li>
+						<li class="new">UI Widget: <dfn>Static Promo 1/4</dfn></li>
+						<li class="update">Renamed UI Widget <dfn>Promo Slider</dfn> to <dfn>Promo Slider Right</dfn>.</li>
+						<li class="update">Renamed UI Widget <dfn>Window Slider</dfn> to <dfn>Thumb Slider Right</dfn>.</li>
+						<li class="update">Renamed UI Widget <dfn>Wide Slider</dfn> to <dfn>Grid Slider Full</dfn>.</li>
+						<li class="update">Renamed UI Widget <dfn>Static Promo Three</dfn> to <dfn>Static Promo 1/3</dfn>.</li>
+						<li class="update">Improved appearance of <dfn>Persistent Cart</dfn> functionality in soft-login state.</li>
+						<li class="update">Relocated CSS for ColorBox to <code>base.css</code> to allow styling in <code>override.css</code>.</li>
+						<li class="update">Namespaced and significantly optimized <code>jquery.run.js</code>.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/page.xml<br>
+							/paypal.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/gravdept/catalog/new-products-slider.phtml<br>
+							/gravdept/catalog/category-slider.phtml<br>
+							<del>/gravdept/catalog/product/new-slider.phtml</del><br>
+							<del>/gravdept/catalog/product/product-slider.phtml</del><br>
+							/paypal/express/review.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							<del>/css/jquery.colorbox.css</del><br>
+							/js/jquery.run.js<br>
+							/media/grid-slider-1-2/ (all)<br>
+							/media/grid-slider-1-3/ (all)<br>
+							/media/grid-slider-1-4/ (all)<br>
+							/media/grid-slider-2-3/ (all)<br>
+							/media/grid-slider-3-4/ (all)<br>
+							/media/grid-slider-full/ (all)<br>
+							<del>/media/promo-slider/ (all)</del><br>
+							/media/promo-slider-right/ (all)<br>
+							/media/static-promo-1-2/ (all)<br>
+							/media/static-promo-1-3/ (all)<br>
+							/media/static-promo-1-4/ (all)<br>
+							<del>/media/static-promo-three/ (all)</del><br>
+							/media/thumb-slider-right/ (all)<br>
+							<del>/media/window-slider/ (all)</del>
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.3.1">
+					<h2>Acumen 1.3.1 <span class="release-date">2011-12-26</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.6.1.0.</li>
+						<li class="new"><dfn>Search Autocomplete</dfn> functionality added.</li>
+						<li class="new">Smarter <code>&lt;html&gt;</code> tag with conditional IE class.</li>
+						<li class="new">jQuery <a href="http://slidesjs.com/">SlidesJS</a> (replaces jQuery LoopedSlider).</li>
+						<li class="new">UI Widget: <dfn>New Products Slider</dfn> with configurable column count (1&ndash;4).</li>
+						<li class="new">UI Widget: <dfn>Category Slider</dfn> with configurable column count (1&ndash;4).</li>
+						<li class="new">UI Widget: <dfn>Wide Slider</dfn> for full width graphics.</li>
+						<li class="new">UI Widget: <dfn>Window Slider</dfn> (replaces <dfn>Spotlight Slider</dfn>).</li>
+						<li class="new">UI Widget: <dfn>Promo Slider</dfn> (like <dfn>Window Slider</dfn> but promos are separate).</li>
+						<li class="new">UI Widget: <dfn>Static Promo Three</dfn> for simple graphic callouts.</li>
+						<li class="update">Primary navigation completely rewritten and simplified.</li>
+						<li class="update">Removed IE conditional stylesheets to minimize HTTP requests.</li>
+						<li class="update">Relocated non-CSS images to <code>/skin/frontend/gravdept/acumen/media/</code> folder.</li>
+						<li class="update">Improved language translation support for UI components.</li>
+						<li class="update">Improved thoroughness of URL redirection for <code>/contact</code>.</li>
+						<li class="update">HTML5 input <code>placeholder</code> replaces JS workarounds.</li>
+						<li class="update">Sprite image completely restructured and optimized.</li>
+						<li class="fix"><dfn>Write A Review</dfn> link broken for products without reviews.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+							/Catalog/Block/Navigation.php<br>
+							/Checkout/Block/Links.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/page.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/catalog/navigation/top.phtml<br>
+							/catalog/product/new.phtml<br>
+							/catalogsearch/form.mini.phtml<br>
+							<del>/gravdept/catalog/product/featured-list.phtml</del><br>
+							/gravdept/catalog/product/new-slider.phtml<br>
+							/gravdept/catalog/product/product-slider.phtml<br>
+							/gravdept/jquery/fn_slides.phtml<br>
+							/gravdept/page/account-dashboard.phtml<br>
+							/gravdept/page/catalog-list.phtml<br>
+							/gravdept/page/catalog-product.phtml<br>
+							/gravdept/page/checkout-multiship.phtml<br>
+							/gravdept/page/checkout-onepage.phtml<br>
+							/gravdept/page/html/html.phtml<br>
+							/newsletter/subscribe.phtml<br>
+							/page/1column.phtml<br>
+							/page/2columns-left.phtml<br>
+							/page/2columns-right.phtml<br>
+							/page/3columns.phtml<br>
+							/page/empty.phtml<br>
+							/page/html/footer.phtml<br>
+							/page/html/header.phtml<br>
+							/page/popup.phtml<br>
+							/page/print.phtml<br>
+							/review/helper/summary.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/js</dt>
+						<dd>
+							/varien/js.js
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							<del>/css/ie_all.css</del><br>
+							<del>/css/ie_ie6.css</del><br>
+							<del>/css/ie_lte-ie7.css</del><br>
+							<del>/img/catalog/ (all)</del><br>
+							<del>/img/email/ (all)</del><br>
+							<del>/img/icon/delete-large.png</del><br>
+							<del>/img/icon/delete-small.png</del><br>
+							<del>/img/icon/payment-methods.png</del><br>
+							<del>/img/icon/product-actions.png</del><br>
+							/img/icon/sprite.png<br>
+							<del>/img/layout/ (all)</del><br>
+							<del>/img/print/ (all)</del><br>
+							<del>/img/page/ (all)</del><br>
+							<del>/js/jquery.loopedslider-0.5.6.min.js</del><br>
+							/js/jquery.run.js<br>
+							/js/jquery.slides.min.js<br>
+							/media/ (all)
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+						    <del>/concept/ (all)</del><br>
+						    <del>/config/ (all)</del><br>
+						    /readme/ (all)<br>
+						    /readme.html<br>
+						    /source/ (all)
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.3.0">
+					<h2>Acumen 1.3.0 <span class="release-date">2011-11-04</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.6.1.0.</li>
+						<li class="new">Magento feature: reset password forms.</li>
+						<li class="update">Increased minimum font-size (12px to 13px) for better readability.</li>
+						<li class="update">Information architecture of mini-cart for better readability.</li>
+						<li class="update">Modal overlay consistency for Persistent Checkout functionality.</li>
+						<li class="fix">Added missing translation functions.</li>
+						<li class="fix">Review rating summary not displaying with products.</li>
+						<li class="fix">Tag search result page missing template.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/customer.xml<br>
+							/paypal.xml<br>
+							/tag.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/catalog/product/view.phtml<br>
+							/checkout/cart/item/default.phtml<br>
+							/checkout/cart/sidebar/default.phtml<br>
+							/checkout/multishipping/agreements.phtml<br>
+							/checkout/onepage/agreements.phtml<br>
+							/checkout/onepage/methods.phtml<br>
+							/checkout/onepage/payment.phtml<br>
+							/customer/form/forgotpassword.phtml<br>
+							/customer/form/resetforgottenpassword.phtml<br>
+							/giftmessage/inline.phtml<br>
+							/page/html/footer.phtml<br>
+							/payment/form/checkmo.phtml<br>
+							/payment/info/checkmo.phtml<br>
+							/paypal/express/review.phtml<br>
+							/persistent/checkout/onepage/billing.phtml<br>
+							/review/helper/summary.phtml<br>
+							/review/helper/summary_short.phtml<br>
+							/tag/list.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							/js/opcheckout.js
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.9">
+					<h2>Acumen 1.2.9 <span class="release-date">2011-09-09</span></h2>
+					
+					<ul class="release-notes">
+					    <li class="core">For Magento Community 1.6.0.0.</li>
+					    <li class="new">Magento feature: persistent shopping cart.</li>
+					    <li class="new">jQuery Colorbox (replaces jQuery FancyBox).</li>
+						<li class="new">Local jQuery fallback if Google AJAX Libraries CDN is inaccessible.</li>
+						<li class="new">Optional 'Home' link to primary navigation.</li>
+						<li class="new">Google +1 button to product page.</li>
+						<li class="new">New widget: 'Triple Promos' block for 'Home' page.</li>
+						<li class="update">HTML5 doctype.</li>
+						<li class="update">jQuery 1.6.3 JavaScript Library.</li>
+						<li class="update">Conditional loading over jQuery over HTTPS only when required.</li>
+						<li class="update">Simplified installation by moving <dfn>CMS Static Blocks</dfn> to <code>PHTML</code> files.</li>
+						<li class="update">Styling of multiple currency and language selectors.</li>
+						<li class="update">Information hierarchy on <dfn>Product View</dfn>.</li>
+						<li class="update">Quantity default is now 1 (default is 0) when a minimum order quantity is not set.</li>
+						<li class="update">Relocated all GravDept's original templates to the <code>/template/gravdept</code> folder.</li>
+						<li class="fix">Bug in VAT affecting IE8.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+						    /Catalog/Block/Navigation.php<br>
+							/Catalog/Model/Config.php<br>
+							/CatalogSearch/Block/Result.php<br>
+							/Checkout/Block/Links.php<br>
+							/Wishlist/Block/Links.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/catalogsearch.xml<br>
+							/checkout.xml<br>
+							/contacts.xml<br>
+							/customer.xml<br>
+							/directory.xml<br>
+							/downloadable.xml<br>
+							/page.xml<br>
+							/paypal.xml<br>
+							/reports.xml<br>
+							/review.xml<br>
+							/sales.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+						    <del>/catalog/category/gravdept_title.phtml</del><br>
+						    /catalog/navigation/top.phtml<br>
+						    <del>/catalog/product/gravdept_featured.phtml</del><br>
+						    /catalog/product/view.phtml<br>
+						    /catalog/product/view/addquantity.phtml<br>
+						    /catalog/product/view/media.phtml<br>
+						    /catalog/product/view/tierprices.phtml<br>
+						    <del>/catalogsearch/gravdept_title.phtml</del><br>
+						    /checkout/cart/item/default.phtml<br>
+						    /checkout/cart/sidebar/default.phtml<br>
+						    /checkout/cart/sidebar.phtml<br>
+						    /checkout/cart/totals.phtml<br>
+							/checkout/onepage/link.phtml<br>
+							/checkout/onepage/review/button.phtml<br>
+							/customer/form/login.phtml<br>
+							/customer/form/register.phtml<br>
+							/customer/widget/name.phtml<br>
+							<del>/customer/widget/dob.phtml</del><br>
+							/customer/widget/gender.phtml<br>
+							/customer/widget/taxvat.phtml<br>
+							/directory/currency.phtml<br>
+							/gravdept/jquery/fn_colorbox.phtml<br>
+							/gravdept/jquery/fn_loopedslider.phtml<br>
+							/gravdept/jquery/load.phtml<br>
+							/gravdept/jquery/run.phtml<br>
+							/gravdept/catalog/category/title-banner.phtml<br>
+							/gravdept/catalog/product/featured-list.phtml<br>
+							/gravdept/catalogsearch/title-banner.phtml<br>
+							/gravdept/page/account-dashboard.phtml<br>
+							/gravdept/page/catalog-list.phtml<br>
+							/gravdept/page/catalog-product.phtml<br>
+							/gravdept/page/checkout-multiship.phtml<br>
+							/gravdept/page/checkout-onepage.phtml<br>
+							/page/1column.phtml<br>
+							/page/2columns-left.phtml<br>
+							/page/2columns-right.phtml<br>
+							/page/3columns.phtml<br>
+							/page/empty.phtml<br>
+							<del>/page/gravdept_account-dashboard.phtml</del><br>
+							<del>/page/gravdept_catalog-list.phtml</del><br>
+							<del>/page/gravdept_catalog-product.phtml</del><br>
+							<del>/page/gravdept_checkout-multiship.phtml</del><br>
+							<del>/page/gravdept_checkout-onepage.phtml</del><br>
+							/page/html/footer.phtml<br>
+							/page/html/header.phtml<br>
+							/page/popup.phtml<br>
+							/page/print.phtml<br>
+							/page/switch/languages.phtml<br>
+							/paypal/express/review.phtml<br>
+							/persistent/checkout/onepage/billing.phtml<br>
+							/persistent/checkout/onepage/login.phtml<br>
+							/persistent/customer/form/login.phtml<br>
+							/persistent/customer/form/register.phtml<br>
+							/review/customer/list.phtml<br>
+							/sales/order/info.phtml<br>
+							/sales/order/info/buttons.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							/css/jquery.colorbox.css<br>
+							<del>/css/jquery.fancybox-1.2.5.css</del><br>
+							/img/jquery.colorbox/ (all)<br>
+							<del>/img/jquery.fancybox/ (all)</del><br>
+							/js/jquery-1.6.3.min.js<br>
+							/js/jquery.colorbox.min.js<br>
+							<del>/js/jquery.fancybox-1.2.5.pack.js</del><br>
+							/js/jquery.run.js<br>
+							/js/opcheckout.js
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+						    /config/cms-pages/home.txt<br>
+						    /config/cms-pages/home.xml<br>
+	    					<del>/config/cms-static-blocks/gravdept_jquery_fancybox.txt</del><br>
+							<del>/config/cms-static-blocks/gravdept_jquery_load.txt</del><br>
+							<del>/config/cms-static-blocks/gravdept_jquery_loopedslider.txt</del><br>
+							<del>/config/cms-static-blocks/gravdept_jquery_run.txt</del>
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.8">
+					<h2>Acumen 1.2.8 <span class="release-date">2011-05-02</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.5.1.0.</li>
+						<li class="new">Facebook Like button to product page.</li>
+						<li class="new">Twitter Tweet button to product page.</li>
+						<li class="update">Wider copyright space to prevent line wrap in footer.</li>
+						<li class="update">Style consistency in <dfn>One Page Checkout</dfn> progess summary.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/paypal.xml<br>
+							/sales.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/catalog/product/view.phtml<br>
+							/checkout/success.phtml<br>
+							/customer/address/edit.phtml<br>
+							/page/html/footer.phtml<br>
+							/page/html/head.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.7">
+					<h2>Acumen 1.2.7 <span class="release-date">2011-03-29</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.5.0.1.</li>
+						<li class="new">CSS to remove extra <code>margin-bottom</code> from navigation with 7+ subcategories.</li>
+						<li class="fix">Missing <code>effects.js</code> component that Magento's JS form validation needs since 1.5.x.</li>
+						<li class="fix">Grid overflow causing linebreak in login/guest step of <dfn>One Page Checkout</dfn>.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/page.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/checkout/onepage/login.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.6">
+					<h2>Acumen 1.2.6 <span class="release-date">2011-03-17</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.5.0.1.</li>
+						<li class="new">CSS to hide grouped product options showing in <dfn>Wishlist</dfn>.</li>
+						<li class="update">Documentation in <code>readme.pdf</code> with new Magento installation guidelines.</li>
+						<li class="fix">Minified CSS broke attribute fallback in IE. Re-minified with better YUI-compressor.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/page.xml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.5">
+					<h2>Acumen 1.2.5 <span class="release-date">2011-03-11</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.5.0.1.</li>
+						<li class="new">Wishlist can save quantity wanted for each item.</li>
+						<li class="new">Remove buttons for items in mini-cart.</li>
+						<li class="new">Parameter to set count of <dfn>New Products</dfn> block.</li>
+						<li class="new">Multiple recipients option to <dfn>Send To Friend</dfn> module.</li>
+						<li class="new">Star ratings to <dfn>Featured Products</dfn> slider (same as <dfn>New Products</dfn> slider).</li>
+						<li class="new">Minified CSS file <code>base.min.css</code> that loads 32% faster.</li>
+						<li class="update">CSS uses global <code>input.qty</code> declaration.</li>
+						<li class="update">CSS uses global <code>a.btn-remove</code> declaration.</li>
+						<li class="update">Layout of <dfn>Address Book</dfn> was improved.</li>
+						<li class="update">Layout of <dfn>One Page Checkout</dfn> was improved.</li>
+						<li class="update">Merged <code>grid960_12_50_30.css</code> into <code>base.css</code> to improve performance.</li>
+						<li class="fix">Slider content was hidden when &lt; 3 items. Added <code>min-height</code> to <code>div.slider-box</code>.</li>
+						<li class="fix">Link to reviews was broken category list view.</li>
+						<li class="fix">User was unable to change password from account dashboard.</li>
+						<li class="fix"><dfn>Send To Friend</dfn> module could not send email.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+							/Catalog/Block/Navigation.php<br>
+							/Catalog/Model/Config.php<br>
+							/CatalogSearch/Block/Result.php<br>
+							/Checkout/Block/Links.php<br>
+							/Tag/Block/Product/Result.php<br>
+							/Wishlist/Block/Links.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/checkout.xml<br>
+							/downloadable.xml<br>
+							/page.xml<br>
+							/paypal.xml<br>
+							/review.xml<br>
+							/sales.xml<br>
+							/wishlist.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/bundle/catalog/product/view/type/bundle/option/checkbox.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/multi.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/radio.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/select.phtml<br>
+							/bundle/catalog/product/view/type/bundle/options.phtml<br>
+							/catalog/product/gravdept_featured.phtml<br>
+							<del>/catalog/product/price.phtml</del><br>
+							/catalog/product/view/addquantity.phtml<br>
+							/catalog/product/view/addtocart.phtml<br>
+							/catalog/product/view/type/grouped.phtml<br>
+							/checkout/cart.phtml<br>
+							/checkout/cart/item/default.phtml<br>
+							/checkout/cart/shipping.phtml<br>
+							/checkout/cart/sidebar/default.phtml<br>
+							/checkout/multishipping/addresses.phtml<br>
+							/checkout/multishipping/shipping.phtml<br>
+							/checkout/onepage/billing.phtml<br>
+							/checkout/onepage/progress.phtml<br>
+							<del>/checkout/onepage/review.phtml</del><br>
+							/checkout/onepage/review/info.phtml<br>
+							<del>/checkout/onepage/shipping_method/</del><br>
+							<del>/checkout/onepage/shipping_method/additional.phtml</del><br>
+							<del>/checkout/onepage/shipping_method/available.phtml</del><br>
+							/checkout/total/tax.phtml<br>
+							/customer/address/book.phtml<br>
+							/customer/address/edit.phtml<br>
+							/customer/form/edit.phtml<br>
+							/customer/form/newsletter.phtml<br>
+							/customer/form/register.phtml<br>
+							/giftmessages/inline.phtml<br>
+							/page/gravdept_checkout-onepage.phtml<br>
+							/review/customer/list.phtml<br>
+							/review/helper/summary.phtml<br>
+							/sales/order/items/renderer/default.phtml<br>
+							/sendfriend/send.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/base.min.css<br>
+							<del>/css/grid960_12_50_30.css</del>
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+							/config/cms-pages/home.txt
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.4">
+					<h2>Acumen 1.2.4 <span class="release-date">2010-12-17</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.2.0.</li>
+						<li class="new">Markup for non-anchored catalog category.</li>
+						<li class="new">CSS to make checkout terms more consistent with Acumen's style.</li>
+						<li class="new">Layouts invoking print styles include override.css.</li>
+						<li class="new">Subtle typographic improvements throughout.</li>
+						<li class="new">PayPal Express order review styling.</li>
+						<li class="update">CSS vendor extension fallback order.</li>
+						<li class="update">CSS italic cascading to H4 in <dfn>Multiple Address Checkout</dfn>'s review step.</li>
+						<li class="update">Product description no longer uses <code>nl2br()</code>. Potentially caused invalid HTML.</li>
+						<li class="update">Theme installation instructions in <code>ReadMe.pdf</code>.</li>
+						<li class="fix">CSS line-wrap for related products.</li>
+						<li class="fix">CSS uncleared float on <code>.ratings</code> in catalog grid.</li>
+						<li class="fix">Removed fixed <code>height:250px</code> from <code>.half-slider div.slider-box</code> cutting off line wrap.</li>
+						<li class="fix">Standardized group/bundle products <code>.price-box</code> variations.</li>
+						<li class="fix">Terms and conditions not showing during <dfn>One Page Checkout</dfn>.</li>
+						<li class="fix"><dfn>CMS Static Block</dfn> code in <code>gravdept_jquery_load</code> missing HTTPS declaration.</li>
+						<li class="fix">Product name causing price block to wrap on upsell template.</li>
+						<li class="fix">Contact form could not send. Also re-enabled telephone field.</li>
+						<li class="fix"><dfn>Add To Cart</dfn> button with <code>type="submit"</code> was adding items twice in IE.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+							/Wishlist/Block/Links.php
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/checkout.xml<br>
+							/cms.xml<br>
+							/customer.xml<br>
+							/newsletter.xml<br>
+							/page.xml<br>
+							/review.xml<br>
+							/sales/recurring_profile.xml<br>
+							/sales.xml<br>
+							/tag.xml<br>
+							/wishlist.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/bundle/catalog/product/view/type/bundle/option/checkbox.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/multi.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/radio.phtml<br>
+							/bundle/catalog/product/view/type/bundle/option/select.phtml<br>
+							/bundle/catalog/product/view/type/bundle/options.phtml<br>
+							/bundle/catalog/product/view/type/bundle.phtml<br>
+							/catalog/layer/state.phtml<br>
+							/catalog/navigation/left.phtml<br>
+							/catalog/product/list/toolbar.phtml<br>
+							/catalog/product/list/upsell.phtml<br>
+							/catalog/product/view/addtocart.phtml<br>
+							/catalog/product/view/description.phtml<br>
+							/catalog/product/view/tierprices.phtml<br>
+							<del>/catalog/product/view/type/configurable.phtml</del><br>
+							/catalog/product/view/type/default.phtml<br>
+							/catalog/product/view/type/grouped.phtml<br>
+							/catalog/product/view/type/options/configurable.phtml<br>
+							<del>/catalog/product/view/type/simple.phtml</del><br>
+							<del>/catalog/product/view/type/virtual.phtml</del><br>
+							/catalog/product/view.phtml<br>
+							/contacts/form.phtml<br>
+							/checkout/cart/noItems.phtml<br>
+							/checkout/cart/sidebar.phtml<br>
+							/checkout/cart/totals.phtml<br>
+							/checkout/multishipping/agreements.phtml<br>
+							/checkout/onepage/agreements.phtml<br>
+							/checkout/onepage/payment/methods.phtml<br>
+							/checkout/onepage/progress.phtml<br>
+							/checkout/onepage/review/items.phtml<br>
+							/checkout/onepage/review/totals.phtml<br>
+							/checkout/success.phtml<br>
+							/customer/review/list.phtml<br>
+							/customer/widget/name.phtml<br>
+							/giftmessage/inline.phtml<br>
+							/page/html/head.phtml<br>
+							/page/html/pager.phtml<br>
+							<del>/page/template/links.phtml</del><br>
+							/payment/form/cc.phtml<br>
+							<del>/payment/form/ccsave.phtml</del><br>
+							<del>/payment/form/purchaseorder.phtml</del><br>
+							<del>/payment/info/purchaseorder.phtml</del><br>
+							/paypal/payment/mark.phtml<br>
+							/paypal/express/review/details.php<br>
+							/paypal/express/review.phtml<br>
+							/review/form.phtml<br>
+							/sales/order/info.phtml<br>
+							/sales/order/view.phtml<br>
+							/shipping/tracing/popup.phtml<br>
+							/wishlist/view.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							<del>/img/icon/favicon.ico</del><br>
+							/js/opcheckout.js
+						</dd>
+						
+						<dt>{item-download-zip}</dt>
+						<dd>
+							/config/cms-static-blocks/gravdept_jquery_load.txt
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.3">
+					<h2>Acumen 1.2.3 <span class="release-date">2010-08-15</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.1.1.</li>
+						<li class="update">Rewrote Google Analytics handling. Supports AdWords and e-commerce tracking.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/googleanalytics.xml<br>
+							/page.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/page/1column.phtml<br>
+							/page/2columns-left.phtml<br>
+							/page/2columns-right.phtml<br>
+							/page/3columns.phtml<br>
+							/page/empty.phtml<br>
+							/page/gravdept_account-dashboard.phtml<br>
+							/page/gravdept_catalog-list.phtml<br>
+							/page/gravdept_catalog-product.phtml<br>
+							/page/gravdept_checkout-multiship.phtml<br>
+							/page/gravdept_checkout-onepage.phtml<br>
+							/page/html/head.phtml<br>
+							/page/popup.phtml
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.2">
+					<h2>Acumen 1.2.2 <span class="release-date">2010-08-13</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.1.1.</li>
+						<li class="update">Package/theme hierarchy changed to gravdept/acumen following new <a href="http://cl.ly/1x4j">guidelines</a>.</li>
+					</ul>
+				</li>
+				
+				<li id="v1.2.1">
+					<h2>Acumen 1.2.1 <span class="release-date">2010-07-17</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.1.0.</li>
+						<li class="update">CSS for order history payment information.</li>
+						<li class="fix">Misdirected HREF for <dfn>Write A Review</dfn> link on product pages with no reviews.</li>
+						<li class="fix">Cannot continue past credit card step during checkout, see <a href="http://bit.ly/8ZMoyr">forum</a>.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/gravdept/acumen/layout</dt>
+						<dd>
+							/page.xml
+						</dd>
+						
+						<dt>/app/design/frontend/gravdept/acumen/template</dt>
+						<dd>
+							/payment/info/default.phtml<br>
+							/review/helper/summary_short.phtml<br>
+							/review/helper/summary.phtml
+						</dd>
+						
+						<dt>/skin/frontend/gravdept/acumen</dt>
+						<dd>
+							/css/base.css
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.2.0">
+					<h2>Acumen 1.2.0 <span class="release-date">2010-06-22</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.1.0.</li>
+						<li class="new">CSS for condition when inventory is not empty but cannot fill order.</li>
+						<li class="update">Account Dashboard hides Billing Agreements and Recurring Profiles by default.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/code/local/Mage</dt>
+						<dd>
+							/CatalogSearch/Block/Result.php<br>
+							<del>/Sales/ (all)</del>
+						</dd>
+						
+						<dt>/app/design/frontend/base/acumen/layout</dt>
+						<dd>
+							/sales/billing_agreement.xml<br>
+							/sales/recurring_profile.xml
+						</dd>
+						
+						<dt>/app/design/frontend/base/acumen/template</dt>
+						<dd>
+							/sales/order/info.phtml<br>
+							/sales/order/print.phtml
+						</dd>
+						
+						<dt>/skin/frontend/base/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/js/opcheckout.js
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.1.0">
+					<h2>Acumen 1.1.0 <span class="release-date">2010-06-05</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.0.1.</li>
+						<li class="core">For Magento Community 1.4.0.0.</li>
+						<li class="new">CSS override stylesheet for customizations (for durable upgrades).</li>
+						<li class="new">Examples of internal/external linking in footer.</li>
+						<li class="update">Theme installation and documentation with clearer instructions.</li>
+						<li class="update">Developer namespace changed from <code>bsf</code> to <code>gravdept</code> (future consistency).</li>
+						<li class="update">jQuery 1.4.2 JavaScript Library.</li>
+						<li class="update">Google AJAX Libraries API now using HTTPS (no warnings in IE).</li>
+						<li class="fix">H1 alignment on catalog search pages.</li>
+						<li class="fix">Column count on catalog search results page (from four to three).</li>
+						<li class="fix"><dfn>Sign Up</dfn> link in header was not working for directory-based installs.</li>
+						<li class="fix">Newsletter input text compatibility with translation methods.</li>
+						<li class="fix">Loosely defined CSS <code>font-style</code> on account dashboard overview.</li>
+					</ul>
+					
+					<a href="#" onclick="gravdept_toggle(this); return false;">Toggle commits</a>
+					
+					<dl class="release-commits">
+						<dt>/app/design/frontend/base/acumen/layout</dt>
+						<dd>
+							/catalog.xml<br>
+							/catalogsearch.xml<br>
+							/checkout.xml<br>
+							/customer.xml<br>
+							/page.xml<br>
+							/tag.xml
+						</dd>
+						
+						<dt>/app/design/frontend/base/acumen/template</dt>
+						<dd>
+							/catalog/category/gravdept_title.phtml<br>
+							/catalog/category/view.phtml<br>
+							/catalog/product/gravdept_featured.phtml<br>
+							/catalog/product/list.phtml<br>
+							/catalogsearch/gravdept_title.phtml<br>
+							/newsletter/subscribe.phtml<br>
+							/page/gravdept_account-dashboard.phtml<br>
+							/page/gravdept_catalog-list.phtml<br>
+							/page/gravdept_catalog-product.phtml<br>
+							/page/gravdept_checkout-multiship.phtml<br>
+							/page/gravdept_checkout-onepage.phtml<br>
+							/page/html/footer.phtml<br>
+							/review/form.phtml
+						</dd>
+						
+						<dt>/skin/frontend/base/acumen</dt>
+						<dd>
+							/css/base.css<br>
+							/css/override.css<br>
+							/js/jquery.run.js
+						</dd>
+					</dl>
+				</li>
+				
+				<li id="v1.0.0">
+					<h2>Acumen 1.0.0 <span class="release-date">2010-04-21</span></h2>
+					
+					<ul class="release-notes">
+						<li class="core">For Magento Community 1.4.0.1.</li>
+						<li class="core">For Magento Community 1.4.0.0.</li>
+						<li class="new">Initial release.</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	function gravdept_next(elem) {
+	    do {
+	        elem = elem.nextSibling;
+	    } while (elem && elem.nodeType != 1);
+	    return elem;                
+	}
+	
+	function gravdept_toggle(elem) {
+		var nextElem = gravdept_next(elem);
+		
+		if (nextElem.style.display==='block') { nextElem.style.display='none'; }
+		else { nextElem.style.display='block'; }
+	}
+</script>

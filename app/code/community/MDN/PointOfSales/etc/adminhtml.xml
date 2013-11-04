@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <pointofsales translate="title" module="PointOfSales">
+                    <title>Point Of Sales</title>
+                    <children>
+                        <order_form translate="title" module="PointOfSales">
+                            <title>Order form</title>
+                            <action>PointOfSales/PointOfSales/StepOne</action>
+                        </order_form>
+                        <sales_report translate="title" module="PointOfSales">
+                            <title>Sales report</title>
+                            <action>PointOfSales/SalesReport/Grid</action>
+                        </sales_report>
+                                    <!--
+		                    <other_sales translate="title" module="PointOfSales">
+		                        <title>Other sales</title>
+		                        <action>PointOfSales/OtherSales/Grid</action>                		
+		                    </other_sales>
+                                    -->
+                        <customers translate="title" module="PointOfSales">
+                            <title>Customers</title>
+                            <action>PointOfSales/Customer/Grid</action>
+                        </customers>
+                        <products translate="title" module="PointOfSales">
+                            <title>Products</title>
+                            <action>PointOfSales/Product/Grid</action>
+                        </products>
+                    </children>
+                </pointofsales>
+            </children>
+        </sales>
+    </menu>
+        
+    <layout>
+        <updates>
+            <PointOfSales>
+                <file>PointOfSales.xml</file>
+            </PointOfSales>
+        </updates>
+    </layout>
+        
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <pointofsales translate="title" module="PointOfSales">
+                                <title>Point Of Sales</title>
+                                <children>
+                                    <order_form translate="title" module="PointOfSales">
+                                        <title>Order form</title>
+                                    </order_form>
+                                    <sales_report translate="title" module="PointOfSales">
+                                        <title>Sales report</title>
+                                    </sales_report>
+                                    <!--
+                                    <other_sales translate="title" module="PointOfSales">
+                                        <title>Other sales</title>
+                                    </other_sales>
+                                    -->
+                                    <customers translate="title" module="PointOfSales">
+                                        <title>Customers</title>
+                                    </customers>
+                                    <products translate="title" module="PointOfSales">
+                                        <title>Products</title>
+                                    </products>
+                                </children>
+                            </pointofsales>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <pointofsales translate="title" module="PointOfSales">
+                                        <title>Point Of Sales</title>
+                                    </pointofsales>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+	    
+    <translate>
+        <modules>
+            <MDN_PointOfSales>
+                <files>
+                    <default>MDN_PointOfSales.csv</default>
+                </files>
+            </MDN_PointOfSales>
+        </modules>
+    </translate>
+</config>
