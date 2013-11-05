@@ -110,7 +110,7 @@ class Beecoder_Beeshopy_Model_Api extends Mage_Catalog_Model_Api_Resource
   /* Used to know if module is installed*/
   public function checkModule()
   {
-    return array("api_version" => '3.0.0', "magento_version" => Mage::getVersion());
+    return array("api_version" => '3.0.1', "magento_version" => Mage::getVersion());
   }
 
   /*Auxiliar functions*/

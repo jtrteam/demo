@@ -1,5 +1,9 @@
 == Module changelog ==
 
+===  3.0.1 (10-04-13) ===
+
+* Packaging for enterprise version
+
 ===  3.0.0 (04-15-13) ===
 
 * Adding storeView hidden variable improving the promotions feature
