@@ -21,16 +21,7 @@
 	</div>
 	
 	<div id="footer-opener" class="grid-block">
-    	<div class="social-icons-box">
-    	    <h2><?php echo $this->__('Follow Us') ?></h2>
-    	    
-    	    <ul class="social-icons-list">
-    	    	<li><a class="facebook" href="http://facebook.com" title="<?php echo $this->__('Follow on Facebook') ?>"><?php echo $this->__('Facebook') ?></a></li>
-    	    	<li><a class="twitter" href="http://twitter.com" title="<?php echo $this->__('Follow on Twitter') ?>"><?php echo $this->__('Twitter') ?></a></li>
-    	    	<li><a class="googleplus" href="http://plus.google.com" title="<?php echo $this->__('Follow on Google Plus') ?>"><?php echo $this->__('Google Plus') ?></a></li>
-    	    	<li><a class="pinterest" href="http://pinterest.com" title="<?php echo $this->__('Follow on Pinterest') ?>"><?php echo $this->__('Pinterest') ?></a></li>
-    	    </ul>
-    	</div>
+    	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social_acumen')->toHtml() ?>
     	
 	    <div class="payment-icons-footer">
 	        <span><?php echo $this->__('Pay with') ?></span>
@@ -78,8 +69,8 @@
 		
 		<div class="grid_4">
 			<div class="switchers">
-				<?php echo $this->getChildHtml('store_switcher') ?>
-				<?php echo $this->getChildHtml('store_language') ?>
+				<?php //echo $this->getChildHtml('store_switcher') ?>
+				<?php //echo $this->getChildHtml('store_language') ?>
 				<?php echo $this->getChildHtml('store_currency') ?>
 			</div>
 			
