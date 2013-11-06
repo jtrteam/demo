@@ -5,11 +5,7 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
     public function render(Varien_Object $row) {
         //collect information
         $product = $row;
-        //check if product is saleable
-        if (!$product->isSalable())
-                return Mage::helper('adminshare')->__('Out of stock');
-
-
+       
         $productName  = $this->cleanTxt($row->getname());
         $productId    = $row->getId();
 		
