@@ -15,7 +15,7 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
         $productId    = $row->getId();
 		
 		//$productData  = Mage::getModel("catalog/product")->load($productId);
-		$productUrl   = $product->getProductUrl();
+		$productUrl   = $product->getUrlInStore();
 		$productImage = $this->_getValue($row);
 		
 		
