@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <promo>
+            <children>
+                <adminshare translate="title" module="adminshare">
+						<title>Product Share</title>
+						<sort_order>20</sort_order>
+						<action>adminshare/share/grid</action>
+				</adminshare>
+            </children>
+        </promo>
+    </menu>
+        
+    <layout>
+        <updates>
+            <PointOfSales>
+                <file>adminshare.xml</file>
+            </PointOfSales>
+        </updates>
+    </layout>
+        
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <promo>
+                        <children>
+                            <adminshare translate="title" module="adminshare">
+                                <title>Product Share</title>
+                            </adminshare>
+                        </children>
+                    </promo>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

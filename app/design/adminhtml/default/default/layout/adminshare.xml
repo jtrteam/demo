@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminshare_share_grid>
+        <reference name="content">
+            <block type="adminshare/share_grid" name="productgrid" template="adminshare/share/grid.phtml" />
+        </reference>
+    </adminshare_share_grid>
+</layout>
