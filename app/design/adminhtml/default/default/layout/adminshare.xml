@@ -2,7 +2,11 @@
 <layout version="0.1.0">
     <adminshare_share_grid>
         <reference name="content">
-            <block type="adminshare/share_grid" name="productgrid" template="adminshare/share/grid.phtml" />
+            <block type="adminshare/share_grid" name="productgrid" template="adminshare/share/grid.phtml">
+				<block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+			</block>
         </reference>
     </adminshare_share_grid>
 </layout>

@@ -11,4 +11,7 @@
     var closeModaleWindow = '<?php echo $this->__('Close') ?>';
 
 </script>
+<?php if( !Mage::app()->isSingleStoreMode() ): ?>
+<?php echo $this->getChildHtml('store_switcher');?>
+<?php endif;?>
 <?php echo $this->getGridParentHtml() ?>

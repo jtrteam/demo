@@ -5,7 +5,6 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
     public function render(Varien_Object $row) {
         //collect information
         $product = $row;
-        $store = mage::helper('adminshare')->getStore();		
         //check if product is saleable
         if (!$product->isSalable())
                 return Mage::helper('adminshare')->__('Out of stock');
@@ -14,8 +13,16 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
         $productName  = $this->cleanTxt($row->getname());
         $productId    = $row->getId();
 		
-		//$productData  = Mage::getModel("catalog/product")->load($productId);
-		$productUrl   = $product->getUrlInStore();
+		$productData  = Mage::getModel("catalog/product")->load($productId);
+		
+		$storeId = $this->getRequest()->getParam('store');
+		if ( $storeId > 0 ) {			
+			$productUrl   = Mage::getModel('core/store')->load($storeId)->getUrl($productData->getUrlPath());
+        }
+		else {
+			$productUrl   = str_replace('/admin/','/',Mage::getUrl($product->getUrlPath()));
+		}
+		
 		$productImage = $this->_getValue($row);
 		
 		
