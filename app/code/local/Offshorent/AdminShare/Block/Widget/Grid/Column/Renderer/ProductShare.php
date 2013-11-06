@@ -16,7 +16,8 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
 			$productUrl   = Mage::getModel('core/store')->load($storeId)->getUrl($productData->getUrlPath());
         }
 		else {
-			$productUrl   = str_replace('/admin/','/',Mage::getUrl($product->getUrlPath()));
+			$storeId  = 1;
+			$productUrl   = Mage::getModel('core/store')->load($storeId)->getUrl($productData->getUrlPath());
 		}
 		
 		$productImage = $this->_getValue($row);
