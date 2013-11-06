@@ -5,7 +5,7 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
     public function render(Varien_Object $row) {
         //collect information
         $product = $row;
-        //$store = mage::helper('adminshare')->getStore();		
+        $store = mage::helper('adminshare')->getStore();		
         //check if product is saleable
         if (!$product->isSalable())
                 return Mage::helper('adminshare')->__('Out of stock');
@@ -14,9 +14,9 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
         $productName  = $this->cleanTxt($row->getname());
         $productId    = $row->getId();
 		
-		$productData  = Mage::getModel("catalog/product")->load($productId);
-		$productUrl   = $productData->getProductUrl();
-		$productImage = Mage::helper('catalog/image')->init($productData, 'image')->resize(265);
+		//$productData  = Mage::getModel("catalog/product")->load($productId);
+		$productUrl   = $product->getProductUrl();
+		$productImage = $this->_getValue($row);
 		
 		
         $skinUrl = $this->getSkinUrl('images/adminshare/');
@@ -50,6 +50,14 @@ class Offshorent_AdminShare_Block_Widget_Grid_Column_Renderer_ProductShare exten
 
     public function cleanTxt($txt) {
         return addslashes(str_replace('"', ' ', $txt));
+    }
+	
+	protected function _getValue(Varien_Object $row)
+    {      
+        $val = $row->getData('image');
+        $val = str_replace("no_selection", "", $val);
+        $url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
+        return $url;
     }
 
 }

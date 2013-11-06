@@ -26,16 +26,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
         $store = mage::getModel('core/store')->load($storeId); //$this->_getStore();
         
         $collection = Mage::getModel('catalog/product')->getCollection()
-            ->addAttributeToSelect('sku')
-            ->addAttributeToSelect('name')
-            ->addAttributeToSelect('attribute_set_id')
-            ->addAttributeToSelect('type_id')
-            ->addAttributeToSelect('ordered_qty')
-            ->addAttributeToSelect('tax_class_id')            
-            ->addAttributeToSelect('special_from_date')
-            ->addAttributeToSelect('special_to_date')
-            ->addAttributeToFilter('type_id', 'simple')
-            ->addAttributeToFilter('status', 1);
+            ->addAttributeToSelect('*');
                 
        
         if ($store->getId()) {
@@ -167,6 +158,15 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
                 'header'=> Mage::helper('catalog')->__('SKU'),
                 'width' => '80px',
                 'index' => 'sku',
+        ));
+		
+		$this->addColumn('type',
+            array(
+                'header'=> Mage::helper('catalog')->__('Type'),
+                'width' => '70px',
+                'index' => 'type_id',
+                'type'  => 'options',
+                'options' => Mage::getModel('catalog/product_type')->getOptionArray(),
         ));
 
         $this->addColumn('visibility',
