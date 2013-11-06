@@ -13,7 +13,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
 
     protected function _getStore()
     {
-        $storeId = Mage::getSingleton('admin/session')->getUser()->getstore_id();
+        $storeId = $this->getRequest()->getParam('store');
         return Mage::app()->getStore($storeId);
     }
 
@@ -45,7 +45,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
         }
         
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
-		/*$role = Mage::getSingleton('aitpermissions/role');
+		$role = Mage::getSingleton('aitpermissions/role');
 		if($role->isPermissionsEnabled()){
 				$getCurrentUserRole = Mage::getSingleton('admin/session')->getUser()->getRole()->getRoleId();
 				$bCanEditOwn = Mage::getModel('aitpermissions/advancedrole')->canEditOwnProductsOnly($getCurrentUserRole);
@@ -107,7 +107,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
 				
 				 }
 		 }
-		*/
+		
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
 		
 		
