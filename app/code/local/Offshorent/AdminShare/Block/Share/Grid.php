@@ -6,9 +6,9 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
     {
         parent::__construct();
         $this->setId('ProductGrid');
-        $this->setDefaultSort('updated_at','desc');
         $this->_parentTemplate = $this->getTemplate();
         $this->setSaveParametersInSession(true);
+        $this->setDefaultSort('updated_at');
     }
 
     protected function _getStore()
@@ -169,6 +169,12 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
                 'index' => 'status',
                 'type'  => 'options',
                 'options' => Mage::getSingleton('catalog/product_status')->getOptionArray(),
+        ));
+		
+		$this->addColumn('updated_at',
+            array(
+                'header'=> Mage::helper('catalog')->__('Updated At'),
+                'index' => 'updated_at',
         ));
 		
 		$this->addColumn('action', array(
