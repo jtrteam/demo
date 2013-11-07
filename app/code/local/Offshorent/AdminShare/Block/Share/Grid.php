@@ -104,7 +104,6 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
 		   Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG
 		);
 		$collection->addAttributeToFilter('visibility', $visibility);
-		$collection->printQueryLog(true);
         $this->setCollection($collection);
 
         parent::_prepareCollection();
