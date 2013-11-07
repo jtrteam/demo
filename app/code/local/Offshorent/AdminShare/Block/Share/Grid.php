@@ -20,7 +20,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
     protected function _prepareCollection()
     {
     	
-    	$storeId = Mage::getSingleton('admin/session')->getUser()->getstore_id();
+    	$storeId   = $this->getRequest()->getParam('store');
         $websiteId = Mage::getModel('core/store')->load($storeId)->getWebsiteId();
 
         $store = mage::getModel('core/store')->load($storeId); //$this->_getStore();
@@ -32,17 +32,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
         if ($store->getId()) {
             $collection->addStoreFilter($store);
             $collection->joinAttribute('custom_name', 'catalog_product/name', 'entity_id', null, 'inner', $storeId);
-            $collection->joinAttribute('status', 'catalog_product/status', 'entity_id', null, 'inner', $storeId);
-            $collection->joinAttribute('visibility', 'catalog_product/visibility', 'entity_id', null, 'inner', $storeId);
-            $collection->joinAttribute('price', 'catalog_product/price', 'entity_id', null, 'left', $storeId);
-            $collection->joinAttribute('special_price', 'catalog_product/special_price', 'entity_id', null, 'left', $storeId);
-        }
-        else {
-            $collection->addAttributeToSelect('price');
-            $collection->addAttributeToSelect('special_price');
-            $collection->addAttributeToSelect('status');
-            $collection->addAttributeToSelect('visibility');
-        }
+        }        
         
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
 		$role = Mage::getSingleton('aitpermissions/role');
@@ -109,8 +99,12 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
 		 }
 		
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
-		
-		
+		$visibility = array(
+		   Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
+		   Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG
+		);
+		$collection->addAttributeToFilter('visibility', $visibility);
+		$collection->addAttributeToSort('updated_at', 'DESC');
         $this->setCollection($collection);
 
         parent::_prepareCollection();
@@ -167,15 +161,6 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
                 'index' => 'type_id',
                 'type'  => 'options',
                 'options' => Mage::getModel('catalog/product_type')->getOptionArray(),
-        ));
-
-        $this->addColumn('visibility',
-            array(
-                'header'=> Mage::helper('catalog')->__('Visibility'),
-                'width' => '70px',
-                'index' => 'visibility',
-                'type'  => 'options',
-                'options' => Mage::getModel('catalog/product_visibility')->getOptionArray(),
         ));
 
         $this->addColumn('status',
