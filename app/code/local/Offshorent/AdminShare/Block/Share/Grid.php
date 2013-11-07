@@ -6,7 +6,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
     {
         parent::__construct();
         $this->setId('ProductGrid');
-        $this->setDefaultSort('entity_id');
+        $this->setDefaultSort('updated_at','desc');
         $this->_parentTemplate = $this->getTemplate();
         $this->setSaveParametersInSession(true);
     }
@@ -104,7 +104,7 @@ class Offshorent_AdminShare_Block_Share_Grid extends Mage_Adminhtml_Block_Widget
 		   Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG
 		);
 		$collection->addAttributeToFilter('visibility', $visibility);
-		$collection->addAttributeToSort('updated_at', 'DESC');
+		$collection->printQueryLog(true);
         $this->setCollection($collection);
 
         parent::_prepareCollection();
