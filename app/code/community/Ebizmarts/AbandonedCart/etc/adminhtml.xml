@@ -40,6 +40,19 @@
         <resources>
             <admin>
                 <children>
+					<newsletter>
+						<children>
+							<magemonkey>
+								<children>
+									<ebizmarts_emails translate="title" module="ebizmarts_abandonedcart">
+										<title>Emails Sent</title>
+										<sort_order>810</sort_order>
+										<action>adminhtml/abandonedmails/index</action>
+									</ebizmarts_emails>
+								</children>
+							</magemonkey>
+						</children>
+					</newsletter>
                     <system>
                         <children>
                             <config>
