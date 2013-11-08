@@ -32,9 +32,9 @@
         
     <layout>
         <updates>
-            <PointOfSales>
+            <adminshare>
                 <file>adminshare.xml</file>
-            </PointOfSales>
+            </adminshare>
         </updates>
     </layout>
         
