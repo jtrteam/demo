@@ -20,3 +20,232 @@
  * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+
+/* Override .super in headerbar */
+.header-right .super {
+	line-height: normal;
+	margin-bottom: 0.5em;
+}
+
+/* Some tighter positioning for second level menu items */
+#nav li.over ul li.over ul { left:186px; }
+#nav ul ul  {top:13px; }
+
+#customerPhoto {
+	float:right;
+	margin-left: 50px;
+	box-shadow: 0px 0px 5px #000;
+}
+
+.float-right {
+	float: right;
+}
+.float-left {
+	float: left;
+}
+.clearBoth {
+	clear: both;
+}
+#content .entry-edit .entry-edit-head, #content dl.accordion dt, .entry-edit .entry-edit-head {
+	padding: 6px 10px;
+background: #72bcbf; /* Old browsers */
+background: -moz-linear-gradient(top, #72bcbf 0%, #166b70 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#72bcbf), color-stop(100%,#166b70)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #72bcbf 0%,#166b70 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #72bcbf 0%,#166b70 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #72bcbf 0%,#166b70 100%); /* IE10+ */
+background: linear-gradient(to bottom, #72bcbf 0%,#166b70 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72bcbf', endColorstr='#166b70',GradientType=0 ); /* IE6-9 */
+}
+
+.qndSocial {
+	padding-top: 20px;
+	height: 400px;
+	overflow-y: scroll;
+	width: 550px;
+}
+
+dl.accordion dt {
+	margin-top: 0px;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+	border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+.recommended-item {
+	width: 20%;
+	height: 250px;
+	position: relative;
+	border: 1px solid #CCC;
+	float: left;
+	margin-right: 10px
+}
+.recommended-item img {
+	margin: 0 auto;
+	display: block;
+}
+.recommended-item-info {
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+}
+.recommended-item-price {
+	color: #888888;
+	font-size: 16px;
+}
+
+
+
+/* Twitter timeline css */
+#timeline {
+	width: 522px;
+	border-radius: 6px;
+	color: #333;
+	background: #FFF;
+}
+#timeline .content-header {
+	border: 1px solid rgba(0,0,0,0.1);
+	border-bottom-width: 0;
+	background-clip: padding-box;
+	border-radius: 6px 6px 0px 0px;
+}
+#timeline .content-header .header-inner {
+	background: #FFF;
+	border-bottom: 1px solid #E8E8E8;
+	border-radius: 5px 5px 0px 0px;
+	min-height: 20px;
+	padding: 12px;
+}
+#timeline h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+}
+#timeline h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    margin: 0;
+    text-rendering: optimizelegibility;
+}
+
+#timeline .stream, .stream-items {
+    list-style: none outside none;
+    margin-left: 0;
+    position: relative;
+}
+
+#timeline .stream, .stream-items {
+    list-style: none outside none;
+    margin-left: 0;
+    position: relative;
+}
+#timeline ul, ol {
+    padding: 0;
+}
+#timeline .in-reply-to > ol > li, li.stream-item, .tweets-wrapper li, .recent-tweets li {
+    line-height: inherit;
+}
+#timeline .stream-item, #timeline .unfocusable-stream-item {
+    background: none repeat scroll 0 0 padding-box #FFFFFF;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#timeline .stream, #timeline .stream-items {
+    list-style: none outside none;
+}
+#timeline .account, #timeline .interest-category, #timeline.list, #timeline .saved-search, #timeline .tweet, #timeline .app, #timeline .discover-item {
+    border-bottom: 1px solid #E8E8E8;
+    min-height: 51px;
+    padding: 9px 12px;
+    position: relative;
+}
+#timeline .dogear {
+    display: none;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+}
+#timeline i, .icon {
+    background-image: url("../img/twitter_web_sprite_icons.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: text-top;
+}
+#timeline .stream-item .content, .permalink-tweet .content {
+    margin-left: 58px;
+}
+#timeline .stream-item-header .account-group {
+    color: #999999;
+}
+#timeline .stream-item-header .avatar, #timeline .permalink-header .avatar {
+    float: left;
+/*    margin-left: -58px;	*/
+    margin-top: 3px;
+}
+#timeline .avatar {
+    -moz-force-broken-image-icon: 1;
+    border-radius: 5px;
+    height: 48px;
+    width: 48px;
+}
+#timeline .username, .time, .time a, .metadata, .metadata button.btn-link, .metadata a {
+    color: #999999;
+    font-size: 12px;
+}
+#timeline .tweet .time {
+    color: #BBBBBB;
+    float: right;
+    margin-top: 1px;
+    position: relative;
+}
+#timeline p {
+	margin: 0;
+}
+#timeline a {
+	color: #0084B4;
+}
+
+.stream .stream-item-footer {
+    position: relative;
+}
+.tweet .stream-item-footer {
+    font-size: 12px;
+    padding-top: 3px;
+}
+
+#timeline .with-icn i {
+    margin-right: 1px;
+}
+.badge-retweeted {
+    background-position: -60px -350px;
+}
+.badge-promoted, .badge-top, .badge-political, .badge-favorited, .badge-tweet-alert, .badge-retweeted {
+    background-color: rgba(0, 0, 0, 0);
+    height: 12px;
+    vertical-align: -1px;
+    width: 16px;
+}
+#timeline i, #timeline .icon {
+    background-image: url("../img/twitter_web_sprite_icons.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: text-top;
+}
+#timeline .persistent-inline-actions .tweet .tweet-actions {
+    display: inline-block;
+    float: right;
+}
+#timeline .stream .stream-item-footer .tweet-actions {
+    padding-left: 5px;
+    position: absolute;
+    right: 1px;
+	clear:both;
+}
+#timeline .tweet-actions li {
+    float: left;
+}
+#timeline .action-del-container, .action-more-container {
+	display: none;
+}

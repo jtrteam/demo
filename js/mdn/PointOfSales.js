@@ -164,6 +164,14 @@ function selectProduct(productId, productName, priceExclTax, taxRate, priceInclT
     td_product.innerHTML = productName;
     td_product.className = 'pos_col_product';
     newTR.appendChild (td_product);
+
+/* quickNdirty: add column for product photo */
+
+	var td_product = document.createElement('td');
+    td_product.innerHTML = '<img src="' + imageURL + 'productStub.png" height="40">';
+    td_product.className = 'pos_col_photo';
+    newTR.appendChild (td_product);
+/* /quickNdirty */
 	
     var td_qty = document.createElement('td');
     td_qty.innerHTML = '<img class="img_qty" onclick="decreaseQty(' + productId + ')" src="' + urlimage + 'decrease.gif">';
@@ -199,7 +207,7 @@ function selectProduct(productId, productName, priceExclTax, taxRate, priceInclT
     //shipped
     var td_shipped = document.createElement('td');
     td_shipped.innerHTML = '<input type="checkbox" name="shipped_' + productId + '" id="shipped_' + productId + '" value="1" '+checked+'>';
-    td_shipped.className = 'a-center';
+    td_shipped.className = 'a-center no-display';
     newTR.appendChild (td_shipped);
 	
     //delete
@@ -754,8 +762,8 @@ function selectPaymentMethod(method)
         if (document.getElementById('img_payment_' + currentSelectedMethod))
             document.getElementById('img_payment_' + currentSelectedMethod).className = 'payment_method';
     }
-
-    document.getElementById('img_payment_' + method).className = 'payment_method_selected';
+	if(document.getElementById('img_payment_'+method) != undefined)
+	    document.getElementById('img_payment_' + method).className = 'payment_method_selected';
 
     document.getElementById('paymentmethod').value = method;
 }
@@ -904,3 +912,5 @@ function calculateChange()
 	else
 		document.getElementById('cc_change').innerHTML = 'Error';
 }
+
+

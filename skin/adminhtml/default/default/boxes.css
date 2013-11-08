@@ -417,11 +417,11 @@ button span                     { line-height:1.35em; background-repeat:no-repea
 button.delete,
 button.save,
 button.add                      { padding-left:6px; }
-button.cancel span,
-button.delete span,
-button.save span,
-button.add span,
-button.back span,
+button.cancel span span span,
+button.delete span span span,
+button.save span span span,
+button.add span span span,
+button.back span span span,
 button.add-image span,
 button.add-widget span { padding-left:20px; }
 button.back { border-color:#ccc #aaa #aaa #ccc; background-color:#fff; background-image:url(images/btn_back_bg.gif); color:#555; }
@@ -432,10 +432,10 @@ button.cancel:hover,
 button.delete:hover { background-image:url(images/cancel_btn_over_bg.gif); }
 button.cancel:active,
 button.delete:active { background-image:url(images/cancel_btn_active_bg.gif); background-color:#e0612f; }
-button.cancel span,
-button.delete span { background-image:url(images/cancel_btn_icon.gif); }
-button.add span     { background-image:url(images/add_btn_icon.gif); }
-button.save span    { background-image:url(images/save_btn_icon.gif); }
+button.cancel span span span,
+button.delete span span span{ background-image:url(images/cancel_btn_icon.gif); }
+button.add span span span    { background-image:url(images/add_btn_icon.gif); }
+button.save span span span  { background-image:url(images/save_btn_icon.gif); }
 button.show-hide span { background-image:url(images/btn_show-hide_icon.gif); padding-left:26px; }
 button.add-image span { background-image:url(images/btn_add-image_icon.gif); }
 button.add-widget span { background-image:url(images/btn_add-widget_icon2.gif); padding-left:24px; }

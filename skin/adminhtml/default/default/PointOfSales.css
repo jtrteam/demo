@@ -23,11 +23,19 @@
 	margin-left: 30px;
 }
 
+#tbl_products td {
+	vertical-align: middle;
+}
+
 .pos_col_product
 {
 	align: left;
 	text-align: left;
 	font-size: 18px;
+}
+
+.pos_col_photo {
+	text-align: center;
 }
 
 .pos_col_qty

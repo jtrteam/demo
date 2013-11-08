@@ -36,8 +36,11 @@ $lastLoginDateStore = $this->getStoreLastLoginDate();
 $createDateAdmin    = $this->getCreateDate();
 $createDateStore    = $this->getStoreCreateDate();
 ?>
+
 <div class="entry-edit">
     <div class="entry-edit-head"><h4 class="icon-head head-customer-view"><?php echo Mage::helper('customer')->__('Personal Information') ?></h4></div>
+
+
     <fieldset>
         <table cellspacing="2" class="box-left">
             <tr>
@@ -73,10 +76,65 @@ $createDateStore    = $this->getStoreCreateDate();
                 <td><?php echo $this->getGroupName() ?></td>
             </tr>
         </table>
-        <address class="box-right">
+ <!-- quickNdirty -->
+	<img id="customerPhoto" customer="<?php echo $this->escapeHtml(Mage::registry('current_customer')->getFirstname()); ?>">
+ 
+      <address class="float-right">
             <strong><?php echo $this->__('Default Billing Address') ?></strong><br/>
             <?php echo $this->getBillingAddressHtml() ?>
-        </address>
+      </address>
+
+	<div class="qndSocial clearBoth">
+		<img src="http://localhost/whlly/media/twitter.png">	
+	</div>
+		
     </fieldset>
+</div>
+
+<!-- quickNdirty -->
+<div class="entry-edit">
+	<div class="entry-edit-head"><h4 class="icon-head">Recommended products</h4></div>
+	<fieldset>
+		<div class="recommended-item">
+			<img src="http://demo.whlly.com/media/catalog/product/cache/1/small_image/110x110/9df78eab33525d08d6e5fb8d27136e95/m/i/mini_mini_chuck.png">
+			<div class="recommended-item-info">
+				<h4>Mini Mini Chuck</h4>
+				<p class="recommended-item-desc">The Mini-Mini is simply the most effective product for reduced diameter machining<p>
+				<p class="recommended-item-price float-right">&euro; 79,50<p>
+				<p class="float-left"><a href="http://demo.whlly.com/default/sub-2/mini-mini-chuck.html">Go to item</a></p>
+			</div>
+		</div>
+
+		<div class="recommended-item">
+			<img src="http://demo.whlly.com/media/catalog/product/cache/1/small_image/110x110/9df78eab33525d08d6e5fb8d27136e95/m/u/multi_lock.png">
+			<div class="recommended-item-info">
+				<h4>Multi-Lock Milling</h4>
+				<p class="recommended-item-desc">Our latest generation Multi-Lock has a completely re-designed internal taper and external nut mechanism.</p>
+				<p class="recommended-item-price float-right">&euro; 105,95<p>
+				<p class="float-left"><a href="http://demo.whlly.com/default/sub-2/multi-lock-milling.html">Go to item</a></p>
+			</div>
+		</div>
+
+		<div class="recommended-item">
+			<img src="http://demo.whlly.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/t/i/titan_x.png">
+			<div class="recommended-item-info">
+				<h4>TiTAN X-Treme Solution</h4>
+				<p class="recommended-item-desc">X-Treme features a patented 'Sure-Lock' quad clamp system to provide positive locking &amp; restraint ...<p>
+				<p class="recommended-item-price float-right">&euro; 75,25<p>
+				<p class="float-left"><a href="http://localhost/whlly/default/titan-x-treme-solution.html">Go to item</a></p>
+			</div>
+		</div>
+
+		<div class="recommended-item">
+			<img src="http://demo.whlly.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/v/c/vc_holder.png">
+			<div class="recommended-item-info">
+				<h4>VC Holder</h4>
+				<p class="recommended-item-desc">Nikken's VC Holders are a variant developed from our hugely successful Slim Chuck with the emphasis placed more on the demands and requirements for milling ...<p>
+				<p class="recommended-item-price float-right">&euro; 99,95<p>
+				<p class="float-left"><a href="http://demo.whlly.com/default/sub-2/vc-holder.html">Go to item</a></p>
+			</div>
+		</div>
+
+	</fieldset>
 </div>
 <?php echo $this->getChildHtml('', true, true); ?>

@@ -174,6 +174,16 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
         
         //if barcode feature enabled, add column
         $barcodeEnabled = mage::getStoreConfig('pointofsales/barcode_scanner/enable');
+
+		$this->addColumn('photo',
+			array(
+				'header'=> Mage::helper('PointOfSales')->__('Photo'),
+				'index'=> 'photo',
+				'sortable'=> false,
+				'filter'=> false,
+				'bliep'=> 'miep'
+		));
+
         if ($barcodeEnabled)
         {
             $this->addColumn('barcode',
@@ -207,8 +217,8 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
             ->setEntityTypeFilter(Mage::getModel('catalog/product')->getResource()->getTypeId())
             ->load()
             ->toOptionHash();
-
-        $this->addColumn('set_name',
+/** quickNdirty **/
+/*        $this->addColumn('set_name',
             array(
                 'header'=> Mage::helper('catalog')->__('Attrib. Set Name'),
                 'width' => '100px',
@@ -216,7 +226,7 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
                 'type'  => 'options',
                 'options' => $sets,
         ));
-
+*/
         $this->addColumn('sku',
             array(
                 'header'=> Mage::helper('catalog')->__('SKU'),
@@ -242,8 +252,8 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
             'filter' => false,
             'sortable' => false
         ));
-
-        $this->addColumn('visibility',
+/** quickNdirty **/
+/*        $this->addColumn('visibility',
             array(
                 'header'=> Mage::helper('catalog')->__('Visibility'),
                 'width' => '70px',
@@ -260,7 +270,7 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
                 'type'  => 'options',
                 'options' => Mage::getSingleton('catalog/product_status')->getOptionArray(),
         ));
-
+*/
             
         $this->addColumn('action', array(
             'header' => Mage::helper('sales')->__('Action'),
