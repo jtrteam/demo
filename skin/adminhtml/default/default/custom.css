@@ -72,6 +72,7 @@ dl.accordion dt {
 }
 
 .recommended-item {
+	min-width: 200px;
 	width: 20%;
 	height: 350px;
 	position: relative;
