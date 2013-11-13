@@ -13,7 +13,7 @@ if(table != undefined){
 
 //****************************
 // Add customer image in main grid of Customers/ManageCustomers
-if((table = document.getElementById('customerGrid_table')) != undefined){
+/*if((table = document.getElementById('customerGrid_table')) != undefined){
 	var tbody = table.getElementsByTagName('tbody')[0];
 	var trs = tbody.getElementsByTagName('tr');
 	for(i=0;i<trs.length;i++){
@@ -55,3 +55,4 @@ if((img = document.getElementById('customerPhoto')) != undefined){
 		}
 	img.src = imageURL+'/'+url+'.jpg';
 }
+*/
