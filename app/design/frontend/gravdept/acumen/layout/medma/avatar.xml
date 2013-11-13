@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+    
+    <default>
+        <reference name="head">
+            <!--
+              More better way will be to add jquery in page.xml before prototype.js
+              It should be like: 
+              jquery.js
+              noconflict.js(to avoid conflicts with prototype, just contains $j = jquery.noConflict() )
+          	
+          	<action method="addJs">
+              <script>jquery/medma/avatar/jQuery.js</script>
+          	</action>-->
+            <action method="addCss">
+                <stylesheet>medma/avatar/avatar.css</stylesheet>
+            </action>
+        </reference>
+        
+      <!--  <reference name="header">
+            <action method="setTemplate">
+                <template>avatar/page/html/header.phtml</template>
+            </action>
+            <block 
+                type="avatar/header_avatar" 
+                name="header_avatar" 
+                template="avatar/header/avatar.phtml"
+            />
+        </reference>-->
+    </default>
+    
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="avatar">
+                <name>set_avatar</name>
+                <path>avatar/customer/form</path>
+                <label>My Avatar</label>
+            </action>
+        </reference>
+    </customer_account>
+    
+    <avatar_customer_form>
+        <label>My Avatar</label>
+        <update handle="customer_account"/>
+				<reference name="head">
+					
+				</reference>
+        <reference name="my.account.wrapper">
+            <block 
+                    type="avatar/header_avatar" 
+                    name="avatar_customer_form" 
+                    template="avatar/customer/form.phtml" 
+             />
+        </reference>
+        <reference name="root">
+            <action 
+                    method="setHeaderTitle" 
+                    translate="title" 
+                    module="avatar">
+                    <title>My Avatar</title>
+            </action>
+        </reference>
+    </avatar_customer_form>
+    
+</layout>
