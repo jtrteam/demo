@@ -77,7 +77,7 @@ $createDateStore    = $this->getStoreCreateDate();
             </tr>
         </table>
       <!-- Customer Avatar -->
-      <?php $path = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). 'medma_avatar/'.$this->getMediaAvatar(); ?> 
+      <?php $path = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). 'medma_avatar/'.Mage::registry('current_customer')->getMediaAvatar(); ?> 
 	    <img id="customerPhoto" alt="<?php echo $this->escapeHtml(Mage::registry('current_customer')->getFirstname()); ?>" src="<?php echo $path; ?>">
       
     <!-- Customer Avatar -->
