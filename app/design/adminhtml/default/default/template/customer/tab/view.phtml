@@ -76,18 +76,20 @@ $createDateStore    = $this->getStoreCreateDate();
                 <td><?php echo $this->getGroupName() ?></td>
             </tr>
         </table>
- <!-- quickNdirty -->
-	<img id="customerPhoto" customer="<?php echo $this->escapeHtml(Mage::registry('current_customer')->getFirstname()); ?>">
- 
+      <!-- Customer Avatar -->
+      <?php $path = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). 'medma_avatar/'.$this->getMediaAvatar(); ?> 
+	    <img id="customerPhoto" alt="<?php echo $this->escapeHtml(Mage::registry('current_customer')->getFirstname()); ?>" src="<?php echo $path; ?>">
+      
+    <!-- Customer Avatar -->
       <address class="float-right">
             <strong><?php echo $this->__('Default Billing Address') ?></strong><br/>
             <?php echo $this->getBillingAddressHtml() ?>
       </address>
-
+   <!-- quickNdirty -->
 	<div class="qndSocial clearBoth">
 		<img src="http://demo.whlly.com/media/twitter.png">	
 	</div>
-		
+	<!-- quickNdirty -->	
     </fieldset>
 </div>
 
