@@ -38,6 +38,11 @@
             <avatar>
                 <class>Medma_Avatar_Block</class>
             </avatar>
+			<adminhtml>
+                <rewrite>
+                    <customer_grid>Medma_Avatar_Block_Adminhtml_Grid</customer_grid>
+                </rewrite>
+            </adminhtml>
         </blocks>
        
        
