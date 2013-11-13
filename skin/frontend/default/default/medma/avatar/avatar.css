@@ -1,0 +1,18 @@
+/* 
+ Medma_Avatar Module
+*/
+
+.avatar-block{
+    float: right;
+    width:auto;
+    height:auto;
+    border:1px solid gray;
+    margin-left: 8px;
+}
+.preview-wrapper{
+    float:left;
+    border:1px solid grey;
+    width:auto;
+    height:auto;
+}
+

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+Medma_Avatar Module
+-->
+<config>
+    <sections>					
+        <customer>
+            <groups>
+                <avatar_group translate="label">
+                    <label>Avatar Settings</label>
+                    <comment>Set dimensions for the avatar block.</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <avatar_field_width translate="label tooltip comment">
+                            <label>Avatar Width</label>
+                            <comment>Enter width</comment>
+                            <!--tooltip>Field ToolTip</tooltip-->
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </avatar_field_width>
+                        <avatar_field_height translate="label tooltip comment">
+                            <label>Avatar Height</label>
+                            <comment>Enter height</comment>
+                            <!--tooltip>Field ToolTip</tooltip-->
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </avatar_field_height>
+                    </fields>
+                </avatar_group>
+            </groups>
+        </customer>
+    </sections>
+</config>

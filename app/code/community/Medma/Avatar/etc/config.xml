@@ -1,0 +1,66 @@
+<!--
+ Medma_Avatar Module
+-->
+<config>
+    <modules>
+        <Medma_Avatar>
+            <version>0.1.0</version>
+        </Medma_Avatar>
+    </modules>
+    
+    <frontend>
+        <routers>
+            <avatar>
+                <use>standard</use>
+                <args>
+                    <module>Medma_Avatar</module>
+                    <frontName>avatar</frontName>
+                </args>
+            </avatar>
+        </routers>
+        
+        <layout>
+            <updates>
+                <avatar>
+                    <file>medma/avatar.xml</file>
+                </avatar>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <avatar>
+                <class>Medma_Avatar_Helper</class>
+            </avatar>
+        </helpers>
+
+        <blocks>
+            <avatar>
+                <class>Medma_Avatar_Block</class>
+            </avatar>
+        </blocks>
+       
+       
+        <resources>
+            <avatar_setup>
+                <setup>
+                    <module>Medma_Avatar</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </avatar_setup>
+            <avatar_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </avatar_write>
+            <avatar_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </avatar_read>
+        </resources>
+        
+    </global>
+</config>
