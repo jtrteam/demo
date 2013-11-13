@@ -20,12 +20,12 @@ class Medma_Avatar_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Customer_Gr
 			'filter'	=> false,
 			'width'		=> 100
 		),'entity_id');
+		return parent::_prepareColumns();
 		unset($this->_columns['group']);
 		unset($this->_columns['Telephone']);
 		unset($this->_columns['billing_postcode']);
 		unset($this->_columns['billing_region']);
 		unset($this->_columns['customer_since']);
-        return $this;
     }
 
    
