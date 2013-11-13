@@ -88,11 +88,11 @@ class Mage_Adminhtml_Block_Customer_Grid extends Mage_Adminhtml_Block_Widget_Gri
             'index'     => 'email'
         ));
 
-        $groups = Mage::getResourceModel('customer/group_collection')
+      /*  $groups = Mage::getResourceModel('customer/group_collection')
             ->addFieldToFilter('customer_group_id', array('gt'=> 0))
             ->load()
             ->toOptionHash();
-/*
+
         $this->addColumn('group', array(
             'header'    =>  Mage::helper('customer')->__('Group'),
             'width'     =>  '100',
