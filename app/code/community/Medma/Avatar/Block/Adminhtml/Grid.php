@@ -21,6 +21,7 @@ class Medma_Avatar_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Customer_Gr
 			'width'		=> 100
 		),'entity_id');
 		return parent::_prepareColumns();
+		
     }
 
    
