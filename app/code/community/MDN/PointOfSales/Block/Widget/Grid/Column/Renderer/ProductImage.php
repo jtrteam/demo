@@ -13,7 +13,7 @@ class MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_ProductImage
         $url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
 
         $out = '<center><a href="'.$_url.'" target="_blank" id="imageurl">';
-        $out .= "<img src=". $url ." width='60px' ";
+        $out .= "<img src=". $url ." width='100px' height='100px' ";
         $out .=" />";
         $out .= '</a></center>';
 
