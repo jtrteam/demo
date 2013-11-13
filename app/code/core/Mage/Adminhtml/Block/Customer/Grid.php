@@ -77,15 +77,7 @@ class Mage_Adminhtml_Block_Customer_Grid extends Mage_Adminhtml_Block_Widget_Gri
             'header'    => Mage::helper('customer')->__('Last Name'),
             'index'     => 'lastname'
         ));*/
-
-		$this->addColumn('photo', array(
-			'header'	=> Mage::helper('customer')->__('Photo'),
-			'index'		=> 'photo',
-			'sortable'	=> false,
-			'filter'	=> false,
-			'width'		=> 100
-		));
-
+		
         $this->addColumn('name', array(
             'header'    => Mage::helper('customer')->__('Name'),
             'index'     => 'name'

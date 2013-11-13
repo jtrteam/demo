@@ -12,12 +12,14 @@ class Medma_Avatar_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Customer_Gr
     {
 		parent::_prepareColumns();
 		
-       	$this->addColumn('medma_avatar', array(
+       	$this->addColumnAfter('medma_avatar', array(
 			'header'	=> Mage::helper('customer')->__('Photo'),
 			'index'		=> 'medma_avatar',
 			'renderer'  => 'avatar/adminhtml_renderer_avatar',
+			'sortable'	=> false,
+			'filter'	=> false,
 			'width'		=> 100
-		));
+		),'entity_id');
         return parent::_prepareColumns();
     }
 
