@@ -1,6 +1,6 @@
 //********************************
 // Add product image in main grid for PointOfSales/OrderForm
-var table = document.getElementById('PointOfSalesProductGrid');
+/*var table = document.getElementById('PointOfSalesProductGrid');
 if(table != undefined){
 	var grid = table.getElementsByClassName('grid')[0];
 	var tbody = grid.getElementsByTagName('tbody')[0];
@@ -9,7 +9,7 @@ if(table != undefined){
 		var td = trs[i].childNodes[3];
 		td.innerHTML = '<img src="'+imageURL+'/productStub.png">';
 	}
-}
+}*/
 
 //****************************
 // Add customer image in main grid of Customers/ManageCustomers

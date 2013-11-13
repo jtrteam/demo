@@ -10,9 +10,9 @@ class MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_ProductImage
         }
         $val = $row->getData($this->getColumn()->getIndex());
         $val = str_replace("no_selection", "", $val);
-        $url = Mage::getBaseUrl('media') . DS . $val;
+        $url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
 
-        $out = $val. '<center><a href="'.$_url.'" target="_blank" id="imageurl">';
+        $out = '<center><a href="'.$_url.'" target="_blank" id="imageurl">';
         $out .= "<img src=". $url ." width='60px' ";
         $out .=" />";
         $out .= '</a></center>';
