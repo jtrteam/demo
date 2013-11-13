@@ -5,10 +5,18 @@ class Medma_Avatar_Block_Adminhtml_Renderer_Avatar extends Mage_Adminhtml_Block_
 
    public function render(Varien_Object $row)
     {
-        $html = '<img ';
-        $html .= 'id="' . $this->getColumn()->getId() . '" ';
-        $html .= 'src="' . $row->getData($this->getColumn()->getIndex()) . '"';
-        $html .= 'class="grid-image ' . $this->getColumn()->getInlineCss() . '"/>';
+        if($row->getData($this->getColumn()->getIndex()) != NULL ){
+			$path = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) 
+                    . 'medma_avatar/' 
+                    . $row->getData($this->getColumn()->getIndex());
+		} else {
+			$path = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) 
+                    . 'medma_avatar/' 
+                    . 'no_avatar.jpg';
+		}
+		$html = '<img ';
+        $html .= 'src="' . $path . '"';
+        $html .= 'class="grid-image ' . $this->getColumn()->getInlineCss() . '" width= "100" height="100" />';
         return $html;
     }
 
