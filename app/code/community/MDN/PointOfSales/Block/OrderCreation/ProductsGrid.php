@@ -160,7 +160,7 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
                 'align' => 'center',
                 'filter' => false,
                 'sortable' => false
-        ));
+        ));		
 
         /*
         $this->addColumn('entity_id',
@@ -172,18 +172,19 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
         ));
         */
         
-        //if barcode feature enabled, add column
-        $barcodeEnabled = mage::getStoreConfig('pointofsales/barcode_scanner/enable');
-
-		$this->addColumn('photo',
+		/*-----------Product Image--SPNCDZ-----------*/
+		$this->addColumn('image',
 			array(
-				'header'=> Mage::helper('PointOfSales')->__('Photo'),
-				'index'=> 'photo',
+				'header'=> Mage::helper('PointOfSales')->__('Product Image'),
+				'index'=> 'image',
 				'sortable'=> false,
 				'filter'=> false,
-				'bliep'=> 'miep'
+				'renderer' => 'MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_ProductImage',
 		));
-
+       /*-----------Product Image---SPNCDZ----------*/
+	   
+        //if barcode feature enabled, add column
+        $barcodeEnabled = mage::getStoreConfig('pointofsales/barcode_scanner/enable');		
         if ($barcodeEnabled)
         {
             $this->addColumn('barcode',
@@ -217,16 +218,16 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
             ->setEntityTypeFilter(Mage::getModel('catalog/product')->getResource()->getTypeId())
             ->load()
             ->toOptionHash();
-/** quickNdirty **/
-/*        $this->addColumn('set_name',
-            array(
-                'header'=> Mage::helper('catalog')->__('Attrib. Set Name'),
-                'width' => '100px',
-                'index' => 'attribute_set_id',
-                'type'  => 'options',
-                'options' => $sets,
-        ));
-*/
+		/** quickNdirty **/
+		/*        $this->addColumn('set_name',
+					array(
+						'header'=> Mage::helper('catalog')->__('Attrib. Set Name'),
+						'width' => '100px',
+						'index' => 'attribute_set_id',
+						'type'  => 'options',
+						'options' => $sets,
+				));
+		*/
         $this->addColumn('sku',
             array(
                 'header'=> Mage::helper('catalog')->__('SKU'),
@@ -252,25 +253,25 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
             'filter' => false,
             'sortable' => false
         ));
-/** quickNdirty **/
-/*        $this->addColumn('visibility',
-            array(
-                'header'=> Mage::helper('catalog')->__('Visibility'),
-                'width' => '70px',
-                'index' => 'visibility',
-                'type'  => 'options',
-                'options' => Mage::getModel('catalog/product_visibility')->getOptionArray(),
-        ));
-
-        $this->addColumn('status',
-            array(
-                'header'=> Mage::helper('catalog')->__('Status'),
-                'width' => '70px',
-                'index' => 'status',
-                'type'  => 'options',
-                'options' => Mage::getSingleton('catalog/product_status')->getOptionArray(),
-        ));
-*/
+		/** quickNdirty **/
+		/*        $this->addColumn('visibility',
+					array(
+						'header'=> Mage::helper('catalog')->__('Visibility'),
+						'width' => '70px',
+						'index' => 'visibility',
+						'type'  => 'options',
+						'options' => Mage::getModel('catalog/product_visibility')->getOptionArray(),
+				));
+		
+				$this->addColumn('status',
+					array(
+						'header'=> Mage::helper('catalog')->__('Status'),
+						'width' => '70px',
+						'index' => 'status',
+						'type'  => 'options',
+						'options' => Mage::getSingleton('catalog/product_status')->getOptionArray(),
+				));
+		*/
             
         $this->addColumn('action', array(
             'header' => Mage::helper('sales')->__('Action'),
