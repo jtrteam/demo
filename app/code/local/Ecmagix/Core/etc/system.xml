@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <ecmagix translate="label">
+            <label>Ecmagix</label>
+            <sort_order>150</sort_order>      
+        </ecmagix>
+    </tabs>
+</config>

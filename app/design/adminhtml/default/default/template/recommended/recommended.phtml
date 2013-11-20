@@ -1,0 +1,22 @@
+<?php
+    $_productCollection=$this->getRecommendedProducts();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if(count($_productCollection)): ?>
+<div class="entry-edit">
+	<div class="entry-edit-head"><h4 class="icon-head"><?php echo $this->__('Recommended Products') ?></h4></div>
+	<fieldset>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+		<div class="recommended-item">
+			<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" height="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+			<div class="recommended-item-info">
+				<h4><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h4>
+				<p class="recommended-item-desc"><p>
+				<p class="recommended-item-price float-right"> <?php echo $this->getPriceHtml($_product, true) ?><p>
+				<p class="float-left"><a href="<?php echo $_product->getProductUrl() ?>">Go to item</a></p>
+			</div>
+		</div>
+      <?php endforeach ?>  
+	</fieldset>
+</div>
+<?php endif ?>

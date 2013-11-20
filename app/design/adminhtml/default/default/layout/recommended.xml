@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_customer_edit>
+		 <reference name="customer_edit_tab_view">
+		 	<block type="recommended/admin_recommended" name="recommended" template="recommended/recommended.phtml" before="-" />
+		 </reference>
+    </adminhtml_customer_edit>
+</layout> 

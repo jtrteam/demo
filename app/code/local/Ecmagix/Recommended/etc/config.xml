@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecmagix_Recommended>
+            <version>1.0.0</version>
+        </Ecmagix_Recommended>
+    </modules>    
+    <global>
+        <blocks>
+            <recommended>
+                <class>Ecmagix_Recommended_Block</class>
+            </recommended>
+			
+        </blocks>
+        <helpers>
+            <recommended>
+                <class>Ecmagix_Recommended_Helper</class>
+            </recommended>
+        </helpers>
+    </global>
+	<adminhtml>
+    <layout>
+        <updates>
+            <recommended>
+                <file>recommended.xml</file>
+            </recommended>
+        </updates>
+    </layout>
+	</adminhtml>
+	<frontend>
+		<layout>
+            <updates>
+                <recommended>
+                    <file>recommended.xml</file>
+                </recommended>
+            </updates>
+        </layout>
+    </frontend>	
+</config>

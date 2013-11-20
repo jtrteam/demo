@@ -1,0 +1,19 @@
+<?php
+class Ecmagix_Recommended_Block_Admin_Accordion extends Mage_Adminhtml_Block_Customer_Edit_Tab_View_Accordion
+{
+	public function _prepareLayout()
+    {
+		 $customer = Mage::registry('current_customer');
+
+        $this->setId('customerViewAccordion');
+
+        $this->addItem('recommended', array(
+            'title'       => Mage::helper('customer')->__('Recommended Prodects'),
+            'ajax'        => true,
+            'content_url' => $this->getUrl('*/*/recommended', array('_current' => true)),
+        ));
+		return parent::_prepareLayout();
+    }
+    
+     
+}
