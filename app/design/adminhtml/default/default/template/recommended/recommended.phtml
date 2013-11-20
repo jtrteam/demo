@@ -6,7 +6,9 @@
 <div class="entry-edit">
 	<div class="entry-edit-head"><h4 class="icon-head"><?php echo $this->__('Recommended Products') ?></h4></div>
 	<fieldset>
+	<?php $_columnCount = 4; ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
+      <?php if ($i < $_columnCount): ?>
 		<div class="recommended-item">
 			<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" height="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
 			<div class="recommended-item-info">
@@ -16,6 +18,7 @@
 				<p class="float-left"><a href="<?php echo $_product->getProductUrl() ?>">Go to item</a></p>
 			</div>
 		</div>
+        <?php endif; $i++; ?>
       <?php endforeach ?>  
 	</fieldset>
 </div>
