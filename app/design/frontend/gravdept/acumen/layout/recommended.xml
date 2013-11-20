@@ -2,9 +2,9 @@
 <layout version="0.1.0">
     <default>
     </default>
-	<customer_account_index>
+	<customer_account>
 		 <reference name="customer_account_dashboard">
-		 	<block type="recommended/recommended" name="customer_account_dashboard_recommended" as="info1" template="recommended/recommended.phtml"/>
+		 	<block type="recommended/recommended" name="customer_account_dashboard_recommended" as="info2" template="recommended/recommended.phtml"/>
 		 </reference>
-	</customer_account_index>
+	</customer_account>
 </layout> 
