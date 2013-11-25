@@ -245,7 +245,7 @@
                 </div>
                <fieldset>
                <?php // Scan product manual --SPNCDZ --- // ?>
-                 <?php if (mage::getStoreConfig('pointofsales/barcode_scanner/manual')): ?>
+                 <?php if (mage::getStoreConfig('pointofsales/barcode_scanner/barcode_manual')): ?>
                        <input size="50" type="text" name="man_barcode" id="man_barcode" value="">
                        <button onclick="addProductFromBarcodeManual();" class="scalable" type="button"><span><?php echo $this->__('Manual Submit')?></span></button>
                     
