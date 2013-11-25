@@ -244,9 +244,13 @@
                         <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Barcode Scanner'); ?></h4>
                 </div>
                <fieldset>
-                    <center>
-                       <button onclick="addProductFromBarcodeManual();" class="scalable" type="button"><span><?php echo $this->__('Manual')?></span></button>
-                    </center>
+               <?php // Scan product manual --SPNCDZ --- // ?>
+                 <?php if (mage::getStoreConfig('pointofsales/barcode_scanner/manual')): ?>
+                       <input size="50" type="text" name="man_barcode" id="man_barcode" value="">
+                       <button onclick="addProductFromBarcodeManual();" class="scalable" type="button"><span><?php echo $this->__('Manual Submit')?></span></button>
+                    
+                   <?php endif; ?>
+                 <?php // Scan product manual --SPNCDZ --- // ?>
                     <table border="0" width="100%">
                             <tr>
                                     <td width="100%" align="center"><span class="scanner-value" id="scanner_value" name="scanner_value"></span></td>

@@ -915,10 +915,11 @@ function calculateChange()
 
 
 //*****************************************************************************************************************************
-//Scan product
+//Scan product manual --SPNCDZ
+
 function addProductFromBarcodeManual()
 {
-    var barcode = 'nikken-4';
+    var barcode = document.getElementById('man_barcode').value();
     KC_value = '';
     var url = addProductFromBarcodeUrl;
     url += 'barcode/' + barcode.replace("/", "slash");  //cant use urlencode method with ajax
