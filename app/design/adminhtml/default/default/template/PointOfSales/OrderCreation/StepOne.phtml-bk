@@ -329,8 +329,8 @@
 
 //Init scanner
 document.onkeypress = handleKey; 
-//enableCatchKeys(null, 'addProductFromBarcode();');
-addProductFromBarcode();
+enableCatchKeys(null, 'addProductFromBarcode();');
+
 </script>
 
 <?php endif; ?>
