@@ -919,7 +919,7 @@ function calculateChange()
 
 function addProductFromBarcodeManual()
 {
-    var barcode = document.getElementById('man_barcode').value();
+    var barcode = document.getElementById('man_barcode').value;
     KC_value = '';
     var url = addProductFromBarcodeUrl;
     url += 'barcode/' + barcode.replace("/", "slash");  //cant use urlencode method with ajax
