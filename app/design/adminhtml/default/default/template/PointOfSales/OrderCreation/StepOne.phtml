@@ -243,6 +243,7 @@
                 <div class="entry-edit-head">
                         <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Barcode Scanner'); ?></h4>
                 </div>
+                <a href="javascript:void(0);" onclick="addProductFromBarcode();">Manual</a>
                 <fieldset>
                     <table border="0" width="100%">
                             <tr>
@@ -330,7 +331,7 @@
 //Init scanner
 document.onkeypress = handleKey; 
 //enableCatchKeys(null, 'addProductFromBarcode();');
-addProductFromBarcode();
+
 </script>
 
 <?php endif; ?>
