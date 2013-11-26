@@ -558,7 +558,7 @@ class MDN_PointOfSales_PointOfSalesController extends Mage_Adminhtml_Controller_
 			$img_url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
 			$imgOut ="";
 			if($val){	       
-				$imgOut .= "<img src=". $url ." width='50px' height='50px' ";
+				$imgOut .= "<img src=". $img_url ." width='50px' height='50px' ";
 				$imgOut .=" />";
 			}
 			$result['product_information']['product_image'] = $imgOut;
