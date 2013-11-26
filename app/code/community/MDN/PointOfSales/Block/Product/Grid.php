@@ -25,7 +25,6 @@ class MDN_PointOfSales_Block_Product_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $websiteId = Mage::getModel('core/store')->load($storeId)->getWebsiteId();
 
         $store = mage::getModel('core/store')->load($storeId); //$this->_getStore();
-        echo $store->getId(); exit;
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToSelect('sku')
             ->addAttributeToSelect('name')
