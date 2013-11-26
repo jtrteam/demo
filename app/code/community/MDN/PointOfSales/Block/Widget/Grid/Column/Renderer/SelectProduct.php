@@ -54,9 +54,10 @@ class MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_SelectProduct extends M
 		$val = $row->getImage();
 		$val = str_replace("no_selection", "", $val);
 		$img_url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
-		$imgOut ='';
+		$imgOut ="";
 		if($val){	       
-			$imgOut .= '<img src='. $img_url .' width="50px" height="50px" />';
+			$imgOut .= "<img src=". $img_url ." width=\'50px\' height=\'50px\' ";
+			$imgOut .=" />";
 		}
 		$productImage = $imgOut;
 		//=======================================//		
@@ -64,7 +65,7 @@ class MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_SelectProduct extends M
         $skinUrl = $this->getSkinUrl('images/OrderWizardCreation/');
         $linkCaption = '<img src="' . $this->getSkinUrl('images/OrderWizardCreation/add.png') . '">';
 
-        $retour = '<a href="javascript:selectProduct(' . $productId . ',\'' . $productName . '\', ' . $priceExclTax . ', ' . $taxRate . ', ' . $priceInclTax . ', \'' . $skinUrl . '\',\'' . $currencySymbol . '\',\''.$productImage. '\')">' . $linkCaption . '</a>';
+        $retour = '<a href="javascript:selectProduct(' . $productId . ',\'' . $productName . '\', ' . $priceExclTax . ', ' . $taxRate . ', ' . $priceInclTax . ', \'' . $skinUrl . '\',\'' . $currencySymbol . '\',\'' . $productImage . '\')">' . $linkCaption . '</a>';
 
         return $retour;
     }
