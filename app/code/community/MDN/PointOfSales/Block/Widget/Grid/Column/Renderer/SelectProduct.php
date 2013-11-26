@@ -49,11 +49,22 @@ class MDN_PointOfSales_Block_Widget_Grid_Column_Renderer_SelectProduct extends M
 
         $productName = $this->cleanTxt($row->getname());
         $productId = $row->getId();
+		
+	   //==============SPNCDZ===================//
+		$val = $row->getImage();
+		$val = str_replace("no_selection", "", $val);
+		$img_url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
+		$imgOut ='';
+		if($val){	       
+			$imgOut .= '<img src='. $img_url .' width="50px" height="50px" />';
+		}
+		$productImage = $imgOut;
+		//=======================================//		
         $currencySymbol = Mage::app()->getLocale()->currency(Mage::getStoreConfig('PointOfSales/configuration/default_currency'))->getSymbol();
         $skinUrl = $this->getSkinUrl('images/OrderWizardCreation/');
         $linkCaption = '<img src="' . $this->getSkinUrl('images/OrderWizardCreation/add.png') . '">';
 
-        $retour = '<a href="javascript:selectProduct(' . $productId . ',\'' . $productName . '\', ' . $priceExclTax . ', ' . $taxRate . ', ' . $priceInclTax . ', \'' . $skinUrl . '\',\'' . $currencySymbol . '\')">' . $linkCaption . '</a>';
+        $retour = '<a href="javascript:selectProduct(' . $productId . ',\'' . $productName . '\', ' . $priceExclTax . ', ' . $taxRate . ', ' . $priceInclTax . ', \'' . $skinUrl . '\',\'' . $currencySymbol . '\',\''.$productImage. '\')">' . $linkCaption . '</a>';
 
         return $retour;
     }
