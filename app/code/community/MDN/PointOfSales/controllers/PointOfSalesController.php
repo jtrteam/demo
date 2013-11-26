@@ -552,6 +552,18 @@ class MDN_PointOfSales_PointOfSalesController extends Mage_Adminhtml_Controller_
             $result['product_information'] = array();
             $result['product_information']['product_name'] = $productName;
             $result['product_information']['product_id'] = $product->getId();
+			//==============SPNCDZ===================//
+			$val = $product->getImage();
+			$val = str_replace("no_selection", "", $val);
+			$img_url = Mage::getBaseUrl('media') . 'catalog/product' . $val;
+			$imgOut ="";
+			if($val){	       
+				$imgOut .= "<img src=". $url ." width='50px' height='50px' ";
+				$imgOut .=" />";
+			}
+			$result['product_information']['product_image'] = $imgOut;
+			//=======================================//		
+			
             $result['product_information']['skin_url'] = Mage::getDesign()->getSkinUrl('images/OrderWizardCreation/');
             $result['product_information']['price_excl_tax'] = $priceExclTax;
             $result['product_information']['price_incl_tax'] = $priceInclTax;

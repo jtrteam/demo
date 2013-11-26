@@ -132,7 +132,7 @@ function canCreateOrder()
 
 //*****************************************************************************************************************************
 //Select a product
-function selectProduct(productId, productName, priceExclTax, taxRate, priceInclTax, urlimage, currency)
+function selectProduct(productId, productName, priceExclTax, taxRate, priceInclTax, urlimage, currency, productImage)
 {
     //check if product already added
     var test;
@@ -165,13 +165,13 @@ function selectProduct(productId, productName, priceExclTax, taxRate, priceInclT
     td_product.className = 'pos_col_product';
     newTR.appendChild (td_product);
 
-/* quickNdirty: add column for product photo */
+/* SPNCDZ: add column for product photo */
 
 	var td_product = document.createElement('td');
-    td_product.innerHTML = '<img src="' + imageURL + 'productStub.png" height="40">';
-    td_product.className = 'pos_col_photo';
+    td_product.innerHTML = productImage;
+    td_product.className = 'pos_col_image';
     newTR.appendChild (td_product);
-/* /quickNdirty */
+/* /SPNCDZ */
 	
     var td_qty = document.createElement('td');
     td_qty.innerHTML = '<img class="img_qty" onclick="decreaseQty(' + productId + ')" src="' + urlimage + 'decrease.gif">';
@@ -643,7 +643,8 @@ function addProductFromBarcode()
                         elementValues['product_information']['tax_rate'],
                         elementValues['product_information']['price_incl_tax'],
                         elementValues['product_information']['skin_url'],
-                        elementValues['product_information']['currency_symbol']);
+                        elementValues['product_information']['currency_symbol'],						
+						elementValues['product_information']['product_image']);
 		        									
                     document.getElementById('scanner_value').innerHTML = elementValues['message'];
                 }
@@ -948,7 +949,8 @@ function addProductFromBarcodeManual()
                         elementValues['product_information']['tax_rate'],
                         elementValues['product_information']['price_incl_tax'],
                         elementValues['product_information']['skin_url'],
-                        elementValues['product_information']['currency_symbol']);
+                        elementValues['product_information']['currency_symbol'],						
+						elementValues['product_information']['product_image']);
 		        									
                     document.getElementById('scanner_value').innerHTML = elementValues['message'];
                 }
