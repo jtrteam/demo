@@ -80,8 +80,8 @@
 
             <!-- additional actions tab -->
             <ul id="action_tabs" class="tabs-horiz">
-                <li><a href="#" onclick="javascript:showTab('add_products_tab');" id="add_products_tab" title="Add products" class="tab-item-link "><?php echo $this->__('Add products'); ?></a></li>
-                <li><a href="#" onclick="javascript:showTab('customer_information_tab');" id="customer_information_tab" title="Customer information" class="tab-item-link "><?php echo $this->__('Customer information'); ?></a></li>
+            	<li><a href="#" onclick="javascript:showTab('customer_information_tab');" id="customer_information_tab" title="Customer information" class="tab-item-link "><?php echo $this->__('Customer information'); ?></a></li>
+                <li><a href="#" onclick="javascript:showTab('add_products_tab');" id="add_products_tab" title="Add products" class="tab-item-link "><?php echo $this->__('Add products'); ?></a></li>                
                 <li><a href="#" onclick="javascript:showTab('customer_address_tab');" id="customer_address_tab" title="Customer address" class="tab-item-link "><?php echo $this->__('Customer address'); ?></a></li>
                 <li><a href="#" onclick="javascript:showTab('comments_tab');" id="comments_tab" title="Comments" class="tab-item-link "><?php echo $this->__('Comments'); ?></a></li>
             </ul>
@@ -344,7 +344,7 @@ enableCatchKeys(null, 'addProductFromBarcode();');
 <?php endif; ?>
 
 <script>
-    showTab('add_products_tab');
+    showTab('customer_information_tab');
     selectPaymentMethod('<?php echo $defaultPaymentMethod; ?>');
 
 </script>
