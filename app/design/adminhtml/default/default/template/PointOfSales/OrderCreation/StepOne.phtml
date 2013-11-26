@@ -86,19 +86,8 @@
                 <li><a href="#" onclick="javascript:showTab('comments_tab');" id="comments_tab" title="Comments" class="tab-item-link "><?php echo $this->__('Comments'); ?></a></li>
             </ul>
             
-            <!-- add products grid -->
-            <div class="entry-edit hidden-menu" id="tab_add_products_tab">
-                     <div class="entry-edit-head">
-                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Add product'); ?></h4>
-                </div>
-                    <fieldset>
-                            <div id="div_products_grid">
-                                    <?php echo $this->getChildHtml('productsgrid'); ?>
-                            </div>
-                    </fieldset>
-            </div>
-
-            <!-- customer information -->
+            
+             <!-- customer information -->
             <div class="entry-edit hidden-menu" id="tab_customer_information_tab">
                 <div class="entry-edit-head">
                         <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Customer'); ?></h4>
@@ -153,6 +142,19 @@
                 </fieldset>
             </div>
 
+            
+            <!-- add products grid -->
+            <div class="entry-edit hidden-menu" id="tab_add_products_tab">
+                     <div class="entry-edit-head">
+                        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Add product'); ?></h4>
+                </div>
+                    <fieldset>
+                            <div id="div_products_grid">
+                                    <?php echo $this->getChildHtml('productsgrid'); ?>
+                            </div>
+                    </fieldset>
+            </div>
+           
             <!-- customer address -->
             <div class="entry-edit hidden-menu" id="tab_customer_address_tab">
                 <div class="entry-edit-head">
