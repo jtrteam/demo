@@ -16,7 +16,7 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
 
     protected function _getStore()
     {
-        $storeId = (int) $this->getRequest()->getParam('store', 0);
+        $storeId = Mage::getSingleton('admin/session')->getUser()->getstore_id();
         return Mage::app()->getStore($storeId);
     }
 
