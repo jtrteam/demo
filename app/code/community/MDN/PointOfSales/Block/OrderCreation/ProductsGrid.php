@@ -26,20 +26,24 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
     	$storeId = Mage::getSingleton('admin/session')->getUser()->getstore_id();
         $websiteId = Mage::getModel('core/store')->load($storeId)->getWebsiteId();
 
-        $store = mage::getModel('core/store')->load(8); 
-		
+        $store = mage::getModel('core/store')->load($storeId); //$this->_getStore();
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToSelect('sku')
             ->addAttributeToSelect('name')
-			->addAttributeToSelect('image')
             ->addAttributeToSelect('attribute_set_id')
             ->addAttributeToSelect('type_id')
             ->addAttributeToSelect('ordered_qty')
             ->addAttributeToSelect('tax_class_id')            
-            ->addAttributeToFilter('type_id', 'simple')
             ->addAttributeToSelect('special_from_date')
             ->addAttributeToSelect('special_to_date')
-            ->addAttributeToFilter('status', 1);
+            ->addAttributeToFilter('type_id', 'simple')
+            ->addAttributeToFilter('status', 1)
+            ->joinField('qty',
+                'cataloginventory/stock_item',
+                'qty',
+                'product_id=entity_id',
+                '{{table}}.stock_id=1 and is_in_stock=1',
+                'inner');
                 
         //if barcode attribute set, add it
         $barcodeAttributeCode = mage::getStoreConfig('pointofsales/barcode_scanner/barcode_attribute');
@@ -62,7 +66,7 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
             $collection->addAttributeToSelect('status');
             $collection->addAttributeToSelect('visibility');
         }
-		
+        
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
 		$role = Mage::getSingleton('aitpermissions/role');
 		if($role->isPermissionsEnabled()){
@@ -128,11 +132,13 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
 		 }
 		
 		/*-------------------SPNCDN ( Permission Filter ------------------*/
-        
-		$this->setCollection($collection);
+		
+		
+        $this->setCollection($collection);
 
         parent::_prepareCollection();
         $this->getCollection()->addWebsiteNamesToResult();
+                
         return $this;
     }
 
