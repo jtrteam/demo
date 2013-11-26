@@ -171,13 +171,13 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
         ));		
 
         
-        $this->addColumn('entity_id',
+        /*$this->addColumn('entity_id',
             array(
                 'header'=> Mage::helper('catalog')->__('ID'),
                 'width' => '50px',
                 'type'  => 'number',
                 'index' => 'entity_id',
-        ));
+        ));*/
         
         
 		/*-----------Product Image--SPNCDZ-----------*/
