@@ -26,8 +26,8 @@ class MDN_PointOfSales_Block_OrderCreation_ProductsGrid extends Mage_Adminhtml_B
     	$storeId = Mage::getSingleton('admin/session')->getUser()->getstore_id();
         $websiteId = Mage::getModel('core/store')->load($storeId)->getWebsiteId();
 
-        $store = mage::getModel('core/store')->load($storeId); //$this->_getStore();
-        echo 'hii'.$store->getId(); exit;
+        $store = mage::getModel('core/store')->load(8); 
+		
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToSelect('sku')
             ->addAttributeToSelect('name')
