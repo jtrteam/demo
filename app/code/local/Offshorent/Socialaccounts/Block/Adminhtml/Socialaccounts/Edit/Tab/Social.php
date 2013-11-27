@@ -13,32 +13,22 @@ class Offshorent_Socialaccounts_Block_Adminhtml_Socialaccounts_Edit_Tab_Social e
         ));
         $fieldset->addField('facebook', 'text', array(
           'label'     => Mage::helper('customer')->__('Facebook'),
-          'class'     => 'required-entry',
-          'required'  => true,
           'name'      => 'facebook',
         ));
 		$fieldset->addField('twitter', 'text', array(
           'label'     => Mage::helper('customer')->__('Twitter'),
-          'class'     => 'required-entry',
-          'required'  => true,
           'name'      => 'twitter',
         ));
 		$fieldset->addField('pinterest', 'text', array(
           'label'     => Mage::helper('customer')->__('Pinterest'),
-          'class'     => 'required-entry',
-          'required'  => true,
           'name'      => 'pinterest',
         ));
 		$fieldset->addField('instagram', 'text', array(
           'label'     => Mage::helper('customer')->__('Instagram'),
-          'class'     => 'required-entry',
-          'required'  => true,
           'name'      => 'instagram',
         ));
         $google = $fieldset->addField('googleplus', 'text', array(
           'label'     => Mage::helper('customer')->__('Google +'),
-          'class'     => 'required-entry',
-          'required'  => true,
           'name'      => 'googleplus',
         ));
 		
