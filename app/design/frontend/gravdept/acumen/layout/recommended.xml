@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <default>
-    </default>
-	<customer_account>
+   <customer_account_index>
 		 <reference name="customer_account_dashboard">
+		 	<action method="unsetChild"><name>customer_account_dashboard_recommended</name></action>
 		 	<block type="recommended/recommended" name="customer_account_dashboard_recommended" as="recommended" template="recommended/recommended.phtml"/>
 		 </reference>
-	</customer_account>
+	</customer_account_index>
 </layout> 
