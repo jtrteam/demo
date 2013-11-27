@@ -8,13 +8,15 @@
 		</reference>
     </customer_account>
     <socialaccounts_index_index>
-        <reference name="content">
+	    <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
             <block type="socialaccounts/socialaccounts" name="socialaccounts" template="socialaccounts/socialaccountsform.phtml" />
         </reference>
     </socialaccounts_index_index>
-	<customer_account_dashboard>
-        <reference name="content">
-            <block type="socialaccounts/socialaccounts" name="socialaccounts" template="socialaccounts/socialaccounts.phtml" />
-        </reference>
-    </customer_account_dashboard>
+	<customer_account_index>
+		 <reference name="customer_account_dashboard">
+		 	<action method="unsetChild"><name>customer_account_dashboard_socialaccounts</name></action>
+		 	<block type="socialaccounts/socialaccounts" name="customer_account_dashboard_socialaccounts" as="socialaccounts" template="socialaccounts/socialaccounts.phtml"/>
+		 </reference>
+	</customer_account_index>
 </layout> 
