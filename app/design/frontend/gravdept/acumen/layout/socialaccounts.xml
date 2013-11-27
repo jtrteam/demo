@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+	<customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>social_networking_section</name>
+                <path>socialaccounts/index/index</path>
+                <label>Social Account</label>
+            </action>
+        </reference>
+    </customer_account>
+    <socialaccounts_index_index>
+        <reference name="content">
+            <block type="socialaccounts/socialaccounts" name="socialaccounts" template="socialaccounts/socialaccountsform.phtml" />
+        </reference>
+    </socialaccounts_index_index>
+	<customer_account>
+        <reference name="content">
+            <block type="socialaccounts/socialaccounts" name="socialaccounts" template="socialaccounts/socialaccounts.phtml" />
+        </reference>
+    </customer_account>
+</layout> 

@@ -1,0 +1,56 @@
+<?php 
+$customerData = Mage::getSingleton('customer/session')->getCustomer();
+$customerID = $customerData->getId();
+$facebook = $customerData->getFacebook();
+$twitter = $customerData->getTwitter();
+$pinterest = $customerData->getPinterest();
+$instagram = $customerData->getInstagram();
+$googleplus = $customerData->getGoogleplus();
+				?>
+<div class="page-title">
+    <h1><?php echo $this->__('Add Social Account Information') ?></h1>
+</div>
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<form action="<?php echo $this->getUrl('socialaccounts/index/savelinks') ?>" method="post" >
+    <div class="fieldset">
+        <?php echo $this->getBlockHtml('formkey')?>
+        <h2 class="legend"><?php echo $this->__('Social Networking Information') ?></h2>
+        <ul class="form-list">
+            <li>
+                <label for="facebook" class="required"><?php echo $this->__('Facebook') ?></label>
+                <div class="input-box">
+                <input type="text" name="facebook" value="<?php echo $facebook; ?>" title="<?php echo $this->__('Facebook Link') ?>" class="input-text required-entry"/>
+                </div>
+            </li>
+            <li>
+                <label for="twitter" class="required"><?php echo $this->__('Twitter') ?></label>
+                <div class="input-box">
+                   <input type="text" name="twitter" value="<?php echo $twitter; ?>" title="<?php echo $this->__('Twitter Link') ?>" class="input-text required-entry"/>
+                </div>
+            </li>
+            <li>
+                <label for="pinterest" class="required"><?php echo $this->__('Pinterest') ?></label>
+                <div class="input-box">
+                 <input type="text" name="pinterest" value="<?php echo $pinterest; ?>" title="<?php echo $this->__('Pinterest Link') ?>" class="input-text required-entry"/>
+                </div>
+            </li>
+            <li>
+                <label for="instagram" class="required"><?php echo $this->__('Instagram') ?></label>
+                <div class="input-box">
+                 <input type="text" name="instagram" value="<?php echo $instagram; ?>" title="<?php echo $this->__('Instagram Link') ?>" class="input-text required-entry"/>
+                </div>
+            </li>
+            <li>
+                <label for="googleplus" class="required"><?php echo $this->__('Google Plus') ?></label>
+                <div class="input-box">
+               <input type="text" name="googleplus" value="<?php echo $googleplus; ?>" title="<?php echo $this->__('Google Plus Link') ?>" class="input-text required-entry"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <button type="submit" title="<?php echo $this->__('Save') ?>" class="button"><span><span><?php echo $this->__('Save') ?></span></span></button>
+    </div>
+</form>
