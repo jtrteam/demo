@@ -1,0 +1,26 @@
+
+<div class="entry-edit">
+    <div class="entry-edit-head"><h4 class="icon-head head-customer-view"><?php echo Mage::helper('customer')->__('Social Account Links') ?></h4></div>
+    <fieldset>
+        <table cellspacing="2" class="box-left">
+<tr>
+<td><?php if ($this->getFacebook()): ?> 
+         <a href="http://www.facebook.com/<?php echo $this->getFacebookLink() ?>" target="_blank" ><img src="<?php echo $this->getSkinUrl('socialaccounts/images/facebook.png'); ?>" alt="<?php echo $this->getFacebookLink() ?>" height="36" width="36"/></a>
+         <?php endif ?> 
+         <?php if ($this->getTwitter()): ?> 
+         <a href="https://twitter.com/<?php echo $this->getTwitterLink() ?>" target="_blank" ><img src="<?php echo $this->getSkinUrl('socialaccounts/images/twitter.png'); ?>" alt="<?php echo $this->getTwitterLink() ?>" height="36" width="36"/></a>
+         <?php endif ?> 
+         <?php if ($this->getPinterest()): ?> 
+        <a href="http://www.pinterest.com/<?php echo $this->getPinterestLink() ?>" target="_blank" ><img src="<?php echo $this->getSkinUrl('socialaccounts/images/pinterest.png'); ?>" alt="<?php echo $this->getPinterestLink() ?>" height="36" width="36"/></a>
+         <?php endif ?> 
+         <?php if ($this->getInstagram()): ?> 
+         <a href="http://instagram.com/<?php echo $this->getInstagramLink() ?>" target="_blank" ><img src="<?php echo $this->getSkinUrl('socialaccounts/images/instagram.png'); ?>" alt="<?php echo $this->getInstagramLink() ?>" height="36" width="36"/></a>
+         <?php endif ?> 
+         <?php if ($this->getGoogleplus()): ?> 
+         <a href="https://plus.google.com/<?php echo $this->getGoogleplusLink() ?>" target="_blank" ><img src="<?php echo $this->getSkinUrl('socialaccounts/images/googleplus.png'); ?>" alt="<?php echo $this->getGoogleplusLink() ?>" height="36" width="36"/></a>
+         <?php endif ?></td>
+
+</tr>
+</table>
+</fieldset>
+</div>
