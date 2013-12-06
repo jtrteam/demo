@@ -23,7 +23,7 @@
 	  $temp =  $this->getItemHtml($_item);
 	  echo $temp; echo 'hqhq--+';
       preg_match_all('/<item>(.*?)<\/item>/s', $temp, $matches);
-      $maten[trim($matches[1][2])] = trim($matches[1][2]);
+      $maten[trim($matches[1][2])] = trim($matches[1][2]);print_r($maten);
       $data[$matches[1][0]][$matches[1][1]]['image']= $matches[1][3];
       $data[$matches[1][0]][$matches[1][1]]['edit']= $matches[1][5];					
       $data[$matches[1][0]][$matches[1][1]]['url']= $matches[1][4];									
