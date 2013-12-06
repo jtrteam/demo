@@ -1,0 +1,182 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @see Mage_Checkout_Block_Cart
+ */
+?>
+<div class="col d_9_10 t_9_10 m_1_1 content margin-a">
+
+    <div class="block-h">
+
+        <h1 class="main-title"><?php echo $this->__('Shopping Cart') ?></h1>
+               
+
+        <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+        
+        <?php echo $this->getChildHtml('form_before') ?>
+        
+        <?php foreach($this->getItems() as $_item):  ?>
+            <?php 	
+            $temp =  $this->getItemHtml($_item);
+            preg_match_all('/<item>(.*?)<\/item>/s', $temp, $matches);
+            $maten[trim($matches[1][2])] = trim($matches[1][2]);
+            $data[$matches[1][0]][$matches[1][1]]['image']= $matches[1][3];
+            $data[$matches[1][0]][$matches[1][1]]['edit']= $matches[1][5];					
+            $data[$matches[1][0]][$matches[1][1]]['url']= $matches[1][4];									
+            $data[$matches[1][0]][$matches[1][1]][$matches[1][2]]['edit']= $matches[1][7];
+            $data[$matches[1][0]][$matches[1][1]][$matches[1][2]]['price']= $matches[1][6];							
+            $data[$matches[1][0]][$matches[1][1]][$matches[1][2]]['amount']= $matches[1][8];
+            ?>
+        <?php endforeach;
+        ksort($maten); ?>
+        
+                    
+        <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+            <fieldset>
+                <table id="shopping-cart-table" class="style_1 w100">
+
+                <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                    <thead>
+                        <tr class="head">
+                            <td rowspan="<?php echo $mergedCells; ?>">&nbsp;</td>
+                            <td rowspan="<?php echo $mergedCells; ?>"><span class="nowrap"><?php echo $this->__('Product Name') ?></span></td>
+                            <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                            <td rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nowrap"><?php echo $this->__('Move to Wishlist') ?></span></td>
+                            <?php endif ?>
+                            <?php
+                            foreach($maten as $key =>$value)
+                              {
+                                 echo '<td class="align-c">'.$value.'</td>';
+                              }
+                              ?>
+                            <td class="align-r" colspan="<?php echo $mergedCells; ?>"><span class="nowrap"><?php echo $this->__('Unit Price') ?></span></td>
+                            <td class="align-c" rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Qty') ?></td>
+                            <td class="align-r" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></td>
+                        </tr>
+                        <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                        <tr>
+                            <td><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></td>
+                            <td><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></td>
+                            <td><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></td>
+                            <td><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></td>
+                        </tr>
+                        <?php endif; ?>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="50">
+                                <?php if($this->getContinueShoppingUrl()): ?>
+                                    <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-s float-l margin-r" onclick="setLocation('<?php echo $this->getUrl('') ?>')"><?php echo $this->__('Continue Shopping') ?></button>
+                                <?php endif; ?>
+                                <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" class="button btn-s float-l"><?php echo $this->__('Update Shopping Cart') ?></button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    <?php /* Old! foreach($this->getItems() as $_item):  ?>
+                        <?php 	echo $this->getItemHtml($_item) ?>
+                    <?php endforeach */ ?>
+                    
+                    <?php
+                    $i = 0;
+                    foreach($data as $key => $_item) {
+                        foreach($_item as $key2 => $_subitem) { 
+                    ?>
+                                    
+                        <tr>
+                            <td><?php echo $_subitem['image'];?></td>
+                            <td class="strong"><a href="<?php echo $_subitem['url'];?>"><?php echo $key . ($key2 != '' ? '-' : '') . $key2; ?></a></td>
+                            <?php
+                            $amount = 0;
+                            $price = 0;
+                            foreach($maten as $key3 =>$value3) {
+                                echo '<td class="align-c">';
+                                if($_subitem[$value3]['amount']!=0)
+                                { 
+                                    $price =  round($_subitem[$value3]['price'],2);
+                                    $amount += $_subitem[$value3]['amount'];
+                                    echo $_subitem[$value3]['edit']; 
+                                }else echo '0';
+                                echo '</td>';
+                                  
+                            }   ?>
+                            
+                            <td class="align-r"><span class="cart-price"><span class="price"><?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>&nbsp;<?php echo number_format($price, 2, ',', '.'); ?></span></span> </td>
+
+                            <td class="align-c"><?php echo $amount; ?></td>
+
+                            <td class="align-r"><span class="cart-price"><span class="price"><?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>&nbsp;<?php echo number_format($price*$amount, 2, ',', '.'); ?></span></span></td>
+
+                        </tr>
+                        
+                    <?php
+                    $i++; 		
+                        }
+                    }				
+                    ?>
+                    
+                    </tbody>
+                </table>
+                
+                
+            </fieldset>
+            
+        </form>
+        
+    </div>
+
+    <div class="margin-t padding-t clearfix">
+        
+        <div class="col-l d_1_2 t_1_2 m_1_1">
+            <div class="block-h">
+                <?php echo $this->getChildHtml('coupon') ?>
+                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            </div>
+        </div>
+        
+        <div class="col-l d_1_2 t_1_2 m_1_1">
+            <div class="block-h">
+                <?php echo $this->getChildHtml('totals'); ?>
+                <?php if(!$this->hasError()): ?>
+                <?php foreach ($this->getMethods('methods') as $method): ?>
+                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                        <div class="clearfix margin-t"><?php echo $methodHtml; ?></div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+            
+    </div>
+    
+    <?php echo $this->getChildHtml('crosssell') ?>
+   
+    
+</div>

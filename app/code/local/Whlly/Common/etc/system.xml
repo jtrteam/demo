@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <whlly_tab translate="label">
+            <label>Whlly Add-ons</label>
+            <sort_order>180</sort_order>      
+        </whlly_tab>
+    </tabs>
+</config>
