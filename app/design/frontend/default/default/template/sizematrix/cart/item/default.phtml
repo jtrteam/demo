@@ -5,9 +5,9 @@ $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
 $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
-$metrixValue = array(); echo $prodAttributeSet;
+$metrixValue = array(); 
 if($prodAttributeSet == 'Matrix'):
-echo 'hhh'. $sku = $_product->getData('sku');
+$sku = $_product->getData('sku');
 $metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
 endif;
 ?>
@@ -61,7 +61,7 @@ endif;
         <?php endif ?>
     </td>
     <?php endif ?>
-    <?php if($prodAttributeSet == 'Metrix'): ?>
+    <?php if($prodAttributeSet == 'Matrix'): ?>
 		<td class="a-center"><?php echo trim($metrixValue[1]);?></td>
         <td class="a-center"><?php echo trim($metrixValue[2]);?></td>
 	<?php endif; ?>
