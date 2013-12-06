@@ -5,7 +5,7 @@ $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
 $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
-$metrixValue = array();
+$metrixValue = array(); echo $prodAttributeSet;
 if($prodAttributeSet == 'Metrix'):
 echo 'hhh'. $sku = $_product->getData('sku');
 $metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
