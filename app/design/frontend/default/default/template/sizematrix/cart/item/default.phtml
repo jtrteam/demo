@@ -6,7 +6,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
 $metrixValue = array(); echo $prodAttributeSet;
-if($prodAttributeSet == 'Metrix'):
+if($prodAttributeSet == 'Matrix'):
 echo 'hhh'. $sku = $_product->getData('sku');
 $metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
 endif;
