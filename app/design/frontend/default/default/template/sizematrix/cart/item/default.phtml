@@ -7,7 +7,7 @@ $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 echo $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
 $metrixValue = array();
 if($prodAttributeSet == 'Metrix'):
-$sku = $this->htmlEscape($this->getProductSku());
+$sku = $this->htmlEscape($_product->getSku());
 $metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
 endif;
 ?>
