@@ -64,6 +64,8 @@ endif;
     <?php if($prodAttributeSet == 'Matrix'): ?>
 		<td class="a-center"><?php echo trim($metrixValue[1]);?></td>
         <td class="a-center"><?php echo trim($metrixValue[2]);?></td>
+    <?php else: ?>
+    	<td class="a-center" colspan="2">&nbsp;</td>
 	<?php endif; ?>
 
     <?php if ($canApplyMsrp): ?>
