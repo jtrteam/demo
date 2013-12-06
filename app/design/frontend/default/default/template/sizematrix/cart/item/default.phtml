@@ -6,10 +6,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
 $metrixValue = array(); 
-if($prodAttributeSet == 'Matrix'):
-$sku = $_product->getData('sku');
-$metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
-endif;
+if($prodAttributeSet != 'Matrix'):
 ?>
 <tr>
     <td><?php if ($this->hasProductUrl()):?><a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->getProductThumbnail()->resize(75); ?>" width="75" height="75" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a><?php endif;?></td>
@@ -61,12 +58,6 @@ endif;
         <?php endif ?>
     </td>
     <?php endif ?>
-    <?php if($prodAttributeSet == 'Matrix'): ?>
-		<td class="a-center"><?php echo trim($metrixValue[1]);?></td>
-        <td class="a-center"><?php echo trim($metrixValue[2]);?></td>
-    <?php else: ?>
-    	<td class="a-center" colspan="2">&nbsp;</td>
-	<?php endif; ?>
 
     <?php if ($canApplyMsrp): ?>
         <td class="a-right"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
@@ -264,3 +255,4 @@ endif;
     <?php endif; ?>
     <td class="a-center"><a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove item')?></a></td>
 </tr>
+ <?php endif; ?>
