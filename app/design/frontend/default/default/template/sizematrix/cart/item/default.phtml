@@ -3,12 +3,11 @@
 $_item = $this->getItem();
 $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
 $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
-echo $_item->getProductId();
 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
 $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
 $metrixValue = array();
 if($prodAttributeSet == 'Metrix'):
-$sku = $this->htmlEscape($_product->getSku());
+echo $sku = $this->htmlEscape($_product->getSku());
 $metrixValue = explode(Mage::getStoreConfig('sizematrix/sizematrix/separate_character'),$sku);
 endif;
 ?>
