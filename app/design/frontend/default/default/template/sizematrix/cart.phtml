@@ -253,10 +253,10 @@
                 <?php foreach($this->getItems() as $_item): ?>
                      <?php
 						$_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-						echo $prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
+						$prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
 						if($prodAttributeSet != 'Metrix'):
 					?> 
-                    	<?php //echo $this->getItemHtml($_item) ?>
+                    	<?php echo $this->getItemHtml($_item) ?>
                     <?php endif; ?>
                 <?php endforeach ?>
                 </tbody>
