@@ -21,9 +21,8 @@
 	  <?php
 	  if($prodAttributeSet == 'Matrix'):
 	  $temp =  $this->getItemHtml($_item);
-	  echo $temp; echo 'hqhq--+';
       preg_match_all('/<item>(.*?)<\/item>/s', $temp, $matches);
-      $maten[trim($matches[1][2])] = trim($matches[1][2]);print_r($maten);
+      $maten[trim($matches[1][2])] = trim($matches[1][2]);
       $data[$matches[1][0]][$matches[1][1]]['image']= $matches[1][3];
       $data[$matches[1][0]][$matches[1][1]]['edit']= $matches[1][5];					
       $data[$matches[1][0]][$matches[1][1]]['url']= $matches[1][4];									
@@ -128,43 +127,9 @@
                 </tfoot>
                 <tbody>
                 
-                <?php
-                    $i = 0;
-                    foreach($data as $key => $_item) {
-                        foreach($_item as $key2 => $_subitem) { 
-                    ?>
-                                    
-                        <tr>
-                           <td><?php if ($_subitem['url']):?><a href="<?php echo $_subitem['url'] ?>" class="product-image"><?php endif;?><img src="<?php echo $_subitem['image']; ?>" width="75" height="75" /><?php if ($_subitem['url']):?></a><?php endif;?></td>
-                           <td> <h2 class="product-name"><a href="<?php echo $_subitem['url'];?>"><?php echo $key . ($key2 != '' ? '-' : '') . $key2; ?></a></h2></td>
-                            <?php
-                            $amount = 0;
-                            $price = 0;
-                            foreach($maten as $key3 =>$value3) {
-                                echo '<td class="align-c">';
-                                if($_subitem[$value3]['amount']!=0)
-                                { 
-                                    $price =  round($_subitem[$value3]['price'],2);
-                                    $amount += $_subitem[$value3]['amount'];
-                                    echo $_subitem[$value3]['edit']; 
-                                }else echo '0';
-                                echo '</td>';
-                                  
-                            }   ?>
-                            
-                            <td class="align-r"><span class="cart-price"><span class="price"><?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>&nbsp;<?php echo number_format($price, 2, ',', '.'); ?></span></span> </td>
-
-                            <td class="align-c"><?php echo $amount; ?></td>
-
-                            <td class="align-r"><span class="cart-price"><span class="price"><?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>&nbsp;<?php echo number_format($price*$amount, 2, ',', '.'); ?></span></span></td>
-
-                        </tr>
-                        
-                    <?php
-                    $i++; 		
-                        }
-                    }				
-                    ?>
+                <?php foreach($this->getItems() as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach ?>
                 </tbody>
             </table>
             <script type="text/javascript">decorateTable('shopping-cart-table')</script>
@@ -252,13 +217,7 @@
                 </tfoot>
                 <tbody>
                 <?php foreach($this->getItems() as $_item): ?>
-                     <?php
-						$_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-						$prodAttributeSet = Mage::getModel('eav/entity_attribute_set')->load($_product->getAttributeSetId())->getAttributeSetName();
-						if($prodAttributeSet != 'Metrix'):
-					?> 
-                    	<?php echo $this->getItemHtml($_item) ?>
-                    <?php endif; ?>
+                    <?php echo $this->getItemHtml($_item) ?>
                 <?php endforeach ?>
                 </tbody>
             </table>
