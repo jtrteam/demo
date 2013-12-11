@@ -86,7 +86,7 @@ Category default layout
 		
 	
         <reference name="content">
-		<block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+		<!--<block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>-->
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
                 <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
                     <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
