@@ -122,7 +122,7 @@ class Sitewards_B2BProfessional_Model_Observer {
 		/*
 		 * Check to see if we should remove the product price
 		 */
-		if($oBlock instanceof Mage_Catalog_Block_Product_Price) {
+		/*if($oBlock instanceof Mage_Catalog_Block_Product_Price) {
 			$oProduct = $oBlock->getProduct();
 			$iCurrentProductId = $oProduct->getId();
 
@@ -141,7 +141,7 @@ class Sitewards_B2BProfessional_Model_Observer {
 		/*
 		 * Check to see if we should remove the add to cart button on the product page
 		 */
-		} elseif(
+		/*} else*/if(
 			$oBlock instanceof Mage_Catalog_Block_Product_View
 			&&
 			$oBlock->getNameInLayout() == 'product.info.addtocart'
