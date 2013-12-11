@@ -80,14 +80,14 @@
 					</b2bprofessional>
 				</observers>
 			</catalog_product_type_configurable_price>
-			<!--<core_layout_block_create_after>
+			<core_layout_block_create_after>
 				<observers>
 					<b2bprofessional>
 						<class>b2bprofessional/observer</class>
 						<method>onCoreLayoutBlockCreateAfter</method>
 					</b2bprofessional>
 				</observers>
-			</core_layout_block_create_after>-->
+			</core_layout_block_create_after>
 		</events>
 		<helpers>
 			<b2bprofessional>
