@@ -500,7 +500,8 @@ h4 {
 #nav ul.level0 a {
 	color:#202020;
 	font-size:13px;
-	line-height:18px
+	line-height:18px;
+	font-family: FuturaHvBTHeavy;
 }
 #nav ul.level0 a:hover {
 	color:#0AD
@@ -560,7 +561,8 @@ h4 {
 	background:#FFF;
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
-	border-radius:12px
+	border-radius:12px;
+	border: 1px solid #858585;
 }
 #search-form label {
 	display:none
