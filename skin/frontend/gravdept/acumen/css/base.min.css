@@ -14,6 +14,29 @@
 * YUI compressor via: http://refresh-sf.com/yui/
 */
 
+/*------------------------------------*/
+@font-face {
+    font-family: 'FuturaHvBTHeavy';
+    src: url('../fonts/futura_heavy_bt.eot');
+    src: url('../fonts/futura_heavy_bt.eot') format('embedded-opentype'),
+         url('../fonts/futura_heavy_bt.woff') format('woff'),
+         url('../fonts/futura_heavy_bt.ttf') format('truetype'),
+         url('../fonts/futura_heavy_bt.svg#FuturaHvBTHeavy') format('svg');
+}
+
+@font-face {
+    font-family: 'abadi_mt_condensed_lightRg';
+    src: url('../fonts/abadi-mt-condensed-light_1357-webfont.eot');
+    src: url('../fonts/abadi-mt-condensed-light_1357-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/abadi-mt-condensed-light_1357-webfont.woff') format('woff'),
+         url('../fonts/abadi-mt-condensed-light_1357-webfont.ttf') format('truetype'),
+         url('../fonts/abadi-mt-condensed-light_1357-webfont.svg#abadi_mt_condensed_lightRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*------------------------------------------*/
+
  * {
 	margin:0;
 	padding:0;
@@ -53,7 +76,7 @@ html, body {
 	height:100%
 }
 body, button, input, select, table, textarea {
-	font-family:'Adobe Caslon Pro', Times, 'Times New Roman', serif;
+	font-family: abadi_mt_condensed_lightRg;
 	color:#202020;
 	font-size:15px;
 	line-height:1.5
@@ -380,7 +403,7 @@ h4 {
 }
 #header #header-bar {
 	height:40px;
-	background:#000;
+	background:#fff;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px
@@ -426,8 +449,8 @@ h4 {
 #nav li.level0>a {
 	display:block;
 	padding:8px 12px;
-	color:#FFF;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	color:#000;
+	font-family: FuturaHvBTHeavy;
 	font-size:14px;
 	line-height:24px
 }
@@ -549,7 +572,7 @@ h4 {
 	padding:0 5px 0 10px;
 	border:0;
 	background:0;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px
 }
 #search-form button {
@@ -777,7 +800,7 @@ h4 {
 	height:40px;
 	margin-bottom:20px;
 	background:#000;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px
@@ -804,7 +827,7 @@ h4 {
 	padding:0 5px 0 10px;
 	border:0;
 	background:#FFF;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
@@ -894,7 +917,7 @@ h4 {
 .social-icons-box h2 {
 	float:left;
 	margin:0 10px 0 0;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
 	font-weight:bold;
 	line-height:28px
@@ -936,7 +959,7 @@ h4 {
 	float:left;
 	margin-right:10px;
 	color:#909090;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:12px;
 	line-height:28px
 }
@@ -1004,7 +1027,7 @@ textarea, .input-text {
 	border:3px solid #e8e8e8;
 	background:#FFF;
 	color:#404040;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
 	-webkit-appearance:none;
 	-moz-border-radius:0;
@@ -1198,7 +1221,7 @@ p.required {
 	padding-right:0
 }
 .availability {
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:11px;
 	font-weight:500;
 	text-transform:uppercase
@@ -1271,7 +1294,7 @@ p.required {
 .breadcrumbs li {
 	float:left;
 	color:#606060;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:11px;
 	line-height:32px
 }
@@ -1288,7 +1311,7 @@ p.required {
 	border:1px solid transparent;
 	background:#0CF;
 	color:#FFF;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:11px;
 	font-weight:bold;
 	line-height:20px;
@@ -1863,7 +1886,7 @@ a.button:hover {
 	padding:0 8px;
 	border:1px solid #d0d0d0;
 	color:#909090;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:11px;
 	line-height:20px;
 	-moz-border-radius:10px;
@@ -3255,7 +3278,7 @@ body.sales-order-print table {
 	padding:0 8px;
 	background:#333;
 	color:#FFF;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:15px;
 	font-weight:300;
 	line-height:2
@@ -3490,7 +3513,7 @@ body.sales-order-print table {
 	border-width:1px 1px 0 0;
 	background:#f8f8f8;
 	color:gray;
-	font-family:'Helvetica Neue', arial, sans-serif;
+	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
 	font-weight:bold;
 	line-height:29px;
