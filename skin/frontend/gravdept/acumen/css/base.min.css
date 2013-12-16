@@ -522,7 +522,7 @@ h4 {
 	display:block;
 	margin-bottom:10px;
 	font-size:15px;
-	font-weight:bold
+	font-weight: normal;
 }
 #nav ul.level1 {
 	margin-bottom:10px
