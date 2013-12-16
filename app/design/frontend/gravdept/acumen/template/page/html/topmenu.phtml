@@ -26,9 +26,9 @@
             <?php if ( $this->getChildHtml('snippet_nav_before') ): ?>
                 <?php echo $this->getChildHtml('snippet_nav_before') ?>
             <?php endif; ?>
-            
-            <?php echo $_menu ?>
-            
+            <li class="level0 nav-1 first level-top parent"><span>Shop By</span>
+            	<div class="menu cols-1"><ul class="level0"><?php echo $_menu ?></ul></div>
+            </li>
             <?php /* GravDept: add snippet */ ?>
             <?php if ( $this->getChildHtml('snippet_nav_after') ): ?>
                 <?php echo $this->getChildHtml('snippet_nav_after') ?>
