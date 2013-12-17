@@ -12,13 +12,13 @@
 ?>
 
 <div id="header">
-	<div id="logo">
+	<?php /*?><div id="logo">
 		<?php if ($this->getIsHomePage()):?>
 			<h1><a href="<?php echo $this->getUrl(); ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
 		<?php else: ?>
 			<a href="<?php echo $this->getUrl(); ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
 		<?php endif; ?>
-	</div>
+	</div><?php */?>
 	
 	<div id="header-bar">
 		<?php echo $this->getChildHtml('topMenu') ?>

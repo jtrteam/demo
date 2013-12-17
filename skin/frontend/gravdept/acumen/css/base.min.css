@@ -648,25 +648,25 @@ h4 {
 #account .links a {
 	display:block;
 	padding:8px;
-	color:#202020
+	color:#fff;
 }
 #account .links a:hover {
-	color:#0AD
+	text-decoration: underline;
 }
 #account-links {
 	float:right
 }
 #account-links li a {
-	background:#f8f8f8
+	/*background:#f8f8f8*/
 }
-#account-links li:last-child a {
+/*#account-links li:last-child a {
 	-moz-border-radius-bottomright:5px;
 	-webkit-border-bottom-right-radius:5px;
 	border-bottom-right-radius:5px
 }
 #account-links a:hover {
 	background:#f0f0f0
-}
+}*/
 #account>a {
 	position:absolute;
 	right:0;
@@ -679,7 +679,7 @@ h4 {
 #mini-cart .links li {
 	position:relative
 }
-#mini-cart .links>li a {
+/*#mini-cart .links>li a {
 	background:#f8f8f8
 }
 #mini-cart:hover .links>li a {
@@ -689,7 +689,7 @@ h4 {
 	-moz-border-radius-bottomleft:5px;
 	-webkit-border-bottom-left-radius:5px;
 	border-bottom-left-radius:5px
-}
+}*/
 #mini-cart .cart-count {
 	position:relative;
 	float:left;
