@@ -411,11 +411,12 @@ h4 {
 }
 #logo {
 	display:block;
-	max-width:300px;
-	min-height:105px;
+	max-width:160px;
+	min-height:70px;
 	overflow:hidden;
 	margin: 0 auto;
 }
+#logo a img { margin-top: 3px; }
 #logo h1 {
 	float:left;
 	margin:0
@@ -802,12 +803,12 @@ h4 {
 }
 #footer-bar {
 	height:40px;
-	margin-bottom:20px;
-	background:#000;
-	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	-moz-border-radius:5px;
+	margin: 0 0 7px 0;
+	/*background:#000;
+	font-family:'Helvetica Neue', arial, sans-serif;*/
+	/*-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	border-radius:5px
+	border-radius:5px*/
 }
 .copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 15px; }
 .copyright  { display: inline-block; }
@@ -928,7 +929,7 @@ h4 {
 	margin:0 10px 0 0;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
-	font-weight:bold;
+	font-weight: normal;
 	line-height:28px
 }
 .social-icons-list {
@@ -995,6 +996,7 @@ h4 {
 .footer-links>li:first-child {
 	margin-left:0
 }
+#footer { border-top: 1px solid #666; padding-top: 5px; }
 .switchers {
 	padding-bottom:15px;
 	text-align:right
