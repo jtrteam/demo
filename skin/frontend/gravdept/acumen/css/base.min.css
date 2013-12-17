@@ -3715,10 +3715,10 @@ ul.tabs-content>li.active {
 	position:relative;
 	margin-left:0 15px 15px;
 	width:930px;
-	height:150px;
+	height:115px;
 	background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;
 	text-align:center;
 	color:#fff;
-	padding-top:20px;
+	padding-top:50px;
 }
-.welcome p { font-size:18px;}
+.welcome p { font-size:30px}
