@@ -396,7 +396,8 @@ h4 {
 }
 #header {
 	position:relative;
-	margin:0 15px
+	margin:0 15px;
+	background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat;
 }
 #header a {
 	text-decoration:none
