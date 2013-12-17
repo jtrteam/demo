@@ -1229,7 +1229,7 @@ p.required {
 	text-transform:uppercase
 }
 .availability.in-stock {
-	color:#5dc46e
+	color:#666
 }
 .availability.out-of-stock {
 	color:#F00
