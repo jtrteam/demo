@@ -202,7 +202,7 @@
                 
                 <li><a href="#tab-details"><?php echo $this->__('Details'); ?></a></li>
                 
-                <li><a href="#tab-tags"><?php echo $this->__('Tags'); ?></a></li>
+                <?php /*?><li><a href="#tab-tags"><?php echo $this->__('Tags'); ?></a></li><?php */?>
                 
                 <?php if ( $this->getChildHtml('snippet_product_view_tab_1') ): ?>
                     <li><a href="#tab-custom-1"><?php echo $this->__('Custom 1'); ?></a></li>
@@ -222,10 +222,10 @@
                     <?php echo $this->getChildHtml('product_attributes'); ?>
                 </div>
                 
-                <div id="tab-tags">
+               <?php /*?> <div id="tab-tags">
                     <?php echo $this->getChildHtml('product_additional_data') ?>
                 </div>
-                
+                <?php */?>
                 <?php if ( $this->getChildHtml('snippet_product_view_tab_1') ): ?>
                     <div id="tab-custom-1">
                         <div class="snippet snippet-product-view-tab-1"><?php echo $this->getChildHtml('snippet_product_view_tab_1') ?></div>
