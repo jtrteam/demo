@@ -3713,11 +3713,12 @@ ul.tabs-content>li.active {
 	display:inline;
 	float:left;
 	position:relative;
-	margin-left:15px;
-	margin-right:15px;
+	margin-left:0 15px 15px;
 	width:930px;
 	height:150px;
 	background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;
 	text-align:center;
 	color:#fff;
+	padding-top:20px;
 }
+.welcome p { font-size:18px;}
