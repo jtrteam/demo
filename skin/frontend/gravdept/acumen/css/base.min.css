@@ -466,7 +466,7 @@ h4 {
 	display:block
 }
 #nav>li>a:hover, #nav>li:hover>a {
-	color:#0CF
+	color:#333
 }
 #nav .cols-1 {
 	width:150px
