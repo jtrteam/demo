@@ -628,9 +628,9 @@ h4 {
 }
 #account {
 	position:absolute;
-	right:0;
-	top:0;
-	border-width:0 1px 1px;
+	right:14px;
+	top:4px;
+	/*border-width:0 1px 1px;
 	border-style:solid;
 	border-color:#e0e0e0;
 	-webkit-border-bottom-right-radius:5px;
@@ -638,7 +638,7 @@ h4 {
 	-moz-border-radius-bottomright:5px;
 	-moz-border-radius-bottomleft:5px;
 	border-bottom-right-radius:5px;
-	border-bottom-left-radius:5px
+	border-bottom-left-radius:5px*/
 }
 #account .links li {
 	float:left;
@@ -711,7 +711,7 @@ h4 {
 	background-position:0 -60px
 }
 #mini-cart:hover ul.links li a {
-	color:#0AD
+	color:#fff;
 }
 #mini-cart .menu {
 	display:none;
@@ -808,6 +808,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px
 }
+.copyright  { background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat; }
 .newsletter {
 	float:left;
 	margin:8px 10px
@@ -970,7 +971,7 @@ h4 {
 	float:left
 }
 #footer-closer {
-	padding-bottom:20px
+	padding: 14px 0 20px 0; background-color: #edece9;
 }
 #footer-closer h2 {
 	margin-bottom:6px;
