@@ -822,7 +822,7 @@ h4 {
 .newsletter label {
 	float:left;
 	margin-right:10px;
-	color:#FFF;
+	color:#000;
 	font-size:13px;
 	line-height:24px
 }
@@ -831,7 +831,7 @@ h4 {
 	width:175px;
 	height:24px;
 	padding:0 5px 0 10px;
-	border:0;
+	border: 1px solid #858585;
 	background:#FFF;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:13px;
@@ -887,14 +887,16 @@ h4 {
 	border-left:5px solid transparent
 }
 #footer .top {
-	position:relative;
+	position:fixed;
 	float:right;
 	height:24px;
 	margin-right:10px;
 	padding:8px 32px 8px 8px;
-	color:#FFF;
+	color:#000;
 	font-size:13px;
-	line-height:24px
+	line-height:24px;
+	right: 10px;
+	bottom: 10px;
 }
 #footer .top:hover {
 	text-decoration:none
@@ -920,6 +922,7 @@ h4 {
 	padding-bottom:20px;
 	border-bottom:1px solid #e0e0e0
 }
+.social-icons-box  { margin-top: 2px; float: right; }
 .social-icons-box h2 {
 	float:left;
 	margin:0 10px 0 0;
