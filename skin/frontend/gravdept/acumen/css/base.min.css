@@ -810,6 +810,7 @@ h4 {
 	border-radius:5px
 }
 .copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 8px; }
+.copyright  { display: inline-block; }
 .newsletter {
 	float:left;
 	margin:8px 10px
