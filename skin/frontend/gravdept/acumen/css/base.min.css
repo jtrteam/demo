@@ -809,7 +809,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px
 }
-.copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 8px; }
+.copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 15px; }
 .copyright  { display: inline-block; }
 .newsletter {
 	float:left;
@@ -964,7 +964,7 @@ h4 {
 .payment-icons-footer span {
 	float:left;
 	margin-right:10px;
-	color:#909090;
+	color:#fff;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:12px;
 	line-height:28px
