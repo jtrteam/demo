@@ -507,14 +507,14 @@ h4 {
 	font-family: FuturaHvBTHeavy;
 }
 #nav ul.level0 a:hover {
-	color:#0AD
+	color:#333
 }
 #nav ul.level0 .view-all {
 	display:block;
 	color:#909090
 }
 #nav ul.level0 .view-all:hover {
-	color:#0AD
+	color:#333
 }
 #nav li.level1 {
 	float:left;
