@@ -413,7 +413,8 @@ h4 {
 	display:block;
 	max-width:300px;
 	min-height:105px;
-	overflow:hidden
+	overflow:hidden;
+	margin: 0 auto;
 }
 #logo h1 {
 	float:left;
@@ -808,7 +809,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px
 }
-.copyright  { background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat; }
+.copyright  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 8px; }
 .newsletter {
 	float:left;
 	margin:8px 10px

@@ -23,10 +23,7 @@
 	<div id="footer-opener" class="grid-block">
     	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social_acumen')->toHtml() ?>
     	
-	    <div class="payment-icons-footer">
-	        <span><?php echo $this->__('Pay with') ?></span>
-    	    <?php echo $this->getChildHtml('gravdept_payment_icons'); ?>
-	    </div>
+	    
 	</div>
 
 	<div id="footer-closer" class="grid">
@@ -85,5 +82,10 @@
 		</div><?php */?>
         
 	</div>
-    <div class="copyright"><p class="copyright">&copy; <?php echo date("Y") ?> <?php echo $this->getCopyright() ?></p></div>
+    <div class="copyright"><p class="copyright">&copy; <?php echo date("Y") ?> <?php echo $this->getCopyright() ?></p>
+    <div class="payment-icons-footer">
+	        <span><?php echo $this->__('Pay with') ?></span>
+    	    <?php echo $this->getChildHtml('gravdept_payment_icons'); ?>
+	    </div>
+        </div>
 </div>
