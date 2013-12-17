@@ -82,11 +82,11 @@ body, button, input, select, table, textarea {
 	line-height:1.5
 }
 a {
-	color:#0AD;
+	color:#909090;
 	text-decoration:none
 }
 a:hover {
-	color:#09C;
+	color:#000;
 	text-decoration:underline
 }
 a:focus, a:active {
@@ -2402,7 +2402,7 @@ a.button:hover {
 	text-decoration:none
 }
 #narrow-by-list ol a:hover {
-	color:#0AD;
+	color:#000;
 	text-decoration:none
 }
 #narrow-by-list ol a .count {
