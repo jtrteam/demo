@@ -1335,7 +1335,7 @@ p.required {
 }
 .button:active {
 	border-color:transparent;
-	background:#0AD
+	background:#333
 }
 .button+.button {
 	margin-left:5px
