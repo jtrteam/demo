@@ -48,7 +48,7 @@
 					?>
 					
 					<a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getImageLabel($_product, 'small_image')) ?>">
-						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200, 200); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel($_product, 'small_image')) ?>" />
+						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(225, 225); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel($_product, 'small_image')) ?>" />
 					
 					    <?php /* GravDept. Check if product is new. */ ?>
 					    <?php if ( $gravdept_now >= $gravdept_newFrom && $gravdept_now <= $gravdept_newTo ): ?>
@@ -112,7 +112,7 @@
         					?>
         					
         					<a class="product-image" href="<?php echo $_product->getProductUrl() ?>">
-        					    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200, 200); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel($_product, 'small_image')) ?>" />
+        					    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(225, 225); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel($_product, 'small_image')) ?>" />
         					
         					    <?php /* GravDept. Check if product is new. */ ?>
         					    <?php if ( $gravdept_now >= $gravdept_newFrom && $gravdept_now <= $gravdept_newTo ): ?>

@@ -30,7 +30,7 @@
     			<?php foreach ($this->getItems() as $_item): ?>
     				<li>
     					<a class="product-image" href="<?php echo $_item->getProductUrl(); ?>">
-                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(200, 200); ?>" alt="<?php echo $this->escapeHtml($_item->getName()); ?>" />
+                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(225, 225); ?>" alt="<?php echo $this->escapeHtml($_item->getName()); ?>" />
                         </a>
     					
     					<div>

@@ -1771,8 +1771,8 @@ a.button:hover {
 }
 .product-grid td {
 	position:relative;
-	max-width:250px;
-	padding:0 30px 30px 0;
+	max-width:225px;
+	padding:0 15px 30px 0;
 	vertical-align:top
 }
 .product-grid td:last-child {
@@ -1788,8 +1788,8 @@ a.button:hover {
 	margin-bottom:10px
 }
 .product-grid .product-image img {
-	width:240px;
-	height:240px
+	width:225px;
+	height:245px
 }
 .product-grid .ratings {
 	position:absolute;

@@ -30,7 +30,7 @@
 		<?php endif; ?>
 	
 				<li>
-					<a class="product-image" href="<?php echo $_product->getProductUrl(); ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200, 200); ?>" alt="<?php echo $this->escapeHtml($_product->getName()); ?>" /></a>
+					<a class="product-image" href="<?php echo $_product->getProductUrl(); ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(225, 225); ?>" alt="<?php echo $this->escapeHtml($_product->getName()); ?>" /></a>
 					<a class="product-name" href="<?php echo $_product->getProductUrl(); ?>"><?php echo $this->escapeHtml($_product->getName()); ?></a>
 					
 					<?php echo $this->getReviewsSummaryHtml($_product, 'short'); ?>
