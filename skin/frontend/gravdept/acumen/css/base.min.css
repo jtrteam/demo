@@ -212,8 +212,11 @@ h4 {
 .grid .grid_4 {
 	width:300px;
 	height:300px;
-	margin-left:5px;
+	margin-left:0px;
 	margin-right:5px;
+}
+.grid .last {
+	margin-right:0px !important;
 }
 .grid .grid_5 {
 	width:370px
