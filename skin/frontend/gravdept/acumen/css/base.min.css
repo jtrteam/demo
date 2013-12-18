@@ -1244,6 +1244,14 @@ p.required {
 	text-transform:uppercase;
 	white-space:nowrap
 }
+.flex-table thead th {
+	padding:8px 10px;
+	font-size:14px;
+	font-weight:bold;
+	line-height:24px;
+	text-transform:uppercase;
+	white-space:nowrap
+}
 .flex-table tbody tr {
 	border-bottom:1px solid #e0e0e0
 }
@@ -2298,11 +2306,11 @@ a.button:hover {
 	margin-bottom:0;
 	font-size:13px
 }
-#cart-table .product-image {
+/*#cart-table .product-image {
 	position:absolute;
 	left:0;
 	top:0
-}
+}*/
 #cart-table .product-name {
 	display:inline-block;
 	margin-bottom:10px
@@ -3761,3 +3769,6 @@ ul.tabs-content>li.active {
 	padding-top:50px;
 }
 .welcome p { font-size:30px}
+.width-qtr {
+	width:20%
+}
