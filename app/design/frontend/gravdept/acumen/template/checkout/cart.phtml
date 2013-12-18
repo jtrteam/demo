@@ -140,6 +140,26 @@
 		    <div class="snippet snippet-coupon-below"><?php echo $this->getChildHtml('snippet_cart_coupon_below') ?></div>
 		<?php endif; ?>
 	</div>
+    <div class="grid_15">
+	    <?php echo $this->getChildHtml('coupon') ?>
+		
+		<?php /* Extensions placeholder */ ?>
+		<?php echo $this->getChildHtml('checkout.cart.extra') ?>
+		
+		<?php if ( $this->getChildHtml('snippet_cart_coupon_below') ): ?>
+		    <div class="snippet snippet-coupon-below"><?php echo $this->getChildHtml('snippet_cart_coupon_below') ?></div>
+		<?php endif; ?>
+	</div>
+	<div class="grid_15">
+	    <?php echo $this->getChildHtml('coupon') ?>
+		
+		<?php /* Extensions placeholder */ ?>
+		<?php //echo $this->getChildHtml('checkout.cart.extra') ?>
+		
+		<?php if ( $this->getChildHtml('snippet_cart_coupon_below') ): ?>
+		    <div class="snippet snippet-coupon-below"><?php echo $this->getChildHtml('snippet_cart_coupon_below') ?></div>
+		<?php endif; ?>
+	</div>
 	
 	<?php /*?><div class="grid_8">
 		<?php if (!$this->getIsVirtual()): ?>
