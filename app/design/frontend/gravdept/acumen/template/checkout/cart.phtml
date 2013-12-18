@@ -31,23 +31,11 @@
 			
 				<thead>
 					<tr>
-						<th class="hide-th" rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Remove') ?></th>
 						<th class="width-full" rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Product') ?></th>
-						
-						<?php /* GravDept, hidden in /checkout/cart/item/default.phtml */ ?>
-						<?php /*
-						<th rowspan="<?php echo $mergedCells; ?>"></th>
-						*/ ?>
-						
-						<?php /* GravDept, hidden in /checkout/cart/item/default.phtml */ ?>
-						<?php /*
-						<?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-							<th rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Move To Wishlist') ?></th>
-						<?php endif; ?>
-						*/ ?>
-						
-						<th class="a-right" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Price') ?></th>
+                        <th class="hide-th" rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Description') ?></th>
+						<th class="hide-th" rowspan="<?php echo $mergedCells; ?>"><?php //echo $this->__('Remove') ?></th>
 						<th rowspan="<?php echo $mergedCells; ?>"><abbr title="<?php echo $this->__('Quantity') ?>"><?php echo $this->__('Qty.') ?></abbr></th>
+						<th class="a-right" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Price') ?></th>
 						<th class="a-right" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
 					</tr>
 					
@@ -119,7 +107,7 @@
 			<?php echo $this->getChildHtml('top_methods') ?>
 		<?php endif;*/ ?>
 		
-		<?php //echo $this->getChildHtml('totals'); ?>
+		<?php echo $this->getChildHtml('totals'); ?>
 		
 		<?php if(!$this->hasError()): ?>
 			<div id="cart-checkout-methods">
