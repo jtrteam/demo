@@ -24,7 +24,7 @@
 </div>
 
 <div class="grid">
-	<div class="grid_13">
+	<div class="grid_9">
 		<form id="cart-update-form" action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
 			<table id="cart-table" class="flex-table">
 				<?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
@@ -113,13 +113,13 @@
 		<?php endif; ?>
 	</div>
 	
-	<div class="grid_14">
+	<div class="grid_3">
 		<?php /* GravDept. Hidden. */ ?>
 		<?php /*if(!$this->hasError()): ?>
 			<?php echo $this->getChildHtml('top_methods') ?>
 		<?php endif;*/ ?>
 		
-		<?php //echo $this->getChildHtml('totals'); ?>
+		<?php echo $this->getChildHtml('totals'); ?>
 		
 		<?php if(!$this->hasError()): ?>
 			<div id="cart-checkout-methods">
@@ -130,7 +130,7 @@
 </div>
 
 <div id="cart-widgets" class="grid">
-	<div class="grid_15">
+	<div class="grid_4">
 	    <?php echo $this->getChildHtml('coupon') ?>
 		
 		<?php /* Extensions placeholder */ ?>
@@ -141,13 +141,13 @@
 		<?php endif; ?>
 	</div>
 	
-	<?php /*?><div class="grid_8">
+	<div class="grid_8">
 		<?php if (!$this->getIsVirtual()): ?>
 			<?php echo $this->getChildHtml('shipping'); ?>
 		<?php else: ?>
 			&nbsp;
 		<?php endif; ?>
-	</div>	<?php */?>
+	</div>	
 </div>
 
 <?php echo $this->getChildHtml('crosssell') ?>
