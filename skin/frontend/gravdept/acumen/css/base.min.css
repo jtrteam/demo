@@ -2287,11 +2287,11 @@ a.button:hover {
 #cart-table tfoot td {
 	text-align:right
 }
-.cart-item-contents {
+/*.cart-item-contents {
 	position:relative;
 	min-height:85px;
 	padding-left:105px
-}
+}*/
 #cart-table .btn-remove {
 	margin-top:34px
 }
