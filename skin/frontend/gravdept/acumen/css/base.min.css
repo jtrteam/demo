@@ -1315,7 +1315,7 @@ p.required {
 }
 .breadcrumbs {
 	overflow:hidden;
-	margin:0 15px;
+	margin:0 0;
 	padding-left:17px;
 	background:#f8f8f8;
 	-moz-border-radius:5px;
