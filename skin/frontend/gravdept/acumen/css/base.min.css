@@ -193,7 +193,7 @@ h4 {
 	display:table;
 	content:''
 }
-.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, .grid_13 {
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
 	display:inline;
 	float:left;
 	position:relative;
@@ -240,7 +240,10 @@ h4 {
 	width:930px
 }
 .grid .grid_13 {
-	width:930px
+	width:960px
+	display:inline;
+	float:left;
+	position:relative;
 }
 .alpha {
 	margin-left:0
@@ -399,7 +402,7 @@ h4 {
 }
 #header {
 	position:relative;
-	margin:0 15px;
+	margin:0 0;
 	background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat;
 }
 #header a {
@@ -3435,15 +3438,15 @@ body.sales-order-print table {
 }
 .promo-slider {
 	position:relative;
-	width:930px;
+	width:960px;
 	margin:30px auto
 }
 .promo-slider .slides-container {
-	width:930px;
+	width:960px;
 	height:345px
 }
 .promo-slider .slides-container>div {
-	width:930px;
+	width:960px;
 	height:345px
 }
 .promo-slider .slides-pagination {
@@ -3703,9 +3706,7 @@ ul.tabs-content>li.active {
 	width:300px;
 	height:300px;
 }
-.grid .first {
-	margin-left:15px !important;
-}
+
 .limiter {
 	display:none;
 }
@@ -3713,8 +3714,8 @@ ul.tabs-content>li.active {
 	display:inline;
 	float:left;
 	position:relative;
-	margin:0 15px 15px;
-	width:930px;
+	margin:0 0 15px 0;
+	width:960px;
 	height:115px;
 	background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;
 	text-align:center;
