@@ -172,11 +172,11 @@
 					success : function(data) {
 						jQuery('#ajax_loader').hide();
                         //alert(data.status + ": " + data.message);
-                        if(jQuery('.block-cart')){
+                       /* if(jQuery('.block-cart')){
                             jQuery('.block-cart').replaceWith(data.sidebar);
-                        }
-                        if(jQuery('.header .links')){
-                            jQuery('.header .links').replaceWith(data.toplink);
+                        }*/
+                        if(jQuery('#mini-cart')){
+                            jQuery('#mini-cart').replaceWith(data.sidebar);
                         }
 					}
 				});
