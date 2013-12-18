@@ -3141,7 +3141,7 @@ body.sales-order-print table {
 	width:690px
 }
 .product-slider.cols_4, .product-slider.cols_4 .slides-container, .product-slider.cols_4 .slides-container>div {
-	width:930px
+	width:960px
 }
 .product-slider h2 {
 	margin-left:60px
@@ -3185,7 +3185,7 @@ body.sales-order-print table {
 .slide-product-list li {
 	float:left;
 	width:210px;
-	margin-left:30px
+	margin-left:50px
 }
 .slide-product-list li:first-child {
 	margin-left:0
@@ -3370,15 +3370,15 @@ body.sales-order-print table {
 	background-position:-400px -60px
 }
 .grid-slider-full {
-	width:930px;
+	width:960px;
 	margin:30px auto
 }
 .grid-slider-full .slides-container {
-	width:930px;
+	width:960px;
 	height:345px
 }
 .grid-slider-full .slides-container>div {
-	width:930px;
+	width:960px;
 	height:345px
 }
 .grid-slider-3-4 {
