@@ -615,7 +615,7 @@ h4 {
 	border:0;
 	background:0;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	font-size:13px
+	font-size:14px
 }
 #search-form button {
 	float:left;
@@ -681,7 +681,7 @@ h4 {
 }
 #account .links li {
 	float:left;
-	font-size:13px;
+	font-size:14px;
 	line-height:24px
 }
 #account .links a {
@@ -710,7 +710,7 @@ h4 {
 	position:absolute;
 	right:0;
 	top:44px;
-	font-size:13px
+	font-size:14px
 }
 #mini-cart {
 	float:left
@@ -739,7 +739,7 @@ h4 {
 	padding-top:1px;
 	background:url(../img/icon/sprite.png) 0 0 no-repeat;
 	color:#202020;
-	font-size:12px;
+	font-size:14px;
 	line-height:24px;
 	text-align:center
 }
@@ -757,7 +757,7 @@ h4 {
 	right:-1px;
 	top:40px;
 	width:300px;
-	font-size:13px
+	font-size:14px
 }
 #mini-cart:hover .menu {
 	display:block
@@ -783,7 +783,7 @@ h4 {
 	min-height:60px;
 	padding:10px 30px 10px 80px;
 	border-bottom:1px solid #e0e0e0;
-	font-size:13px;
+	font-size:14px;
 	line-height:16px
 }
 #mini-cart-list dt {
@@ -829,14 +829,14 @@ h4 {
 }
 #mini-cart .actions .last-added {
 	margin-bottom:10px;
-	font-size:13px
+	font-size:14px
 }
 #mini-cart .subtotal .label {
 	display:none
 }
 #footer p, #footer ul li {
 	margin-bottom:0;
-	font-size:13px
+	font-size:14px
 }
 #footer-bar {
 	height:40px;
@@ -861,7 +861,7 @@ h4 {
 	float:left;
 	margin-right:10px;
 	color:#000;
-	font-size:13px;
+	font-size:14px;
 	line-height:24px
 }
 .newsletter #newsletter-email {
@@ -872,7 +872,7 @@ h4 {
 	border: 1px solid #858585;
 	background:#FFF;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	font-size:13px;
+	font-size:14px;
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
 	border-radius:12px
@@ -931,7 +931,7 @@ h4 {
 	margin-right:10px;
 	padding:8px 32px 8px 8px;
 	color:#000;
-	font-size:13px;
+	font-size:14px;
 	line-height:24px;
 	right: 10px;
 	bottom: 10px;
@@ -965,7 +965,7 @@ h4 {
 	float:left;
 	margin:0 10px 0 0;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	font-size:13px;
+	font-size:14px;
 	font-weight: normal;
 	line-height:28px
 }
@@ -1018,7 +1018,7 @@ h4 {
 }
 #footer-closer h2 {
 	margin-bottom:6px;
-	font-size:13px;
+	font-size:14px;
 	font-weight:bold;
 	line-height:24px;
 	text-transform:uppercase
@@ -1049,7 +1049,7 @@ h4 {
 	margin-left:5px
 }
 label {
-	font-size:13px
+	font-size:14px
 }
 label.required:after {
 	content:' *';
@@ -1061,7 +1061,7 @@ label.required em {
 }
 select {
 	max-width:100%;
-	font-size:13px
+	font-size:14px
 }
 textarea {
 	width:100%;
@@ -1076,7 +1076,7 @@ textarea, .input-text {
 	background:#FFF;
 	color:#404040;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	font-size:13px;
+	font-size:14px;
 	-webkit-appearance:none;
 	-moz-border-radius:0;
 	-webkit-border-radius:0;
@@ -1109,7 +1109,7 @@ color:#707070
 .validation-advice {
 	margin-top:5px;
 	color:#F00;
-	font-size:13px
+	font-size:14px
 }
 p.required {
 	display:none
@@ -1228,7 +1228,7 @@ p.required {
 }
 .flex-table thead th {
 	padding:8px 10px;
-	font-size:13px;
+	font-size:14px;
 	font-weight:bold;
 	line-height:24px;
 	text-transform:uppercase;
@@ -1270,7 +1270,7 @@ p.required {
 }
 .availability {
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
-	font-size:11px;
+	font-size:12px;
 	font-weight:500;
 	text-transform:uppercase
 }
@@ -1319,7 +1319,7 @@ p.required {
 }
 .block-title p {
 	margin:0;
-	font-size:13px
+	font-size:14px
 }
 .block-content.lined {
 	padding:15px 10px 0
@@ -1388,7 +1388,7 @@ p.required {
 }
 .button+.alt-action {
 	margin-left:10px;
-	font-size:13px;
+	font-size:14px;
 	line-height:28px
 }
 .button-large {
@@ -1446,7 +1446,7 @@ a.button:hover {
 	left:215px;
 	top:14px;
 	padding-left:30px;
-	font-size:13px;
+	font-size:14px;
 	line-height:24px
 }
 .captcha-reload:after {
@@ -1481,7 +1481,7 @@ a.button:hover {
 }
 .cvv-what-is-this {
 	margin-left:10px;
-	font-size:13px;
+	font-size:14px;
 	line-height:24px
 }
 .faq dl {
@@ -1517,7 +1517,7 @@ a.button:hover {
 }
 .gift-option-box .product-img-box .number {
 	color:#909090;
-	font-size:13px
+	font-size:14px
 }
 .gift-option-box .product-img-box .product-image {
 	position:absolute;
@@ -1548,7 +1548,7 @@ a.button:hover {
 	text-indent:-9999px
 }
 .item-options {
-	font-size:13px
+	font-size:14px
 }
 .item-options dt {
 	font-weight:bold
