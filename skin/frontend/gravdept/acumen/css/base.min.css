@@ -193,13 +193,14 @@ h4 {
 	display:table;
 	content:''
 }
-.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+.grid_1, .grid_2, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_10, .grid_11, .grid_12 {
 	display:inline;
 	float:left;
 	position:relative;
 	margin-left:15px;
 	margin-right:15px
 }
+
 .grid .grid_1 {
 	width:50px
 }
@@ -207,7 +208,12 @@ h4 {
 	width:130px
 }
 .grid .grid_3 {
-	width:210px
+	width:210px;
+	display:inline;
+	float:left;
+	position:relative;
+	margin-left:0px;
+	margin-right:15px
 }
 .grid .grid_4 {
 	width:300px;
@@ -231,7 +237,12 @@ h4 {
 	width:610px
 }
 .grid .grid_9 {
-	width:690px
+	width:705px;
+	display:inline;
+	float:left;
+	position:relative;
+	margin-left:15px;
+	margin-right:0px
 }
 .grid .grid_10 {
 	width:770px
