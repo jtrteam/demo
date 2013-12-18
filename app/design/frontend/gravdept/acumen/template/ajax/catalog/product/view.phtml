@@ -171,12 +171,12 @@
 					data : data,
 					success : function(data) {
 						jQuery('#ajax_loader').hide();
-                        //alert(data.status + ": " + data.message);
-                       /* if(jQuery('.block-cart')){
-                            jQuery('.block-cart').replaceWith(data.sidebar);
-                        }*/
-                        if(jQuery('#mini-cart')){
-                            jQuery('#mini-cart').replaceWith(data.sidebar);
+                        if(jQuery('#mini-cart .links')){
+                            jQuery('#mini-cart .links').replaceWith(data.toplink);
+                        }
+                        if(jQuery('.menu .liner')){
+							var content = '<div class="liner">'+data.sidebar+'</div';
+                            jQuery('.menu .liner').replaceWith(content);
                         }
 					}
 				});

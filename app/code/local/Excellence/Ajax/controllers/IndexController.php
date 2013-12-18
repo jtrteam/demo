@@ -49,7 +49,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController
 					$response['message'] = $message;
 					//New Code Here
 					$this->loadLayout();
-					$toplink = $this->getLayout()->getBlock('top.links')->toHtml();
+					$toplink = $this->getLayout()->getBlock('top.cart')->toHtml();
 					$sidebar_block = $this->getLayout()->getBlock('cart_sidebar');
 					Mage::register('referrer_url', $this->_getRefererUrl());
 					$sidebar = $sidebar_block->toHtml();
