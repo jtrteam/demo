@@ -2171,7 +2171,7 @@ tr.summary-details-excluded {
 }
 .block-account .block-content li a {
     border-bottom: 1px solid #DDDDDD;
-    color: #5F5D5C;
+    color: #F2CE68;
     display: block;
     font-size: 11px;
     font-weight: 700;
@@ -2186,7 +2186,7 @@ tr.summary-details-excluded {
 }
 .block-account .block-content li.current {
     border-bottom: 1px solid #DDDDDD;
-    color: #6C899C;
+    color: #fff;
     padding: 3px 0;
 }
 .block-account .block-content li.current strong {
