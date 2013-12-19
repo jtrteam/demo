@@ -53,14 +53,14 @@ color:#FFFFFF;font:bold 12px/20px Arial,Helvetica,sans-serif;height:20px !import
 .onepagecheckout_datafields #comment-label { font-weight:normal; }
 .onepagecheckout_datafields #comment-block #order-comment{ width: 100%; padding:0px;}
 
-.form_fields label {color:#767676;float:left;font-weight:normal;position:relative;z-index:0;}
+.form_fields label {color:#F2CE68;float:left;font-weight:normal;position:relative;z-index:0;}
 
 .onepagecheckout_datafields .form_fields li {margin:0 0 8px;}
 .onepagecheckout_datafields .form_fields li.options input.radio,
 .onepagecheckout_datafields .form_fields li.options input.checkbox {margin-right:3px;}
 .onepagecheckout_datafields .form_fields li.options label {float:none;}
 .onepagecheckout_datafields .form_fields li.options .input-box {clear:none;display:inline;width:auto;}
-li.options label {color:#767676;}
+li.options label {color:#F2CE68;}
 
 input, select, textarea, button{color:#000;} 
 
