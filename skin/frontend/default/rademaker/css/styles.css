@@ -628,7 +628,7 @@ input.input-text:focus, select:focus, textarea:focus {
     margin: 0 0 8px;
 }
 .form-list label {
-    color: #666666;
+    color: #F2CE68;
     float: left;
     font-weight: 700;
     position: relative;
@@ -1079,9 +1079,9 @@ p.required {
     border: 1px solid #D8D8D8;
     width: 100%;
 }
-.data-table .odd, .data-table .even {
+/*.data-table .odd, .data-table .even {
     background: none repeat scroll 0 0 #FFFFFF;
-}
+}*/
 .data-table td.last, .data-table th.last {
     border-right: 0 none;
 }
@@ -1097,7 +1097,7 @@ p.required {
 }
 .data-table thead th {
     border-bottom: 1px solid #D8D8D8;
-    color: #0A263C;
+    color: #F2CE68;
     font-weight: 700;
     padding: 8px;
     vertical-align: middle;
@@ -1109,9 +1109,9 @@ p.required {
 .data-table thead th a, .data-table thead th a:hover {
     color: #FFFFFF;
 }
-.data-table thead th {
+/*.data-table thead th {
     background: none repeat scroll 0 0 #F9F9F9;
-}
+}*/
 .data-table thead th .tax-flag {
     font-size: 11px;
     white-space: nowrap;
@@ -4943,7 +4943,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 .box-account .box-head h2 {
     background-position: 0 0;
     background-repeat: no-repeat;
-    color: #000000;
+    color: #F2CE68;
     float: left;
     font-size: 13px;
     font-weight: 700;
@@ -4951,7 +4951,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     padding-left: 35px;
 }
 .box-account a {
-    color: #025689;
+    color: #fff;
     font-size: 11px;
 }
 .dashboard .box .box-title {
