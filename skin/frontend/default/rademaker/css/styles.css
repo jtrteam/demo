@@ -5876,14 +5876,14 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     overflow: hidden;
 }
 .blockHome .product-title a, .products-grid .product-name a {
-    color: #26BEC2;
+    color: #F2CE68;
     font-size: 14px;
     font-weight: 700;
     height: 36px;
     line-height: 18px;
 }
 .products-grid .product-name a {
-    color: #2F2F2F;
+    color: #F2CE68;
     display: table-cell;
     vertical-align: middle;
 }
