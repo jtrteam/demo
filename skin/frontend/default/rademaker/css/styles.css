@@ -2413,13 +2413,13 @@ tr.summary-details-excluded {
     text-align: center;
 }
 .compare-table tr.first td .product-name {
-    color: #999999;
+    color: #F2CE68;
     font-size: 13px;
     font-weight: 700;
     margin: 0 0 5px;
 }
 .compare-table tr.first td .product-name a {
-    color: #999999;
+    color: #F2CE68;
 }
 .compare-table tr.first td .ratings {
     margin: 0 auto;
@@ -2432,7 +2432,7 @@ tr.summary-details-excluded {
     font-size: 12px;
 }
 .block-poll label {
-    color: #777777;
+    color: #F2CE68;
     font-weight: 700;
 }
 .block-poll input.radio {
