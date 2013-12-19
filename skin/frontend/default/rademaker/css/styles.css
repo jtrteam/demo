@@ -1654,7 +1654,7 @@ tr.summary-details-excluded {
     height: auto;
     line-height: 22px;
     padding: 6px 10px 7px 29px;
-    text-shadow: 1px 1px 1px #118E92;
+    text-shadow: 1px 1px 1px #333;
 }
 .header .form-search .search-autocomplete {
     left: 40px !important;
