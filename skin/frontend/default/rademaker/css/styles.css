@@ -3200,11 +3200,11 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     padding: 4px 15px;
 }
 .product-collateral .tabs li.active {
-    background-color: #005387;
-    background-image: linear-gradient(#1C76A0, #005387);
+    background-color: #666;
+    background-image: linear-gradient(#666, #999);
     background-repeat: repeat-x;
-    border: 1px solid #005986;
-    box-shadow: 0 1px 0 #3585AA inset;
+    border: 1px solid #666;
+    box-shadow: 0 1px 0 #666 inset;
 }
 .product-collateral .tabs li.active a {
     color: #FFFFFF;
