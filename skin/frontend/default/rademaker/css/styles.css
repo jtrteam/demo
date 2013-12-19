@@ -592,19 +592,19 @@ button.disabled span {
     border-color: #BBBBBB !important;
 }
 button.btn-checkout span {
-    background-color: #F7395E;
-    background-image: linear-gradient(#F96F8A, #F7395E);
+    background-color: #666;
+    background-image: linear-gradient(#666, #999);
     background-repeat: repeat-x;
-    border: 1px solid #AB213C;
-    box-shadow: 0 1px 0 #F85B79 inset;
+    border: 1px solid #666;
+    box-shadow: 0 1px 0 #666 inset;
     color: #FFFFFF;
     font: 15px/35px Arial,Helvetica,sans-serif;
     height: 35px;
     padding: 0 0 0 9px;
 }
 button.btn-checkout:hover span {
-    background-color: #F96F8A;
-    background-image: linear-gradient(#F7395E, #F96F8A);
+    background-color: #333;
+    background-image: linear-gradient(#333, #666);
     background-repeat: repeat-x;
 }
 button.btn-checkout span span {
@@ -612,7 +612,7 @@ button.btn-checkout span span {
 }
 button.btn-checkout.no-checkout span {
     background-position: 0 100%;
-    color: #B8BABA;
+    color: #fff;
 }
 button.btn-checkout.no-checkout span span {
     background-position: 100% 100%;
