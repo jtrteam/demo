@@ -2663,7 +2663,7 @@ tr.summary-details-excluded {
     width: 790px;
 }
 .product-name a:hover {
-    color: #6C899C;
+    color: #F2CE68;
 }
 button.button.btn-cart span {
     border: 1px solid #D9D9D9;
@@ -3770,7 +3770,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     margin: 0;
 }
 .product-name a {
-    color: #999999;
+    color: #F2CE68;
 }
 .tags-list {
     background: none repeat scroll 0 0 #F8F7F5;
