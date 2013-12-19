@@ -2004,7 +2004,7 @@ tr.summary-details-excluded {
     text-decoration: underline;
 }
 .block {
-    background: none repeat scroll 0 0 #FFFFFF;
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
     border: 1px solid #D8D8D8;
     border-radius: 3px;
     box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.05);
@@ -2015,7 +2015,7 @@ tr.summary-details-excluded {
     padding: 10px 0 10px 15px;
 }
 .block .block-title strong {
-    color: #5A5A5A;
+    color: #F2CE68;
     display: block;
     font-size: 14px;
     font-weight: 400;
@@ -2030,7 +2030,7 @@ tr.summary-details-excluded {
     text-decoration: none !important;
 }
 .block .block-subtitle {
-    color: #0A263C;
+    color: #F2CE68;
     font-size: 1em;
     font-weight: 400;
     margin: 0;
@@ -2047,7 +2047,7 @@ tr.summary-details-excluded {
     margin-right: 10px;
 }
 .block .block-content .product-name {
-    color: #999999;
+    color: #F2CE68;
 }
 .block .btn-remove, .block .btn-edit {
     float: right;
