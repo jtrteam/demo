@@ -2072,7 +2072,7 @@ tr.summary-details-excluded {
     background-image: linear-gradient(#666666, #999999);
     background-repeat: repeat-x;
     border: 1px solid #999999;
-    box-shadow: 0 1px 0 #3585AA inset;
+    box-shadow: 0 1px 0 #666666 inset;
 }
 .block.block-leftnav .block-content {
     padding: 0;
@@ -2082,15 +2082,15 @@ tr.summary-details-excluded {
     text-shadow: 1px 1px 0 #666666;
 }
 .block.newsletter .block-title, .block.block-cart .block-title {
-    background-color: #009EA4;
-    background-image: linear-gradient(#2CC0C4, #009EA4);
+    background-color: #666;
+    background-image: linear-gradient(#666, #999);
     background-repeat: repeat-x;
-    border: 1px solid #4F9C9E;
-    box-shadow: 0 1px 0 #47C8CB inset;
+    border: 1px solid #666;
+    box-shadow: 0 1px 0 #666 inset;
 }
 .block.newsletter .block-title strong, .block.block-cart .block-title strong {
     color: #FFFFFF;
-    text-shadow: 1px 1px 0 #4F9C9E;
+    text-shadow: 1px 1px 0 #666;
 }
 .block.newsletter button {
     background-color: #E4E4E4;
