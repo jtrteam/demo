@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+	<!--<customer_account_index>
+		 <reference name="customer_account_dashboard">
+		 	<block type="recommended/recommended" name="customer_account_dashboard_recommended" as="info1" template="recommended/recommended.phtml"/>
+		 </reference>
+	</customer_account_index>-->
+</layout> 
