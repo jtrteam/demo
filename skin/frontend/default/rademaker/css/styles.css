@@ -2179,7 +2179,7 @@ tr.summary-details-excluded {
     text-decoration: none !important;
 }
 .block-account .block-content li a:hover {
-    color: #6C899C;
+    color: #fff;
 }
 .block-account .block-content li.last a {
     border-bottom: 0 none;
@@ -5455,16 +5455,16 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 }
 .footer .copyright {
     border-radius: 5px 5px 0 0;
-    border-top: 1px solid #D8D8D8;
+    /*border-top: 1px solid #D8D8D8;*/
 }
 .footer .copyright {
-    background: none repeat scroll 0 0 #F5F5F5;
-    color: #B2B2B2;
+   /* background: none repeat scroll 0 0 #F5F5F5;*/
+    color: #F2CE68;
     min-height: 60px;
     text-align: left;
 }
 .footer .copyright a {
-    color: #F7395D;
+    color: #F2CE68;
 }
 .footer .payment-options img {
     float: right;
