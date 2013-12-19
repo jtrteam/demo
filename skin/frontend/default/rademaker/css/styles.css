@@ -1585,7 +1585,8 @@ tr.summary-details-excluded {
     width: 10px;
 }
 .header .mini-cart .content {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+    /*background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);*/
+	background-color:#333;
     border-radius: 5px;
     box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.09) inset;
     margin: 10px;
