@@ -1330,8 +1330,8 @@ p.required {
 .block-title {
 	padding:8px 10px;
 	border-top:1px solid #b0b0b0;
-	border-bottom:1px solid #e0e0e0;
-	background:#f8f8f8
+	border-bottom:1px solid #b0b0b0;
+	/*background:#f8f8f8*/
 }
 .block-title h2 {
 	margin-bottom:0
@@ -1983,9 +1983,9 @@ a.button:hover {
 .toolbar {
 	height:40px;
 	border-top:1px solid #b0b0b0;
-	border-bottom:1px solid #e0e0e0;
+	border-bottom:1px solid #b0b0b0;
 	margin-bottom:30px;
-	background:#f8f8f8;
+	/*background:#f8f8f8;*/
 	line-height:24px
 }
 .tooltip {
@@ -2450,9 +2450,9 @@ a.button:hover {
 	margin:15px 10px 0
 }
 #narrow-by-list dt {
-	font-size:13px;
+	font-size:16px;
 	font-weight:bold;
-	text-transform:uppercase
+	/*text-transform:uppercase*/
 }
 #narrow-by-list dd {
 	margin-bottom:15px
