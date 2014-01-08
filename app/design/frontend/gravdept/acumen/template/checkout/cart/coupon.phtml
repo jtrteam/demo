@@ -32,7 +32,7 @@
         	</ul>
         	
         	<div class="buttons-set">
-            	<button class="button" onclick="couponForm.submit(false)"><?php echo $this->__('Apply'); ?></button>
+            	<button class="button button-gray" onclick="couponForm.submit(false)"><?php echo $this->__('Apply'); ?></button>
             	
             	<?php if (strlen($this->getCouponCode())): ?>
             		<a class="button button-small button-subtle" href="#" onclick="couponForm.submit(true)"><?php echo $this->__('Remove Coupon'); ?></a>
