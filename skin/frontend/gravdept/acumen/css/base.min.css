@@ -858,7 +858,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px*/
 }
-.copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 15px; }
+.copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 12px; }
 .copyright  { display: inline-block; }
 .newsletter {
 	float:left;
@@ -3778,4 +3778,4 @@ ul.tabs-content>li.active {
 	width:20%
 }
 .no-bottom{ border-bottom: 0px none !important;	}
-.copy-outer { background:url(../media/logo/ftr_logo_badge.png) 50% 50% no-repeat }
+.copy-outer { background:url(../media/logo/ftr_logo_badge.png) 50% 50% no-repeat; height: 30px; }
