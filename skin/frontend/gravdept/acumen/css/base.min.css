@@ -278,13 +278,13 @@ h4 {
 	float:left;
 	position:relative;
 	width:300px;
-	height:300px;
+	/*height:300px;*/
 	margin-left:10px;
 	margin-right:10px;
 }
 .grid .grid_16 img {
 	width:300px;
-	height:300px;
+	/*height:300px;*/
 }
 .alpha {
 	margin-left:0
