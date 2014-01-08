@@ -459,7 +459,7 @@ h4 {
 #logo {
 	display:block;
 	max-width:160px;
-	min-height:70px;
+	min-height:55px;
 	overflow:hidden;
 	margin: 0 auto;
 }
@@ -3488,7 +3488,7 @@ body.sales-order-print table {
 .promo-slider {
 	position:relative;
 	width:960px;
-	margin:30px auto
+	margin:8px auto
 }
 .promo-slider .slides-container {
 	width:960px;
