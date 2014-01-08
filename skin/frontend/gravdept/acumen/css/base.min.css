@@ -444,7 +444,7 @@ h4 {
 }
 #header {
 	position:relative;
-	margin:0 0;
+	margin:0 0 10px 0;
 	background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat;
 }
 #header a {
