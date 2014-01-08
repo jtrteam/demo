@@ -2337,8 +2337,8 @@ a.button:hover {
 	font-weight:normal
 }
 #cart-checkout-methods {
-	margin-bottom:30px;
-	text-align:right
+	/*margin-bottom:30px;
+	text-align:right;*/ float:right;
 }
 #cart-checkout-methods button {
 	/*width:100%;*/
