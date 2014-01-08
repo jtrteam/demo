@@ -130,18 +130,18 @@
 		    <div class="snippet snippet-coupon-below"><?php echo $this->getChildHtml('snippet_cart_coupon_below') ?></div>
 		<?php endif; ?><?php */?>
 	</div>
-    <div class="grid_15 cart-banner">
-     <div class="cart-banner-head"><h3>questions</h3></div>
-	  <div class="cart-banner-cntnts">ygiyf</div> 
-	</div>
-     <div class="grid_15 cart-banner">
-	  <div class="cart-banner-head"><h3>free returns</h3></div>
-	  <div class="cart-banner-cntnts">ygiyf</div> 
-	</div>
-	<div class="grid_15 cart-banner">
-	   <div class="cart-banner-head"><h3>free shippintg</h3></div>
-	  <div class="cart-banner-cntnts">ygiyf</div> 
-	</div>
+   <?php if ( $this->getChildHtml('snippet_cart_banner_third') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_banner_third') ?>
+	<?php endif; ?>
+    
+    <?php if ( $this->getChildHtml('snippet_cart_coupon_second') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_coupon_second') ?>
+	<?php endif; ?>
+    
+    <?php if ( $this->getChildHtml('snippet_cart_coupon_first') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_coupon_first') ?>
+	<?php endif; ?> 
+	
 	
 	<?php /*?><div class="grid_8">
 		<?php if (!$this->getIsVirtual()): ?>
