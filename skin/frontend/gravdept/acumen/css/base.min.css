@@ -1414,7 +1414,7 @@ p.required {
 	padding:12px 15px;
 	font-size:22px;
 	font-weight:300;
-	text-transform:capitalize
+	/*text-transform:capitalize*/
 }
 .button-small {
 	padding:1px 7px;
@@ -3777,3 +3777,4 @@ ul.tabs-content>li.active {
 .width-half {
 	width:20%
 }
+.no-bottom{ border-bottom: 0px none !important;	}
