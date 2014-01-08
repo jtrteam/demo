@@ -3769,7 +3769,8 @@ ul.tabs-content>li.active {
 	color:#fff;
 	padding-top:50px;
 }
-.welcome p { font-size:30px}
+.welcome .wel-heading{ font-size:24px; width:300px;}
+.welcome .wel-content{ font-size:18px; width:300px;}
 .width-qtr {
 	width:15%
 }
