@@ -3488,15 +3488,15 @@ body.sales-order-print table {
 }
 .promo-slider {
 	position:relative;
-	width:960px;
+	width:940px;
 	margin:8px auto
 }
 .promo-slider .slides-container {
-	width:960px;
+	width:940px;
 	height:345px
 }
 .promo-slider .slides-container>div {
-	width:960px;
+	width:940px;
 	height:345px
 }
 .promo-slider .slides-pagination {
