@@ -3780,5 +3780,5 @@ ul.tabs-content>li.active {
 .no-bottom{ border-bottom: 0px none !important;	}
 .copy-outer { background:url(../media/logo/ftr_logo_badge.png) 50% 50% no-repeat; height: 30px; }
 .cart-banner { width: 190px !important; min-height: 150px; height: auto !important; height: 150px; margin-bottom: 10px; background-color: #f8f8f8; border-radius: 5px; padding: 10px; margin-right: 35px; }
-.cart-banner h3 { font: normal 14px Arial, Helvetica, sans-serif; color: #696d70; text-transform: uppercase; border-bottom: 1px dotted #bbb9b9; padding-bottom: 8px; margin-bottom: 10px; }
+.cart-banner h3 { font: normal 14px abadi_mt_condensed_lightRg; color: #696d70; text-transform: uppercase; border-bottom: 1px dotted #bbb9b9; padding-bottom: 8px; margin-bottom: 10px; }
 .cart-banner-cntnts { color: #99999c; }
