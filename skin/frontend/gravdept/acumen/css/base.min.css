@@ -439,7 +439,8 @@ h4 {
 #container {
 	width:960px;
 	margin:0 auto;
-	background:#FFF
+	background:#FFF;
+	background:url(../img/icon/page_shadow.gif) 0 50px repeat-x;
 }
 #header {
 	position:relative;
