@@ -1229,13 +1229,13 @@ p.required {
 	margin-bottom:30px
 }
 .flex-table thead tr {
-	background:#f8f8f8
+	/*background:#f8f8f8*/
 }
 .flex-table thead tr:first-child {
 	border-top:1px solid #b0b0b0
 }
 .flex-table thead tr:last-child {
-	border-bottom:1px solid #e0e0e0
+	border-bottom:1px solid #b0b0b0
 }
 .flex-table thead th {
 	padding:8px 10px;
@@ -1261,7 +1261,7 @@ p.required {
 	vertical-align:top
 }
 .flex-table tfoot tr {
-	background:#f8f8f8
+	/*background:#f8f8f8*/
 }
 .flex-table tfoot tr:last-child {
 	border-bottom:1px solid #e0e0e0
