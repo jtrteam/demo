@@ -267,7 +267,7 @@ h4 {
 
 .grid .grid_15 {
 	width:210px;
-	margin-right:15px;
+	/*margin-right:15px;*/
 	margin-left:0px;
 	display:inline;
 	float:right;

@@ -108,7 +108,9 @@
 		<?php endif;*/ ?>
 		
 		<?php echo $this->getChildHtml('totals'); ?>
-		
+		<?php if($this->getContinueShoppingUrl()): ?>
+		    <a href="<?php echo $this->getContinueShoppingUrl() ?>" class="button button-subtle"><?php echo $this->__('Continue Shopping') ?></a>
+		<?php endif; ?>
 		<?php if(!$this->hasError()): ?>
 			<div id="cart-checkout-methods">
 				<?php echo $this->getChildHtml('methods') ?>
@@ -122,11 +124,11 @@
 	    <?php echo $this->getChildHtml('coupon') ?>
 		
 		<?php /* Extensions placeholder */ ?>
-		<?php echo $this->getChildHtml('checkout.cart.extra') ?>
+		<?php //echo $this->getChildHtml('checkout.cart.extra') ?>
 		
-		<?php if ( $this->getChildHtml('snippet_cart_coupon_below') ): ?>
+		<?php /*?><?php if ( $this->getChildHtml('snippet_cart_coupon_below') ): ?>
 		    <div class="snippet snippet-coupon-below"><?php echo $this->getChildHtml('snippet_cart_coupon_below') ?></div>
-		<?php endif; ?>
+		<?php endif; ?><?php */?>
 	</div>
     <div class="grid_15">
 	   
