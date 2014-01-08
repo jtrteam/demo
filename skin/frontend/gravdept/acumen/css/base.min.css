@@ -257,7 +257,7 @@ h4 {
 	position:relative;
 }
 .grid .grid_14 {
-	width:210px;
+	width:560px;
 	display:inline;
 	float:right;
 	position:relative;
@@ -2341,7 +2341,7 @@ a.button:hover {
 	text-align:right
 }
 #cart-checkout-methods button {
-	width:100%;
+	/*width:100%;*/
 	margin-bottom:30px
 }
 #cart-checkout-methods p {
