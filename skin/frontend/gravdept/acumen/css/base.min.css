@@ -1044,7 +1044,7 @@ h4 {
 .footer-links>li:first-child {
 	margin-left:0
 }
-#footer { border-top: 1px solid #666; padding-top: 5px; }
+#footer {/* border-top: 1px solid #666; padding-top: 5px;*/ }
 .switchers {
 	padding-bottom:15px;
 	text-align:right
@@ -3761,16 +3761,16 @@ ul.tabs-content>li.active {
 	display:inline;
 	float:left;
 	position:relative;
-	margin:0 0 15px 0;
+	/*margin:0 0 15px 0;*/
 	width:960px;
-	height:115px;
+	height:135px;
 	background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;
 	text-align:center;
 	color:#fff;
-	padding-top:50px;
+	padding-top:30px;
 }
-.welcome .wel-heading{ font-size:24px; width:300px;}
-.welcome .wel-content{ font-size:18px; width:300px;}
+.welcome .wel-heading{ font-size:28px; width:300px;margin:auto;}
+.welcome .wel-content{ font-size:18px; width:400px;margin:auto;}
 .width-qtr {
 	width:15%
 }
