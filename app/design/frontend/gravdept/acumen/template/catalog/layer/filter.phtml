@@ -30,11 +30,12 @@
       ?>
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
-            <?php if(($prv != '') && ($prv.'L' == $_item->getLabel())):?>
-            <?php else: ?>
-            	 <li class="size-layer">&nbsp;</li>
-                 <?php $prv = $_item->getLabel(); ?>
-            <?php endif; ?>
+            <?php if($prv != ''): ?>
+				<?php if($prv.'L' != $_item->getLabel()):?>
+                     <li class="size-layer">&nbsp;</li>
+                     <?php $prv = $_item->getLabel(); ?>
+                <?php endif; ?>
+            <?php endif; ?>  
         <?php endif; ?>         
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
