@@ -19,7 +19,7 @@
 ?>
 
 <ol>
-    <?php $i = 1; foreach ($this->getItems() as $_item): ?>
+    <?php $i = 1; $prv = 0; foreach ($this->getItems() as $_item): ?>
     <?php if(($_item->getName() == 'Size') && ($i == 1)): ?>
     	<li class="size-layer-title"><?php echo $this->__('Reg.') ?></li>
         <li class="size-layer-title"><?php echo $this->__('Long') ?></li>
@@ -31,12 +31,12 @@
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
             <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
-             <?php echo $i.'+in'; ?>
             		<?php if(($i%2)== 1): ?>
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?> 
+                    <?php $prv = 1; ?>
             <?php else: ?>
-					<?php if(($i%2)== 0): ?>
+					<?php if(($prv == 0) && ($i > 1)): ?>
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?>
 			<?php endif; ?>  
