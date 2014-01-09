@@ -24,7 +24,7 @@
         // GravDept: custom function to enable basic filter styling by type
         $gravdept_filterClass = "filter-" . strtolower( preg_replace("/[^a-zA-Z0-9]/", "", $_item->getName()) ) . "-" . strtolower( preg_replace("/[^a-zA-Z0-9]/", "", $_item->getLabel()) );
         ?>
-        <?php print_r($_item); exit;  ?>
+        <?php print_r($_item); exit; ?>
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
                 <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
