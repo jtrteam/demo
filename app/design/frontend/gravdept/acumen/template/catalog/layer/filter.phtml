@@ -19,12 +19,23 @@
 ?>
 
 <ol>
-    <?php foreach ($this->getItems() as $_item): ?>
+    <?php $prv = ''; foreach ($this->getItems() as $_item): ?>
+    <?php if(($_item->getName() == 'Size') && ($prv == '')): ?>
+    	<li class="size-layer-title"><?php echo $this->__('Reg.') ?></li>
+        <li class="size-layer-title"><?php echo $this->__('Long') ?></li>
+     <?php endif; ?>
         <?php
         // GravDept: custom function to enable basic filter styling by type
         $gravdept_filterClass = "filter-" . strtolower( preg_replace("/[^a-zA-Z0-9]/", "", $_item->getName()) ) . "-" . strtolower( preg_replace("/[^a-zA-Z0-9]/", "", $_item->getLabel()) );
       ?>
-        <?php if($_item->getName() == 'Size') $gravdept_filterClass = $gravdept_filterClass.' size-layer';?>
+        <?php if($_item->getName() == 'Size'):?>
+			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
+            <?php if(($prv != '') && ($prv.'L' == $_item->getLabel())):?>
+            <?php else: ?>
+            	 <li class="size-layer"></li>
+                 <?php $prv = $_item->getLabel(); ?>
+            <?php endif; ?>
+        <?php endif; ?>         
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
                 <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
