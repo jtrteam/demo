@@ -30,8 +30,8 @@
       ?>
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
-            <?php if(preg_match("/[0-9L]+/", $_item->getLabel()) == TRUE): ?>
-            		<?php if(($i%2)!= 0): ?>
+            <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
+            		<?php if(($i%2)== 1): ?>
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?> 
             <?php else: ?>
