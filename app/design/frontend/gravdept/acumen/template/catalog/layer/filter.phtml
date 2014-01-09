@@ -19,8 +19,8 @@
 ?>
 
 <ol>
-    <?php $prv = ''; foreach ($this->getItems() as $_item): ?>
-    <?php if(($_item->getName() == 'Size') && ($prv == '')): ?>
+    <?php $i = 1; foreach ($this->getItems() as $_item): ?>
+    <?php if(($_item->getName() == 'Size') && ($i == 1)): ?>
     	<li class="size-layer-title"><?php echo $this->__('Reg.') ?></li>
         <li class="size-layer-title"><?php echo $this->__('Long') ?></li>
      <?php endif; ?>
@@ -30,12 +30,16 @@
       ?>
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
-            <?php if($prv != ''): ?>
-				<?php if($prv.'L' != $_item->getLabel()):?>
-                     <li class="size-layer">&nbsp;</li>
-                     <?php $prv = $_item->getLabel(); ?>
-                <?php endif; ?>
-            <?php endif; ?>  
+            <?php if(preg_match("/[0-9L]+/", $_item->getLabel()) == TRUE): ?>
+            		<?php if(($i%2)!= 0): ?>
+                     	<li class="size-layer">&nbsp;</li>
+                    <?php endif; ?> 
+            <?php else: ?>
+					<?php if(($i%2)== 0): ?>
+                     	<li class="size-layer">&nbsp;</li>
+                    <?php endif; ?>
+			<?php endif; ?>  
+            
         <?php endif; ?>         
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
@@ -51,5 +55,6 @@
                 <?php echo $_item->getLabel() ?>
             <?php endif; ?>
         </li>
+       <?php $i++; ?>
     <?php endforeach ?>
 </ol>
