@@ -32,7 +32,7 @@
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
             <?php if(($prv != '') && ($prv.'L' == $_item->getLabel())):?>
             <?php else: ?>
-            	 <li class="size-layer"></li>
+            	 <li class="size-layer">&nbsp;</li>
                  <?php $prv = $_item->getLabel(); ?>
             <?php endif; ?>
         <?php endif; ?>         
