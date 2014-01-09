@@ -27,9 +27,9 @@
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
                 <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
-                    <?php if ($this->shouldDisplayProductCount()): ?>
+                   <?php /*?> <?php if ($this->shouldDisplayProductCount()): ?>
                         <span class="count"><?php echo $_item->getCount() ?></span>
-                    <?php endif; ?>
+                    <?php endif; ?><?php */?>
                     
                     <?php echo $_item->getLabel() ?>
                     <?php /*echo $_item->getName()*/ ?>
