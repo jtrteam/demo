@@ -31,6 +31,7 @@
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
             <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
+             <?php echo $i.'+in'; ?>
             		<?php if(($i%2)== 1): ?>
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?> 
@@ -55,6 +56,6 @@
                 <?php echo $_item->getLabel() ?>
             <?php endif; ?>
         </li>
-       <?php $i++; ?>
+       <?php $i=$i+1; ?>
     <?php endforeach ?>
 </ol>
