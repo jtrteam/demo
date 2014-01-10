@@ -75,7 +75,7 @@ input, select, textarea, button{color:#000;}
 .onepagecheckout_datafields .gift-messages-form .item .details .form-list li.wide textarea { width:165px; }
 
 .onepagecheckout_datafields .sp-methods { margin: 0; }
-.onepagecheckout_datafields #checkout-review-submit { margin: 10px 0 0; }
+.onepagecheckout_datafields #checkout-review-submit { margin: 10px 0; float:right; }
 .onepagecheckout_datafields .checkout-agreements li { margin: 0 0 30px 0; }
 
 .onepagecheckout_datafields .loading { background: url(../images/onepagecheckout/loader.gif) no-repeat 50% 50%; }
@@ -186,4 +186,5 @@ p.newsletter label{color:#8E8D8B;float: right; margin-left:10px;}
 * html .d-sh-tl, * html .d-sh-tr { padding-right:42px; }
 /* IE7 fix */
 *:first-child+html .onepagecheckout-window { width: 500px; }
+.button-opcheckout{font:18px; line-height:24px;}
 

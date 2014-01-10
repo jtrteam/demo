@@ -1045,7 +1045,7 @@ h4 {
 .footer-links>li:first-child {
 	margin-left:0
 }
-#footer {/* border-top: 1px solid #666; padding-top: 5px;*/background-color: #FCFCFC; }
+#footer {/* border-top: 1px solid #666; padding-top: 5px;*/background-color: #FCFCFC;clear: both; }
 .switchers {
 	padding-bottom:15px;
 	text-align:right
