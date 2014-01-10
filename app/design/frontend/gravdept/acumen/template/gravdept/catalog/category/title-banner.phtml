@@ -50,7 +50,7 @@ if ($_imgUrl = $_category->getImageUrl()) {
 		<div class="cat-heading"><h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1></div>
 	
 		<?php if ($_description=$this->getCurrentCategory()->getDescription()): ?>
-		<div class="cat-heading">	<p class="category-description"><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p></div>
+			<div class="cat-content"><p class="category-description"><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p></div>
 		<?php endif; ?>
 	<?php endif; ?>
 	
