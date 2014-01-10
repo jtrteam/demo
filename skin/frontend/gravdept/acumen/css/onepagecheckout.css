@@ -19,7 +19,7 @@ color:#FFFFFF;font:bold 12px/20px Arial,Helvetica,sans-serif;height:20px !import
 .onepagecheckout-index-index .onepagetitle { margin-bottom: 10px; }
 .onepagecheckout-index-index .page-title { border-bottom:1px solid #000;margin:0;}
 .ptdivline{width:100%;height:1px;margin:-1px 0 0;-moz-box-shadow: 0 2px 2px #999;-webkit-box-shadow: 0 2px 2px #999;box-shadow: 0 2px 2px #999;}
-.onepagecheckout_datafields{border-bottom:1px solid #CCCCCC;padding-bottom:20px;}
+.onepagecheckout_datafields{/*border-bottom:1px solid #CCCCCC;padding-bottom:20px;*/}
 
 #onepagecheckout_orderform .col3-set .col-1{width:27%;float:left;}
 #onepagecheckout_orderform .col3-set .col-2{width:33%;margin-left:9%;float:left;}
