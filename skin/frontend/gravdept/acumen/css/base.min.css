@@ -1767,6 +1767,9 @@ a.button:hover {
 .price-box {
 	color:#909090
 }
+.price-box:hover {
+	color:#000000
+}
 .price-box p {
 	margin-bottom:0
 }
