@@ -43,16 +43,17 @@ if ($_imgUrl = $_category->getImageUrl()) {
 ?>
 
 <div id="category-landing" class="grid-block">
+	<div style="float:left; min-width:30%;">
 	<?php if ($_imgUrl): ?>
 		<h1 class="category-image"><?php echo $_imgHtml ?></h1>
 	<?php else: ?>
 		<h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
-		
+	</div><div style="float:left">
 		<?php if ($_description=$this->getCurrentCategory()->getDescription()): ?>
 			<p class="category-description"><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
-	
+	</div>
 	<?php /*if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
 		<a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('RSS Feed') ?></a>
 	<?php endif;*/ ?>
