@@ -445,7 +445,7 @@ h4 {
 #header {
 	position:relative;
 	margin:0 0 10px 0;
-	background:url(../img/layout/hdr_bg.jpg) 0 0 no-repeat;
+	background:url(../img/layout/top_bar.jpg) 0 0 no-repeat;
 }
 #header a {
 	text-decoration:none
@@ -859,7 +859,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px*/
 }
-.copy-div  { background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat; color: #fff; padding: 12px; }
+.copy-div  { background:url(../img/layout/bottom_bar.jpg) 0 0 no-repeat; color: #fff; padding: 12px; }
 .copyright  { display: inline-block; }
 .newsletter {
 	float:left;
