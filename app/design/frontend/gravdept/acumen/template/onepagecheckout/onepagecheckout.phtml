@@ -67,6 +67,24 @@ $seq_http	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on');
     </div>
 
     <div class="col-3">
+    <?php if ( $this->getChildHtml('snippet_cart_banner_first') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_banner_first') ?>
+	<?php endif; ?> 
+    
+    <?php if ( $this->getChildHtml('snippet_cart_banner_second') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_banner_second') ?>
+	<?php endif; ?>
+    
+    <?php if ( $this->getChildHtml('snippet_cart_banner_third') ): ?>
+		    <?php echo $this->getChildHtml('snippet_cart_banner_third') ?>
+	<?php endif; ?>
+    
+    
+    
+    
+    </div>
+    
+    <div class="col-4">
         <?php echo $this->getChildHtml('review') ?>
     </div>
 </div>

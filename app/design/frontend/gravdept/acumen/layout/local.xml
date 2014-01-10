@@ -159,7 +159,23 @@ Module layouts
             <block type="core/template" name="gravdept.payment.icons" as="gravdept_payment_icons" template="gravdept/page/html/payment-icons.phtml" />
         </reference>
     </checkout_multishipping_billing>
-    
+	
+    <onepagecheckout_index_index>
+		 		<!-- Add CMS Static Banner Block -->
+                <block type="cms/block" name="snippet.cart.coupon.first" as="snippet_cart_banner_first">
+                    <action method="setBlockId"><block_id>snippet_cart_banner_first</block_id></action>
+                </block>
+				
+				<block type="cms/block" name="snippet.cart.coupon.second" as="snippet_cart_banner_second">
+                    <action method="setBlockId"><block_id>snippet_cart_banner_second</block_id></action>
+                </block>
+				
+				<block type="cms/block" name="snippet.cart.coupon.third" as="snippet_cart_banner_third">
+                    <action method="setBlockId"><block_id>snippet_cart_banner_third</block_id></action>
+                </block>
+                
+	</onepagecheckout_index_index>
+	
     <checkout_onepage_index>
         <reference name="root">
             <!-- Add CMS Static Block -->
