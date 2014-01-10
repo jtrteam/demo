@@ -161,7 +161,9 @@ Module layouts
     </checkout_multishipping_billing>
 	
     <onepagecheckout_index_index>
-		 		<!-- Add CMS Static Banner Block -->
+		 <reference name="content">
+            <block name="onepagecheckout"> 		
+				<!-- Add CMS Static Banner Block -->
                 <block type="cms/block" name="snippet.cart.coupon.first" as="snippet_cart_banner_first">
                     <action method="setBlockId"><block_id>snippet_cart_banner_first</block_id></action>
                 </block>
@@ -173,7 +175,8 @@ Module layouts
 				<block type="cms/block" name="snippet.cart.coupon.third" as="snippet_cart_banner_third">
                     <action method="setBlockId"><block_id>snippet_cart_banner_third</block_id></action>
                 </block>
-                
+             </block>
+        </reference>
 	</onepagecheckout_index_index>
 	
     <checkout_onepage_index>
