@@ -158,7 +158,7 @@ filter: progid:DXImageTransform.Microsoft.dropShadow(color=#555, offX=0, offY=0,
 .clr{clear:both;}
 
 p.agree a{color:#8E8D8B;}
-p.newsletter label{color:#8E8D8B;float: right;}
+p.newsletter label{color:#8E8D8B;float: right; margin-left:10px;}
 
 .onepagecheckout-window { border: none; background: #fff; z-index: 999; position: absolute; text-align: left; }
 .onepagecheckout-window .page-title span { color:#0A263C; font-size:20px; margin:0; }
