@@ -22,8 +22,8 @@ color:#FFFFFF;font:bold 12px/20px Arial,Helvetica,sans-serif;height:20px !import
 .onepagecheckout_datafields{border-bottom:1px solid #CCCCCC;padding-bottom:20px;}
 
 #onepagecheckout_orderform .col3-set .col-1{width:27%;float:left;}
-#onepagecheckout_orderform .col3-set .col-2{width:33%;margin-left:4%;float:left;}
-#onepagecheckout_orderform .col3-set .col-3{margin-left:4%;width:27%; float:left;}
+#onepagecheckout_orderform .col3-set .col-2{width:33%;margin-left:9%;float:left;}
+#onepagecheckout_orderform .col3-set .col-3{margin-left:9%;width:22%; float:left; margin-top:15px;}
 #onepagecheckout_orderform .col3-set .col-4{clear:both;}
 
 #onepagecheckout_orderform #register-customer-password{margin-bottom:5px;}
@@ -84,7 +84,7 @@ input, select, textarea, button{color:#000;}
 .onepagecheckout_datafields #checkout-payment-method-load,
 .onepagecheckout_datafields #checkout-review-load { min-height: 50px; }
 
-.onepagecheckout_datafields .newsletter { margin:0; padding:35px 0 10px 0; }
+.onepagecheckout_datafields .newsletter { margin:0; padding:10px 0 10px 0; }
 .onepagecheckout_datafields .buttons-set { margin: 5px 0 0; border:0;padding:2px 0 0;}
 .onepagecheckout_datafields .checkout-agreements .last { margin: 0; }
 
@@ -158,7 +158,7 @@ filter: progid:DXImageTransform.Microsoft.dropShadow(color=#555, offX=0, offY=0,
 .clr{clear:both;}
 
 p.agree a{color:#8E8D8B;}
-p.newsletter label{color:#8E8D8B;}
+p.newsletter label{color:#8E8D8B;float: right;}
 
 .onepagecheckout-window { border: none; background: #fff; z-index: 999; position: absolute; text-align: left; }
 .onepagecheckout-window .page-title span { color:#0A263C; font-size:20px; margin:0; }
