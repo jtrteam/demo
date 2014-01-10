@@ -204,6 +204,10 @@
                 
                 <?php /*?><li><a href="#tab-tags"><?php echo $this->__('Tags'); ?></a></li><?php */?>
                 
+                <?php if ( $this->getChildHtml('snippet_product_view_tab_size') ): ?>
+                    <li><a href="#tab-sizeguide"><?php echo $this->__('Size Guide'); ?></a></li>
+                <?php endif; ?>
+                
                 <?php if ( $this->getChildHtml('snippet_product_view_tab_1') ): ?>
                     <li><a href="#tab-custom-1"><?php echo $this->__('Custom 1'); ?></a></li>
                 <?php endif; ?>
@@ -226,6 +230,13 @@
                     <?php echo $this->getChildHtml('product_additional_data') ?>
                 </div>
                 <?php */?>
+                
+                 <?php if ( $this->getChildHtml('snippet_product_view_tab_size') ): ?>
+                    <div id="tab-sizeguide">
+                        <div class="snippet snippet_product_view_tab_size"><?php echo $this->getChildHtml('snippet_product_view_tab_size') ?></div>
+                    </div>
+                <?php endif; ?>
+                
                 <?php if ( $this->getChildHtml('snippet_product_view_tab_1') ): ?>
                     <div id="tab-custom-1">
                         <div class="snippet snippet-product-view-tab-1"><?php echo $this->getChildHtml('snippet_product_view_tab_1') ?></div>

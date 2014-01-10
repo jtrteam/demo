@@ -81,6 +81,11 @@ Module layouts
                 <action method="setBlockId"><block_id>snippet_product_view_bottom</block_id></action>
             </block>
             
+			 <!-- Add CMS Static Block for Size Guide -->
+            <block type="cms/block" name="snippet.product.view.tab.size" as="snippet_product_view_tab_size">
+                <action method="setBlockId"><block_id>snippet_product_view_tab_size</block_id></action>
+            </block>
+			
             <!-- Add CMS Static Block -->
             <block type="cms/block" name="snippet.product.view.tab.1" as="snippet_product_view_tab_1">
                 <action method="setBlockId"><block_id>snippet_product_view_tab_1</block_id></action>
