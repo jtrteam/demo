@@ -621,7 +621,7 @@ h4 {
 }
 #search-form input {
 	float:left;
-	width:163px;
+	width:75px;
 	height:24px;
 	padding:0 5px 0 10px;
 	border:0;
@@ -3793,4 +3793,4 @@ ul.tabs-content>li.active {
 .size-layer-title{float:left;width:50%; font-weight:bold;}
 .cat-heading{float:left;min-width:25%;}
 .cat-content{float:left;max-width:75%;}
-.nav-store{ float:left; margin:13px 20px 0 0; padding:0 0 0 25px; position:absolute; right:205px; width:50px; background:url(../img/icon/navigation-icon.png) 0 0 no-repeat; border-right:1px solid #000000; line-height:18px;}
+.nav-store{ float:left; margin:13px 20px 0 0; padding:0 0 0 25px; position:absolute; right:122px; width:50px; background:url(../img/icon/navigation-icon.png) 0 0 no-repeat; border-right:1px solid #000000; line-height:18px;}
