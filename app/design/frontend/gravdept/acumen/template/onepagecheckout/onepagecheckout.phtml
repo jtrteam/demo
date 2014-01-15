@@ -3,7 +3,7 @@
     <?php echo $this->__('For tracking your order and a faster checkout you can create an account') ?>
     <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
     <p class="onepagecheckout_loginarea">
-        <a href="javascript:void(0)" class="onepagecheckout_loginlink" onclick='open_login();'>
+        <a href="javascript:void(0)" class="button" onclick='open_login();'>
             <?php echo $this->__('Already registered? Click here to login') ?>
         </a>
     </p>
