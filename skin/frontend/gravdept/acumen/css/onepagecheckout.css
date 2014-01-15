@@ -9,12 +9,12 @@
 .op_login_area .page-title{margin-bottom:10px !important;}
 .close_la{position:relative;margin-bottom:-16px;top:-16px;right:-16px;cursor:pointer;float:right;width:16px;height:16px;
 background:url("../img/onepagecheckout/cancel.png") no-repeat scroll 0 0 transparent;}
-.op_login_area button.button{border:1px solid #ccc;
+/*.op_login_area button.button{border:1px solid #ccc;
 background:url("../img/onepagecheckout/buttonbgsmall.gif") repeat-x scroll 0 0 #00A7D1;
 -moz-box-shadow: 3px 3px 5px #ccc;-webkit-box-shadow: 3px 3px 5px #ccc;box-shadow: 3px 3px 5px #ccc;}
 .op_login_area button.button span{background:none no-repeat scroll 0 0 transparent;border:0 none;
 color:#FFFFFF;font:bold 12px/20px Arial,Helvetica,sans-serif;height:20px !important;padding:0 0 0 5px;text-transform:uppercase;}
-.op_login_area button.button span span {background-position:100% 0;padding:0 5px 0 0;}
+.op_login_area button.button span span {background-position:100% 0;padding:0 5px 0 0;}*/
 
 .onepagecheckout-index-index .onepagetitle { margin-bottom: 10px; }
 .onepagecheckout-index-index .page-title { border-bottom:1px solid #000;margin:0;}
