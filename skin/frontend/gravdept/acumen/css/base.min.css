@@ -445,7 +445,7 @@ h4 {
 #header {
 	position:relative;
 	margin:0 0 10px 0;
-	background:url(../img/layout/top_bar.jpg) 0 0 no-repeat;
+	/*background:url(../img/layout/top_bar.jpg) 0 0 no-repeat;*/
 }
 #header a {
 	text-decoration:none
@@ -699,7 +699,7 @@ h4 {
 #account .links a {
 	display:block;
 	padding:8px;
-	color:#fff;
+	color:#000;
 }
 #account .links a:hover {
 	text-decoration: underline;
@@ -859,7 +859,7 @@ h4 {
 	-webkit-border-radius:5px;
 	border-radius:5px*/
 }
-.copy-div  { background:url(../img/layout/bottom_bar.jpg) 0 0 no-repeat; color: #fff; padding: 12px; }
+.copy-div  { /*background:url(../img/layout/bottom_bar.jpg) 0 0 no-repeat;*/ color: #000; padding: 12px; }
 .copyright  { display: inline-block; }
 .newsletter {
 	float:left;
@@ -1017,7 +1017,7 @@ h4 {
 .payment-icons-footer span {
 	float:left;
 	margin-right:10px;
-	color:#fff;
+	color:#000;
 	/*font-family:'Helvetica Neue', arial, sans-serif;*/
 	font-size:12px;
 	line-height:28px
@@ -3769,9 +3769,9 @@ ul.tabs-content>li.active {
 	/*margin:0 0 15px 0;*/
 	width:960px;
 	height:130px;
-	background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;
+	/*background:url(../img/layout/welcome_bg.jpg) 0 0 no-repeat;*/
 	text-align:center;
-	color:#fff;
+	color:#000;
 	padding-top:30px;
 }
 .welcome .wel-heading{ font-size:28px; width:300px;margin:auto;}
