@@ -92,7 +92,7 @@ Default layout, loads most of the pages
 					<label>Navigation Bar</label>
 					<block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/>
 				</block>
-				<block type="core/templates" name="top.store" as="topStore" template="page/html/topstore.phtml"/>
+				<block type="core/template" name="top.store" as="topStore" template="page/html/topstore.phtml"/>
 				<block type="page/template_links" name="top.links" as="topLinks"/>
 				
 				<!-- GravDept, the mini-cart -->
