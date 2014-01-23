@@ -83,8 +83,15 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             $errors = $this->_getCustomerErrors($customer);
 
             if (empty($errors)) {
+				$customer->setConfirmation(null);
+				$customer->setGroupId(Mage::getSingleton('customer/session')->getCustomerGroupId()); 
+				$customer->setStatus('1');               
                 $customer->save();
-                $this->_dispatchRegisterSuccess($customer);
+				 $this->_getSession()->addSuccess($this->__('The account information has been saved.'));
+
+                $this->_redirect('agent/account');
+                return;
+				
                 return;
             } else {
                 $this->_addSessionError($errors);
@@ -361,10 +368,7 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             }
 
             try {
-				
-                $customer->setConfirmation(null);
-				$customer->setStatus(1);
-				$customer->setGroupId(Mage::getSingleton('customer/session')->getCustomerGroupId());
+				$customer->setConfirmation(null);
                 $customer->save();
                 $this->_getSession()->setCustomer($customer)
                     ->addSuccess($this->__('The account information has been saved.'));
