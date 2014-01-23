@@ -1,0 +1,40 @@
+<?php
+$customers = $this->getMyCustomers();
+?>
+<div class="dashboard">
+	<div class="page-title title-buttons">
+        <h1><?php echo $this->__('Customer overview') ?></h1>
+        <button type="button" title="<?php echo $this->__('Add New Address') ?>" class="button" onclick="window.location='<?php echo $this->getUrl('agent/user/new') ?>';"><span><span><?php echo $this->__('Add New Customer') ?></span></span></button>
+    </div>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php if(count($customers)): ?>
+<table class="data-table" id="my-orders-table" >
+    <thead>
+        <tr>
+            <th><?php echo $this->__('Company') ?></th>
+            <th><?php echo $this->__('Name') ?></th>
+            <th><?php echo $this->__('City') ?></th>
+            <th><?php echo $this->__('Orders') ?></th>
+            <th><?php echo $this->__('Order History') ?></th>
+             <th><?php echo $this->__('Edit') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($customers as $customer): ?>
+    <?php $addressBilling = $customer->getDefaultBillingAddress();?>
+        <tr>
+            <td><?php echo $addressBilling['company']  ?>&nbsp;</td>
+            <td><?php echo $customer->getName() ?>&nbsp;</td>
+            <td><?php echo $addressBilling['city'] ?>&nbsp;</td>
+            <td><a href="<?php echo $this->getUrl('agent/user/neworder', array('id'=>$customer->getId())) ?>"><?php echo $this->__('Place Order') ?></a>&nbsp;</td>
+            <td><a href="<?php echo $this->getUrl('agent/user/history', array('id'=>$customer->getId())) ?>"><?php echo $this->__('Order History') ?></a>&nbsp;</td>
+            <td><a href="<?php echo $this->getUrl('agent/user/edit', array('id'=>$customer->getId())) ?>"><?php echo $this->__('Edit Account Info') ?></a>&nbsp;</td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+<script type="text/javascript">decorateTable('my-orders-table')</script>
+<?php else: ?>
+    <p><?php echo $this->__('No matches found.') ?></p>
+<?php endif ?>
+</div>

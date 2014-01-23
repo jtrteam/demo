@@ -1,0 +1,154 @@
+<?php 
+	$categories = $this->getStoreCategories();
+	$_helper = $this->helper('catalog/output');
+	
+?>
+<?php if(count($categories)): ?>
+<div class="category-products">
+    <?php echo $this->getToolbarHtml() ?>
+    <?php // List mode ?>
+    <?php if($this->getMode()!='grid'): ?>
+    <?php $_iterator = 0; ?>
+     <?php foreach ($categories as $cat): ?>
+    <?php $category = Mage::getModel('catalog/category')->load($cat->getId());
+		  $_productCollection = $category->getProductCollection()->addAttributeToSort('position');
+		  Mage::getModel('catalog/layer')->prepareProductCollection($_productCollection);
+	?>
+    <?php if($_productCollection->count()): ?>
+    <div><?php echo $cat->getName() ?></div>
+    <ol class="products-list" id="products-list">
+    <?php foreach ($_productCollection as $_product): ?>
+        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+            <?php // Product Image ?>
+            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+            <?php // Product description ?>
+            <div class="product-shop">
+                <div class="f-fix">
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                    <?php if($_product->isSaleable()): ?>
+                        <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                    <div class="desc std">
+                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ol>
+     <?php endif; ?>
+    <?php endforeach; ?>
+    <script type="text/javascript">
+$jQ('.quick-view-link').one('click', function(e) {
+	showQuickView(this, e);
+	$jQ(this).click(function() { return false; });
+	e.preventDefault();
+});
+ 
+function showQuickView(link, e) {
+	var quickUrl = $jQ(link).data('url');
+ 
+	$jQ.get(quickUrl, function(data) {
+		$jQ('body').append(data);
+		$jQ('.quick-view').lightbox_me({
+			centered: true,
+			destroyOnClose: true,
+			overlaySpeed: 10,
+			onClose: function() {
+				$jQ(link).one('click', function(e) {
+					showQuickView(link, e);
+					$jQ(this).click(function() { return false; });
+				});
+			}
+		});
+	});
+}
+</script>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+	
+    <?php else: ?>
+
+    <?php // Grid Mode ?>
+	 <?php foreach ($categories as $cat): ?>
+    <?php $category = Mage::getModel('catalog/category')->load($cat->getId());
+		  $_productCollection = $category->getProductCollection()->addAttributeToSort('position');
+		  Mage::getModel('catalog/layer')->prepareProductCollection($_productCollection);
+	?>
+    <?php if($_productCollection->count()): ?>
+    <div style="border-bottom:dotted 1px #666; font-weight:bold; text-transform:uppercase; margin-bottom:10px;"><?php echo $cat->getName() ?></div>
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php if ($i++%$_columnCount==0): ?>
+        <ul class="products-grid row">
+        
+        <?php endif ?>
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> span2">
+           
+              
+                <div class="catalog-image">
+				   <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150,150); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				</div>
+				<div class="product-actions">
+					<h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+					<?php echo $this->getPriceHtml($_product, true) ?> 
+					 <?php if($_product->isSaleable()): ?>
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						<?php else: ?>
+							<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						<?php endif; ?>  
+                </div>
+               
+            </li>
+        <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ul>
+        <?php endif ?>
+        <?php endforeach ?>
+	  <?php endif; ?>
+      <?php endforeach; ?>  
+        
+        
+<script type="text/javascript">
+
+$jQ('.quick-view-link').one('click', function(e) {
+	showQuickView(this, e);
+	$jQ(this).click(function() { return false; });
+	e.preventDefault();
+});
+ 
+function showQuickView(link, e) {
+	var quickUrl = $jQ(link).data('url');
+ 
+	$jQ.get(quickUrl, function(data) {
+		$jQ('body').append(data);
+		$jQ('.quick-view').lightbox_me({
+			centered: true,
+			destroyOnClose: true,
+			overlaySpeed: 10,
+			onClose: function() {
+				$jQ(link).one('click', function(e) {
+					showQuickView(link, e);
+					$jQ(this).click(function() { return false; });
+				});
+			}
+		});
+	});
+}
+</script>
+        
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+    <?php endif; ?>
+
+    <div class="toolbar-bottom">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+</div>
+<?php endif; ?>
