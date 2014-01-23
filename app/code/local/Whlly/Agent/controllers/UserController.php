@@ -363,6 +363,8 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             try {
 				
                 $customer->setConfirmation(null);
+				$customer->setStatus(1);
+				$customer->setGroupId(Mage::getSingleton('customer/session')->getCustomerGroupId());
                 $customer->save();
                 $this->_getSession()->setCustomer($customer)
                     ->addSuccess($this->__('The account information has been saved.'));
