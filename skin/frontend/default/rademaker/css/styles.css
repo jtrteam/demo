@@ -835,7 +835,7 @@ input.input-text:focus, select:focus, textarea:focus {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background: none repeat scroll 0 0 #F9F9F9;
+   /* background: none repeat scroll 0 0 #F9F9F9;*/
     border-color: -moz-use-text-color -moz-use-text-color rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
     border-image: none;
     border-style: none none solid solid;
@@ -4803,12 +4803,12 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     padding: 0;
 }
 .account-create .fieldset .legend {
-    background: none repeat scroll 0 0 #F9F9F9;
+    /*background: none repeat scroll 0 0 #F9F9F9;*/
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     border-right: 0 none;
     border-top: 0 none;
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.05);
-    color: #333333;
+    color:#F2CE68;
     float: none;
     font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
     font-size: 13px;
