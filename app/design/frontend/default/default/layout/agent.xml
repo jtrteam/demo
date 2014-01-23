@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">  
+
+    <agent_account_edit translate="label">
+        <label>Account Account Edit Form</label>
+        <update handle="agent_account"/>
+        <reference name="root">
+            <action method="setHeaderTitle" translate="title" module="agent"><title>Edit Account Info</title></action>
+        </reference>
+        <reference name="agent.account.wrapper">
+            <block type="agent/form_edit" name="agent_edit" template="agent/form/edit.phtml"/>
+        </reference>
+
+        <reference name="left">
+          <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>
+    </agent_account_edit>
+
+    <agent_account translate="label">
+        <label>Agent Account (All Pages)</label>        
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+		<reference name="top.links">
+            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+          	<remove name="checkout_cart_link"/>
+          <remove name="wishlist_link"/>
+		</reference>
+        <reference name="content">
+            <block type="page/html_wrapper" name="agent.account.wrapper" translate="label">
+                <label>Agent Account Wrapper</label>
+                <action method="setElementClass"><value>agent-account</value></action>
+            </block>
+        </reference>
+
+        <reference name="left">
+            <block type="agent/account_navigation" name="agent_account_navigation" before="-" template="agent/account/navigation.phtml">
+                <action method="addLink" translate="label" module="agent"><name>agent</name><path>agent/account/</path><label>Customers</label></action>
+                <action method="addLink" translate="label" module="agent"><name>account_edit</name><path>agent/account/edit/</path><label>Edit My Account</label></action>                
+            </block>
+            
+            <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+            <remove name="tags_popular"/>
+
+        </reference>
+    </agent_account>
+
+    <agent_account_index translate="label">
+        <label>Customers</label>
+        <update handle="agent_account"/>
+        <!-- Mage_Customer -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="agent.account.wrapper">
+            <block type="agent/account_agent" name="agent_account_customer" template="agent/account/customer.phtml">              
+            </block>
+        </reference>
+
+    </agent_account_index>
+	
+	<agent_user_edit translate="label">
+        <label>Customer Account Edit Form</label>
+        <update handle="agent_account"/>
+        <reference name="root">
+            <action method="setHeaderTitle" translate="title" module="agent"><title>Edit Account Info</title></action>
+        </reference>
+        <reference name="agent.account.wrapper">
+            <block type="agent/form_user" name="user_edit" template="agent/form/useredit.phtml"/>
+        </reference>
+
+        <reference name="left">
+          <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>
+    </agent_user_edit>
+
+    <!--<agent_address_form translate="label">
+        <label>Customer My Account Address Edit Form</label>
+        <update handle="agent_account"/>
+        <reference name="agent.account.wrapper">
+            <block type="agent/address_edit" name="agent_address_edit" template="agent/address/edit.phtml"/>
+        </reference>
+    </agent_address_form>-->
+	
+	<agent_user_history translate="label">
+        <label>Customer My Account Order History</label>
+        <update handle="agent_account"/>
+        <reference name="agent.account.wrapper">
+            <block type="agent/order_history" name="agent.order.history" template="agent/order/history.phtml" />
+            <block type="agent/account_agent" name="agent.account.link.back" template="agent/account/link/back.phtml"/>
+        </reference>
+    </agent_user_history>
+	
+	<agent_user_neworder translate="label">
+        <label>Customer New Order</label>
+        <update handle="agent_account"/>
+        <reference name="agent.account.wrapper">
+            <block type="agent/order_product" name="agent.order.product" template="agent/order/products.phtml" />
+        </reference>
+    </agent_user_neworder>
+	
+
+</layout>
