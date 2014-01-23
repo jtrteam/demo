@@ -36,6 +36,10 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 		if(($membership != 1) || (!Mage::getStoreConfig('agent/genaral/enable'))):
 			$this->_redirectUrl($this->_getUrl('customer/account'));
 		endif;
+		
+		if(Mage::helper('checkout/cart')->getCart()->getItemsCount()> 0):
+			$this->_clearCart();
+		endif;
     }
 
   
@@ -347,5 +351,13 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
     protected function _isVatValidationEnabled($store = null)
     {
         return  $this->_getHelper('customer/address')->isVatValidationEnabled($store);
+    }
+	
+	protected function _clearCart()
+    {
+        foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
+			Mage::getSingleton('checkout/cart')->removeItem( $item->getId() )->save();
+		}
+
     }
 }
