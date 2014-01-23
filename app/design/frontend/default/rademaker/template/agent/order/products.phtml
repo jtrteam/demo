@@ -83,7 +83,7 @@ function showQuickView(link, e) {
 		  Mage::getModel('catalog/layer')->prepareProductCollection($_productCollection);
 	?>
     <?php if($_productCollection->count()): ?>
-    <div style="border-bottom:dotted 1px #666; font-weight:bold; text-transform:uppercase; margin-bottom:10px;"><?php echo $cat->getName() ?></div>
+    <div class="agent-products-heading"><?php echo $cat->getName() ?></div>
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = 4;//$this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
