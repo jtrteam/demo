@@ -85,8 +85,8 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             if (empty($errors)) {
 				$customer->setConfirmation(null);
 				$customer->setGroupId(Mage::getSingleton('customer/session')->getCustomerGroupId()); 
-				$customer->setStatus('1');
-				$customer->setMembership(0);
+				$customer->setStatus(1); 
+				$customer->setMembership(0);                 
                 $customer->save();
 				 $this->_getSession()->addSuccess($this->__('The account information has been saved.'));
 
@@ -424,6 +424,40 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 	
+	public function orderViewAction()
+    {
+       $this->_viewAction();
+    }
+	
+	 protected function _viewAction()
+    {
+        if (!$this->_loadValidOrder()) {
+            return;
+        }
+
+        $this->loadLayout();
+        $this->_initLayoutMessages('catalog/session');        
+        $this->renderLayout();
+    }
+
+    
+    protected function _loadValidOrder($orderId = null)
+    {
+        if (null === $orderId) {
+            $orderId = (int) $this->getRequest()->getParam('order_id');
+        }
+        if (!$orderId) {
+            $this->_forward('noRoute');
+            return false;
+        }
+
+        $order = Mage::getModel('sales/order')->load($orderId);
+		Mage::register('current_order', $order);
+		return true;
+        
+    }
+
+   
 	public function newOrderAction()
     {
 		$this->loadLayout();

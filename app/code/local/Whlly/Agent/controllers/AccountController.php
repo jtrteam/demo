@@ -36,7 +36,6 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 		if(($membership != 1) || (!Mage::getStoreConfig('agent/genaral/enable'))):
 			$this->_redirectUrl($this->_getUrl('customer/account'));
 		endif;
-		
 		if(Mage::helper('checkout/cart')->getCart()->getItemsCount()> 0):
 			$this->_clearCart();
 		endif;
@@ -360,4 +359,5 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 		}
 
     }
+	
 }
