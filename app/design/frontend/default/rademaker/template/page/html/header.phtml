@@ -51,8 +51,11 @@
 	
 	
 	<div class="nav-container container">
-		<?php echo $this->getChildHtml('topMenu') ?>
-		<?php echo $this->getChildHtml('miniCart') ?>
+    <?php if((Mage::getSingleton( 'customer/session' )->isLoggedIn()) && (Mage::getSingleton('customer/session')->getCustomer()->getMembership() == 1)): ?>
+	<?php  else: ?>
+        <?php echo $this->getChildHtml('topMenu') ?>
+        <?php echo $this->getChildHtml('miniCart') ?>
+    <?php endif; ?>
 	</div>
 	<?php echo $this->getChildHtml('mobile-nav') ?>
 
