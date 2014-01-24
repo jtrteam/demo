@@ -5088,7 +5088,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     margin: 10px 0;
 }
 .order-info-box {
-    background: none repeat scroll 0 0 #FFFFFF;
+   /* background: none repeat scroll 0 0 #FFFFFF;*/
     border: 1px solid #D8D8D8;
     margin: 0 0 15px;
     padding: 12px 15px;
@@ -5110,7 +5110,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 }
 .order-items h2, .order-items h3 {
     clear: none;
-    color: #0A263C;
+    color: #F2CE68;
     font-size: 13px;
     font-weight: 700;
     margin: 0 0 5px;
