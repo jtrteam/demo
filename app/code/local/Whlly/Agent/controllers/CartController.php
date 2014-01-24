@@ -177,7 +177,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
 		 
 		$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
-
+        echo 'hi';exit;
         $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);
 		foreach ($resultCustomeraddrs as $_address):
                 if($_address['is_default_billing']=='1'):
@@ -191,13 +191,12 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		 $resultCustomerAddresses = Mage::getModel('api/server_handler')->call($apiDetails, "cart_customer.addresses", array($quote_id, $arrAddresses));
 		 
          $resultShippingList = Mage::getModel('api/server_handler')->call($apiDetails,"cart_shipping.list", array($quote_id));
-		 
-		 $freeshipping = false;
-
-         foreach($resultShippingList as $key=>$value):
-            if($value['code']=='freeshipping_freeshipping') $freeshipping = true;
-            if($freeshipping==true):
+		
+		 foreach($resultShippingList as $key=>$value):
+            if($value['code']=='freeshipping_freeshipping'):
                 $resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'freeshipping_freeshipping'));
+			elseif($value['code']=='flatrate_flatrate'):
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
 			else:
 				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'tablerate_bestway'));
 			endif;
