@@ -40,8 +40,7 @@
             </block>
             
             <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-            <block type="agent/order_sidebar" name="agent_cart_sidebar" template="agent/order/sidebar.phtml" after="agent_account_navigation" />
-			<remove name="tags_popular"/>
+            <remove name="tags_popular"/>
 
         </reference>
     </agent_account>
@@ -92,68 +91,13 @@
         </reference>
     </agent_user_history>
 	
-	 <agent_user_orderview translate="label">
-        <label>Customer My Account Order View</label>
-        <update handle="agent_account"/>
-        <reference name="agent.account.wrapper">
-            <block type="sales/order_info" as="info" name="sales.order.info"></block>
-            <block type="agent/order_view" name="sales.order.view">
-                <block type="sales/order_items" name="order_items" template="sales/order/items.phtml">
-                    <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>sales/order/items/renderer/default.phtml</template></action>
-                    <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>sales/order/items/renderer/default.phtml</template></action>
-                    <block type="sales/order_totals" name="order_totals" template="sales/order/totals.phtml">
-                        <action method="setLabelProperties"><value>colspan="4" class="a-right"</value></action>
-                        <action method="setValueProperties"><value>class="last a-right"</value></action>
-                        <block type="tax/sales_order_tax" name="tax" template="tax/order/tax.phtml" />
-                    </block>
-                </block>
-            </block>
-        </reference>
-    </agent_user_orderview>
-	
 	<agent_user_neworder translate="label">
         <label>Customer New Order</label>
         <update handle="agent_account"/>
-		<reference name="head">
-            <action method="addItem"><type>js</type><name>jquery/jquery-1.6.4.min.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/fancybox/jquery.fancybox-1.3.4.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/fancybox/jquery.easing-1.3.pack.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/fancybox/jquery.mousewheel-3.0.4.pack.js</name></action>
-            <action method="addItem"><type>js</type><name>jquery/noconflict.js</name></action>
-            <action method="addCss"><stylesheet>js/fancybox/jquery.fancybox-1.3.4.css</stylesheet></action>
-        </reference>
         <reference name="agent.account.wrapper">
             <block type="agent/order_product" name="agent.order.product" template="agent/order/products.phtml" />
         </reference>
     </agent_user_neworder>
 	
-	<agent_cart_index translate="label">
-        <label>Customer Cart</label>
-        <update handle="agent_account"/>
-		<reference name="head">
-            <action method="addItem"><type>js</type><name>jquery/jquery-1.6.4.min.js</name></action>
-            <action method="addItem"><type>js</type><name>jquery/noconflict.js</name></action>
-        </reference>
-        <reference name="agent.account.wrapper">
-            <block type="agent/order_cart" name="agent.order.cart" >
-				<action method="setCartTemplate"><value>agent/order/cart.phtml</value></action>
-                <action method="setEmptyTemplate"><value>checkout/cart/noItems.phtml</value></action>
-                <action method="chooseTemplate"/>
-                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>agent/order/cart/item/default.phtml</template></action>
-                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>agent/ordercart/item/default.phtml</template></action>
-                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/item/default.phtml</template></action>
-                <block type="core/template" name="agent.cart.discount" as="discount" template="agent/order/cart/discount.phtml"/>
-                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
-			</block>
-        </reference>
-    </agent_cart_index>
-	
-	<agent_cart_success translate="label">
-        <label>Customer Order Success</label>
-        <update handle="agent_account"/>
-        <reference name="agent.account.wrapper">
-            <block type="agent/order_success" name="agent.order.success" template="agent/order/success.phtml" />
-        </reference>
-    </agent_cart_success>
 
 </layout>

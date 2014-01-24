@@ -1,0 +1,17 @@
+<form action="<?php echo Mage::getUrl('agent/cart/updatediscount',array('id'=>$this->getRequest()->getParam('id')));?>" method="post">
+<div class="discount">
+  <h2><?php echo $this->__('Discount') ?></h2>
+  <div class="discount-form">
+    <label class="title"><?php echo $this->__('Discount')?></label>
+    <select name="discount" id="discount" onchange="this.form.submit()">
+      <option value=""></option>
+      <?php    for ($i=1; $i<=25; $i++)
+				{  
+					echo '<option value="agent_percent'.$i.'">'.$i.'%</option>';
+
+				} ?>
+    </select>
+  </div>
+</div>
+</form>
+
