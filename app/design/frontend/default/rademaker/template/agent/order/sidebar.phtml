@@ -25,7 +25,9 @@
             </p>
         </div>
     <?php endif ?>
-    
+    <div class="actions">
+       <button type="button" title="<?php echo $this->__('Checkout') ?>" class="button" onclick="setLocation('<?php echo $this->getUrl('agent/cart',array('id'=> $id)) ?>')"><span><span><?php echo $this->__('Checkout') ?></span></span></button>
+    </div>
     <?php $_items = $this->getRecentItems() ?>
     <?php if(count($_items)): ?>
         <p class="block-subtitle"><?php echo $this->__('Recently added item(s)') ?></p>
