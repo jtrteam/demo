@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<layout version="0.1.0">
-    <checkout_cart_index>
-         <reference name="checkout.cart">
-            <action method="setTemplate" ifconfig="sizematrix/sizematrix/enable"><template>sizematrix/cart.phtml</template></action>
-			<action method="addItemRender" ifconfig="sizematrix/sizematrix/enable"><type>simple</type><block>checkout/cart_item_renderer</block><template>sizematrix/cart/item/default.phtml</template></action>
-        </reference>
-    </checkout_cart_index>
-</layout>

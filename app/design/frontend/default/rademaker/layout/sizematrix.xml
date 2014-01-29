@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+   <PRODUCT_TYPE_grouped>
+   		<reference name='product.info.grouped'>
+        	<action method='setTemplate'><template>sizematrix/catalog/product/view/type/grouped.phtml</template></action>
+        </reference>
+    </PRODUCT_TYPE_grouped>
+</layout> 

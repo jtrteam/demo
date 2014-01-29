@@ -4,57 +4,8 @@
         <Whlly_Sizematrix>
             <version>1.0.0</version>
         </Whlly_Sizematrix>
-    </modules>
-    <frontend>
-        <routers>
-            <sizematrix>
-                <use>standard</use>
-                <args>
-                    <module>Whlly_Sizematrix</module>
-                    <frontName>sizematrix</frontName>
-                </args>
-            </sizematrix>
-        </routers>
-        <layout>
-            <updates>
-                <sizematrix>
-                    <file>sizematrix.xml</file>
-                </sizematrix>
-            </updates>
-        </layout>
-    </frontend>
-    <admin>
-        <routers>
-			<sizematrix>
-				<use>admin</use>
-				<args>
-					<module>Whlly_Sizematrix</module>
-					<frontName>sizematrix</frontName>
-				</args>
-			</sizematrix>
-        </routers>
-    </admin>
-    <global>       
-        <resources>
-            <sizematrix_setup>
-                <setup>
-                    <module>Whlly_Sizematrix</module>
-                </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
-            </sizematrix_setup>
-            <sizematrix_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </sizematrix_write>
-            <sizematrix_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </sizematrix_read>
-        </resources>
+    </modules>    
+    <global>
         <blocks>
             <sizematrix>
                 <class>Whlly_Sizematrix_Block</class>
@@ -66,4 +17,37 @@
             </sizematrix>
         </helpers>
     </global>
+	 <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Whlly_Sizematrix>
+							<title>Sizematrix Module</title>
+							<sort_order>10</sort_order>
+						</Whlly_Sizematrix>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<sizematrix>
+					<file>sizematrix.xml</file>
+				</sizematrix>
+			</updates>
+		</layout>
+    </adminhtml>  
+	 <frontend>
+        <layout>
+            <updates>
+                <sizematrix>
+                    <file>sizematrix.xml</file>
+                </sizematrix>
+            </updates>
+        </layout>
+    </frontend>    
 </config>
