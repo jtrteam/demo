@@ -6,7 +6,9 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 	 public function indexAction() {
         parent::indexAction();
 		$data = $this->getRequest()->getParams();
-		$this->_addDetaisToQuote($data);
+		if(Mage::helper('checkout/cart')->getCart()->getItemsCount()> 0):
+			$this->_addDetaisToQuote($data);
+		endif;
     }
 	
 	public function addAction()
