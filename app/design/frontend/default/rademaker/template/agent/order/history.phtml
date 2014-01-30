@@ -1,7 +1,17 @@
+<?php 
+	 $customerData = Mage::getModel('customer/customer')->load($this->getRequest()->getParam('id'));
+     $addressBilling = $customerData->getDefaultBillingAddress();
+     if($addressBilling['company']):
+	 	$customerName = $addressBilling['company'];
+	else:
+		$customerName = $customerData->getName();
+	endif;
+?>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <?php $_orders = $this->getOrders(); ?>
 <div class="page-title">
     <h1><?php echo $this->__('Order History') ?></h1>
+     <span><strong><?php echo $this->__('Customer:') ?></strong>&nbsp;<?php echo $customerName ?></span>
 </div>
 <?php echo $this->getPagerHtml(); ?>
 <?php if($_orders->getSize()): ?>

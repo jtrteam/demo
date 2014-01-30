@@ -3,6 +3,18 @@
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
+<?php 
+	 $customerData = Mage::getModel('customer/customer')->load($this->getRequest()->getParam('id'));
+     $addressBilling = $customerData->getDefaultBillingAddress();
+     if($addressBilling['company']):
+	 	$customerName = $addressBilling['company'];
+	else:
+		$customerName = $customerData->getName();
+	endif;
+?>
+<div class="page-title title-buttons">
+   <span><strong><?php echo $this->__('Customer:') ?></strong>&nbsp;<?php echo $customerName ?></span>
+</div>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
     <div class="product-essential boxed">
