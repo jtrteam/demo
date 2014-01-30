@@ -354,9 +354,12 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 	
 	protected function _clearCart()
     {
-        foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
+       /* foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
 			Mage::getSingleton('checkout/cart')->removeItem( $item->getId() )->save();
-		}
+		}*/
+		
+		Mage::getSingleton('checkout/cart')->truncate();
+		Mage::getSingleton('checkout/session')->clear();
 
     }
 	
