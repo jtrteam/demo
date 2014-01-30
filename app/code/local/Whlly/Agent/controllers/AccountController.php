@@ -363,7 +363,7 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 	 protected function _emptyShoppingCart()
     {
         try {
-            Mage::getSingleton('checkout/cart') ->truncate()->save();
+            Mage::getSingleton('checkout/cart')->truncate()->save();
             Mage::getSingleton('checkout/session')->setCartWasUpdated(true);
         } catch (Mage_Core_Exception $exception) {
             Mage::getSingleton('checkout/session')->addError($exception->getMessage());
