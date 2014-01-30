@@ -1,6 +1,16 @@
+<?php 
+	 $customerData = Mage::getModel('customer/customer')->load($this->getRequest()->getParam('id'));
+     $addressBilling = $customerData->getDefaultBillingAddress();
+     if($addressBilling['company']):
+	 	$customerName = $addressBilling['company'];
+	else:
+		$customerName = $customerData->getName();
+	endif;
+?>
 <div class="cart">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
+        <span><strong><?php echo $this->__('Customer:') ?></strong><?php echo $customerName ?></span>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getUrl('agent/cart/updatePost') ?>" method="post">
