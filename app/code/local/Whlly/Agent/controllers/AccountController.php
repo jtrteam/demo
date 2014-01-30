@@ -36,9 +36,8 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 		if(($membership != 1) || (!Mage::getStoreConfig('agent/genaral/enable'))):
 			$this->_redirectUrl($this->_getUrl('customer/account'));
 		endif;
-		if(Mage::helper('checkout/cart')->getCart()->getItemsCount()> 0):
-			$this->_clearCart();
-		endif;
+		
+		$this->_emptyShoppingCart();
     }
 
   
@@ -354,13 +353,23 @@ class Whlly_Agent_AccountController extends Mage_Core_Controller_Front_Action
 	
 	protected function _clearCart()
     {
-       /* foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
-			Mage::getSingleton('checkout/cart')->removeItem( $item->getId() )->save();
-		}*/
+        foreach( Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection() as $item ){
+			Mage::getSingleton('checkout/cart')->removeItem($item->getId())->save();
+		}
 		
-		Mage::getSingleton('checkout/cart')->truncate();
-		Mage::getSingleton('checkout/session')->clear();
 
+    }
+	
+	 protected function _emptyShoppingCart()
+    {
+        try {
+            Mage::getSingleton('checkout/cart') ->truncate()->save();
+            Mage::getSingleton('checkout/session')->setCartWasUpdated(true);
+        } catch (Mage_Core_Exception $exception) {
+            Mage::getSingleton('checkout/session')->addError($exception->getMessage());
+        } catch (Exception $exception) {
+            Mage::getSingleton('checkout/session')->addException($exception, $this->__('Cannot update shopping cart.'));
+        }
     }
 	
 }
