@@ -3,6 +3,18 @@
 	$_helper = $this->helper('catalog/output');
 	
 ?>
+<?php 
+	 $customerData = Mage::getModel('customer/customer')->load($this->getRequest()->getParam('id'));
+     $addressBilling = $customerData->getDefaultBillingAddress();
+     if($addressBilling['company']):
+	 	$customerName = $addressBilling['company'];
+	else:
+		$customerName = $customerData->getName();
+	endif;
+?>
+<div class="page-title title-buttons">
+   <span><strong><?php echo $this->__('Customer:') ?></strong><?php echo $customerName ?></span>
+</div>
 <?php if(count($categories)): ?>
 <div class="category-products">
     <?php //echo $this->getToolbarHtml() ?>
