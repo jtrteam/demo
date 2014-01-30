@@ -18,7 +18,8 @@
 
 <?php if ($_hasAssociatedProducts): ?>
     <?php foreach ($_associatedProducts as $_item): ?>    
-     <?php $dataMtx = explode('-',$this->escapeHtml($_item->getName())); ?>
+     <?php // $dataMtx = explode('-',$this->escapeHtml($_item->getName())); ?>
+     <?php  $dataMtx = explode('~',$_item->getSku()); ?>
      <?php $name[]= $dataMtx[0];
 		   $color[]= $dataMtx[1];
 		   $size[]  = $dataMtx[2];
@@ -29,6 +30,8 @@
      <?php  $color = array_unique($color); 
 	 		$size = array_unique($size);
 			$name = array_unique($name);
+			
+			var_dump($matrix);exit;
 	 ?>
 <?php endif;?>
 
