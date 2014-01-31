@@ -121,7 +121,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$data = $this->getRequest()->getParams();
 		if($data['discount']!= ''):
 			$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();		
-			$apiDetails = Mage::getModel('api/server_handler')->login('agentuser', '10dulk@R');		
+			$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));		
 			$resultCartCouponAdd = Mage::getModel('api/server_handler')->call($apiDetails, "cart_coupon.add", array($quote_id,$data['discount']));
 			$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
 			$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
@@ -135,7 +135,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 	{
 		
 		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();		
-		$apiDetails = Mage::getModel('api/server_handler')->login('agentuser', '10dulk@R');
+		$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));
 		$orderId = Mage::getModel('api/server_handler')->call($apiDetails,"cart.order",array($quote_id, null, null));
 		if($orderId){
 			$this->_redirectUrl(Mage::getUrl('agent/cart/success',array('order_id' => $orderId)));
@@ -174,7 +174,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		
 		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();
 		
-		$apiDetails = Mage::getModel('api/server_handler')->login('agentuser', '10dulk@R');
+		$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));
 		
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
 		 
