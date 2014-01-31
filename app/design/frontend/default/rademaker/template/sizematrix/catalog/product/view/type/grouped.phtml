@@ -5,7 +5,7 @@
 
 <?php ### Matrix Product### ?>
 
-<?php if(($_product->getAttributeSetId() == 9) && (Mage::getStoreConfig('sizematrix/genaral/enable'))): ?>
+<?php if(($_product->getAttributeSetId() == 9) && (Mage::getStoreConfig('sizematrix/genaral/enable')) && ( Mage::helper('customer')->isLoggedIn())): ?>
 <?php $separator = trim(Mage::getStoreConfig('sizematrix/genaral/separator')); ?>
 <?php if ($this->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable() && $_hasAssociatedProducts): ?>
