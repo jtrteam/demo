@@ -100,9 +100,7 @@
                         if(jQuery('.block-cart')){
                             jQuery('.block-cart').replaceWith(data.sidebar);
                         }
-                        if(jQuery('.header .links')){
-                            jQuery('.header .links').replaceWith(data.toplink);
-                        }
+                       window.location="<?php echo $this->getUrl('agent/user/neworder',array('id'=>$this->getRequest()->getParam('id'))); ?>";
 					}
 				});
 			} catch (e) {
