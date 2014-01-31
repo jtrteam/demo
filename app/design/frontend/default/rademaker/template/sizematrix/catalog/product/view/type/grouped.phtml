@@ -5,8 +5,8 @@
 
 <?php ### Matrix Product### ?>
 
-<?php if($_product->getAttributeSetId() == 9): ?>
-
+<?php if(($_product->getAttributeSetId() == 9) && (Mage::getStoreConfig('sizematrix/genaral/enable'))): ?>
+<?php $separator = trim(Mage::getStoreConfig('sizematrix/genaral/separator')); ?>
 <?php if ($this->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable() && $_hasAssociatedProducts): ?>
         <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p>
@@ -18,8 +18,18 @@
 
 <?php if ($_hasAssociatedProducts): ?>
     <?php foreach ($_associatedProducts as $_item): ?>    
-     <?php // $dataMtx = explode('-',$this->escapeHtml($_item->getName())); ?>
-     <?php $dataMtx = explode('~',$this->escapeHtml($_item->getSku())); ?>
+     <?php 
+	 		if(Mage::getStoreConfig('sizematrix/genaral/separator_attribute') == 'name'):
+			
+				$dataMtx = explode($separator,$this->escapeHtml($_item->getName())); 
+				
+			else:
+			
+				$dataMtx = explode($separator,$this->escapeHtml($_item->getSku())); 
+				
+			endif;			
+			
+	 ?>
      <?php $name[]= $dataMtx[0];
 		   $color[]= $dataMtx[1];
 		   $size[]  = $dataMtx[2];

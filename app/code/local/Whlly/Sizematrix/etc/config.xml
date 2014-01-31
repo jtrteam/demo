@@ -6,6 +6,11 @@
         </Whlly_Sizematrix>
     </modules>    
     <global>
+		<models>
+            <sizematrix>
+                <class>Whlly_Sizematrix_Model</class>
+            </sizematrix>
+		</models>
         <blocks>
             <sizematrix>
                 <class>Whlly_Sizematrix_Block</class>
@@ -49,5 +54,14 @@
                 </sizematrix>
             </updates>
         </layout>
-    </frontend>    
+    </frontend> 
+	<default>
+	  <sizematrix>
+		 <general> 
+			  <enable>1</enable>
+			  <separator>~</separator>
+			  <separator_attribute>sku</separator_attribute>  
+		 </general>
+	   </sizematrix>
+    </default>   
 </config>
