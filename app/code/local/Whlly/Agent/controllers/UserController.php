@@ -421,6 +421,7 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
         if ($block = $this->getLayout()->getBlock('agent.account.link.back')) {
             $block->setRefererUrl($this->_getRefererUrl());
         }
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Order History'));
         $this->renderLayout();
     }
 	
@@ -436,7 +437,8 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
         }
 
         $this->loadLayout();
-        $this->_initLayoutMessages('catalog/session');        
+        $this->_initLayoutMessages('catalog/session');     
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Customer Order'));   
         $this->renderLayout();
     }
 
@@ -462,6 +464,7 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
     {
 		$this->loadLayout();
         $this->_initLayoutMessages('catalog/session');
+		$this->getLayout()->getBlock('head')->setTitle($this->__('New Order'));
 		$this->renderLayout();       
     }
 
