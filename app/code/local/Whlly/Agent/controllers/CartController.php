@@ -9,6 +9,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		if(Mage::helper('checkout/cart')->getCart()->getItemsCount()> 0):
 			$this->_addDetaisToQuote($data);
 		endif;
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Agent - New Order'));
     }
 	
 	public function addAction()
@@ -151,6 +152,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$this->loadLayout();
         $this->_initLayoutMessages('customer/session');
         $this->_initLayoutMessages('catalog/session');
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Order Success'));
         $this->renderLayout();
 		
 	}
@@ -160,6 +162,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$this->loadLayout();
         $this->_initLayoutMessages('customer/session');
         $this->_initLayoutMessages('catalog/session');
+		$this->getLayout()->getBlock('head')->setTitle($this->__('Order Failure'));
         $this->renderLayout();
 	}
 	

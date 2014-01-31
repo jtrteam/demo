@@ -2,7 +2,7 @@
 <layout version="0.1.0">  
 
     <agent_account_edit translate="label">
-        <label>Account Account Edit Form</label>
+        <label>Agent Account Edit Form</label>
         <update handle="agent_account"/>
         <reference name="root">
             <action method="setHeaderTitle" translate="title" module="agent"><title>Edit Account Info</title></action>

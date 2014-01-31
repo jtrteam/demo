@@ -55,7 +55,7 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
         $this->getLayout()->getBlock('content')->append(
             $this->getLayout()->createBlock('agent/account_customer')
         );
-        $this->getLayout()->getBlock('head')->setTitle($this->__('Customers'));
+        $this->getLayout()->getBlock('head')->setTitle($this->__('Agent - Customers'));
         $this->renderLayout();
     }
 
@@ -324,7 +324,7 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             $customer->setChangePassword(1);
         }
 
-        $this->getLayout()->getBlock('head')->setTitle($this->__('Account Information'));
+        $this->getLayout()->getBlock('head')->setTitle($this->__('Customer Account Information'));
         $this->getLayout()->getBlock('messages')->setEscapeMessageFlag(true);
         $this->renderLayout();
     }
