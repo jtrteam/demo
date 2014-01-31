@@ -37,14 +37,17 @@
 		   $size[]  = $dataMtx[2];
 	 	   $matrix[$dataMtx[0]] [$dataMtx[1]][]= $dataMtx[2];
 		   $productId[$dataMtx[0]] [$dataMtx[1]][$dataMtx[2]]= $_item->getId().'-'.($_item->getQty()*1);  // To get id and qty
+		   $minPrice[] = $this->getPriceHtml($_item, true);
 	 ?>    	
      <?php endforeach;?>
      <?php  $color = array_unique($color); 
 	 		$size = array_unique($size);
 			$name = array_unique($name);
+			$minPrice = array_unique($minPrice);
+			sort($minPrice);
 	 ?>
 <?php endif;?>
-
+<div><?php echo  $this->__('<strong>Starting at:</strong> %s', $minPrice[0]);?></div>
 <table class="data-table grouped-items-table" id="super-product-table">
     <col />
     <col />
