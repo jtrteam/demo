@@ -3814,48 +3814,34 @@ ul.tabs-content>li.active {
     text-transform: uppercase;
     width: 50px;
 }
-.backdrop{background-image: url('../img/layout/brussel.jpg');}
 .store .store-details .col {
     float: left;
     min-width: 280px;
     overflow: hidden;
     width: 33.3%;
 }
-
-
 .store .store-details article {
     max-width: 340px;
     padding: 0 20px 0 0;
 }
-
-
 .store .store-details h2.line {
     border-bottom: 1px solid #D5D5D5;
     margin: 0 0 15px;
 }
-
 .store .store-details h3 {
     font-family: PillGothic300mgSemibd;
     text-transform: uppercase;
 }
-
-
 .store .store-details table, .store .store-details p {
     margin: 0 0 10px;
     width: 100%;
 }
-
-
 .store .store-details th, .store .store-details td:first-child {
     text-align: left;
 }
-
-
 .store .store-details td {
     text-align: right;
 }
-
-
 .store .backdrop-overlay {
     min-height: 410px;
     padding-bottom: 210px;
@@ -3867,4 +3853,17 @@ ul.tabs-content>li.active {
     padding: 20px;
     position: relative;
     width: 380px;
+}
+.store .backdrop {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    min-height: 410px;
+}
+.backdrop {
+	background-image: url('../img/layout/brussel.jpg');
+    margin: 0 0 40px;
+    min-height: 500px;
+    padding: 20px 0 20px 40px;
+    position: relative;
 }
