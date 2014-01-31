@@ -3360,7 +3360,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 }
 .product-view .product-shop {
     float: left;
-    margin-left: 30px;
+   /* margin-left: 30px;*/
     width: 350px;
 }
 .product-view .product-shop .padder {
