@@ -1,3 +1,4 @@
+<?php if(Mage::helper('customer')->isLoggedIn()): ?>
 <?php $this->setPreconfiguredValue(); ?>
 <?php $_product = $this->getProduct(); ?>
 <?php $_associatedProducts = $this->getAssociatedProducts(); ?>
@@ -5,7 +6,7 @@
 
 <?php ### Matrix Product### ?>
 
-<?php if(($_product->getAttributeSetId() == 9) && (Mage::getStoreConfig('sizematrix/genaral/enable')) && ( Mage::helper('customer')->isLoggedIn())): ?>
+<?php if(($_product->getAttributeSetId() == 9) && (Mage::getStoreConfig('sizematrix/genaral/enable'))): ?>
 <?php $separator = trim(Mage::getStoreConfig('sizematrix/genaral/separator')); ?>
 <?php if ($this->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable() && $_hasAssociatedProducts): ?>
@@ -138,4 +139,5 @@
     </tbody>
 </table>
 <script type="text/javascript">decorateTable('super-product-table')</script>
+<?php endif; ?>
 <?php endif; ?>
