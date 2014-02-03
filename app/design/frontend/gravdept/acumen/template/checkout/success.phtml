@@ -10,20 +10,33 @@
  * @version    1.3.3
  */
 ?>
+<?php 
+$orderId = Mage::getSingleton('checkout/type_onepage')->getCheckout()->getLastOrderId();
+$order = Mage::getModel('sales/order')->load($orderId);
+$email = $order->getCustomerEmail();
+$address = Mage::getModel('sales/order_address')->load($order->billing_address_id);
 
+$name=$address->getFirstname()." ".$address->getLastname();
+?>
 <div class="grid-block">
-	<h1><?php echo $this->__('Success!') ?></h1>
-	
+	<h2 class="success_msg"><?php echo $this->__('THANK YOU FOR YOUR ORDER') ?></h2>
+	<h2 class="success_msg2"><?php echo $this->__('WE REALLY APPRECIATE IT!') ?></h2>
 	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
 	<?php if ($this->getOrderId()): ?>		
-		<p><?php echo $this->__('Thanks for your purchase! We sent you an order summary email and when your order ships we\'ll forward the tracking number.') ?></p>
+		<p class="success_order"><?php echo $this->__('Thank you for your order from Camouflage '.$name.'. Your order number is: '.  $this->__('%s', $this->escapeHtml($this->getOrderId())) ) ?></p>
 		
-		<p><?php echo $this->__('Order #: %s', $this->escapeHtml($this->getOrderId())) ?></p>
-		
-		<?php if ($this->getCanViewOrder()): ?>
-			<p><a href="<?php echo $this->escapeHtml($this->getViewOrderUrl()) ?>"><?php echo $this->__('View Order') ?></a></p>
-		<?php endif; ?>
+	
+        <p> <?php echo $this->__('You will receive a confirmation of your order at '.$email.'. Once your package ships we will send an email with a link to track your order. You can check the status of your order by logging into your account. If you have any questions about your order please contact us at <u><b> service@theartofcamouflage.com </b></u> or file a ticket through your account. ')?></p>
+		<br/>
+        <h3 class="next-step"><?php echo $this->__('NEXT STEPS OF YOUR ORDER') ?></h3>
+
+
+<br/>
+
+		<?php //if ($this->getCanViewOrder()): ?>
+			<p class="vieworder"><a href="<?php echo $this->escapeHtml($this->getViewOrderUrl()) ?>" class="button"><?php echo $this->__('VIEW  YOUR ORDER') ?></a></p>
+		<?php //endif; ?>
 				
 		<?php if ($this->getViewOrder() && $this->getCanPrintOrder()) :?>
 			<p><a href="<?php echo $this->getPrintUrl() ?>"><?php echo $this->__('Print Confirmation') ?></a></p>

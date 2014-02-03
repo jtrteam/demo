@@ -3870,3 +3870,38 @@ ul.tabs-content>li.active {
 .map {
     margin-top: 20px;
 }
+.vieworder .button{ 
+	background: none repeat scroll 0 0 #000000;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+	padding: 8px 60px;
+    text-transform: uppercase;
+    transition: all 0.2s linear 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.success_msg{ 
+	font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 12px;
+	color: #000000; 
+	font-family: FuturaHvBTHeavy; 
+}
+.success_msg2{
+	 font-size: 22px; 
+	 color: #666666;  
+	 font-weight: normal; 
+}
+.success_order{
+	margin-bottom: 12px;
+}
+ .next-step{
+	font-size: 18px;
+ 	font-family: FuturaHvBTHeavy;
+  }
