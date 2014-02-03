@@ -3910,7 +3910,10 @@ ul.tabs-content>li.active {
 	 padding-right:10px;
 	 float:left;
 }
-.cart-banner-outer:first-child{
-		  background:none;
-		  padding-right:0;
+.cart-banner-outer:last-child{
+	background:none;
+	padding-right:0;
+}
+.onepagecheckout-index-success .cart-banner{
+	 width: 245px !important;
 }
