@@ -3907,7 +3907,7 @@ ul.tabs-content>li.active {
 }
 .cart-banner-outer{
 	 background:url("../img/icon/blue-arrow.png") 98% 50% no-repeat;
-	 padding-right:10px
+	 padding-right:10px;
 	 float:left;
 }
 .cart-banner-outer:first-child{
