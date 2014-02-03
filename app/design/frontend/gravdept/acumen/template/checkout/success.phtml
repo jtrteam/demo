@@ -32,23 +32,29 @@ $order_receive ='';
 		<br/>
         <h3 class="next-step"><?php echo $this->__('NEXT STEPS OF YOUR ORDER') ?></h3>
         <div class="grid">
-        	<div class="grid_15 cart-banner">
-                <div class="cart-banner-head">
-                	<h3><?php echo $this->__('ORDER CONFORMATION') ?></h3>
-                </div>
-                <div class="cart-banner-cntnts"><?php echo $this->__('You will receive a confirmation of your order at %s',$email) ?></div>
+        	<div class="cart-banner-outer">
+                <div class="grid_15 cart-banner">
+                    <div class="cart-banner-head">
+                        <h3><?php echo $this->__('ORDER CONFORMATION') ?></h3>
+                    </div>
+                    <div class="cart-banner-cntnts"><?php echo $this->__('You will receive a confirmation of your order at %s',$email) ?></div>
+                 </div>
              </div>
-             <div class="grid_15 cart-banner">
-                <div class="cart-banner-head">
-                	<h3><?php echo $this->__('WE SHIP YOUR ORDER') ?></h3>
-                </div>
-                <div class="cart-banner-cntnts"><?php echo $this->__('Tomorrow at the latest before 00:30 you will receive a conformation of your shipment with a link to track your order') ?></div>
+             <div class="cart-banner-outer">
+                 <div class="grid_15 cart-banner">
+                    <div class="cart-banner-head">
+                        <h3><?php echo $this->__('WE SHIP YOUR ORDER') ?></h3>
+                    </div>
+                    <div class="cart-banner-cntnts"><?php echo $this->__('Tomorrow at the latest before 00:30 you will receive a conformation of your shipment with a link to track your order') ?></div>
+                 </div>
              </div>
-             <div class="grid_15 cart-banner">
-                <div class="cart-banner-head">
-                	<h3><?php echo $this->__('YOU RECEIVE YOUR ORDER') ?></h3>
-                </div>
-                <div class="cart-banner-cntnts"><?php echo $this->__('You will receive your order on the $s',$order_receive) ?></div>
+             <div class="cart-banner-outer">
+                 <div class="grid_15 cart-banner">
+                    <div class="cart-banner-head">
+                        <h3><?php echo $this->__('YOU RECEIVE YOUR ORDER') ?></h3>
+                    </div>
+                    <div class="cart-banner-cntnts"><?php echo $this->__('You will receive your order on the $s',$order_receive) ?></div>
+                 </div>
              </div>
         </div>
 
