@@ -17,6 +17,7 @@ $email = $order->getCustomerEmail();
 $address = Mage::getModel('sales/order_address')->load($order->billing_address_id);
 
 $name=$address->getFirstname()." ".$address->getLastname();
+$order_receive ='';
 ?>
 <div class="grid-block">
 	<h2 class="success_msg"><?php echo $this->__('THANK YOU FOR YOUR ORDER') ?></h2>
@@ -30,7 +31,26 @@ $name=$address->getFirstname()." ".$address->getLastname();
         <p> <?php echo $this->__('You will receive a confirmation of your order at '.$email.'. Once your package ships we will send an email with a link to track your order. You can check the status of your order by logging into your account. If you have any questions about your order please contact us at <u><b> service@theartofcamouflage.com </b></u> or file a ticket through your account. ')?></p>
 		<br/>
         <h3 class="next-step"><?php echo $this->__('NEXT STEPS OF YOUR ORDER') ?></h3>
-
+        <div class="grid">
+        	<div class="grid_15 cart-banner">
+                <div class="cart-banner-head">
+                	<h3><?php echo $this->__('ORDER CONFORMATION') ?></h3>
+                </div>
+                <div class="cart-banner-cntnts"><?php echo $this->__('You will receive a confirmation of your order at %s',$email) ?></div>
+             </div>
+             <div class="grid_15 cart-banner">
+                <div class="cart-banner-head">
+                	<h3><?php echo $this->__('WE SHIP YOUR ORDER') ?></h3>
+                </div>
+                <div class="cart-banner-cntnts"><?php echo $this->__('Tomorrow at the latest before 00:30 you will receive a conformation of your shipment with a link to track your order') ?></div>
+             </div>
+             <div class="grid_15 cart-banner">
+                <div class="cart-banner-head">
+                	<h3><?php echo $this->__('YOU RECEIVE YOUR ORDER') ?></h3>
+                </div>
+                <div class="cart-banner-cntnts"><?php echo $this->__('You will receive your order on the $s',$order_receive) ?></div>
+             </div>
+        </div>
 
 <br/>
 
