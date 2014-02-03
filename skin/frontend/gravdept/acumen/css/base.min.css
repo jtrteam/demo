@@ -3908,4 +3908,9 @@ ul.tabs-content>li.active {
   
   
  .onepagecheckout-index-success .cart-banner-outer{
-	 background:url("../img/icon/blue-arrow.png") 50% 100% no-repeat;}
+	 background:url("../img/icon/blue-arrow.png") 98% 50% no-repeat;
+	 padding-right:10px
+	 float:left;}
+	  .onepagecheckout-index-success .cart-banner-outer:last-child{
+		  background:none;
+		  padding-right:0;}
