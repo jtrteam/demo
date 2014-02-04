@@ -1,0 +1,19 @@
+<?php $storesData = $this->getAllStores(); 
+	  $pageData = $this->getStoreData();
+?>
+<?php if(count($storesData) > 1): ?>
+<script type="text/javascript">
+function reloadStore(){
+	window.location = document.getElementById('store-url').value;
+}
+</script>
+
+<div class="store-changer">
+  <select id="store-url" onchange="reloadStore()">
+    <?php foreach($storesData as $item): ?>
+      <option value="<?php echo $this->getUrl('stores/index/index',array('id' => $item['id'])); ?>" <?php if($pageData->getId() == $item['id']) echo 'selected' ?>><?php echo $item['name'] ?></option>
+    <?php endforeach; ?>
+  </select>
+ </div>
+<?php endif; ?>
+<?php echo $pageData->getContent(); ?>

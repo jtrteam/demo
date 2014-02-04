@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <stores_adminhtml_stores_index>
+        <reference name="content">
+            <block type="stores/adminhtml_stores" name="stores" />
+        </reference>
+    </stores_adminhtml_stores_index>
+	<stores_adminhtml_stores_edit>
+        <update handle="editor"/>
+    </stores_adminhtml_stores_edit>
+</layout>
