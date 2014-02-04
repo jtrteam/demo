@@ -3,9 +3,9 @@
     <default>
     </default>
 	<customer_account>
-		<reference name="customer_account_navigation">
+		<!--<reference name="customer_account_navigation">
 			<action method="addLink" translate="label" module="socialaccounts"><name>socialaccounts</name><path>socialaccounts/index/index</path><label>Social Account</label></action>
-		</reference>
+		</reference>-->
     </customer_account>
     <socialaccounts_index_index>
 	    <update handle="customer_account"/>

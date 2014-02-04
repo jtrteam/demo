@@ -3917,3 +3917,21 @@ ul.tabs-content>li.active {
 .onepagecheckout-index-success .cart-banner{
 	 width: 245px !important;
 }
+.customer-account-index .products-grid{
+	display: inline-block;
+    margin: 0 0 12px;
+    position: relative;
+    width: 800px;
+}.customer-account-index .products-grid .item {
+    float: left;
+	margin: 0 27px;
+}
+.customer-account-index .add-to-links > li {
+    float: left;
+}
+.customer-account-index .products-grid .button{ 
+ 	/*margin-left: 22px;*/
+}
+.customer-account-index .products-grid .product-name{
+	margin-bottom: 7px
+}

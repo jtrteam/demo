@@ -31,13 +31,13 @@
     </default>
     
     <customer_account>
-        <reference name="customer_account_navigation">
+      <!--  <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="avatar">
                 <name>set_avatar</name>
                 <path>avatar/customer/form</path>
                 <label>My Avatar</label>
             </action>
-        </reference>
+        </reference>-->
     </customer_account>
     
     <avatar_customer_form>
