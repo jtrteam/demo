@@ -2102,7 +2102,7 @@ a.button:hover {
 	text-decoration:none
 }
 .dashboard-links a:hover {
-	background:#333
+	background:#FFF;
 }
 .dashboard {
 	margin-bottom:20px;
