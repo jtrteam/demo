@@ -28,10 +28,6 @@ function codeAddress() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-document.observe('dom:loaded', function(){
-  codeAddress();
-});
-
 </script>
 <?php $storesData = $this->getAllStores(); 
 	  $pageData = $this->getStoreData();
@@ -50,8 +46,8 @@ function reloadStore(){
   </select>
 </div>
 <?php endif; ?>
-<div style="display:none;">
-<input id="address" type="hidden" value="<?php echo $pageData->getAddress1().', '.$pageData->getAddress2(); ?>">
+<div style="display:block;">
+<input id="address" type="hidden" value="<?php echo $pageData->getAddress1().', '.$pageData->getAddress2(); ?>"><a onclick="codeAddress()">click</a>
 </div>
 <div class="main store">
   <div class="backdrop">
