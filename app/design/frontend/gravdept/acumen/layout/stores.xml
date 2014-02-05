@@ -4,6 +4,10 @@
 		 <reference name="root">
 				<action method="setTemplate"><template>page/1column.phtml</template></action>
 		 </reference>
+		 <reference name="head">
+            <action method="addItem"><type>js</type><name>jquery/jquery-1.6.4.min.js</name></action>
+            <action method="addItem"><type>js</type><name>jquery/noconflict.js</name></action>
+        </reference>
 		 <reference name="content">
 				<block type="stores/stores" name="stores" template="stores/cms.phtml" />
 		</reference>
