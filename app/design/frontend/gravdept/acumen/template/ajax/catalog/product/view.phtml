@@ -163,7 +163,7 @@
 			var data = jQuery('#product_addtocart_form').serialize();
 			data += '&isAjax=1';
 			jQuery('#ajax_loader').show();
-			jQuery('# addtocartbutton').hide();
+			jQuery('#addtocartbutton').hide();
 			try {
 				jQuery.ajax( {
 					url : url,
@@ -172,7 +172,7 @@
 					data : data,
 					success : function(data) {
 						jQuery('#ajax_loader').hide();
-						jQuery('# addtocartbutton').show();
+						jQuery('#addtocartbutton').show();
                         if(jQuery('#mini-cart .links')){
                             jQuery('#mini-cart .links').replaceWith(data.toplink);
                         }
