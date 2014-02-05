@@ -17,7 +17,6 @@ $email = $order->getCustomerEmail();
 $address = Mage::getModel('sales/order_address')->load($order->billing_address_id);
 
 $name=$address->getFirstname()." ".$address->getLastname();
-
 $country = $address->getCountry();
 $sTime = Mage::app()->getLocale()->date(strtotime($order->getCreatedAtStoreDate()), null, null, false)->toString('H:m:s');
 $time=substr($sTime,0,2);
@@ -42,6 +41,7 @@ else
 {
 	$order_receive =$international;
 }
+
 ?>
 <div class="grid-block">
 	<h2 class="success_msg"><?php echo $this->__('THANK YOU FOR YOUR ORDER') ?></h2>
@@ -49,10 +49,10 @@ else
 	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
 	<?php if ($this->getOrderId()): ?>		
-		<p class="success_order"><?php echo $this->__('Thank you for your order from Camouflage '.$name.'. Your order number is: '.  $this->__('%s', $this->escapeHtml($this->getOrderId())) ) ?></p>
+		<p class="success_order"><?php echo $this->__('Thank you for your order from Camouflage %s.',$name)?><?php echo $this->__('Your order number is: <strong>%s</strong>',$this->escapeHtml($this->getOrderId()))?></p>
 		
 	
-        <p> <?php echo $this->__('You will receive a confirmation of your order at '.$email.'. Once your package ships we will send an email with a link to track your order. You can check the status of your order by logging into your account. If you have any questions about your order please contact us at <u><b> service@theartofcamouflage.com </b></u> or file a ticket through your account. ')?></p>
+        <p> <?php echo $this->__('You will receive a confirmation of your order at %s. Once your package ships we will send an email with a link to track your order. You can check the status of your order by logging into your account. If you have any questions about your order please contact us at <u><b> service@theartofcamouflage.com </b></u> or file a ticket through your account.', $email)?></p>
 		<br/>
         <h3 class="next-step"><?php echo $this->__('NEXT STEPS OF YOUR ORDER') ?></h3>
         <div class="grid">
