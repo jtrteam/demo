@@ -14,7 +14,32 @@ class Whlly_Stores_Block_Adminhtml_Stores_Edit_Tab_Form extends Mage_Adminhtml_B
           'required'  => true,
           'name'      => 'store_name',
       ));
-     
+	  
+	  $fieldset->addField('address1', 'text', array(
+          'label'     => Mage::helper('stores')->__('Address'),
+          'class'     => 'required-entry',
+          'required'  => true,
+          'name'      => 'address1',
+      ));
+	  
+	  $fieldset->addField('address2', 'text', array(
+          'label'     => Mage::helper('stores')->__('Address 1'),
+          'required'  => false,
+          'name'      => 'address2',
+      ));
+	  
+	  $fieldset->addField('telephone', 'text', array(
+          'label'     => Mage::helper('stores')->__('Tel'),
+          'required'  => false,
+          'name'      => 'telephone',
+      ));
+	  
+	  $fieldset->addField('email', 'text', array(
+          'label'     => Mage::helper('stores')->__('Email'),
+          'required'  => false,
+          'name'      => 'email',
+      ));
+	       
       $fieldset->addField('content', 'editor', array(
           'name'  => 'content',
           'label' => Mage::helper('stores')->__('Content'),
@@ -22,7 +47,7 @@ class Whlly_Stores_Block_Adminhtml_Stores_Edit_Tab_Form extends Mage_Adminhtml_B
 		  'style' => 'width:600px; height:300px;',
 		  'config' => Mage::getSingleton('stores/wysiwyg_config')->getConfig(),
 		  'wysiwyg' => true,
-		  'required' => true,
+		  'required' => false,
       ));
      
       if ( Mage::getSingleton('adminhtml/session')->getStoresData() )
