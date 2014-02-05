@@ -25,7 +25,6 @@ class Whlly_Stores_Adminhtml_StoresController extends Mage_Adminhtml_Controller_
 			if (!empty($data)) {
 				$model->setData($data);
 			}
-			print_r($data);exit;
 
 			Mage::register('stores_data', $model);
 
@@ -53,13 +52,12 @@ class Whlly_Stores_Adminhtml_StoresController extends Mage_Adminhtml_Controller_
  
 	public function saveAction() {
 		if ($data = $this->getRequest()->getPost()) {
-			
+			print_r($data);
 			$model = Mage::getModel('stores/stores');		
 			$model->setData($data)
 				->setId($this->getRequest()->getParam('id'));
 			
 			try {
-				
 				$model->save();
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('stores')->__('Store was successfully saved'));
 				Mage::getSingleton('adminhtml/session')->setFormData(false);
