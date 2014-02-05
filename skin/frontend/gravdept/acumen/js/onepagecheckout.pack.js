@@ -155,6 +155,7 @@ OPC.prototype = {
         checkout.setLoadWaiting(true);
         var params = Form.serialize(this.form);
         $('review-please-wait').show();
+		$('.button-opcheckout').setStyle({display:'none'});
         var request = new Ajax.Request(this.saveUrl, {
             method: 'post',
             parameters: params,
