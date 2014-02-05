@@ -52,7 +52,6 @@ class Whlly_Stores_Adminhtml_StoresController extends Mage_Adminhtml_Controller_
  
 	public function saveAction() {
 		if ($data = $this->getRequest()->getPost()) {
-			print_r($data);exit;
 			$model = Mage::getModel('stores/stores');		
 			$model->setData($data)
 				->setId($this->getRequest()->getParam('id'));
