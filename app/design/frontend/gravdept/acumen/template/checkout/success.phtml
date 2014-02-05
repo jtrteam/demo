@@ -21,10 +21,10 @@ $country = $address->getCountry();
 $sTime = Mage::app()->getLocale()->date(strtotime($order->getCreatedAtStoreDate()), null, null, false)->toString('H:m:s');
 $time=substr($sTime,0,2);
 $date =date("Y-m-d");;
-$tomorrow = date('m-d-Y',strtotime($date . "+4 days"));
-$within=date('m-d-Y',strtotime($date . "+1 days"));
-$outside=date('m-d-Y',strtotime($date . "+2 days"));
-$international=date('m-d-Y',strtotime($date . "+4 days"));
+
+$within=date('M jS Y',strtotime($date . "+1 days"));
+$outside=date('M jS Y',strtotime($date . "+2 days"));
+$international=date('M jS Y',strtotime($date . "+4 days"));
 
 if($country=='NL')
 {
