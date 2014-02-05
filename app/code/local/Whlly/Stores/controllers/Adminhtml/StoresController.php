@@ -25,6 +25,7 @@ class Whlly_Stores_Adminhtml_StoresController extends Mage_Adminhtml_Controller_
 			if (!empty($data)) {
 				$model->setData($data);
 			}
+			print_r($data);exit;
 
 			Mage::register('stores_data', $model);
 
