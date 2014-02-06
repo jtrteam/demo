@@ -32,51 +32,50 @@ google.maps.event.addDomListener(window, 'load', initialize);
 jQuery( window ).load(function() {
 	codeAddress();
 });
+
+function reloadStore(){
+	window.location = document.getElementById('store-url').value;
+}
+
 </script>
 <?php $storesData = $this->getAllStores(); 
 	  $pageData = $this->getStoreData();
 ?>
-<?php if(count($storesData) > 1): ?>
-<script type="text/javascript">
-function reloadStore(){
-	window.location = document.getElementById('store-url').value;
-}
-</script>
-<div class="store-changer">
-  <select id="store-url" onchange="reloadStore()">
-    <?php foreach($storesData as $item): ?>
-    <option value="<?php echo $this->getUrl('stores/index/index',array('id' => $item['id'])); ?>" <?php if($pageData->getId() == $item['id']) echo 'selected' ?>><?php echo $item['name'] ?></option>
-    <?php endforeach; ?>
-  </select>
-</div>
-<?php endif; ?>
+
 <div style="display:none;">
-<input id="address" type="hidden" value="<?php echo $pageData->getAddress1().', '.$pageData->getAddress2(); ?>">
+  <input id="address" type="hidden" value="<?php echo $pageData->getAddress1().', '.$pageData->getAddress2(); ?>">
 </div>
 <div class="main store">
   <div class="backdrop">
+    <?php if(count($storesData) > 1): ?>
+    <div class="store-changer">
+      <select id="store-url" onchange="reloadStore()">
+        <?php foreach($storesData as $item): ?>
+        <option value="<?php echo $this->getUrl('stores/index/index',array('id' => $item['id'])); ?>" <?php if($pageData->getId() == $item['id']) echo 'selected' ?>><?php echo $item['name'] ?></option>
+        <?php endforeach; ?>
+      </select>
+    </div>
+    <?php endif; ?>
     <div class="backdrop-overlay">
       <div class="address-block">
         <h2>Address</h2>
-        <div class="address-box"><span class="js-address1"><?php echo $pageData->getAddress1(); ?></span> 
+        <div class="address-box"><span class="js-address1"><?php echo $pageData->getAddress1(); ?></span>
           <?php if($pageData->getAddress2()): ?>
-              <br />
-              <span class="js-address2"><?php echo $pageData->getAddress2(); ?></span>
+          <br />
+          <span class="js-address2"><?php echo $pageData->getAddress2(); ?></span>
           <?php endif; ?>
           <?php if($pageData->getTelephone()): ?>
-              <br />
-              <?php echo $this->__('Tel. %s', $pageData->getTelephone()) ?>
+          <br />
+          <?php echo $this->__('Tel. %s', $pageData->getTelephone()) ?>
           <?php endif; ?>
           <?php if($pageData->getEmail()): ?>
-              <br />
-              <?php echo $this->__('Email %s', $pageData->getEmail()) ?>
+          <br />
+          <?php echo $this->__('Email %s', $pageData->getEmail()) ?>
           <?php endif; ?>
-         </div>
+        </div>
       </div>
       <div class="map" id="map-canvas"></div>
     </div>
   </div>
-  <div class="store-details clearfix">
-    <?php echo $pageData->getContent(); ?>
-  </div>
+  <div class="store-details clearfix"> <?php echo $pageData->getContent(); ?> </div>
 </div>
