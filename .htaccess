@@ -207,3 +207,5 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
+RewriteCond %{HTTP_HOST} ^(.*)http://demo.whlly.com/cam_en/
+RewriteRule ^ - [E=MAGE_RUN_CODE:cam_en]
