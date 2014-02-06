@@ -3850,7 +3850,7 @@ ul.tabs-content>li.active {
     background: none repeat scroll 0 0 #FFFFFF;
     min-height: 500px;
     padding: 20px;
-    position: relative;
+	clear:both;
     width: 380px;
 }
 .store .backdrop {
@@ -3939,7 +3939,6 @@ ul.tabs-content>li.active {
 .store-changer {
     float: left;
     margin-bottom: 10px;
-    position: relative;
 	padding: 10px 20px;
 	background-color:#FFFFFF;
 }

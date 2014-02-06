@@ -49,6 +49,7 @@ function reloadStore(){
   <div class="backdrop">
     <?php if(count($storesData) > 1): ?>
     <div class="store-changer">
+      <span>Change City</span>
       <select id="store-url" onchange="reloadStore()">
         <?php foreach($storesData as $item): ?>
         <option value="<?php echo $this->getUrl('stores/index/index',array('id' => $item['id'])); ?>" <?php if($pageData->getId() == $item['id']) echo 'selected' ?>><?php echo $item['name'] ?></option>
