@@ -162,8 +162,10 @@
 			url = url.replace("checkout/cart","ajax/index"); // New Code
 			var data = jQuery('#product_addtocart_form').serialize();
 			data += '&isAjax=1';
+			jQuery('#ajax_loader').addClass('ajax_loader1');
 			jQuery('#ajax_loader').show();
-			jQuery('#addtocartbutton').hide();
+		/*	jQuery('#addtocartbutton').hide();*/
+			jQuery('#addtocartbutton').addClass('newClass');
 			try {
 				jQuery.ajax( {
 					url : url,
@@ -171,8 +173,10 @@
 					type : 'post',
 					data : data,
 					success : function(data) {
+						jQuery('#ajax_loader').removeClass('ajax_loader1');
 						jQuery('#ajax_loader').hide();
-						jQuery('#addtocartbutton').show();
+						/*jQuery('#addtocartbutton').show();*/
+						jQuery('#addtocartbutton').removeClass('newClass');
                         if(jQuery('#mini-cart .links')){
                             jQuery('#mini-cart .links').replaceWith(data.toplink);
                         }
