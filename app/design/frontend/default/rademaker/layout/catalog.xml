@@ -62,8 +62,8 @@ Default layout, loads most of the pages
         <reference name="left">
         </reference>
         <reference name="right">	
-            <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-			<remove name="paypal.partner.right.logo"/>
+<!--            <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+-->			<remove name="paypal.partner.right.logo"/>
 		</reference>
         <reference name="footer_links">
 		
