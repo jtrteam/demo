@@ -129,7 +129,7 @@ OPC.prototype = {
         checkout.setLoadWaiting(true);
         var params = Form.serialize(this.form);
         $("review-please-wait").show();
-        $$(".button-opcheckout").setStyle({backgroundColor:''});
+        $$(".button-opcheckout").setStyle({backgroundColor:'#000'});
         var request = new Ajax.Request(this.saveUrl, {
             method: "post",
             parameters: params,
