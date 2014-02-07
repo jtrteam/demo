@@ -57,10 +57,10 @@
             </div> 
 						
             <?php if ($this->canEmailToFriend()): ?>
-                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+              <?php /*?>  <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p><?php */?>
             <?php endif; ?>
 
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+          <?php /*?>  <?php echo $this->getReviewsSummaryHtml($_product, false, true)?><?php */?>
             <?php echo $this->getChildHtml('alert_urls') ?>
 			
 			<?php if ($_product->getShortDescription()):?>
@@ -79,7 +79,7 @@
                     <?php if($_product->isSaleable()): ?>
                         <?php echo $this->getChildHtml('addtocart') ?>
                     <?php endif; ?>
-                    <?php echo $this->getChildHtml('addto') ?>
+                  <?php /*?>  <?php echo $this->getChildHtml('addto') ?><?php */?>
                 </div>
                 <?php echo $this->getChildHtml('extra_buttons') ?>
             <?php elseif (!$_product->isSaleable()): ?>
