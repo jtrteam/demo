@@ -115,9 +115,9 @@ filter: progid:DXImageTransform.Microsoft.dropShadow(color=#555, offX=0, offY=0,
 
 /* CHECKOUT Review Your Order Table */
 #checkout-review-table-wrapper{margin-top:-5px;}
-.order-products-table { width:100%;color:#767676;}
-.order-products-table .odd  { background:#fff; }
-.order-products-table .even { background:#fff; }
+.order-products-table { width:100%;}
+.order-products-table .odd  {/* background:#fff;*/ }
+.order-products-table .even { /*background:#fff;*/ }
 .order-products-table td.last,
 .order-products-table th.last { border-right:0; width:30%;}
 /*
@@ -127,16 +127,16 @@ filter: progid:DXImageTransform.Microsoft.dropShadow(color=#555, offX=0, offY=0,
 .order-products-table th { padding:3px 8px; font-weight:bold; border-bottom:1px solid #BFBFBF;}
 .order-products-table td { padding:8px 8px 2px;}
 
-.order-products-table thead th{font-weight:bold;border-bottom:1px solid #848484;font-size:13px;padding:2px 0;color:#000;white-space:nowrap;vertical-align:middle;text-transform:uppercase;}
+.order-products-table thead th{font-weight:bold;border-bottom:1px solid #848484;font-size:13px;padding:2px 0;white-space:nowrap;vertical-align:middle;text-transform:uppercase;}
 .order-products-table thead th.wrap { white-space:normal; }
 .order-products-table thead th a,
 .order-products-table thead th a:hover { color:#fff; }
 .order-products-table thead th .tax-flag { font-size:11px; white-space:nowrap; }
 
 .order-products-table tfoot { border:0;}
-.order-products-table tfoot tr.first td{background-color:#ffffff;}
-.order-products-table tfoot tr.last td{border:0 none !important;font-size:13px;text-transform:uppercase;color:#000;}
-.order-products-table tfoot tr { background-color:#FFFFFF !important; }
+.order-products-table tfoot tr.first td{/*background-color:#ffffff;*/}
+.order-products-table tfoot tr.last td{border:0 none !important;font-size:13px;text-transform:uppercase;}
+.order-products-table tfoot tr { /*background-color:#FFFFFF !important; */}
 .order-products-table tfoot td { border-bottom:1px solid #BFBFBF; }
 .order-products-table tfoot strong { font-size:105%; }
 

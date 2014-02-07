@@ -6117,3 +6117,8 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 {
 	display:none;
 }
+.special-price .price {
+    color: #888888;
+    font-size: 16px;
+    font-weight: 400;
+}

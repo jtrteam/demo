@@ -316,16 +316,16 @@
                 </span>
             </p>
         <?php else: // excl. ?>
-            <p class="old-price">
+           <?php /*?> <p class="old-price">
                 <span class="price-label"><?php echo $this->__('Retail Price:') ?></span>
                 <span class="price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_regularPrice,true,false) ?>
                 </span>
-            </p>
+            </p><?php */?>
 
             <?php if ($_taxHelper->displayBothPrices()): ?>
                 <p class="special-price">
-                    <span class="price-label"><?php echo $this->__('Wholesale Price:') ?></span>
+                    <span class="price-label"<?php /*?>><?php echo $this->__('Wholesale Price:') ?><?php */?></span>
                     <span class="price-excluding-tax">
                         <span class="label"><?php echo $_taxHelper->__('Excl. Tax:') ?></span>
                         <span class="price" id="price-excluding-tax-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
@@ -341,7 +341,7 @@
                 </p>
             <?php else: ?>
             <p class="special-price">
-                <span class="price-label"><?php echo $this->__('Wholesale Price:') ?></span>
+                <span class="price-label"><?php /*?><?php echo $this->__('Wholesale Price:') ?><?php */?></span>
                 <span class="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_finalPrice,true,false) ?>
                 </span>
@@ -383,7 +383,7 @@
     <?php if ($this->getDisplayMinimalPrice() && $_minimalPriceValue): ?>
         <div class="price-box">
             <p class="minimal-price">
-                <span class="price-label"><?php echo $this->__('Starting at:') ?></span>
+                <span class="price-label"><?php /*?><?php echo $this->__('Starting at:') ?><?php */?></span>
                 <?php if ($_taxHelper->displayBothPrices()): ?>
                     <span class="price-excluding-tax">
                         <span class="label"><?php echo $this->helper('tax')->__('Excl. Tax:') ?></span>
