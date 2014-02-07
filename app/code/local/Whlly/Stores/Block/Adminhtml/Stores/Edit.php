@@ -13,15 +13,7 @@ class Whlly_Stores_Block_Adminhtml_Stores_Edit extends Mage_Adminhtml_Block_Widg
         $this->_updateButton('save', 'label', Mage::helper('stores')->__('Save Item'));
         $this->_updateButton('delete', 'label', Mage::helper('stores')->__('Delete Item'));
 		
-		$this->_formScripts[] = "
-           function toggleEditor() {
-                if (tinyMCE.getInstanceById('content') == null) {
-                    tinyMCE.execCommand('mceAddControl', false, 'content');
-                } else {
-                    tinyMCE.execCommand('mceRemoveControl', false, 'content');
-                }
-            }
-        ";
+		
     }
 	
     public function getHeaderText()
@@ -31,5 +23,15 @@ class Whlly_Stores_Block_Adminhtml_Stores_Edit extends Mage_Adminhtml_Block_Widg
         } else {
             return Mage::helper('stores')->__('Add Store');
         }
+    }
+	
+	protected function _prepareLayout()
+
+    {
+	   if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled() && ($block = $this->getLayout()->getBlock('head')))
+	   {
+		$block->setCanLoadTinyMce(true);
+	   }
+         parent::_prepareLayout();
     }
 }
