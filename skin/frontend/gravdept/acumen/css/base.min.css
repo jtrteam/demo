@@ -3952,15 +3952,6 @@ ul.tabs-content>li.active {
 	font-size:18px;
 	float:right;
 }
-/*========================================================*/
-.newClass{ background-color:#E8E8E8;}
-.ajax_loader1 {
-     margin-left: -75px;
-    margin-top: 12px;
-    position: absolute;
-}
-
-/*===================================================================*/
 .cms-terms-and-conditions .terms
 {
 	margin:31px 0 0 334px;
@@ -3974,4 +3965,16 @@ ul.tabs-content>li.active {
 {
 	font-size:22px;
 	
+}
+.opb-disabled{
+	border-color:#E8E8E8; 
+	background:#E8E8E8  url("../images/onepagecheckout/loader.gif") no-repeat 50% 50%;background-origin:content-box;
+}
+.newClass{ 
+	border-color:#E8E8E8; 
+	background:#E8E8E8  url("../images/onepagecheckout/loader.gif") no-repeat 50% 50%;background-origin:content-box;
+}
+.newClass.button:hover {
+	border-color:#E8E8E8; 
+	cursor:pointer
 }
