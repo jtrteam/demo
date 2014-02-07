@@ -40,12 +40,12 @@ class Whlly_Stores_Block_Adminhtml_Stores_Edit_Tab_Form extends Mage_Adminhtml_B
           'name'      => 'email',
       ));
 	       
-      $fieldset->addField('content', 'editor', array(
-          'name'  => 'content',
+      $fieldset->addField('more_info', 'editor', array(
+          'name'  => 'more_info',
           'label' => Mage::helper('stores')->__('Content'),
 		  'title' => Mage::helper('stores')->__('Content'),
 		  'style' => 'width:600px; height:300px;',
-		  'config' => Mage::getSingleton('stores/wysiwyg_config')->getConfig(),
+		  'config' => Mage::getSingleton('cms/wysiwyg_config')->getConfig(), 
 		  'wysiwyg' => true,
 		  'required' => false,
       ));
