@@ -76,14 +76,18 @@ OPC.prototype = {
     setLoadWaiting: function (flag) {
         if (flag) {
             var container = $("review-buttons-container");
-            container.addClassName("disabled");
+			 var cnt = $("opcheckout-btn");
+            cnt.addClassName("newClass");
+          //  container.addClassName("disabled");
             container.setStyle({
                 opacity: 0.5
             });
             this._disableEnableAll(container, true)
         } else if (this.loadWaiting) {
             var container = $("review-buttons-container");
-            container.removeClassName("disabled");
+			 var cnt = $("opcheckout-btn");
+            cnt.removeClassName("newClass");
+           // container.removeClassName("disabled");
             container.setStyle({
                 opacity: 1
             });
