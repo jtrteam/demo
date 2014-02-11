@@ -36,7 +36,7 @@ OPC.prototype = {
                         document.location = response.redirect;
                         return
                     }
-                   /* $("login-please-wait").hide();*/  
+                    $("login-please-wait").hide();  
 				   var opbtn = $("send2");
        				opbtn.removeClassName("opb-disabled");
                     $("send2").removeAttribute("disabled");
