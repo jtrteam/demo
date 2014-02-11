@@ -21,7 +21,9 @@ OPC.prototype = {
         $("login-form") && $("login-form").observe("submit", function (e) {
             Event.stop(e);
             if (!loginForm.validator.validate()) return;
-            $("login-please-wait").show();
+           /* $("login-please-wait").show();*/
+		   var opbtn = $("send2");
+        	opbtn.addClassName("opb-disabled");
             $("send2").setAttribute("disabled", "disabled");
             $$("#login-form .buttons-set")[0].addClassName("disabled").setOpacity(0.5);
             new Ajax.Request($("login-form").action, {
@@ -34,7 +36,9 @@ OPC.prototype = {
                         document.location = response.redirect;
                         return
                     }
-                    $("login-please-wait").hide();
+                   /* $("login-please-wait").hide();*/  
+				   var opbtn = $("send2");
+       				opbtn.removeClassName("opb-disabled");
                     $("send2").removeAttribute("disabled");
                     $$("#login-form .buttons-set")[0].removeClassName("disabled").setOpacity(1)
                 }
