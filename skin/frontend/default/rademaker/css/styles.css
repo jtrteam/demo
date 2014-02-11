@@ -6120,10 +6120,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 .col2-left-layout .agent-account .products-grid, .col2-right-layout .agent-account .products-grid {
     width: auto !important;
 }
-.footer-connect
-{
-	display:none;
-}
+
 .special-price .price {
     color: #888888;
     font-size: 16px;
