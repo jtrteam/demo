@@ -1051,7 +1051,9 @@ h4 {
 	text-align:right
 }
 .switcher {
-	margin-bottom:5px
+	/*margin-bottom:5px*/
+	margin-top:9px;
+	width:280px;
 }
 .legal p {
 	margin-bottom:0;
