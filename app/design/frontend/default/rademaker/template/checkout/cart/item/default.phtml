@@ -273,7 +273,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif; ?>
     </td>
     <?php endif; ?>
-    <?php $store = Mage::app()->getStore('default');
+    <?php $store = Mage::app()->getStore('rad_en');
  $request = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, $store);
  $taxclassid = $_item->getData('tax_class_id');
  $percent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxclassid)); ?>
