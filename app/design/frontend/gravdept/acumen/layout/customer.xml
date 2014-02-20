@@ -46,7 +46,7 @@ Load this update on every page when customer is logged in
 		<reference name="top.links">
 			<action method="addLink" translate="label title" module="customer"><label>Account</label><url helper="customer/getAccountUrl"/><title>Account</title><prepare/><urlParams/><position>1</position></action>
 			<!-- wishlist, position = 3 set in /app/code/local/ -->
-			<action method="addLink" translate="label title" module="customer"><label>Sign Out</label><url helper="customer/getLogoutUrl"/><title>Sign Out</title><prepare/><urlParams/><position>4</position></action>
+			<action method="addLink" translate="label title" module="customer"><label>Log Out</label><url helper="customer/getLogoutUrl"/><title>Log Out</title><prepare/><urlParams/><position>4</position></action>
 		</reference>
 	</customer_logged_in>
 
@@ -62,7 +62,7 @@ Load this update on every page when customer is logged out
 		-->
 		
 		<reference name="top.links">
-			<action method="addLink" translate="label title" module="customer"><label>Sign In</label><url helper="customer/getLoginUrl"/><title>Sign In</title><prepare/><urlParams/><position>3</position></action>
+			<action method="addLink" translate="label title" module="customer"><label>Log In</label><url helper="customer/getLoginUrl"/><title>Log In</title><prepare/><urlParams/><position>3</position></action>
 			<action method="addLink" translate="label title" module="customer"><label>Register</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>4</position></action>
 		</reference>
 		
