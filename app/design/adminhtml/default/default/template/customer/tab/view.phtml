@@ -92,7 +92,8 @@ $createDateStore    = $this->getStoreCreateDate();
       </address>
    <!-- quickNdirty -->
 	<div class="qndSocial clearBoth">
-		<img src="http://demo.whlly.com/media/twitter.png">	
+		<?php $baseurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?> 
+		<img src="<?php echo $baseurl; ?>media/twitter.png">	
 	</div>
 	<!-- quickNdirty -->	
     </fieldset>
