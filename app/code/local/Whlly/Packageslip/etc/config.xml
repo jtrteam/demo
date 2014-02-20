@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Whlly_Packageslip>
+            <version>1.0.0</version>
+        </Whlly_Packageslip>
+    </modules>  
+	 <admin>
+        <routers>
+			<packageslip>
+				<use>admin</use>
+				<args>
+					<module>Whlly_Packageslip</module>
+					<frontName>packageslip</frontName>
+				</args>
+			</packageslip>
+        </routers>
+    </admin>  
+    <global>
+		<rewrite>
+            <whlly_packageslip_order>
+                <from><![CDATA[#^/admin/sales_order/#]]></from>
+                <to>/packageslip/order/</to>
+            </whlly_packageslip_order>
+        </rewrite>
+		<models>
+            <packageslip>
+                <class>Whlly_Packageslip_Model</class>
+            </packageslip>
+		</models>
+		<pdf>
+            <packageslip>
+                <default>packageslip/items_packageslip_default</default>
+            </packageslip>
+        </pdf>
+    </global>
+	 
+</config>
