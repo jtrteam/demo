@@ -681,6 +681,7 @@ h4 {
 	position:absolute;
 	right:15px;
 	top:4px;
+	text-align:right;
 	/*border-width:0 1px 1px;
 	border-style:solid;
 	border-color:#e0e0e0;
@@ -1053,7 +1054,7 @@ h4 {
 .switcher {
 	/*margin-bottom:5px*/
 	margin-top:9px;
-	width:250px;
+	min-width:210px;
 }
 .legal p {
 	margin-bottom:0;
