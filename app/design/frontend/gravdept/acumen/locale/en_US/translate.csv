@@ -5,7 +5,7 @@ COMMENT: these are Magento phrases that are translated for Acumen,
 -- Please Select --,Select option...
 "%1$s has been added to your wishlist. Click <a href=""%2$s"">here</a> to continue shopping.","%1$s has been added to your wishlist. <a href=""%2$s"" class='button button-small button-subtle'>Continue Shopping</a>"
 Billing Information,Billing Address
-Choose an Option...,Select option...
+Choose an Option...,Select size...
 Discount (%s),Coupon (%s)
 Payment Information,Payment Method
 "Please, enter your comments...",
@@ -15,7 +15,7 @@ Qty:,Quantity
 Reload captcha,Reload
 Remember Me,Remember me
 Search results for: '%s',Searched: %s
-Select...,Select option...
+Select...,Select size...
 Ship to different address,Ship to a different address
 Shipping Information,Shipping Address
 State/Province,State
