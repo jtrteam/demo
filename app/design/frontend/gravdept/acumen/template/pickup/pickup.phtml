@@ -3,23 +3,18 @@
 	$carrier = $this->getMethodInstance();
 	$pickupData = $this->getQuote()->getPickupData();
 	$_rate = $this->getRate();
-	if(!isset($pickupData['store']))
-	{
-		$pickupData['store'] = -1;
-	}
+	$storesData = $this->getAllStores(); 
 	
 ?>
 <ul class="form-list" id="shipping_form_<?php echo $_rate->getCode() ?>" style="display:none;">
     <li>
         <label for="<?php echo $_code ?>_store" class="required"><em>*</em><?php echo $this->__('Choose Store Location:') ?></label>
         <span class="input-box">
-            <select class="required-entry" name="shipping_pickup[store]">
-            	<option value='' <?php if($pickupData['store'] == ''){ echo "selected=selected";} ?>><?php echo $this->__('Select Store..');?></option>
-            	<option value='Store1' <?php if($pickupData['store'] == 'Store1'){ echo "selected=selected";} ?>><?php echo $this->__('Store1');?></option>
-            	<option value='Store2' <?php if($pickupData['store'] == 'Store2'){ echo "selected=selected";} ?>><?php echo $this->__('Store2');?></option>
-            	<option value='Store3' <?php if($pickupData['store'] == 'Store3'){ echo "selected=selected";} ?>><?php echo $this->__('Store3');?></option>
-            	<option value='Store4' <?php if($pickupData['store'] == 'Store4'){ echo "selected=selected";} ?>><?php echo $this->__('Store4');?></option>
+            <select class="required-entry" name="shipping_pickup[store_id]">
+             <?php foreach($storesData as $item): ?>
+            	<option value=<?php echo $item['id']; ?> <?php if($pickupData['store_id'] == $item['id']){ echo "selected=selected";} ?>><?php echo $item['name']; ?></option>
+              <?php endforeach; ?>
             </select>
-        </span>
+        </span>        
     </li>
 </ul>

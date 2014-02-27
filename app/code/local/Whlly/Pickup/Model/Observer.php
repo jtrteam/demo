@@ -11,8 +11,21 @@ class Whlly_Pickup_Model_Observer extends Varien_Object
 		if($pickup){
 			Mage::getSingleton('checkout/session')->setPickup($data);
 		}
-		print_r($data);die;
 	}
+	/*public function saveOrderAfter($evt){
+		$order = $evt->getOrder();
+		$quote = $evt->getQuote();
+		$quote_id = $quote->getId();
+		$pickup = Mage::getSingleton('checkout/session')->getPickup();
+		if(isset($pickup[$quote_id])){
+			$data = $pickup[$quote_id];
+			$data['order_id'] = $order->getId();
+			$pickupModel = Mage::getModel('pickup/pickup');
+			$pickupModel->setData($data);
+			$pickupModel->save();
+		}
+	}*/
+	
 	public function saveOrderAfter($evt){
 		$order = $evt->getOrder();
 		$quote = $evt->getQuote();
@@ -21,6 +34,10 @@ class Whlly_Pickup_Model_Observer extends Varien_Object
 		if(isset($pickup[$quote_id])){
 			$data = $pickup[$quote_id];
 			$data['order_id'] = $order->getId();
+			$store = Mage::getModel('stores/stores')
+                ->load($data['store_id']);
+			$data['store'] = $store->getStoreName();		
+			$data['address'] = $store->getAddress1().'<br />'.$store->getAddress2().'<br /> Tel: '.$store->getTelephone();				
 			$pickupModel = Mage::getModel('pickup/pickup');
 			$pickupModel->setData($data);
 			$pickupModel->save();

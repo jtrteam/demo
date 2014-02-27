@@ -76,7 +76,7 @@
                 <class>Whlly_Pickup_Model_Mysql4</class>
                 <entities>
                     <pickup>
-                        <table>order_shipping_pickup</table>
+                        <table>whlly_order_shipping_pickup</table>
                     </pickup>
                 </entities>
             </pickup_mysql4>

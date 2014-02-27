@@ -8,6 +8,6 @@ class Whlly_Pickup_Model_Sales_Order extends Mage_Sales_Model_Order{
 			$desc .= '<br/><b>Address</b>: '.$pickupObject->getAddress();
 			$desc .= '<br/>';
 		}
-		return $desc;
+		return strip_tags($desc);
 	}
 }
