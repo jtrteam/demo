@@ -175,6 +175,18 @@
 					success : function(data) {
 						jQuery('#ajax_loader').removeClass('ajax_loader1');
 						jQuery('#ajax_loader').hide();
+						if(data.status == 'ERROR'){
+							alert(data.message);
+							jQuery('#addtocartbutton').removeClass('newClass');
+						}
+						else{
+	                        if(jQuery('.block-cart')){
+	                            jQuery('.block-cart').replaceWith(data.sidebar);
+	                        }
+	                        if(jQuery('.header .links')){
+	                            jQuery('.header .links').replaceWith(data.toplink);
+	                        }
+						
 						/*jQuery('#addtocartbutton').show();*/
 						jQuery('#addtocartbutton').removeClass('newClass');
                         if(jQuery('#mini-cart .links')){
@@ -184,6 +196,7 @@
 							var content = '<div class="liner">'+data.sidebar+'</div';
                             jQuery('.menu .liner').replaceWith(content);
                         }
+					  }
 					}
 				});
 			} catch (e) {
