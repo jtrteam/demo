@@ -4310,6 +4310,10 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #DDDDDD;
 }
+.onepagecheckout-index-success .sub-title {
+       color: #F2CE68;
+ }
+
 .centinel .authentication iframe {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     border: 0 none !important;
