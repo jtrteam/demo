@@ -13,6 +13,25 @@
 				</ivdiscount>
 			</updates>
 		</layout>
+		<acl>
+         <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ivdiscount>
+                                        <title>Invoice Discount</title>
+                                    </ivdiscount>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
     </adminhtml>
 	<admin>
         <routers>
@@ -32,5 +51,10 @@
                 <to>/ivdiscount/adminhtml_invoice/</to>
 			</offshorent_ivdiscount_adminhtml_invoice>
 	   </rewrite>
+	   <helpers>
+            <ivdiscount>
+                <class>Offshorent_Ivdiscount_Helper</class>
+            </ivdiscount>
+        </helpers>
     </global>
 </config>

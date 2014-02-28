@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_sales_order_invoice_new>
+		<reference name="invoice_totals">	
+			<action method="setTemplate" >
+                <template>ivdiscount/totals.phtml</template>
+            </action>	    
+			<block type="core/template" name="ivdiscount_total" template="ivdiscount/discount.phtml"></block>
+        </reference>
+    </adminhtml_sales_order_invoice_new>
+</layout>

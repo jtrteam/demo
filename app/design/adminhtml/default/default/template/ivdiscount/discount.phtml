@@ -1,2 +1,5 @@
+<?php $configValue = Mage::getStoreConfig('ivdiscount/general/enabled'); 
+if($configValue) { ?>
 <label for="discount_amount" class="normal"><?php echo Mage::helper('sales')->__('Discount') ?></label>&nbsp;
 <input type="text" name="invoice[discount_amount]" id="discount_amount" value=""/>
+<?php } ?>
