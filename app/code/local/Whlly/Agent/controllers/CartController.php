@@ -177,7 +177,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();
 		
 		$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));
-		
+		print_r($apiDetails);
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
 		 
 		$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
