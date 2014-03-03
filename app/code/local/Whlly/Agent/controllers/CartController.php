@@ -177,53 +177,42 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();
 		
 		$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));
-		if(!$apiDetails):
-		 $this->_getSession()
-                ->addException($e, $this->__('Please add Api user.'));
-		 $this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
-		endif;
+		
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
-		try { 
-				$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
-				$resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);
-				foreach ($resultCustomeraddrs as $_address):
-						if($_address['is_default_billing']=='1'):
-							$arrAddresses[0]= array("mode" => "billing","address_id" => $_address['customer_address_id']);
-						endif;
-						if($_address['is_default_shipping']=='1'):
-							$arrAddresses[1]= array("mode" => "shipping","address_id" => $_address['customer_address_id']);
-						endif;
-				endforeach;
-				
-				 $resultCustomerAddresses = Mage::getModel('api/server_handler')->call($apiDetails, "cart_customer.addresses", array($quote_id, $arrAddresses));
-				 
-				 $resultShippingList = Mage::getModel('api/server_handler')->call($apiDetails,"cart_shipping.list", array($quote_id));
-				
-				 foreach($resultShippingList as $key=>$value):
-					if($value['code']=='freeshipping_freeshipping'):
-						$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'freeshipping_freeshipping'));
-					elseif($value['code']=='flatrate_flatrate'):
-						$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
-					else:
-						$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'tablerate_bestway'));
-					endif;
-				 endforeach;
-				if($data['discount']!= ''):
-					$resultCartCouponAdd = Mage::getModel('api/server_handler')->call($apiDetails, "cart_coupon.add", array($quote_id,$data['discount']));
+		 
+		$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
+        $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);
+		foreach ($resultCustomeraddrs as $_address):
+                if($_address['is_default_billing']=='1'):
+                    $arrAddresses[0]= array("mode" => "billing","address_id" => $_address['customer_address_id']);
 				endif;
-				
-				$paymentMethod = array("method" => "checkmo");
-				 $this->_getSession()
-                ->addException($e, $this->__('Please add payment.'));
-		 $this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));exit;
-				$resultPaymentMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_payment.method", array($quote_id, $paymentMethod));
-				$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
-				$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
-			} catch (Exception $e) {
-				 $this->_getSession()
-                ->addException($e, $this->__('Checkout process cannot process due to some errors.'));
-				$this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
-			}
+                if($_address['is_default_shipping']=='1'):
+					$arrAddresses[1]= array("mode" => "shipping","address_id" => $_address['customer_address_id']);
+				endif;
+		endforeach;
+		
+		 $resultCustomerAddresses = Mage::getModel('api/server_handler')->call($apiDetails, "cart_customer.addresses", array($quote_id, $arrAddresses));
+		 
+         $resultShippingList = Mage::getModel('api/server_handler')->call($apiDetails,"cart_shipping.list", array($quote_id));
+		
+		 foreach($resultShippingList as $key=>$value):
+            if($value['code']=='freeshipping_freeshipping'):
+                $resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'freeshipping_freeshipping'));
+			elseif($value['code']=='flatrate_flatrate'):
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
+			else:
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'tablerate_bestway'));
+			endif;
+		 endforeach;
+		if($data['discount']!= ''):
+			$resultCartCouponAdd = Mage::getModel('api/server_handler')->call($apiDetails, "cart_coupon.add", array($quote_id,$data['discount']));
+	    endif;
+		echo 'hi';exit;
+		$paymentMethod = array("method" => "checkmo");
+		$resultPaymentMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_payment.method", array($quote_id, $paymentMethod));
+		$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
+		$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
+		
 		return;
     }
 	
