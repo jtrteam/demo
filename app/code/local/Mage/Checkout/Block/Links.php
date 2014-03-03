@@ -90,7 +90,7 @@ class Mage_Checkout_Block_Links extends Mage_Core_Block_Template
             //$parentBlock->addLink($text, 'checkout/cart', $text, true, array(), 50, null, 'class="top-link-cart"');
             
             // GravDept, set position = 1
-            $parentBlock->addLink($text, 'onepagecheckout', null, true, array(), 1, null, 'class="top-link-cart"');
+            $parentBlock->addLink($text, 'checkout/cart', null, true, array(), 1, null, 'class="top-link-cart"');
         }
         return $this;
     }
@@ -110,7 +110,7 @@ class Mage_Checkout_Block_Links extends Mage_Core_Block_Template
         if ($parentBlock && Mage::helper('core')->isModuleOutputEnabled('Mage_Checkout')) {
             $text = $this->__('Checkout');
             $parentBlock->addLink(
-                $text, 'checkout', $text,
+                $text, 'onepagecheckout', $text,
                 true, array('_secure' => true), 60, null,
                 'class="top-link-checkout"'
             );
