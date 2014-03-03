@@ -183,7 +183,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
 		
 		
-        $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);echo 'hi';exit;
+        $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);
 		foreach ($resultCustomeraddrs as $_address):
                 if($_address['is_default_billing']=='1'):
                     $arrAddresses[0]= array("mode" => "billing","address_id" => $_address['customer_address_id']);
@@ -193,7 +193,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 				endif;
 		endforeach;
 		
-		 $resultCustomerAddresses = Mage::getModel('api/server_handler')->call($apiDetails, "cart_customer.addresses", array($quote_id, $arrAddresses));
+		 $resultCustomerAddresses = Mage::getModel('api/server_handler')->call($apiDetails, "cart_customer.addresses", array($quote_id, $arrAddresses));echo 'hi';exit;
 		 
          $resultShippingList = Mage::getModel('api/server_handler')->call($apiDetails,"cart_shipping.list", array($quote_id));
 		
