@@ -203,7 +203,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 			elseif($value['code']=='flatrate_flatrate'):
 				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
 			else:
-				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'pickup_pickup'));
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
 			endif;
 		 endforeach;
 		if($data['discount']!= ''):
