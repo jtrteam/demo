@@ -212,8 +212,9 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 				$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
 				$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
 			} catch (Exception $e) {
-				$response['status'] = 'ERROR';
-				$response['message'] = $this->__('Checkout process cannot process due to some errors.');
+				 $this->_getSession()
+                ->addException($e, $this->__('Checkout process cannot process due to some errors.'));
+				$this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
 				Mage::logException($e);
 			}
 		return;
