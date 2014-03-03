@@ -209,8 +209,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		if($data['discount']!= ''):
 			$resultCartCouponAdd = Mage::getModel('api/server_handler')->call($apiDetails, "cart_coupon.add", array($quote_id,$data['discount']));
 	    endif;
-		echo 'hi';exit;
-		$paymentMethod = array("method" => "checkmo");
+		$paymentMethod = array("method" => "banktransfer");
 		$resultPaymentMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_payment.method", array($quote_id, $paymentMethod));
 		$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
 		$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
