@@ -201,12 +201,12 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
             if($value['code']=='freeshipping_freeshipping'):
                 $resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'freeshipping_freeshipping'));
 			elseif($value['code']=='flatrate_flatrate'):
-				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));echo 'hi';exit;
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
 			else:
 				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'tablerate_bestway'));
 			endif;
 		 endforeach;
-		if($data['discount']!= ''):
+		if($data['discount']!= ''):echo 'hi';exit;
 			$resultCartCouponAdd = Mage::getModel('api/server_handler')->call($apiDetails, "cart_coupon.add", array($quote_id,$data['discount']));
 	    endif;
 		$paymentMethod = array("method" => "checkmo");
