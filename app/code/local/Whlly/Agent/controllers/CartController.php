@@ -177,6 +177,11 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();
 		
 		$apiDetails = Mage::getModel('api/server_handler')->login(Mage::getStoreConfig('agent/genaral/api_username'), Mage::getStoreConfig('agent/genaral/api_password'));
+		if(!$apiDetails):
+		 $this->_getSession()
+                ->addException($e, $this->__('Please add Api user.'));
+		 $this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
+		endif;
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
 		try { 
 				$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
@@ -215,7 +220,6 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 				 $this->_getSession()
                 ->addException($e, $this->__('Checkout process cannot process due to some errors.'));
 				$this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
-				Mage::logException($e);
 			}
 		return;
     }
