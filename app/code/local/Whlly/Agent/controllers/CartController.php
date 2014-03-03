@@ -198,13 +198,12 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
          $resultShippingList = Mage::getModel('api/server_handler')->call($apiDetails,"cart_shipping.list", array($quote_id));
 		
 		 foreach($resultShippingList as $key=>$value):
-		 echo $value['code'];exit;
-            if($value['code']=='freeshipping_freeshipping'):
+		 	if($value['code']=='freeshipping_freeshipping'):
                 $resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'freeshipping_freeshipping'));
 			elseif($value['code']=='flatrate_flatrate'):
-				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));echo 'hi';exit;
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'flatrate_flatrate'));
 			else:
-				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'tablerate_bestway'));
+				$resultShippingMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_shipping.method", array($quote_id, 'pickup_pickup'));
 			endif;
 		 endforeach;
 		if($data['discount']!= ''):
