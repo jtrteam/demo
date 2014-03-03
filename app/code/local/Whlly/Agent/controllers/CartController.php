@@ -215,7 +215,7 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 				$paymentMethod = array("method" => "checkmo");
 				 $this->_getSession()
                 ->addException($e, $this->__('Please add payment.'));
-		 $this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));
+		 $this->_redirectUrl( Mage::getUrl('agent/user/neworder',array('id'=>$data['id'])));exit;
 				$resultPaymentMethod = Mage::getModel('api/server_handler')->call($apiDetails, "cart_payment.method", array($quote_id, $paymentMethod));
 				$shoppingCartTotals = Mage::getModel('api/server_handler')->call($apiDetails, "cart.totals", array($quote_id));
 				$shoppingCartInfo = Mage::getModel('api/server_handler')->call($apiDetails, "cart.info", array($quote_id));
