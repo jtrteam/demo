@@ -181,9 +181,9 @@ class Whlly_Agent_CartController extends Mage_Checkout_CartController
 		$customer = array('entity_id' => $customerId,'mode' => 'customer');
 		 
 		$resultCustomerSet = Mage::getModel('api/server_handler')->call($apiDetails, 'cart_customer.set', array( $quote_id, $customer) );
-		echo 'hi';exit;
 		
-        $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);
+		
+        $resultCustomeraddrs = Mage::getModel('api/server_handler')->call($apiDetails, 'customer_address.list', $customerId);echo 'hi';exit;
 		foreach ($resultCustomeraddrs as $_address):
                 if($_address['is_default_billing']=='1'):
                     $arrAddresses[0]= array("mode" => "billing","address_id" => $_address['customer_address_id']);
