@@ -329,30 +329,48 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
-    /**
-     * Change customer password action
-     */
-    public function editPostAction()
+   public function editPostAction()
     {
         
         if ($this->getRequest()->isPost()) {
             /** @var $customer Mage_Customer_Model_Customer */
-            $customer = Mage::getModel('customer/customer')->load($this->getRequest()->getPost('user_id'))->getData();
+            $customerId = (int) $this->getRequest()->getPost('user_id');
+			$customer = Mage::getModel('customer/customer');
+			$address  = Mage::getModel('customer/address');
+			$addressId = $customerId;
+            if ($addressId) {
+                $existsAddress = $customer->getAddressById($addressId);
+                if ($existsAddress->getId() && $existsAddress->getCustomerId() == $customer->getId()) {
+                    $address->setId($existsAddress->getId());
+                }
+            }
+			if ($customerId) {
+				$customer->load($customerId);
+			}
             /** @var $customerForm Mage_Customer_Model_Form */
             $customerForm = $this->_getModel('customer/form');
             $customerForm->setFormCode('customer_account_edit')
                 ->setEntity($customer);
+				
+			$addressForm = Mage::getModel('customer/form');	
+			$addressForm->setFormCode('customer_address_edit')
+                ->setEntity($address);
 
             $customerData = $customerForm->extractData($this->getRequest());
-			
+			$addressData    = $addressForm->extractData($this->getRequest());
+            			
             $errors = array();
             $customerErrors = $customerForm->validateData($customerData);
+			$addressErrors  = $addressForm->validateData($addressData);
+            if ($addressErrors !== true) {
+                $errors = $addressErrors;
+            }
+			
             if ($customerErrors !== true) {
                 $errors = array_merge($customerErrors, $errors);
             } else {
                 $customerForm->compactData($customerData);
                 $errors = array();
-                // Validate account and compose list of errors if any
                 $customerErrors = $customer->validate();
                 if (is_array($customerErrors)) {
                     $errors = array_merge($errors, $customerErrors);
@@ -364,17 +382,21 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
                 foreach ($errors as $message) {
                     $this->_getSession()->addError($message);
                 }
-                $this->_redirect('*/account');
+                $this->_redirect('agent/user/edit');
                 return $this;
             }
-
+  
             try {
 				$customer->setConfirmation(null);
                 $customer->save();
-                $this->_getSession()->setCustomer($customer)
-                    ->addSuccess($this->__('The account information has been saved.'));
-
-                $this->_redirect('agent/account');
+				$addressForm->compactData($addressData);
+                $address->setCustomerId($customerId)
+                    ->setIsDefaultBilling($this->getRequest()->getParam('default_billing', true))
+                    ->setIsDefaultShipping($this->getRequest()->getParam('default_shipping', true));
+					
+				$address->save();	
+                $this->_getSession()->addSuccess($this->__('The account information has been saved.'));
+                $this->_redirect('agent/account'); 
                 return;
             } catch (Mage_Core_Exception $e) {
                 $this->_getSession()->setCustomerFormData($this->getRequest()->getPost())
@@ -385,8 +407,9 @@ class Whlly_Agent_UserController extends Mage_Core_Controller_Front_Action
             }
         }
 
-        $this->_redirect('agent/account');
+         return $this->_redirectError(Mage::getUrl('agent/user/edit', array('id' => $customerId)));
     }
+
 
     /**
      * Filtering posted data. Converting localized data if needed
