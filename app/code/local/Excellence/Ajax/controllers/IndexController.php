@@ -63,7 +63,7 @@ class Excellence_Ajax_IndexController extends Mage_Checkout_CartController
 				} else {
 					$messages = array_unique(explode("\n", $e->getMessage()));
 					foreach ($messages as $message) {
-						$msg .= $message.'<br/>';
+					$msg .= $message. ' ';
 					}
 				}
 

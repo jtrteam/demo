@@ -25,6 +25,11 @@
     </frontend>
     <global>
         <models>
+		<cataloginventory>
+              <rewrite>
+                  <stock_item>Excellence_Ajax_Model_Stock_Item</stock_item>
+              </rewrite>
+            </cataloginventory>
             <ajax>
                 <class>Excellence_Ajax_Model</class>
                 <resourceModel>ajax_mysql4</resourceModel>
