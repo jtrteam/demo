@@ -315,13 +315,15 @@
                     </span>
                 </span>
             </p>
-        <?php else: // excl. ?>
-           <?php /*?> <p class="old-price">
+        <?php else:  ?>
+           <?php if(Mage::getSingleton('customer/session')->getCustomerGroupId() == 2) { ?>
+           <p class="old-price">
                 <span class="price-label"><?php echo $this->__('Retail Price:') ?></span>
-                <span class="price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
+                <span class="reg_grp_price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_regularPrice,true,false) ?>
                 </span>
-            </p><?php */?>
+            </p>
+        <?php } ?>
 
             <?php if ($_taxHelper->displayBothPrices()): ?>
                 <p class="special-price">
