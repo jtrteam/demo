@@ -14,6 +14,23 @@
 
 class Aitoc_Aitpermissions_Block_Rewrite_AdminSalesOrderGrid extends Mage_Adminhtml_Block_Sales_Order_Grid
 {
+	
+	public function setCollection($collection)
+    {
+		$role = Mage::getSingleton('aitpermissions/role');
+
+		if ($role->isPermissionsEnabled())
+		{
+			$allowedStoreviews = $role->getAllowedStoreviewIds();
+			if (count($allowedStoreviews) > 0 )
+            {
+                $collection->addFieldToFilter('store_id',array('in' => $allowedStoreviews));
+            }
+		}
+		
+		 return parent::setCollection($collection);
+    }
+	
 	protected function _prepareColumns()
 	{
 		parent::_prepareColumns();
