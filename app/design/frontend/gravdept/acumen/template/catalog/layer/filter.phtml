@@ -17,7 +17,18 @@
  * @see Mage_Catalog_Block_Layer_Filter
  */
 ?>
-
+<?php $item_url;  $item_values; $k=0; foreach ($this->getItems() as $_item): ?>
+<?php if($_item->getName() == 'Size'):?>
+      <?php 
+		 
+		   if (strpos($_item->getLabel(),'L') !== false):  
+		    $item_values[$k]=substr($_item->getLabel(),0,strpos($_item->getLabel(),'L')); 
+			$item_url[$k]=$this->urlEscape($_item->getUrl());
+			$k=$k+1;
+		   ?>  
+   <?php  endif; ?>
+  <?php endif; ?>
+  <?php endforeach ?>
 <ol>
     <?php $i = 1; $prv = 0; foreach ($this->getItems() as $_item): ?>
     <?php if(($_item->getName() == 'Size') && ($i == 1)): ?>
@@ -30,7 +41,7 @@
       ?>
         <?php if($_item->getName() == 'Size'):?>
 			<?php $gravdept_filterClass = $gravdept_filterClass.' size-layer'; ?>
-            <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
+           <?php /*?> <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
             		<?php if(((($i%2)== 1) && ($prv != 0) )||($i==1)): ?>
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?> 
@@ -40,13 +51,29 @@
                      	<li class="size-layer">&nbsp;</li>
                     <?php endif; ?>
                      <?php $prv = 0; ?>
-			<?php endif; ?>  
+			<?php endif; ?>  <?php */?>
             
-        <?php endif; ?>         
+        <?php endif; ?>   
+        
+         <?php if($_item->getName() == 'Size'): ?>
+       
+            <?php if(preg_match("/[0-9]+[L]+/", $_item->getLabel()) == TRUE): ?>
+             <?php else: 
+			 if (in_array($_item->getLabel(), $item_values)): 
+			 $key = array_search($_item->getLabel(), $item_values)
+ 			 ?>
+      	<li class="<?php echo $gravdept_filterClass; ?>"> <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?> </a></li>
+        <li class="<?php echo $gravdept_filterClass; ?>"> <a href="<?php echo  $item_url[$key] ?>"><?php echo $_item->getLabel()."L" ?> </a></li>
+       <?php else: ?>
+    	<li class="<?php echo $gravdept_filterClass; ?>"> <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?> </a></li>
+		<li class="size-layer">&nbsp;</li>
+       <?php  endif; ?> 
+       <?php  endif; ?>
+        <?php else: ?>      
         <li class="<?php echo $gravdept_filterClass; ?>">
             <?php if ($_item->getCount() > 0): ?>
                 <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
-                   <?php /*?> <?php if ($this->shouldDisplayProductCount()): ?>
+                 <?php /*?> <?php if ($this->shouldDisplayProductCount()): ?>
                         <span class="count"><?php echo $_item->getCount() ?></span>
                     <?php endif; ?><?php */?>
                     
@@ -56,7 +83,8 @@
             <?php else: ?>
                 <?php echo $_item->getLabel() ?>
             <?php endif; ?>
-        </li>
+        </li>  
+		<?php endif; ?>
        <?php $i=$i+1; ?>
     <?php endforeach ?>
 </ol>
