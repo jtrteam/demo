@@ -80,7 +80,7 @@ class Excellence_Ajax_Model_Stock_Item extends Mage_CatalogInventory_Model_Stock
         if (!$this->checkQty($summaryQty) || !$this->checkQty($qty)) {
 			if($stocklevel>0)
 			{
-            $message = Mage::helper('cataloginventory')->__('The requested quantity for "%s1" is not available.There are only "%s2" left in stock', $this->getProductName(),$stocklevel);}
+            $message = Mage::helper('cataloginventory')->__('The requested quantity for "%s1" is not available.There are only "%s" left in stock', $this->getProductName(),$stocklevel);}
 			else
 			{
 				        $message = Mage::helper('cataloginventory')->__('The requested quantity for "%s1" is not available.', $this->getProductName());
