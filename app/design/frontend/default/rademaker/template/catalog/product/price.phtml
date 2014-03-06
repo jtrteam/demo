@@ -316,18 +316,18 @@
                 </span>
             </p>
         <?php else:  ?>
-       <?php /*?>    <?php if(Mage::getSingleton('customer/session')->getCustomerGroupId() == 2) { ?><?php */?>
+           <?php if(Mage::getSingleton('customer/session')->getCustomerGroupId() == 2) { ?>
            <p class="old-price">
                 <span class="price-label"><?php echo $this->__('Retail Price:') ?></span>
                 <span class="reg_grp_price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_regularPrice,true,false) ?>
                 </span>
             </p>
-        <?php //} ?>
+        <?php } ?>
 
             <?php if ($_taxHelper->displayBothPrices()): ?>
                 <p class="special-price">
-                    <span class="price-label"><?php echo $this->__('Wholesale Price:') ?></span>
+                    <span class="price-label"<?php /*?>><?php echo $this->__('Wholesale Price:') ?><?php */?></span>
                     <span class="price-excluding-tax">
                         <span class="label"><?php echo $_taxHelper->__('Excl. Tax:') ?></span>
                         <span class="price" id="price-excluding-tax-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
@@ -342,8 +342,9 @@
                     </span>
                 </p>
             <?php else: ?>
+            
             <p class="special-price">
-                <span class="price-label"><?php echo $this->__('Wholesale Price:') ?></span>
+                <span class="price-label"><?php /*?><?php echo $this->__('Wholesale Price:') ?><?php */?></span>
                 <span class="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_finalPrice,true,false) ?>
                 </span>
