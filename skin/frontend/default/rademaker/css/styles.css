@@ -2920,7 +2920,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
 .old-price .price {
  color: #888888;
     font-weight: 400;
-    text-decoration: line-through;
+   /* text-decoration: line-through;*/
 }
 .special-price {
     margin: 0;
