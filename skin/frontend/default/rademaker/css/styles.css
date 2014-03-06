@@ -2918,7 +2918,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     white-space: nowrap;
 }
 .old-price .price {
-    color: #C76200;
+ color: #888888;
     font-weight: 400;
     text-decoration: line-through;
 }
@@ -2927,7 +2927,7 @@ button.button.btn-cart span span, button.button.btn-cart:hover span span {
     padding: 3px 0;
 }
 .special-price .price-label {
-    color: #CD5033;
+    color: #888888;
     font-size: 13px;
     font-weight: 400;
     white-space: nowrap;
